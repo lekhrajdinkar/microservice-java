@@ -1,4 +1,4 @@
-package Java7Andbefore.strings;
+package Java7.strings;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package Java7Andbefore.strings;
+package Java7.strings;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

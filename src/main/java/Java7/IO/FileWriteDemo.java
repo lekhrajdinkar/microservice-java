@@ -1,4 +1,4 @@
-package Java7Andbefore.IO;
+package Java7.IO;
 
 import java.io.FileWriter;
 import java.io.IOException;

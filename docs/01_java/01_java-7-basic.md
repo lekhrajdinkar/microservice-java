@@ -238,7 +238,7 @@
 ---
 ## IO  
 - io (old) and nio(New) : `Files`, `Path`, `scanner`
-- Check: Java7Andbefore.IO programs.
+- Check: Java7.IO programs.
   - [FileReadDemo.java](..%2Fsrc%2Fmain%2Fjava%2FJava7Andbefore%2FIO%2FFileReadDemo.java)
   - [FileWriteDemo.java](..%2Fsrc%2Fmain%2Fjava%2FJava7Andbefore%2FIO%2FFileWriteDemo.java)
 - Serializable, transient

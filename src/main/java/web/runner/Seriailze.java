@@ -2,7 +2,7 @@ package web.runner;
 
 import web.model.dto.CategoryDTO;
 import web.model.dto.CourseDTO;
-import Java7Andbefore.enums.CatLevel;
+import Java7.enums.CatLevel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

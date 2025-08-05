@@ -2,7 +2,7 @@ package web.model.dto;
 
 import web.controller.serialize.LocalDateDeSerializer;
 import web.controller.serialize.LocalDateSerializer;
-import Java7Andbefore.enums.CatLevel;
+import Java7.enums.CatLevel;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

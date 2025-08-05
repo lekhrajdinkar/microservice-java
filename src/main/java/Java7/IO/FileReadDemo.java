@@ -1,4 +1,4 @@
-package Java7Andbefore.IO;
+package Java7.IO;
 
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
