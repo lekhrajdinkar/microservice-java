@@ -1,0 +1,3 @@
+[build]
+command = "pip install -r requirements-netlify.txt && mkdocs build"
+publish = "site"

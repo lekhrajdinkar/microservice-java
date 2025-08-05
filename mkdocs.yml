@@ -1,0 +1,122 @@
+# Get-ChildItem -Recurse -Depth 2 -File | Select-Object FullName
+# mkdocs gh-deploy
+# mkdocs serve | build
+
+site_name: Java | micro services | Spring Boot
+site_url: https://lekhrajdinkar.github.io/solution-engineer/
+site_author: Lekhraj Dinkar
+site_author_url: https://www.linkedin.com/in/lekhraj-dinkar-25872140/
+site_logo: images/logo.png
+site_icon: images/favicon.ico
+site_subtitle: Java | Spring Boot | Spring Batch | ETL
+site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Documentation
+
+nav:
+  - Java:
+      - Java 7: 01_java/01_java-7-basic.md
+      - Java 8: 01_java/02_Java-8-new.md
+      - Java 9-11: 01_java/03_Java-9-11-new.md
+      - Java 11-17: 01_java/04_Java-11-17-new.md
+      - Java 17-21: 01_java/05_Java-17-21-new.md
+
+  - Spring boot:
+      - lombok mvn git: 02_springboot/00_others.md
+      - Spring Core:
+          - Spring Core Basics: 02_springboot/01_Spring-core/01_Spring_Core.md
+          - Spring Bean Lifecycle: 02_springboot/01_Spring-core/02_Spring_bean_lifeCycle.md
+          - AOP Concept: 02_springboot/01_Spring-core/03_AOP_concept.md
+          - Point-cut Examples: 02_springboot/01_Spring-core/03_point-cut-examples.txt
+          - Spring Properties: 02_springboot/01_Spring-core/04_spring_properties.md
+
+      - Spring Boot:
+          - Kickoff: 02_springboot/01_springboot/01_SB_kickoff.md
+          - Auto Configuration: 02_springboot/01_springboot/02_SB_AutoConfig.md
+          - Starter & Testing: 02_springboot/01_springboot/03_SB_starter_test.md
+
+  - Web:
+          - Web Start: 02_springboot/02_web/00 WEB_start.md
+          - General Web Tasks: 02_springboot/02_web/00_general_web_task.md
+          - Servlet 3: 02_springboot/02_web/01_servlet_3.md
+          - Spring MVC: 02_springboot/02_web/02_spring_MVC.md
+          - Spring Boot Starter Web: 02_springboot/02_web/03_spring_boot_stater_web.md
+          - REST: 02_springboot/02_web/04_REST.md
+          - Jackson: 02_springboot/02_web/05_Jackson.md
+          - Swagger: 02_springboot/02_web/06_swagger.md
+          - Error Handling: 02_springboot/02_web/07_error_handling.md
+          - gRPC & Webflux: 02_springboot/02_web/08_gRPC+webflux.md
+          - Webflux: 02_springboot/02_web/09_webflux.md
+
+  - Data Layer:
+          - Common Tasks: 02_springboot/03_data-layer/00_common_task.md
+          - JPA: 02_springboot/03_data-layer/01_JPA.md
+          - Persistence Context: 02_springboot/03_data-layer/02_presistence-context.md
+          - Hibernate Annotations & Converter: 02_springboot/03_data-layer/04_Hibernate-1-anno+converter.md
+          - Hibernate Identifier & Validator: 02_springboot/03_data-layer/04_Hibernate-2-identifier+validator.md
+          - Hibernate Query: 02_springboot/03_data-layer/04_Hibernate-3-query.md
+          - SB JPA Data Part 1: 02_springboot/03_data-layer/05-SBjpaData-1-start.md
+          - SB JPA Data Part 2: 02_springboot/03_data-layer/05-SBjpaData-2.md
+          - SB JPA Data Transactions: 02_springboot/03_data-layer/05-SBjpaData-3-txn.md
+          - ER Diagram: 02_springboot/03_data-layer/er-diagram.png
+
+  - Security:
+          - OAuth 2.0: 02_springboot/04_security/00_OAuth_2.0.md
+          - Spring Boot Security Start: 02_springboot/04_security/01_sb-security-start.md
+          - Authentication: 02_springboot/04_security/02_Authentication.md
+          - Authorization: 02_springboot/04_security/03_Authorization.md
+          - REST Security: 02_springboot/04_security/04_REST-secure.md
+
+  - ETL SpringBatch:
+          - index: 02_springboot/05_spring-batch-ETL/index.md
+          - SpringBatch: 02_springboot/05_spring-batch-ETL/01_SpringBatch-start.md
+
+extra_css:
+  - mkdocs.css
+
+theme:
+  name: material
+  features:
+    #- content.code.annotate
+    - navigation.tracking          # Enables breadcrumbs
+    - navigation.tabs              # Optional: if using tabs layout
+    - navigation.top               # Scroll-to-top button
+    - navigation.sections
+    #- navigation.expand
+    - navigation.indexes
+    - navigation.footer
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: grey
+      accent: pink
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
+      primary: grey
+      accent: pink
+
+
+repo_url: https://github.com/lekhrajdinkar/solution-engineer
+repo_name: GitHub
+edit_uri: edit/main/Notes/
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lekhrajdinkar
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/lekhraj-dinkar-25872140/
+
