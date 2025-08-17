@@ -131,7 +131,7 @@
   - String.join(", ", strArray);
 ---
 ## Java Collection 
-![img.png](./img/collections.png)
+![img.png](../99_img/collections.png)
 ### Java Collection (Data structure) - commonly used
 > - Side-Note:
 >   - can think, Linked-list as tree with single branch.

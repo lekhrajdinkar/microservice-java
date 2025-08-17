@@ -12,28 +12,29 @@ site_subtitle: Java | Spring Boot | Spring Batch | ETL
 site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Documentation
 
 nav:
-  - Java:
+  - 🔶Java:
       - Java 7: 01_java/01_java-7-basic.md
       - Java 8: 01_java/02_Java-8-new.md
       - Java 9-11: 01_java/03_Java-9-11-new.md
       - Java 11-17: 01_java/04_Java-11-17-new.md
       - Java 17-21: 01_java/05_Java-17-21-new.md
 
-  - Spring boot:
-      - lombok mvn git: 02_springboot/00_others.md
-      - Spring Core:
+  - 🔶Spring boot:
+      - ✔️lombok mvn git: 02_springboot/00_others.md
+      - ✔️Spring Core:
           - Spring Core Basics: 02_springboot/01_Spring-core/01_Spring_Core.md
           - Spring Bean Lifecycle: 02_springboot/01_Spring-core/02_Spring_bean_lifeCycle.md
           - AOP Concept: 02_springboot/01_Spring-core/03_AOP_concept.md
           - Point-cut Examples: 02_springboot/01_Spring-core/03_point-cut-examples.txt
           - Spring Properties: 02_springboot/01_Spring-core/04_spring_properties.md
 
-      - Spring Boot:
+      - ✔️Spring Boot:
           - Kickoff: 02_springboot/01_springboot/01_SB_kickoff.md
           - Auto Configuration: 02_springboot/01_springboot/02_SB_AutoConfig.md
           - Starter & Testing: 02_springboot/01_springboot/03_SB_starter_test.md
 
-  - Web:
+  - 🔶Web Application:
+      - ✔️controller:
           - Web Start: 02_springboot/02_web/00 WEB_start.md
           - General Web Tasks: 02_springboot/02_web/00_general_web_task.md
           - Servlet 3: 02_springboot/02_web/01_servlet_3.md
@@ -46,7 +47,7 @@ nav:
           - gRPC & Webflux: 02_springboot/02_web/08_gRPC+webflux.md
           - Webflux: 02_springboot/02_web/09_webflux.md
 
-  - Data Layer:
+      - ✔️Data Layer:
           - Common Tasks: 02_springboot/03_data-layer/00_common_task.md
           - JPA: 02_springboot/03_data-layer/01_JPA.md
           - Persistence Context: 02_springboot/03_data-layer/02_presistence-context.md
@@ -58,16 +59,23 @@ nav:
           - SB JPA Data Transactions: 02_springboot/03_data-layer/05-SBjpaData-3-txn.md
           - ER Diagram: 02_springboot/03_data-layer/er-diagram.png
 
-  - Security:
+      - ✔️Security:
           - OAuth 2.0: 02_springboot/04_security/00_OAuth_2.0.md
           - Spring Boot Security Start: 02_springboot/04_security/01_sb-security-start.md
           - Authentication: 02_springboot/04_security/02_Authentication.md
           - Authorization: 02_springboot/04_security/03_Authorization.md
           - REST Security: 02_springboot/04_security/04_REST-secure.md
 
-  - ETL SpringBatch:
+  - 🔶More:
+     - ✔️ETL SpringBatch:
           - index: 02_springboot/05_spring-batch-ETL/index.md
           - SpringBatch: 02_springboot/05_spring-batch-ETL/01_SpringBatch-start.md
+
+  - 🔶Advance:
+      - performance: 03_Advance/01_performance.md
+      - microservices: 03_Advance/02_microservices.md
+      - multi-threading: 03_Advance/03_multi-threading.md
+
 
 extra_css:
   - mkdocs.css
