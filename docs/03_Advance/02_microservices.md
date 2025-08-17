@@ -7,8 +7,9 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; cli
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - **Reference**:
-  - https://temporal.io/
-  - repo: https://github.com/Java-Techie-jt/spring-temporal
+  - [https://temporal.io/](https://temporal.io/)
+  - ai 🤖: [https://www.perplexity.ai](https://www.perplexity.ai/search/microservice-with-temporal-htt-jEr_tT_wSFSFxsMm8uCDpQ)
+  - git: [https://github.com/Java-Techie-jt/spring-temporal](https://github.com/Java-Techie-jt/spring-temporal)
     - small code and quicly check.
 - **insight**
   - open-source **workflow orchestration engine**
@@ -26,6 +27,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="stric
 
 ---
 ## 🔶Spring modulith
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RYtIndaGdNg?si=rcQAoeLEbhS7PIcQ" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5SwaWowtU30?si=k1p0gjgCcVVYPog2" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 

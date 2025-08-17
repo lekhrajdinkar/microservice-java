@@ -68,7 +68,7 @@ nav:
 
   - 🔶More:
      - ✔️ETL SpringBatch:
-          - index: 02_springboot/05_spring-batch-ETL/index.md
+          - index: 02_springboot/05_spring-batch-ETL/00_index.md
           - SpringBatch: 02_springboot/05_spring-batch-ETL/01_SpringBatch-start.md
 
   - 🔶Advance:

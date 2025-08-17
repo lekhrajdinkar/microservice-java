@@ -1,13 +1,3 @@
-> boiler plate code remove : lombok, mapstruct, modelMapper
----
-
-
-- https://chatgpt.com/c/7d23b0fe-a7a5-43d5-9ced-69d4a344e31a - error handling
-- https://chatgpt.com/c/f4a0c9cd-c6cb-414e-888c-605c2d50340c - ext server deploy
-
----
-
-# web
 ## 0 web request
 - idempotent : PUT
 - non-idempotent
@@ -53,7 +43,6 @@
 "text/csv"	        Returns CSV
 "application/pdf"	Returns PDF
 
-
 APPLICATION_OCTET_STREAM - Generic binary (default)
 APPLICATION_PDF - For PDF files
 IMAGE_JPEG/IMAGE_PNG - For images
@@ -63,5 +52,9 @@ Content-Disposition Header
 - attachment forces download dialog
 - filename suggests the saved filename
 
-
 ```
+
+---
+## references
+- https://chatgpt.com/c/7d23b0fe-a7a5-43d5-9ced-69d4a344e31a - error handling
+- https://chatgpt.com/c/f4a0c9cd-c6cb-414e-888c-605c2d50340c - ext server deploy
