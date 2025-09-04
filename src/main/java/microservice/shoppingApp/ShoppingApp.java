@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @SpringBootApplication
 @Component("microservice.shoppingApp")
 @EnableAsync
@@ -15,6 +17,7 @@ public class ShoppingApp
 	public static void main(String[] args)
 	{
 		SpringApplication app = new SpringApplication(ShoppingApp.class);
+		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/microservice/shoppingApp/shoppingApp.properties"));
 		app.run(args);
 	}
 }

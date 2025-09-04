@@ -1,11 +1,14 @@
+/*
 package microservice.jewelleryApp.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,9 +23,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import java.util.List;
 
-//@ConditionalOnProperty(havingValue = "security_02", name = "sb.customize.security")
-//@Configuration
-//@EnableWebSecurity
+@ConditionalOnProperty(havingValue = "security_02", name = "sb.customize.security")
+@Configuration
+@EnableWebSecurity
 public class Security_01_Config
 {
     @Value("${spring.security.oauth2.client.registration.okta.scope}") String scope;
@@ -137,3 +140,4 @@ public class Security_01_Config
     }
 
 }
+*/

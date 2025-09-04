@@ -1,6 +1,5 @@
 package microservice.jewelleryApp.Runner;
 
-import microservice.jewelleryApp.service.OAuth2TokenServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,17 +12,16 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
-// @Component                     // <<<< here
+// @Component                     // <<<< here 👈🏻👈🏻
 @Slf4j
 public class RestConsumeRunner implements CommandLineRunner {
     String url1 = "http://localhost:8083/spring/security/admin/secured-api-1";
     String url2  = "http://localhost:8083/spring/security/user/secured-api-2";
     String url3  = "http://localhost:8083/spring/security/oauth/resource/api-1";
     @Autowired RestTemplate rest;
-    //@Autowired ClientHttpRequestInterceptor basicAuthInterceptor;
 
-    @Autowired
-    OAuth2TokenServiceImpl OAuth2srv;
+    // @Autowired ClientHttpRequestInterceptor basicAuthInterceptor;
+    // @Autowired OAuth2TokenServiceImpl OAuth2srv;
 
     @Override
     public void run(String... args) throws Exception

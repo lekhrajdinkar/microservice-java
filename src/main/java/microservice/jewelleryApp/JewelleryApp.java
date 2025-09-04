@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @SpringBootApplication
 @Component("microservice.jewelleryApp")
 @EnableAsync
@@ -15,6 +17,7 @@ public class JewelleryApp
 	public static void main(String[] args)
 	{
 		SpringApplication app = new SpringApplication(JewelleryApp.class);
+		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/microservice/jewelleryApp/jewelleryApp.properties"));
 		app.run(args);
 	}
 }

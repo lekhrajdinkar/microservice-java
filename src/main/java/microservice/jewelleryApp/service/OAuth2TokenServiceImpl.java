@@ -1,3 +1,4 @@
+/*
 package microservice.jewelleryApp.service;
 
 
@@ -40,3 +41,4 @@ public class OAuth2TokenServiceImpl {
     }
 }
 
+*/

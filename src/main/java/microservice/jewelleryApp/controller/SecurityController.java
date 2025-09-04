@@ -1,6 +1,6 @@
 package microservice.jewelleryApp.controller;
 
-import microservice.jewelleryApp.service.OAuth2TokenServiceImpl;
+//import microservice.jewelleryApp.service.OAuth2TokenServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/jewelleryApp/v1/security")
 public class SecurityController
 {
-    @Autowired OAuth2TokenServiceImpl OAuth2Srv;
+
     @GetMapping("/jewelleryApp/v1/admin/secured-api-1")
     public String m1() { return "ADMIN :: secured-api-1";}
 
@@ -37,9 +37,12 @@ public class SecurityController
         return " processed :: /oauth/resource/api-1";
     }
 
+    //=================
+
+    /*
+    @Autowired OAuth2TokenServiceImpl OAuth2Srv;
     @GetMapping("/jewelleryApp/v1/getAccessToken")
     public String m5() {return OAuth2Srv.getAccessToken();}
+    */
 
 }
-
-// Role : Admin, user

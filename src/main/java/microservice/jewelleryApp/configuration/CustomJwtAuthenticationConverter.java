@@ -1,3 +1,4 @@
+/*
 package microservice.jewelleryApp.configuration;
 
 import lombok.extern.slf4j.Slf4j;
@@ -56,3 +57,4 @@ public class CustomJwtAuthenticationConverter implements Converter<Jwt, Abstract
         return Collections.emptyList();
     }
 }
+*/
