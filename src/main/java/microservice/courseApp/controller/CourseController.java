@@ -22,7 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController("/courseApp/v1")
+@RestController
 public class CourseController 
 {
     Logger logger = LoggerFactory.getLogger(CourseController.class);

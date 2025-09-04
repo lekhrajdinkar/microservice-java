@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/courseApp/v1")
+@RestController
 public class CategoryController //implements CategoryApi
 {
 
