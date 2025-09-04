@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("microservice/shoppingApp/v1")
+@RequestMapping("/shoppingApp/v1")
 public class ShoppingAppController
 {
     @Autowired  private ShoppingAppService srv;

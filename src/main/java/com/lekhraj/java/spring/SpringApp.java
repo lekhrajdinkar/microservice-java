@@ -2,11 +2,9 @@ package com.lekhraj.java.spring;
 
 import com.lekhraj.java.spring.Spring_03_Properties.bean.Prop2Map;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -20,7 +18,7 @@ import java.util.Collections;
 @EnableConfigurationProperties({Prop2Map.class})
 @Component("com.lekhraj.java.spring")
 @EnableAsync
-public class Application implements ApplicationContextAware
+public class SpringApp implements ApplicationContextAware
 {
 	//@Autowired  // didnot work
 	private ApplicationContext applicationContext;
@@ -31,7 +29,7 @@ public class Application implements ApplicationContextAware
 		System.setProperty("server.servlet.context-path", "/spring"); //way-3
 		System.setProperty("server.error.whitelabel.enabled=", "false"); //way-3
 
-		SpringApplication app = new SpringApplication(Application.class);
+		SpringApplication app = new SpringApplication(SpringApp.class);
 		app.setDefaultProperties(Collections.singletonMap("server.port", "8083")); //way-1
 		//app.setDefaultProperties(Collections.singletonMap("spring.config.additional-location", "file:/application.properties"));
 		app.run(args);

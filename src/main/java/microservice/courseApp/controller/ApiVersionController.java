@@ -4,19 +4,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@RestController("/courseApp/v1")
 public class ApiVersionController
 {
     // API Vesrioning
     @GetMapping(
-            value="test/get",
+            value="/test/get",
             produces="application/v1+json"
     )
     private Integer getId() { return 20; }
     // in header, set Accept="application/v1+json"
 
     @GetMapping(
-            value="test/get",
+            value="/test/get",
             produces="application/v2+json"
     )
     private String getName() { return "20String"; }

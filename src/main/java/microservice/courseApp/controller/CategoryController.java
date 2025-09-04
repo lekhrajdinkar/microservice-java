@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController("/courseApp/v1")
 public class CategoryController //implements CategoryApi
 {
 
@@ -27,14 +27,14 @@ public class CategoryController //implements CategoryApi
     }
 
     //@Override
-    @GetMapping("category/find-all")
+    @GetMapping("/category/find-all")
     public List<Category> findAll() {
         logger.debug("CategoryController :: findAll");
         return srv.findAll();
     }
 
     //@Override
-    @GetMapping("category/findById")
+    @GetMapping("/category/findById")
     public Category findById(Long id) {
         logger.debug("CategoryController :: findById");
         return srv.findById(id);
@@ -42,7 +42,7 @@ public class CategoryController //implements CategoryApi
 
     //@Override
     @PostMapping(
-            value = "category/save",
+            value = "/category/save",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )

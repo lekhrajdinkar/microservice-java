@@ -50,7 +50,7 @@ public class HibernateH2Config
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
             sessionFactory.setDataSource(dataSource);
-            sessionFactory.setPackagesToScan("com.lekhraj.java.spring.SB_99_RESTful_API.entities");
+            sessionFactory.setPackagesToScan("microservice.jewelleryApp.entities");
             sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
@@ -90,7 +90,7 @@ public class HibernateH2Config
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.lekhraj.java.spring.SB_99_RESTful_API.entities");
+        em.setPackagesToScan("microservice.jewelleryApp.entities");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(hibernateProperties());

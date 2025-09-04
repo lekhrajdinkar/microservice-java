@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ms/system1/stocks")
+@RequestMapping("/stocksApp")
 public class StockController
 {
-    @GetMapping
+    @GetMapping("/get-all-stocks")
     public List<Stock> getAllStocks()
     {
         List<Stock> stocks = new java.util.ArrayList<>(10000);

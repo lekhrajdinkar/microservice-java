@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
-@PropertySource("classpath:microservice/courseApp/db-pcourse.properties")
+@PropertySource("classpath:microservice/courseApp/courseApp.properties")
 public class CourseApp
 {
 	public static void main(String[] args) {

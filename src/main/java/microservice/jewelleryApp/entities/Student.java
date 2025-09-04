@@ -25,7 +25,7 @@ public class Student {
     @GeneratedValue(generator = "myUUID")
     //@GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
     @GenericGenerator(name = "myUUID"
-            ,strategy = "com.lekhraj.java.spring.SB_99_RESTful_API.entities.CustomIdentifier"
+            ,strategy = "microservice.jewelleryApp.entities.CustomIdentifier"
             //,parameters = @Parameter(name = "prefix", value = "prod")
     )
     private UUID uuid;

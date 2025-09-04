@@ -22,7 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
+@RestController("/courseApp/v1")
 public class CourseController 
 {
     Logger logger = LoggerFactory.getLogger(CourseController.class);
@@ -32,7 +32,7 @@ public class CourseController
     @Autowired InstructorSrv instSrv;
 
     //@Override
-    @GetMapping("course/find-all")
+    @GetMapping("/course/find-all")
     private List<Course> findAll() {
         logger.debug("CourseController :: findAll");
         List<Course>  res = srv.findAll();
@@ -40,21 +40,21 @@ public class CourseController
         return srv.findAll();
     }
 
-    @GetMapping("course/find-all-dto")
+    @GetMapping("/course/find-all-dto")
     private List<CourseDTO> findAllDto() {
         logger.debug("CourseController :: findAllDto");
         return srv.findAllDto();
     }
 
     //@Override
-    @GetMapping("course/findById")
+    @GetMapping("/course/findById")
     private Course findById(Long id) {
         logger.debug("CourseController :: findById");
         return srv.findById(id);
     }
 
     //@Override
-    @PostMapping("course/save")
+    @PostMapping("/course/save")
     private Long save(@RequestBody CourseDTO dto) {
         logger.debug("CourseController :: save");
 
@@ -70,7 +70,7 @@ public class CourseController
     @Autowired CourseDAO dao;
 
     @GetMapping(
-            value="course/q-find-by-cat",
+            value="/course/q-find-by-cat",
             produces="application/v1+json"
     )
     private List<CourseDTO> QFindByCategory() {
@@ -82,7 +82,7 @@ public class CourseController
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("course/q-find-by-inst")
+    @GetMapping("/course/q-find-by-inst")
     private List<CourseDTO> QFindByInstructor() {
         logger.debug("CourseController :: QFindByInstructor");
         //List<Course>  res =  dao.find2ByCategoryId(1L).get();
@@ -92,7 +92,7 @@ public class CourseController
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("course/q-find-All-page/{page}/{size}")
+    @GetMapping("/course/q-find-All-page/{page}/{size}")
     private List<CourseDTO> QFindAllPage(@PathVariable int page, @PathVariable int size) {
         logger.debug("CourseController :: QFindAllPage");
         Page<Course> res = dao.findAllWithPagination( PageRequest.of(page, size, Sort.by("title").descending().and(Sort.by("desc"))));

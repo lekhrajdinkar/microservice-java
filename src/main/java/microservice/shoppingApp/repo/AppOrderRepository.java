@@ -1,6 +1,5 @@
 package microservice.shoppingApp.repo;
 
-import com.lekhraj.java.spring.database.entities.*;
 import microservice.shoppingApp.entities.AppOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController("/courseApp/v1")
 public class InstructorController
 {
 
@@ -19,21 +19,21 @@ public class InstructorController
     InstructorSrv srv;
 
     //@Override
-    @GetMapping("inst/find-all")
+    @GetMapping("/inst/find-all")
     public List<Instructor> findAll() {
         logger.debug("CourseController :: findAll");
         return srv.findAll();
     }
 
     //@Override
-    @GetMapping("inst/findById/{id}")
+    @GetMapping("/inst/findById/{id}")
     public Instructor findById(@PathVariable Long id) {
         logger.debug("CourseController :: findById");
         return srv.findById(id);
     }
 
     //@Override
-    @PostMapping("inst/save")
+    @PostMapping("/inst/save")
     public Long save(@RequestBody Instructor model) {
         logger.debug("CourseController :: save");
         return srv.save(model);
