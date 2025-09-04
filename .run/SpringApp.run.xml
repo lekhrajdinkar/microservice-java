@@ -2,6 +2,7 @@
   <configuration default="false" name="SpringApp" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="com.lekhraj.java.spring.SpringApp" />
     <module name="spring-app" />
+    <option name="PROGRAM_PARAMETERS" value="-Dspring.config.location=classpath:/springApp/application.properties" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.lekhraj.java.spring.*" />
