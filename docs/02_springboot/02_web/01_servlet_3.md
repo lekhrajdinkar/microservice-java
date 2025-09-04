@@ -3,7 +3,7 @@
 # Servlet 3
 ## new feature/s
 - programmatically **register** servlets,filter and lister into it **ServletContext** / SC , using `WebApplicationInitializer`
- - eliminating need of web.xml
+ - eliminating need of microservice.xml
 
  - ```
    public class MyWebAppInitializer implements WebApplicationInitializer {
@@ -41,7 +41,7 @@ public class AsyncServlet extends HttpServlet {
 ---
 
 ## @webListener
-- used to perform actions in response to various **events** in a web application
+- used to perform actions in response to various **events** in a microservice application
   - event eg : creation and destruction of the sessions and request objects
   - based  on event already parent listener present, just create subclass out of it
     - HttpSessionListener
@@ -67,7 +67,7 @@ public class MyServletRequestListener implements ServletRequestListener {
 ```
 
 ## Servlet Context / SC 
--  like spring IAC - AC or hibernate - PC, we have web container - SC
+-  like spring IAC - AC or hibernate - PC, we have microservice container - SC
 - sample code:
 ```
   - InputStream inputStream = servletContext.getResourceAsStream("/WEB-INF/resource.txt");

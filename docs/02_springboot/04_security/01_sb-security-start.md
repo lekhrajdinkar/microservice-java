@@ -8,7 +8,7 @@
   - DN entries
 - Authentication vs Authorization
 - token - JWT https://jwt.io/introduction/
-- web filter
+- microservice filter
 - CCGG pattern/s
   - App <--> Authenticating users against an LDAP directory, **directly**. (old)
   - App <--> **OKTA** <--integrated--> LDAP Authentication
@@ -24,7 +24,7 @@
 ## Spring Boot Security
 ### Intro
 - Authentication and access-control framework.
-- use web-filter bts
+- use microservice-filter bts
 - old: **WebSecurityConfigurerAdapter**
 - `@EnableGlobalMethodSecurity`(prePostEnabled = true)` c1
   - `@PreAuthorize`("hasAuthority('SCOPE_my.spring.app.scope')") m()
@@ -37,7 +37,7 @@
   ```
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/ignore1", "/ignore2");
+        return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
     }
   ```
   - Add  **SecurityFilterChain** `bean` - `new and functional style`.

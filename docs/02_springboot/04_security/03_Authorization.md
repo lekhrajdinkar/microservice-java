@@ -5,7 +5,7 @@
 - note: cg-LDAP takes care
 
 ### `URL-based Security`
-- Restricting access to web resources based on URL patterns.
+- Restricting access to microservice resources based on URL patterns.
 
 ### token based : `OAuth 2.0` :green_circle:
 - springs helps to integrating with external authentication-providers(okta,google,etc)

@@ -13,7 +13,7 @@
 - body/payload : claims (statement about user and additional info)
 
 ## Application arch
-- server-side web applications (SpringMVC, JSP) :
+- server-side microservice applications (SpringMVC, JSP) :
 - browser-based applications / SPA :
 - native/mobile apps :
 - connected devices (M2M, lambda) :
@@ -28,7 +28,7 @@
 - http-redirection (header :: `location=url-2`, responseCode :: `302`)
 - refer : https://auth0.com/intro-to-iam/what-is-oauth-2
 - Definition : OAuth standard protocol to solve `Delegated Authorization`.
-    > - allow appl(Client) to access resources hosted by other web apps, on behalf of a user/resource-owner.
+    > - allow appl(Client) to access resources hosted by other microservice apps, on behalf of a user/resource-owner.
     > - provides consented access.
     > - restricts actions of what the client app can perform on resources, without sharing user credential.
 
@@ -78,7 +78,7 @@
 - After validating client identity,
 - AuthServer return single-use Authorization-Code to the Client via callback URI
 - which is then exchanged for an Access Token.
-- use-case : Traditional web apps where the exchange can `securely` happen on the server side. // back-channel.
+- use-case : Traditional microservice apps where the exchange can `securely` happen on the server side. // back-channel.
 - **PKCE** : additional steps that make it more secure for mobile/native apps and SPAs.
 ```
     1. Client : GET /authorize?response_type=code&client_id=`CLIENT_ID`&redirect_uri=`REDIRECT_URI`&scope=read&state=xyz

@@ -4,7 +4,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qe5zyOElzsU?si=vlveqXjZWdn_OG67" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+gyroscope; picture-in-picture; microservice-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - 🤖 [https://www.perplexity.ai/](https://www.perplexity.ai/search/https-www-youtube-com-watch-v-jjXK3MGMRIu5x0hTNJr66A)
   - use For loop and Stream for  small Dataset

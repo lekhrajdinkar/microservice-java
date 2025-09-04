@@ -55,19 +55,19 @@
 ## Multi-threading
 - **Multi-threading / Parallel Processing** (not using much, why ?)
   - Web applications are generally stateless, with each request handled independently. 
-  - **Modern web server/application** 
+  - **Modern microservice server/application** 
     - designed to handle multiple requests concurrently
     - And automatically create and manage threads to process incoming HTTP requests, using **threadpools**
     - so developer don't write it.
   - **Complexity** : race conditions, deadlocks, and synchronization problems (thread safe)
   - **Distributed Systems**
-    - modern web applare designed to run in distributed environments (e.g., microservices architecture).
+    - modern microservice applare designed to run in distributed environments (e.g., microservices architecture).
     - In such systems, multi-threading at the application level is less beneficial because tasks are distributed across multiple instances and nodes, 
     - each running independently.
   - Alternative: 
     - **Asynchronous Programming** for non-blocking operation.
     - **Message Queues**: 
-      - For processing intensive or long-running tasks, web applications can use message queues (e.g., RabbitMQ, Kafka)
+      - For processing intensive or long-running tasks, microservice applications can use message queues (e.g., RabbitMQ, Kafka)
       - to decouple task execution from user requests,
       - allowing tasks to be handled asynchronously in the background.
 - race condition

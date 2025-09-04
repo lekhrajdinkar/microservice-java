@@ -1,4 +1,4 @@
-## 0 web request
+## 0 microservice request
 - idempotent : PUT
 - non-idempotent
 
@@ -6,12 +6,12 @@
 - **persistent**(stateful), **bi-directional** communication channel between a client and a server over a single, **long-lived** TCP connection. 
 - WebSocket connections remain open and allow for **real-time data exchange** between the client and the serve.
 - 
-## 2 web-aware Spring ApplicationContext : `WebApplicationContext`
+## 2 microservice-aware Spring ApplicationContext : `WebApplicationContext`
 - IAC container for springMVC application.
-- AC aware of the web-specific features and contexts in a Servlet environment.
+- AC aware of the microservice-specific features and contexts in a Servlet environment.
     - can access the `ServletContext`, provides access to the Servlet API
     - access the `ServletConfig`
-- supports **web-scopes** for beans
+- supports **microservice-scopes** for beans
     - request - bean is created for each HTTP request
     - session -
     - global session - never used

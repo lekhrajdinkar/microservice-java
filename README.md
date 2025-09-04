@@ -27,13 +27,13 @@ mkdocs serve
     - [Spring_01_AOP](src/main/java/com/lekhraj/java/spring/Spring_01_AOP)
     - [Spring_02_Core](src/main/java/com/lekhraj/java/spring/Spring_02_Core)
     - [Spring_03_Properties](src/main/java/com/lekhraj/java/spring/Spring_03_Properties)
-    - [Spring_04_AutoConfiguration](src/main/java/com/lekhraj/java/spring/SB_01_AutoConfiguration)
+    - [Spring_04_AutoConfiguration](src/main/java/com/lekhraj/java/spring/Spring_04_AutoConfiguration)
 - **Java programs**
-    - [Java7](src/main/java/Java7)
-    - [java8+](src/main/java/java8)
+    - [Java7](src/main/java/fundamentals/java_7)
+    - [java8+](src/main/java/fundamentals/java_8_and_above)
 - **microservices**
-    - [RESTful_API_1 : jewellery](src/main/java/web)
-    - [RESTful_API_2 : student](src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API)
+    - [RESTful_API_1 : student ](src/main/java/microservice/courseApp)
+    - [RESTful_API_2 : jewellery ](src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API)
 - **More**
     - [kafka](src/main/java/com/lekhraj/java/spring/kafka)
     - [05_spring-batch-ETL](docs/02_springboot/05_spring-batch-ETL)

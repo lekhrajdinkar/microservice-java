@@ -1,6 +1,6 @@
 package util;
 
-import java8.streamProcessing.FnIStreamGen;
+import fundamentals.java_8_and_above.streamProcessing.FnIStreamGen;
 
 import java.util.Arrays;
 import java.util.Collection;

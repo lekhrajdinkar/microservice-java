@@ -1,6 +1,6 @@
 - https://chatgpt.com/c/831f36a0-bce4-4372-87d4-9ab6528babc5 
 --- 
-# sb-starter-web
+# sb-starter-microservice
 ## A. features
 - necessary dependencies (jackson, springMVC), 
 - embedded server
@@ -11,7 +11,7 @@
 ## B. useful customization class
 ### 1. class: WebServerFactoryCustomizer 
 - interface provided by Spring Boot 
-- allows you to customize the configuration of embedded web servers
+- allows you to customize the configuration of embedded microservice servers
   - setting ports, 
   - enabling SSL, 
   - configuring timeouts
@@ -68,7 +68,7 @@ public class ServletConfig
 ### 1. update embedded server
 - update pom 
   - add spring-boot-starter-**undertow** / spring-boot-starter-**jetty**
-  - exclude <spring-boot-starter-**tomcat** from `spring-boot-starter-web`
+  - exclude <spring-boot-starter-**tomcat** from `spring-boot-starter-microservice`
 
 ### 2. shut down project
 - ApplicationContext context = SpringApplication.run(DemoApplication.class, args);

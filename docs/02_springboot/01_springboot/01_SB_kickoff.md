@@ -32,7 +32,7 @@
   - bootstrap simple webApp
   - Spring vs SB
   - `@SpringBootApplication` --> @EnableAutoConfiguration, @Configuration, @ComponentScan
-  - worked on --> web, jpa, test, okta, rmq, ibmmq, doc, okta, etc.
+  - worked on --> microservice, jpa, test, okta, rmq, ibmmq, doc, okta, etc.
   - `@WebFilter`
   - `banner.txt` keep in resources folder
 

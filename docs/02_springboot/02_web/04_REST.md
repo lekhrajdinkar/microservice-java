@@ -1,6 +1,6 @@
 ## references
 - https://www.baeldung.com/rest-with-spring-series
-- web filter : https://chatgpt.com/c/34abc85f-eabb-47ac-b525-7c2c6af8023a 
+- microservice filter : https://chatgpt.com/c/34abc85f-eabb-47ac-b525-7c2c6af8023a 
  
 ---
 ## REST Actions
@@ -21,7 +21,7 @@
 ### 2 more actions list-2 (pending)
 - **Async Controllers**: 
   - Use **@Async("taskExecutor-1")** and **CompletableFuture** to handle long-running requests asynchronously :point_left:
-  - [AsyncController.java](../../../src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API/controller/AsyncController.java)
+  - [AsyncController.java](../../../src/main/java/microservice/jewelleryApp/controller/AsyncController.java)
   - **@EnableAsync** - enable
   - create @Bean(name = "taskExecutor-1") **ThreadPoolTaskExecutor** : [AsyncConfig.java](../../src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API/configuration/AsyncConfig.java)
   
