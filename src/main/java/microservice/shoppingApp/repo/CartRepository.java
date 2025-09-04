@@ -1,6 +1,6 @@
-package more.database.repo;
+package microservice.shoppingApp.repo;
 
-import more.database.entities.Cart;
+import microservice.shoppingApp.entities.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,13 +1,13 @@
-package more.database;
+package microservice.shoppingApp;
 
-import more.database.entities.AppOrder;
-import more.database.entities.AppOrderDetail;
-import more.database.entities.Customer;
-import more.database.entities.Product;
-import more.database.repo.AppOrderRepository;
-import more.database.repo.CartRepository;
-import more.database.repo.CustomerRepository;
-import more.database.repo.ProductRepository;
+import microservice.shoppingApp.entities.AppOrder;
+import microservice.shoppingApp.entities.AppOrderDetail;
+import microservice.shoppingApp.entities.Customer;
+import microservice.shoppingApp.entities.Product;
+import microservice.shoppingApp.repo.AppOrderRepository;
+import microservice.shoppingApp.repo.CartRepository;
+import microservice.shoppingApp.repo.CustomerRepository;
+import microservice.shoppingApp.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

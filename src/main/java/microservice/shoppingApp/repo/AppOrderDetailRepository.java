@@ -1,12 +1,10 @@
-package more.database.repo;
+package microservice.shoppingApp.repo;
 
-
-import more.database.entities.Product;
+import microservice.shoppingApp.entities.AppOrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 //@Transactional(transactionManager = "transactionManager_for_postgres")
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface AppOrderDetailRepository extends JpaRepository<AppOrderDetail, Long> {
 }
-

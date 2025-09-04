@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.lekhraj.java.spring.elt.springbatch",
+        basePackages = "more.springbatch",
         entityManagerFactoryRef = "entityManagerFactory_for_postgres2",
         transactionManagerRef = "transactionManager_for_postgres2"
 )

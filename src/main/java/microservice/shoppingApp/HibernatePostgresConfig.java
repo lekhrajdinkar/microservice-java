@@ -1,4 +1,4 @@
-package more.database;
+package microservice.shoppingApp;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.lekhraj.java.spring.database",
+        basePackages = "microservice.shoppingApp",
         entityManagerFactoryRef = "entityManagerFactory_for_postgres",
         transactionManagerRef = "transactionManager_for_postgres"
 )
@@ -44,7 +44,7 @@ public class HibernatePostgresConfig
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
             sessionFactory.setDataSource(dataSource);
-            sessionFactory.setPackagesToScan("com.lekhraj.java.spring.database");
+            sessionFactory.setPackagesToScan("microservice.shoppingApp");
             sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;

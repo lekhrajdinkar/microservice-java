@@ -1,13 +1,13 @@
-package more.database;
+package microservice.shoppingApp;
 
-import more.database.entities.Customer;
-import more.database.entities.Product;
+import microservice.shoppingApp.entities.Customer;
+import microservice.shoppingApp.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/shopping-app")
+@RequestMapping("microservice/shoppingApp/v1")
 public class ShoppingAppController
 {
     @Autowired  private ShoppingAppService srv;

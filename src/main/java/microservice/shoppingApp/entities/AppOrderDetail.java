@@ -1,4 +1,4 @@
-package more.database.entities;
+package microservice.shoppingApp.entities;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
