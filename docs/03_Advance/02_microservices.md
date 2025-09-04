@@ -24,10 +24,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="stric
     - metadata
   - transaction compensation (the **Saga pattern**). 👈🏻
 
+- hands-on: `pending`
+
 
 ---
 ## 🔶Spring modulith
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RYtIndaGdNg?si=rcQAoeLEbhS7PIcQ" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
@@ -36,3 +37,6 @@ gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cro
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5SwaWowtU30?si=k1p0gjgCcVVYPog2" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
 encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+- [https://www.perplexity.ai/search/spring-modulith-part-1-https-w-N8l_R84tQc.Qb2IjGhmkTQ](https://www.perplexity.ai/search/spring-modulith-part-1-https-w-N8l_R84tQc.Qb2IjGhmkTQ)
+- hands-on: `pending`
