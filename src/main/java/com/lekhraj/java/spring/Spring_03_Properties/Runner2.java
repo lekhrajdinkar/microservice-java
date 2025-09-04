@@ -4,7 +4,7 @@ import com.lekhraj.java.spring.Spring_03_Properties.bean.ConfigurationProperties
 import com.lekhraj.java.spring.Spring_03_Properties.bean.DatabasePropertiesMap;
 import com.lekhraj.java.spring.Spring_03_Properties.bean.RabbitPropertiesMap;
 import com.lekhraj.java.spring.Spring_03_Properties.bean.Prop2Map;
-import com.lekhraj.java.spring.util.Print;
+import com.lekhraj.java.spring.Print;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

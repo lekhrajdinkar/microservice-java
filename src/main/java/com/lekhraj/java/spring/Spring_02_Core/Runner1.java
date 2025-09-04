@@ -4,7 +4,7 @@ import com.lekhraj.java.spring.Spring_02_Core.Annotation.MyAnnotation;
 import com.lekhraj.java.spring.Spring_02_Core.bean.Item;
 import com.lekhraj.java.spring.Spring_02_Core.bean.SingletonBean;
 import com.lekhraj.java.spring.Spring_02_Core.bean.Store;
-import com.lekhraj.java.spring.util.Print;
+import com.lekhraj.java.spring.Print;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

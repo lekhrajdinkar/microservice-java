@@ -1,7 +1,7 @@
 package com.lekhraj.java.spring.Spring_03_Properties.converter;
 
 import com.lekhraj.java.spring.Spring_03_Properties.bean.Credentials;
-import com.lekhraj.java.spring.util.Print;
+import com.lekhraj.java.spring.Print;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

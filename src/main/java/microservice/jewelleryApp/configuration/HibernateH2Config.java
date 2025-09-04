@@ -24,7 +24,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.lekhraj.java.spring.SB_99_RESTful_API",
+        basePackages = "microservice.jewelleryApp",
         entityManagerFactoryRef = "entityManagerFactory_for_h2",
         transactionManagerRef = "transactionManager_for_h2"
 )

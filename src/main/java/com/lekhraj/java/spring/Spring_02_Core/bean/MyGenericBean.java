@@ -1,6 +1,6 @@
 package com.lekhraj.java.spring.Spring_02_Core.bean;
 
-import com.lekhraj.java.spring.util.Print;
+import com.lekhraj.java.spring.Print;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

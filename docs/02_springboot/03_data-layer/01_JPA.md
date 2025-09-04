@@ -30,7 +30,7 @@
   - **TransactionManager**  
     - `PlatformTransactionManager` --impl--> HibernateTransactionManager, JpaTransactionManager
   - **TransactionTemplate** 
-    - [HibernatePostgresConfig.java](../../../src/main/java/com/lekhraj/java/spring/database/HibernatePostgresConfig.java)
+    - [HibernatePostgresConfig.java](../../../src/main/java/more/database/HibernatePostgresConfig.java)
     - can set global ISOLATION LEVEL here :point_left:
   - **Datasource** 
     - database connections pool
@@ -73,7 +73,7 @@ public class ExtendedPersistenceContextRepository
 ## C Relationship
 - owner owns the foreign key and defines @JoinColumn(name="newName")
 - uni-directional or bi-directional : both has references of each other.
-- project : [entities](../../../src/main/java/com/lekhraj/java/spring/database/entities)
+- project : [entities](../../../src/main/java/more/database/entities)
 - ![img.png](er-diagram.png)
 
 ### `1-2-1`

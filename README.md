@@ -35,7 +35,7 @@ mkdocs serve
     - [RESTful_API_1 : student ](src/main/java/microservice/courseApp)
     - [RESTful_API_2 : jewellery ](src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API)
 - **More**
-    - [kafka](src/main/java/com/lekhraj/java/spring/kafka)
+    - [kafka](src/main/java/more)
     - [05_spring-batch-ETL](docs/02_springboot/05_spring-batch-ETL)
 
 
