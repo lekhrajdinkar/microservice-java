@@ -10,6 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+
+import java.io.FileWriter;
+import java.io.File;
+import java.util.stream.Collectors;
 
 @Tag(name = "Stock Streaming APIs", description = "APIs for bulk, streaming, and live price updates of stocks.")
 @RestController
@@ -28,7 +37,7 @@ public class StockStreamController
     }
 
     /*
-    🔸NLDJSON (Newline Delimited JSON) format:
+    ??NLDJSON (Newline Delimited JSON) format:
     - Each line is a valid JSON object, Records are separated by \n (newline), not wrapped in a big JSON array
     - Streaming-friendly → client can parse as soon as a line arrives
 
@@ -41,7 +50,7 @@ public class StockStreamController
     Purpose: Low-level streaming of the entire response body via an OutputStream.
 
     Controller returns StreamingResponseBody.
-    You write "raw bytes" to the stream directly. 👈🏻
+    You write "raw bytes" to the stream directly. ????
     More control, but you manage flushing and formatting.
 
     Use case: Streaming large files (CSV, ZIP, video, logs).
@@ -56,7 +65,7 @@ public class StockStreamController
             // some reason not injecting. error:
             // java.lang.IllegalStateException: No primary or single unique constructor found for interface javax.servlet.http.HttpServletResponse - put on hold ????
     ) {
-        //response.setContentType("application/json"); // "text/event-stream" 👈🏻
+        //response.setContentType("application/json"); // "text/event-stream" ????
         //response.setHeader("X-Content-Stream", "true"); 👈🏻
         return outputStream -> {
             //outputStream.write("[".getBytes());
@@ -144,6 +153,6 @@ public class StockStreamController
         }).start();
         return emitter;
     }
+
+
 }
-
-
