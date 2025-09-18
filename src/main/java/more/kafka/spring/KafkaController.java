@@ -30,7 +30,7 @@ public class KafkaController
         return "Customer/student/etc object :: as message sent" ;
     }
 
-    @PostMapping("/springApp//publish-generic/transaction")
+    @PostMapping("/springApp/publish-generic/transaction")
     public String sendTransactionalCustomer() {
         return producerService.sendTransactional();
     }

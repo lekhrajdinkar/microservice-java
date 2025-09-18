@@ -69,14 +69,14 @@ docker-compose -f docker-compose.yml up -d
   
 ### Error and its Fix
 ```
-Caused by: org.springframework.messaging.converter.MessageConversionException: 
+🔶 Caused by: org.springframework.messaging.converter.MessageConversionException: 
 Cannot convert from [org.apache.avro.generic.GenericData$Record] 
-to 
-[more.kafka.spring.avro.Student] for GenericMessage
----
-Fix : ✔️
-config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+to [more.kafka.spring.avro.Student] for GenericMessage
+✔️Fix : config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
 
+---
+🔶 java.lang.IllegalStateException: Producer factory does not support transactions
+✔️ Fix : config.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-producer-1");
 ```
 
 ### Producer Advance
@@ -88,13 +88,25 @@ props.put(ProducerConfig.ACKS_CONFIG, "all");
 props.put(ProducerConfig.RETRIES_CONFIG, 3);
 
 # ✔️ Transactional Producer
-## Send messages atomically to multiple topics
+Send messages atomically to multiple topics
 
 props.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-id-1");
+
 producer.initTransactions();
 producer.beginTransaction();
 producer.send(...);
 producer.commitTransaction();
+
+or
+
+generic_kafkaTemplate.executeInTransaction(ops -> {
+  ops.send("generic-topic", "dummy-message-step-1");
+  ops.send("generic-topic", "dummy-message-step-2");
+  //ops.send("generic-topic-2", "dummy-message-step-3");
+  // ...
+  return null;
+});
+
 
 # ✔️  Custom Partitioner
 props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.example.kafka.CustomPartitioner");
