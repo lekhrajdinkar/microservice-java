@@ -22,18 +22,24 @@ public class KafkaProducerService
     @Value("${app.kafka.topic.student-topic-name}") String studentTopic;
     @Value("${app.kafka.topic.customer-topic-name}") String customerTopic;
 
-    // ===========================
-    // ✅ producer (generic/String)
-    // ===========================
-    public void sendGeneric(Object obj)
+    // ==========================================
+    // ✅ producer (generic - String/object)
+    // ===========================================
+    public void sendGenericObject(Object obj)
     {
         try {
             String message = objectMapper.writeValueAsString(obj);
             generic_kafkaTemplate.send(genericTopic, message);
-            System.out.println("Student message sent: " + message);
+            System.out.println("generic :: objectMapper.writeValueAsString(obj) :: sent ✅" + message);
         } catch (JsonProcessingException e) {
-            System.err.println("Error serializing Student object: " + e.getMessage());
+            System.err.println("Error sendGenericObject : " + e.getMessage());
         }
+    }
+
+    public void sendGenericString(String jsonString)
+    {
+        generic_kafkaTemplate.send(genericTopic, jsonString);
+        System.out.println("Generic jsonString message sent ✅ " + jsonString);
     }
 
     // ===========================
@@ -55,6 +61,5 @@ public class KafkaProducerService
         avro_KafkaTemplate_student.send(studentTopic, student);
         System.out.println("Student message sent: " + student);
     }
-
 
 }
