@@ -1,19 +1,17 @@
 package more.kafka.spring;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/kafka")
-public class KafkaProducerController {
-    private final KafkaProducerService producerService;
+public class KafkaProducerController
+{
+    @Autowired private KafkaProducerService producerService;
     String topic = "customer_student";
     String topic_wikimedia = "wikimedia";
 
-    public KafkaProducerController(KafkaProducerService producerService) {
-        this.producerService = producerService;
-    }
-
+    // ===== ✅ Student App ======
     @PostMapping("/student")
     public String sendStudent( @RequestBody Student student) {
         producerService.sendStudent(topic, student);
@@ -26,6 +24,7 @@ public class KafkaProducerController {
         return "Customer message sent to topic: " + topic;
     }
 
+    // ===== ✅ wikimedia App ======
     @PostMapping("/wikimdeia")
     public String sendCustomer() {
         //producerService.sendCustomer(topic_wikimedia);

@@ -127,6 +127,8 @@ public class StockStreamController
         // Purpose: Specialization of ResponseBodyEmitter for Server-Sent Events (SSE).
 
         Automatically sets Content-Type: text/event-stream.
+        (produces = "text/event-stream") 👈🏻👈
+
         Real-time event updates to browsers (stock prices, notifications, logs).
      */
     @Operation(

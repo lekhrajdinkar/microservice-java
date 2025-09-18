@@ -23,6 +23,8 @@ Compressed response ✅
 
 File-based response + download API ✅
     Generate a CSV/JSON file, return a pre-signed URL (S3 style).
+    header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=stocks.csv") 🔸
+    produces = "octet-stream" 🔸
 ```
 
 - **Case 2**: Stream records one by one | [StockStreamController.java](StockStreamController.java)
@@ -33,8 +35,11 @@ Chunked Transfer Encoding (HTTP/1.1) ✅
 
 Server-Sent Events (SSE) ✅
     Stream JSON objects as event: message lines.
+    produces = "text/event-stream" 🔸
 
-webflux (Spring WebFlux) 
+webflux (Spring WebFlux)
+    preferred approach <<<< 
+    better scalability, non-blocking I/O, for large data sets.
     Reactive streams, backpressure support.
 ---
 

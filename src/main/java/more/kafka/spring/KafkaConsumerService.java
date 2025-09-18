@@ -4,12 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.kafka.annotation.KafkaListener;
 
 // @Service
-public class KafkaConsumerService {
+public class KafkaConsumerService
+{
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     // app.kafka.consumer.kafka-generic-consumer-group.enabled = true <<<
 
-    @KafkaListener(topics = {"customer_student", "wikimedia"}, groupId = "kafka-generic-consumer-group")
+    @KafkaListener(
+            topics = {"customer_student", "wikimedia"},
+            groupId = "kafka-generic-consumer-group"
+    )
     public void consume(String message) {
         try {
             if (message.contains("customerId")) {

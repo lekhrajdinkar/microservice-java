@@ -1,4 +1,4 @@
-package more.kafka.wikimedia;
+package more.kafka.spring;
 
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
@@ -11,9 +11,11 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import java.net.URI;
 import java.util.Properties;
 
-public class wiki_Producer {
+public class wiki_Producer
+{
     static String topic = "wikimedia";
     static String url = "https://stream.wikimedia.org/v2/stream/recentchange";
+
     public static void main(String[] args) throws InterruptedException
     {
         Properties properties = new Properties();
@@ -29,7 +31,6 @@ public class wiki_Producer {
                 .Builder(eventHandler, URI.create(url))
                 .build();
 
-
         // start the producer in another thread
         eventSource.start();
 
@@ -38,38 +39,3 @@ public class wiki_Producer {
     }
 }
 
-class Wikimedia_event_handler implements EventHandler {
-
-    KafkaProducer<String, String> kafkaProducer;
-    String topic;
-
-    public Wikimedia_event_handler(KafkaProducer<String, String> kafkaProducer, String topic){
-        this.kafkaProducer = kafkaProducer;
-        this.topic = topic;
-    }
-
-
-    @Override
-    public void onOpen() { }
-
-    @Override
-    public void onClosed() {
-        kafkaProducer.close();
-    }
-
-    @Override
-    public void onMessage(String event, MessageEvent messageEvent) {
-        System.out.println("Error in Stream Reading"+messageEvent.getData());
-        // asynchronous
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, messageEvent.getData());
-        kafkaProducer.send(producerRecord );
-    }
-
-    @Override
-    public void onComment(String comment) { }
-
-    @Override
-    public void onError(Throwable t) {
-        System.out.println("Error in Stream Reading"+t.getMessage());
-    }
-}

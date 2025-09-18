@@ -8,7 +8,8 @@ import java.util.concurrent.ExecutionException;
 
 public class MyKafkaProducer
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         // Step 1: Set up the producer properties
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
