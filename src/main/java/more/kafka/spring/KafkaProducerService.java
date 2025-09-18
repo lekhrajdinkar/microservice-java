@@ -2,13 +2,17 @@ package more.kafka.spring;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import more.kafka.spring.avro.Customer;
 import more.kafka.spring.avro.Student;
+
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class KafkaProducerService
@@ -28,7 +32,7 @@ public class KafkaProducerService
     public void sendGenericObject(Object obj)
     {
         try {
-            String message = objectMapper.writeValueAsString(obj);
+            String message = objectMapper.writeValueAsString(obj); // Convert object to JSON string first
             generic_kafkaTemplate.send(genericTopic, message);
             System.out.println("generic :: objectMapper.writeValueAsString(obj) :: sent ✅" + message);
         } catch (JsonProcessingException e) {
@@ -42,6 +46,17 @@ public class KafkaProducerService
         System.out.println("Generic jsonString message sent ✅ " + jsonString);
     }
 
+    public String  sendTransactional() {
+        generic_kafkaTemplate.executeInTransaction(ops -> {
+            ops.send("generic-topic", "dummy-message-step-1");
+            ops.send("generic-topic", "dummy-message-step-2");
+            //ops.send("generic-topic-2", "dummy-message-step-3");
+            // ...
+            return null;
+        });
+        return "Transactional dummy message/s sent to multiple topics!";
+    }
+
     // ===========================
     // ✅ producer (Avro)
     // ===========================
@@ -51,15 +66,34 @@ public class KafkaProducerService
 
     public void sendCustomer(Customer customer) {
         //String message = objectMapper.writeValueAsString(customer);
-        avro_KafkaTemplate_customer.send(customerTopic, customer);
-        System.out.println("Customer message sent: " + customer);
+        CompletableFuture<SendResult<String, Customer>> future = avro_KafkaTemplate_customer.send(customerTopic, customer);
+        future.whenComplete((result, ex) -> {
+            if (ex != null) {
+                System.err.println("Failed to send message: " + ex.getMessage());
+            } else {
+                System.out.println("Message sent successfully with offset: " + result.getRecordMetadata().offset());
+            }
+        });
     }
 
     public void sendStudent(Student student)
     {
         //String message = objectMapper.writeValueAsString(student);
-        avro_KafkaTemplate_student.send(studentTopic, student);
-        System.out.println("Student message sent: " + student);
+        ProducerRecord<String, Student> record = new ProducerRecord<>(studentTopic, String.valueOf(System.currentTimeMillis()), student);
+        record.headers().add("source", "kafkaSpringApp".getBytes()); // ◀️
+        record.timestamp(); // ◀️
+
+        CompletableFuture<SendResult<String, Student>> future = avro_KafkaTemplate_student.send(record);
+
+        //avro_KafkaTemplate_student.send(studentTopic, student);
+
+        future.whenComplete((result, ex) -> {
+            if (ex != null) {
+                System.err.println("Failed to send message: " + ex.getMessage());
+            } else {
+                System.out.println("Message sent successfully with offset: " + result.getRecordMetadata().offset());
+            }
+        });
     }
 
 }

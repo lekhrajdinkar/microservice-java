@@ -59,5 +59,6 @@ public class KafkaConfig
 
         return new KafkaTemplate<>(pf);
     }
+
 }
 

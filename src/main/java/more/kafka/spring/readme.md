@@ -57,8 +57,9 @@ docker-compose -f docker-compose.yml up -d
 ![docker1.png](../../../../resources/more/kafka/docker1.png)
 
 ---
-## Spring Boot Application
-- **kafkaSpringApp**
+## kafkaSpringApp
+### overview
+  - [https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8](https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8)
   - main: [kafkaSpringApp.java](kafkaSpringApp.java)
   - docs: http://localhost:8091/kafkaSpringApp/swagger-ui/index.html
   - props: [kafkaSpringApp.properties](../../../../resources/more/kafka/kafkaSpringApp.properties)
@@ -76,4 +77,40 @@ to
 Fix : ✔️
 config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
 
+```
+
+### Producer Advance
+
+```properties
+# ✔️ Idempotent Producer
+props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true);
+props.put(ProducerConfig.ACKS_CONFIG, "all");
+props.put(ProducerConfig.RETRIES_CONFIG, 3);
+
+# ✔️ Transactional Producer
+## Send messages atomically to multiple topics
+
+props.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-id-1");
+producer.initTransactions();
+producer.beginTransaction();
+producer.send(...);
+producer.commitTransaction();
+
+# ✔️  Custom Partitioner
+props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.example.kafka.CustomPartitioner");
+
+# ✔️ Batching & Compression
+props.put(ProducerConfig.BATCH_SIZE_CONFIG, 32*1024); // 32 KB
+props.put(ProducerConfig.LINGER_MS_CONFIG, 10);
+props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
+
+# ✔️Large Message Handling
+on broker :
+- Increase max.request.size & message.max.bytes .
+- Optionally split large payloads into chunks.
+- max 10 MB
+
+# ✔️ Schema Evolution
+- Register new Avro schema version with backward/forward compatibility.
+- Producer sends using latest schema; consumer reads using previous schema if compatible.
 ```
