@@ -65,3 +65,15 @@ docker-compose -f docker-compose.yml up -d
   - conductor console: http://localhost:8080/console/my-local-kafka-cluster
   - [avro](../../../../resources/avro)
   - ![img.png](img.png)
+  
+### Error and its Fix
+```
+Caused by: org.springframework.messaging.converter.MessageConversionException: 
+Cannot convert from [org.apache.avro.generic.GenericData$Record] 
+to 
+[more.kafka.spring.avro.Student] for GenericMessage
+---
+Fix : ✔️
+config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+
+```
