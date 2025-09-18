@@ -16,17 +16,15 @@ Topics used:
 - Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
 - [docker-compose.yml](../../../../resources/more/kafka/docker-compose.yml)
 - [platform-config.yml](../../../../resources/more/kafka/platform-config.yml)
-- `my-local-kafka-cluster`
+- cluster name: `my-local-kafka-cluster`
 - https://conduktor.io/get-started
 
 ```bash
 cd ./../../../../../../src/main/resources/more/kafka
 docker-compose -f docker-compose.yml up -d
 ```
-![docker1.png](../../../../resources/more/kafka/docker1.png)
 
-- fix for cnductor-console
-```bash
+- fix for cnductor-console 👈🏻
 ```yaml
   conduktor-console:
     image: conduktor/conduktor-console:1.26.0
@@ -43,11 +41,10 @@ docker-compose -f docker-compose.yml up -d
         read_only: true
     environment:
       CDK_IN_CONF_FILE: /opt/conduktor/platform-config.yaml
-
 ```
 
 ```text
-[+] Running 7/7
+[+] Running 7/7 ✅
  ✔ Network kafka_default           Created                                                                                                                                                                                 0.0s 
  ✔ Container zookeeper             Started                                                                                                                                                                                 1.6s 
  ✔ Container conduktor-monitoring  Started                                                                                                                                                                                 1.6s 
@@ -57,6 +54,8 @@ docker-compose -f docker-compose.yml up -d
  ✔ Container schema-registry       Started
 ```
 
+![docker1.png](../../../../resources/more/kafka/docker1.png)
+
 ---
 ## Spring Boot Application
 - **kafkaSpringApp**
@@ -64,4 +63,5 @@ docker-compose -f docker-compose.yml up -d
   - docs: http://localhost:8091/kafkaSpringApp/swagger-ui/index.html
   - props: [kafkaSpringApp.properties](../../../../resources/more/kafka/kafkaSpringApp.properties)
   - conductor console: http://localhost:8080/console/my-local-kafka-cluster
+  - [avro](../../../../resources/avro)
   - ![img.png](img.png)

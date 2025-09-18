@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,9 +16,9 @@ public class KafkaConsumerService
 {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    // =====================================
-    // ✅ Generic Consumer for multiple topics
-    // ====================================
+    // ===============================================
+    // ✅ Generic/String Consumer for multiple topics
+    // ===============================================
     @KafkaListener(
             topics = { "${app.kafka.topic.generic-topic-name}" },
             groupId = "kafka-generic-consumer-group",
@@ -43,5 +44,27 @@ public class KafkaConsumerService
         } catch (Exception e) {
             System.err.println("Error processing message: " + e.getMessage());
         }
+    }
+
+
+    // ===========================================
+    // ✅ Avro Consumer for multiple topics
+    // ==========================================
+    @KafkaListener(
+            topics = { "${app.kafka.topic.customer-topic-name}" },
+            groupId = "customer-avro-consumer-group", // "avro-consumer-group",
+            containerFactory = "avro_KafkaListenerContainerFactory"
+    )
+    public void consumeCustomer(@Payload Customer customer) {
+        System.out.println("Consumed Avro Customer: " + customer);
+    }
+
+    @KafkaListener(
+            topics = { "${app.kafka.topic.student-topic-name}" },
+            groupId = "student-avro-consumer-group", // "avro-consumer-group",
+            containerFactory = "avro_KafkaListenerContainerFactory"
+    )
+    public void consumeStudent(@Payload Student student) {
+        System.out.println("Consumed Avro Student: " + student);
     }
 }
