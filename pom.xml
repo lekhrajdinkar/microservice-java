@@ -131,16 +131,24 @@
 			<version>2.20.68</version> <!-- Replace with the latest version -->
 		</dependency>
 
- <!-- kafka-->
+ <!-- kafka start 🔸🔸 -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka-clients</artifactId>
 			<version>3.6.0</version>
 		</dependency>
+		<!-- Spring for Apache Kafka -->
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
+		<!-- JSON serialization -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+<!-- kafka end  🔸🔸-->
+
 
 		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
 		<dependency>

@@ -1,20 +1,29 @@
 package more.kafka.spring;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
 
-// @Service
+@Service
+@ConditionalOnProperty(
+        name = "app.kafka.consumer.kafka-generic-consumer-group.enabled",
+        havingValue = "true",
+        matchIfMissing = false)
 public class KafkaConsumerService
 {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    // app.kafka.consumer.kafka-generic-consumer-group.enabled = true <<<
-
+    // =====================================
+    // ✅ Generic Consumer for multiple topics
+    // ====================================
     @KafkaListener(
-            topics = {"customer_student", "wikimedia"},
-            groupId = "kafka-generic-consumer-group"
+            topics = { "${app.kafka.topic.generic-topic-name}" },
+            groupId = "kafka-generic-consumer-group",
+            containerFactory = "generic_KafkaListenerContainerFactory"
     )
-    public void consume(String message) {
+    public void genericConsume(String message) {
         try {
             if (message.contains("customerId")) {
                 // Process Customer

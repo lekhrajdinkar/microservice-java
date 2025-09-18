@@ -1,7 +1,24 @@
 # Kafka Spring Example
-## Run Kafka locally
-- with Docker
+
+## 1. Overview
+This POC demonstrates Kafka basics and advanced patterns using:
+- **Java Spring Boot** (producers, consumers, schema integration).
+- **Confluent Schema Registry** for Avro schema-based messaging.
+
+Topics used:
+- `student-topic`
+- `customer-topic`
+- `generic-topic`
+
+---
+## 2. Environment Setup
+### Docker Compose
+- Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
+- [docker-compose.yml](../../../../resources/more/kafka/docker-compose.yml)
+- [platform-config.yml](../../../../resources/more/kafka/platform-config.yml)
+- `my-local-kafka-cluster`
 - https://conduktor.io/get-started
+
 ```bash
 cd ./../../../../../../src/main/resources/more/kafka
 docker-compose -f docker-compose.yml up -d
