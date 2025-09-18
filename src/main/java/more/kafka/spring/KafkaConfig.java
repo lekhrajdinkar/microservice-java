@@ -27,34 +27,37 @@ public class KafkaConfig
     }
 
     // ===========================
-    // consumer (generic)
+    // consumer (generic) <String, String>
     // ===========================
     @Bean("generic_KafkaListenerContainerFactory")
     public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory()
     {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         Map<String, Object> config = new HashMap<>();
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         ConsumerFactory<String, String> cf =  new DefaultKafkaConsumerFactory<>(config); // Consumer factory ✔️
         factory.setConsumerFactory(cf);
+
         return factory;
     }
 
     // ===========================
-    // producer (generic)
+    // producer (generic) <String, String>
     // ===========================
     @Bean("generic_KafkaTemplate")
-    public KafkaTemplate<String, String> kafkaTemplate() {
+    public KafkaTemplate<String, String> kafkaTemplate()
+    {
         Map<String, Object> config = new HashMap<>();
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
         ProducerFactory<String, String> pf =  new DefaultKafkaProducerFactory<>(config); // Producer factory ✔️
+
         return new KafkaTemplate<>(pf);
     }
-
-
 }
 

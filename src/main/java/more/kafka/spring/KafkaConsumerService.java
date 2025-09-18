@@ -1,11 +1,12 @@
 package more.kafka.spring;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
+import more.kafka.spring.avro.Customer;
+import more.kafka.spring.avro.Student;
 
 @Service
 @ConditionalOnProperty(
@@ -53,7 +54,7 @@ public class KafkaConsumerService
     @KafkaListener(
             topics = { "${app.kafka.topic.customer-topic-name}" },
             groupId = "customer-avro-consumer-group", // "avro-consumer-group",
-            containerFactory = "avro_KafkaListenerContainerFactory"
+            containerFactory = "avro_KafkaListenerContainerFactory_Customer"
     )
     public void consumeCustomer(@Payload Customer customer) {
         System.out.println("Consumed Avro Customer: " + customer);
@@ -62,7 +63,7 @@ public class KafkaConsumerService
     @KafkaListener(
             topics = { "${app.kafka.topic.student-topic-name}" },
             groupId = "student-avro-consumer-group", // "avro-consumer-group",
-            containerFactory = "avro_KafkaListenerContainerFactory"
+            containerFactory = "avro_KafkaListenerContainerFactory_Student"
     )
     public void consumeStudent(@Payload Student student) {
         System.out.println("Consumed Avro Student: " + student);
