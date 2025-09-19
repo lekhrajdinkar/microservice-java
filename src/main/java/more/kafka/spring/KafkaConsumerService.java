@@ -27,23 +27,9 @@ public class KafkaConsumerService
     )
     public void genericConsume(String message) {
         try {
-            if (message.contains("customerId")) {
-                // Process Customer
-                Customer customer = objectMapper.readValue(message, Customer.class);
-                System.out.println("Received Customer: " + customer);
-            }
-
-            else if (message.contains("id")) {
-                // Process Student
-                Student student = objectMapper.readValue(message, Student.class);
-                System.out.println("Received Student: " + student);
-            }
-
-            else {
-                System.out.println("Unknown message: " + message);
-            }
+            System.out.println("generic message received 🟡: " + message);
         } catch (Exception e) {
-            System.err.println("Error processing message: " + e.getMessage());
+            System.err.println("Error processing message 🟡: " + e.getMessage());
         }
     }
 

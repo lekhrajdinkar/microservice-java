@@ -19,6 +19,8 @@ public class KafkaProducerService
 {
     private  ObjectMapper objectMapper = new ObjectMapper();
     @Autowired @Qualifier("generic_KafkaTemplate") private  KafkaTemplate<String, String> generic_kafkaTemplate;
+    @Autowired @Qualifier("generic_KafkaTemplate_txn") private  KafkaTemplate<String, String> generic_kafkaTemplate_txn;
+
     @Autowired @Qualifier("avro_KafkaTemplate_Customer") private  KafkaTemplate<String, Customer> avro_KafkaTemplate_customer;
     @Autowired @Qualifier("avro_KafkaTemplate_Student") private  KafkaTemplate<String, Student> avro_KafkaTemplate_student;
 
@@ -46,8 +48,9 @@ public class KafkaProducerService
         System.out.println("Generic jsonString message sent ✅ " + jsonString);
     }
 
+    // txn
     public String  sendTransactional() {
-        generic_kafkaTemplate.executeInTransaction(ops -> {
+        generic_kafkaTemplate_txn.executeInTransaction(ops -> {
             ops.send("generic-topic", "dummy-message-step-1");
             ops.send("generic-topic", "dummy-message-step-2");
             //ops.send("generic-topic-2", "dummy-message-step-3");

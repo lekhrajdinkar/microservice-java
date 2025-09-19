@@ -19,12 +19,14 @@ public class KafkaController
     @PostMapping("/springApp/publish-generic/string")
     public String sendStudent_generic( String jsonString)
     {
-        producerService.sendGenericString(jsonString);
+        //producerService.sendGenericString(jsonString);
+        producerService.sendGenericString(temp1);
+        //producerService.sendGenericString(temp2);
         return "jsonString :: sent";
     }
 
     @PostMapping("/springApp/publish-generic/object")
-    public String sendCustomer_generic( Object obj)
+    public String sendCustomer_generic( @RequestBody Object obj)
     {
         producerService.sendGenericObject(obj);
         return "Customer/student/etc object :: as message sent" ;

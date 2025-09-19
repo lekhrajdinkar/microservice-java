@@ -36,14 +36,13 @@ public class KafkaConfig
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        config.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-producer-1");
 
         ProducerFactory<String, String> pf =  new DefaultKafkaProducerFactory<>(config); // Producer factory ✔️
 
         return new KafkaTemplate<>(pf);
     }
 
-    // ===========================
+        // ===========================
     // consumer (generic) <String, String>
     // ===========================
     @Bean("generic_KafkaListenerContainerFactory")
@@ -62,6 +61,19 @@ public class KafkaConfig
         return factory;
     }
 
+    // --------------------------------------------
+
+    @Bean("generic_KafkaTemplate_txn")
+    public KafkaTemplate<String, String> kafkaTemplateTxn()
+    {
+        Map<String, Object> config = new HashMap<>();
+        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-producer-1");
+        ProducerFactory<String, String> pf =  new DefaultKafkaProducerFactory<>(config);
+        return new KafkaTemplate<>(pf);
+    }
 
 
 }
