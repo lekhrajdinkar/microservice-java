@@ -72,7 +72,7 @@ docker-compose -f docker-compose.yml up -d
 🔶 Caused by: org.springframework.messaging.converter.MessageConversionException: 
 Cannot convert from [org.apache.avro.generic.GenericData$Record] 
 to [more.kafka.spring.avro.Student] for GenericMessage
-✔️Fix : config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+✔️Fix : config.put("specific.avro.reader", true);
 
 ---
 🔶 java.lang.IllegalStateException: Producer factory does not support transactions
@@ -125,4 +125,53 @@ on broker :
 # ✔️ Schema Evolution
 - Register new Avro schema version with backward/forward compatibility.
 - Producer sends using latest schema; consumer reads using previous schema if compatible.
+```
+
+### Consumer Advance
+```java 
+/*
+1. ✔️ Consumer Groups & Parallelism ✅
+- Horizontal scaling across partitions 
+- student-avro-consumer-group (2 consumers)
+
+2. ✔️ Manual Offset Management ✅
+- check Customer  
+- Fine-grained control of commit 
+- factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+*/
+public void consumeCustomer(@Payload Customer customer, Acknowledgment ack) {
+        System.out.println("Consumed Avro Customer: " + customer);
+        ack.acknowledge();  // Commit offset only after processing is successful ◀️
+}
+
+/*
+- Kafka Consumer API call (not Spring-specific).
+    - commitSync() = safe, waits for broker, but slower.
+    - commitAsync() = faster, but no guarantee (could fail silently).
+*/
+
+// 3. ✔️ Filtering Messages   ✅      
+factory.setRecordFilterStrategy(record -> {})
+
+// 4. Consuming Headers ✅
+
+// 5. Batch Consumer
+// - factory.setBatchListener(true);
+@KafkaListener
+public void consumeCustomerBatch(List<Customer> customers) {
+    log.info("Batch size: {}", customers.size());
+    customers.forEach(c -> log.info("{}", c));
+}
+```
+
+### Advance :: more
+```properties
+1. exception handling
+2. retry mechanism
+3. dead-letter topics
+4. monitoring & metrics
+5. security (SSL, SASL)
+6. schema evolution strategies
+7. testing strategies (embedded Kafka, MockConsumer)
+8. performance tuning (batch size, linger.ms, compression)
 ```

@@ -51,8 +51,8 @@ public class KafkaProducerService
     // txn
     public String  sendTransactional() {
         generic_kafkaTemplate_txn.executeInTransaction(ops -> {
-            ops.send("generic-topic", "dummy-message-step-1");
-            ops.send("generic-topic", "dummy-message-step-2");
+            ops.send(genericTopic, "dummy-message-step-1");
+            ops.send(genericTopic, "dummy-message-step-2");
             //ops.send("generic-topic-2", "dummy-message-step-3");
             // ...
             return null;
@@ -67,9 +67,14 @@ public class KafkaProducerService
     // curl http://localhost:8081/subjects/customer-topic-value/versions
     // If you send a new version of the schema (e.g., added a field), Schema Registry can enforce compatibility modes (BACKWARD, FORWARD, FULL).
 
-    public void sendCustomer(Customer customer) {
-        //String message = objectMapper.writeValueAsString(customer);
-        CompletableFuture<SendResult<String, Customer>> future = avro_KafkaTemplate_customer.send(customerTopic, customer);
+    public void sendCustomer(Customer customer)
+    {
+        ProducerRecord<String, Customer> record = new ProducerRecord<>(customerTopic, String.valueOf(System.currentTimeMillis()), customer);
+        record.headers().add("source", "kafkaSpringApp".getBytes()); // ◀️
+        record.timestamp(); // ◀️
+
+        //CompletableFuture<SendResult<String, Customer>> future = avro_KafkaTemplate_customer.send(customerTopic, customer);
+        CompletableFuture<SendResult<String, Customer>> future = avro_KafkaTemplate_customer.send(record);
         future.whenComplete((result, ex) -> {
             if (ex != null) {
                 System.err.println("Failed to send message: " + ex.getMessage());
@@ -81,7 +86,6 @@ public class KafkaProducerService
 
     public void sendStudent(Student student)
     {
-        //String message = objectMapper.writeValueAsString(student);
         ProducerRecord<String, Student> record = new ProducerRecord<>(studentTopic, String.valueOf(System.currentTimeMillis()), student);
         record.headers().add("source", "kafkaSpringApp".getBytes()); // ◀️
         record.timestamp(); // ◀️
