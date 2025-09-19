@@ -5,7 +5,6 @@ import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import lombok.extern.slf4j.Slf4j;
 import more.kafka.spring.avro.Customer;
-import more.kafka.spring.avro.Student;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -59,15 +58,8 @@ public class KafkaConfig2_avro_customer
         //factory.setBatchListener(true);
 
         // manual offset commit
-        if (manualOffset) {
-            factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
-        } else {
-            factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH);
-            // Offsets are committed automatically after the batch of records returned by poll() is processed.
-            // Common in log ingestion, analytics, stream pipelines.
-            // max.poll.records → maximum number of records returned per poll.
-            // fetch.min.bytes, fetch.max.bytes, fetch.max.wait.ms --> control how much data the broker returns.
-        }
+        if (manualOffset)   factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+        else factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH);
 
         // Filtering Messages
         factory.setRecordFilterStrategy(record -> {
@@ -78,6 +70,32 @@ public class KafkaConfig2_avro_customer
             }
             return false;
         });
+        return factory;
+    }
+
+    @Bean("avro_KafkaListenerContainerFactory_batch_Customer")
+    public ConcurrentKafkaListenerContainerFactory<String, Customer> kafkaListenerContainerFactory_batch()
+    {
+        Map<String, Object> config = new HashMap<>();
+        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class); // here ◀️
+        config.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+        config.put("specific.avro.reader", true);
+
+
+        ConcurrentKafkaListenerContainerFactory<String, Customer> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        ConsumerFactory<String, Customer> cf =  new DefaultKafkaConsumerFactory<>(config); // Consumer factory ✔️
+        factory.setConsumerFactory(cf);
+
+        // =================================================
+        // Advanced settings : batch enabled factory ◀ ◀ ◀
+        // =================================================
+        // manual offset commit
+        if (manualOffset)   factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+        else factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH); // offset commit in batch after each poll() ◀ ◀ ◀
+        factory.setBatchListener(true); //list<Records> ◀ ◀ ◀
+
         return factory;
     }
 

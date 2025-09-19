@@ -41,16 +41,20 @@ public class KafkaController
     // ✅ producer (Avro)
     // ===========================
     @PostMapping("/springApp/publish/student")
-    public String sendStudent( String id,String name,int age) {
-        Student student = Student.newBuilder().setId(id).setName(name).setAge(age).build();
-        producerService.sendStudent(student);
-        return "Student avro :: message sent";
+    public String sendStudent( String id,String name,int age, int count) {
+        for (int i = 1; i <= count; i++) {
+            Student student = Student.newBuilder().setId(id + "-" + i).setName(name + "-" + i).setAge(age + i).build();
+            producerService.sendStudent(student);
+        }
+        return "Student/s avro :: message sent ✅";
     }
     @PostMapping("/springApp/publish/customer")
-    public String sendCustomer( String id, String name) {
-        Customer customer = Customer.newBuilder() .setCustomerId(id).setCustomerName(name).setEmail(name + "@gmail.com").build();
-        producerService.sendCustomer(customer);
-        return "Customer avro :: message sent" ;
+    public String sendCustomer( String id, String name, int count) {
+        for (int i = 1; i <= count; i++) {
+            Customer customer = Customer.newBuilder().setCustomerId(id + "-" + i).setCustomerName(name + "-" + i).setEmail(name + i + "@gmail.com").build();
+            producerService.sendCustomer(customer);
+        }
+        return "Customer/s avro :: message sent ✅" ;
     }
 }
 
@@ -62,7 +66,7 @@ public class KafkaController
 {"customerId": "C123", "customerName": "Bob", "email": "bob@example.com"}
 {"id": "1", "name": "Alice", "age": 22}
 
-// ===== ✅ App 2 :: wikimedia (in progress)  ======
+// ===== App 2 :: wikimedia (in progress)  ======
     @PostMapping("/wikimdeia")
     public String sendCustomer() {
         producerService.sendCustomer("");

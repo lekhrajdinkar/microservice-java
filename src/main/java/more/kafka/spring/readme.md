@@ -153,15 +153,38 @@ public void consumeCustomer(@Payload Customer customer, Acknowledgment ack) {
 // 3. ✔️ Filtering Messages   ✅      
 factory.setRecordFilterStrategy(record -> {})
 
-// 4. Consuming Headers ✅
+// 4. ✔️ Consuming Headers ✅
 
-// 5. Batch Consumer
+// 5. ✔️ Batch Consumer
 // - factory.setBatchListener(true);
 @KafkaListener
 public void consumeCustomerBatch(List<Customer> customers) {
     log.info("Batch size: {}", customers.size());
     customers.forEach(c -> log.info("{}", c));
 }
+
+/* 6. ✔️ parallelism
+By default, Spring Kafka consumes partition events sequentially, so throughput is limited.
+Increase Consumer Concurrency ?
+
+way-1 (preferred ):: factory.setConcurrency(3); // Max concurrency = partition count
+ or, @KafkaListener(concurrency = "3")
+way-2 ::
+ private final ExecutorService executor = Executors.newFixedThreadPool(3);
+ executor.submit(() -> { ... } );
+ 
+ ---
+ 
+ consumer-group-1
+ ├── consumer-1 (thread-1) → partition-1
+ └── consumer-2 (thread-2) → partition-2
+OR
+consumer-group-1
+ └── consumer-1
+       ├── thread-1 → partition-1
+       └── thread-2 → partition-2
+
+ */
 ```
 
 ### Advance :: more
