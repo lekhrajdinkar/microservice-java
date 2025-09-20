@@ -1,5 +1,6 @@
 package more.rmq;
 
+import io.apicurio.registry.serde.avro.AvroKafkaDeserializer;
 import io.apicurio.registry.serde.avro.AvroKafkaSerializer;
 import lombok.extern.slf4j.Slf4j;
 import more.rmq.avro.Student;
@@ -19,6 +20,7 @@ public class RmqService
 {
     @Autowired private RabbitTemplate rabbitTemplate;
     @Autowired private AvroKafkaSerializer<Student> serializer_student;
+    @Autowired private AvroKafkaDeserializer<Student> avroKafkaDeSerialize;
 
     // =====================
     // ✅ Rabbit MQ producer
@@ -58,7 +60,15 @@ public class RmqService
     @RabbitListener(queues="${rabbit.mq.queue.student}")
     public void receiveMessage(Message message) {
         String body = new String(message.getBody());
-        log.info("🟡 RabbitMQ message [ student ] Received :: {}", body);
+        log.info("▶️ RabbitMQ message [ student ] Received :: {}", body);
+
+        try {
+            Student student = avroKafkaDeSerialize.deserialize(q_student, message.getBody());
+            log.info("▶️ RabbitMQ message [ student avroKafkaDeSerialize ] Received :: {}", student);
+        }
+        catch (Exception e) {
+            log.error("❌ Failed to deserialize Student message", e);
+        }
     }
 
     // -- Advance --

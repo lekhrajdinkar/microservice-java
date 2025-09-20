@@ -1,6 +1,7 @@
 package more.rmq;
 
 import io.apicurio.registry.serde.SerdeConfig;
+import io.apicurio.registry.serde.avro.AvroKafkaDeserializer;
 import io.apicurio.registry.serde.avro.AvroKafkaSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -130,10 +131,19 @@ public class RmqConfig
     {
         AvroKafkaSerializer<Student> serializer = new AvroKafkaSerializer<>();
         Map<String, Object> config = new HashMap<>();
-        config.put(SerdeConfig.REGISTRY_URL, sr_url);
-        config.put(SerdeConfig.AUTO_REGISTER_ARTIFACT, true);
+            config.put(SerdeConfig.REGISTRY_URL, sr_url);
+            config.put(SerdeConfig.AUTO_REGISTER_ARTIFACT, true); // ◀️
         serializer.configure(config, false);
-
         return serializer;
+    }
+
+    @Bean
+    AvroKafkaDeserializer<Student> avroKafkaDeSerializer()
+    {
+        AvroKafkaDeserializer<Student> deserializer = new AvroKafkaDeserializer<>();
+        Map<String, Object> config = new HashMap<>();
+            config.put(SerdeConfig.REGISTRY_URL, sr_url);
+        deserializer.configure(config, false);
+        return deserializer;
     }
 }
