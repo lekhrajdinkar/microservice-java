@@ -16,13 +16,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RmqConfig
 {
+    // -- Student --
+    @Value("${rabbit.mq.queue.student}") String queueName_student;
+    @Value("${rabbit.mq.exchange.student}") String exchangeName_student;
+    @Value("${rabbit.mq.routingkey.student}") String key_student;
+
+    // -- generic --
     @Value("${rabbit.mq.queue}") String queueName;
     @Value("${rabbit.mq.exchange}") String exchangeName;
-
     @Value("${rabbit.mq.queue.dlq}") String queueName_dlq;
     @Value("${rabbit.mq.exchange.dlx}") String exchangeName_dlx;
-
     @Value("${rabbit.mq.routingkey}") String key;
+
     @Value("${spring.rabbitmq.username}") String username;
     @Value("${spring.rabbitmq.password}") String password;
 
@@ -52,7 +57,24 @@ public class RmqConfig
     }
 
     //=================================================
-    // ✅  Queue, Exchange, Binding
+    // ✅  Student :: Queue, Exchange, Binding
+    //=================================================
+    @Bean
+    Queue queueStudent() {
+        return  QueueBuilder.durable(queueName_student).quorum() .build();
+    }
+    @Bean
+    DirectExchange exchangeStudent() {
+        return ExchangeBuilder.directExchange(exchangeName_student).build();
+    }
+    @Bean
+    Binding bindingStudent(Queue queueStudent, DirectExchange exchangeStudent) {
+        return BindingBuilder .bind(queueStudent).to(exchangeStudent).with(key_student);
+    }
+
+
+    //=================================================
+    // ✅  Generic :: Queue, Exchange, Binding
     //=================================================
     @Bean
     Queue queue() {        return  QueueBuilder.durable(queueName)
@@ -82,6 +104,10 @@ public class RmqConfig
     Binding deadLetterBinding(Queue deadLetterQueue, DirectExchange deadLetterExchange) {
         return BindingBuilder.bind(deadLetterQueue).to(deadLetterExchange).with(queueName_dlq); // ◀️ queueName_dlq as routing key ??
     }
+
+
+
+
 
     //=================================================
     // ✅  others

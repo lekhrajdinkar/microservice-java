@@ -14,7 +14,7 @@ public class RmqController
        return srv.send(msg);
     }
 
-    @GetMapping("/RmqSpringApp/send/string")
+    @GetMapping("/RmqSpringApp/send/student")
     public String sendStudent(String id, String name, int age) {
         Student s = Student.builder()
                 .id(id)

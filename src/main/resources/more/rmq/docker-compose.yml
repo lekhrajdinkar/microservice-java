@@ -11,5 +11,13 @@ services:
       RABBITMQ_DEFAULT_PASS: guest
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+
+  apicurio-registry-mem:
+    image: apicurio/apicurio-registry-mem:2.6.13.Final
+    #For prod, use apicurio/apicurio-registry-sql
+    container_name: apicurio-registry-mem
+    ports:
+      - "8080:8080"
+
 volumes:
   rabbitmq_data:
