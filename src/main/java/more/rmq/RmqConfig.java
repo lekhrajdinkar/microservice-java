@@ -1,5 +1,7 @@
 package more.rmq;
 
+import io.apicurio.registry.serde.SerdeConfig;
+import io.apicurio.registry.serde.avro.AvroKafkaSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -11,6 +13,10 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Configuration;
+import more.rmq.avro.Student;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @Configuration
@@ -30,6 +36,8 @@ public class RmqConfig
 
     @Value("${spring.rabbitmq.username}") String username;
     @Value("${spring.rabbitmq.password}") String password;
+    @Value("${sr_url}") String sr_url;
+
 
     //=================================================
     // ✅ ConnectionFactory, RabbitTemplate, MessageConverter
@@ -106,9 +114,6 @@ public class RmqConfig
     }
 
 
-
-
-
     //=================================================
     // ✅  others
     //=================================================
@@ -118,5 +123,17 @@ public class RmqConfig
             rabbitTemplate.convertAndSend(exchangeName, key, "{message}", m->m);
             log.info("Rabbit MQ test message sent at startup");
         };
+    }
+
+    @Bean
+    AvroKafkaSerializer<Student> avroKafkaSerializer()
+    {
+        AvroKafkaSerializer<Student> serializer = new AvroKafkaSerializer<>();
+        Map<String, Object> config = new HashMap<>();
+        config.put(SerdeConfig.REGISTRY_URL, sr_url);
+        config.put(SerdeConfig.AUTO_REGISTER_ARTIFACT, true);
+        serializer.configure(config, false);
+
+        return serializer;
     }
 }

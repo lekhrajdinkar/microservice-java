@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Data
 @Builder
-public class Student implements Serializable {
+public class Student2 implements Serializable {
     private String id;
     private String name;
     private int age;
