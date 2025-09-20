@@ -1,7 +1,6 @@
 package more.rmq;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,10 +14,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
-public class RabbitMqConfig
+public class RmqConfig
 {
     @Value("${rabbit.mq.queue}") String queueName;
     @Value("${rabbit.mq.exchange}") String exchangeName;
+
+    @Value("${rabbit.mq.queue.dlq}") String queueName_dlq;
+    @Value("${rabbit.mq.exchange.dlx}") String exchangeName_dlx;
+
     @Value("${rabbit.mq.routingkey}") String key;
     @Value("${spring.rabbitmq.username}") String username;
     @Value("${spring.rabbitmq.password}") String password;
@@ -52,7 +55,12 @@ public class RabbitMqConfig
     // ✅  Queue, Exchange, Binding
     //=================================================
     @Bean
-    Queue queue() {        return  QueueBuilder.durable(queueName).quorum().build();    }
+    Queue queue() {        return  QueueBuilder.durable(queueName)
+                .withArgument("x-dead-letter-exchange", exchangeName_dlx)   // send to DLX after nack/ttl
+                .withArgument("x-dead-letter-routing-key", queueName_dlq) // ◀️ queueName_dlq as routing key ??
+                .quorum()
+                .build();
+    }
 
     @Bean
     DirectExchange exchange() {return ExchangeBuilder.directExchange(exchangeName).build();}
@@ -63,6 +71,16 @@ public class RabbitMqConfig
                 .bind(queue)
                 .to(exchange)
                 .with(key);
+    }
+
+    // --- DLQ --
+    @Bean
+    Queue deadLetterQueue() {        return new Queue(queueName_dlq, true);    }
+    @Bean
+    DirectExchange deadLetterExchange() {        return new DirectExchange(exchangeName_dlx, true, false);    }
+    @Bean
+    Binding deadLetterBinding(Queue deadLetterQueue, DirectExchange deadLetterExchange) {
+        return BindingBuilder.bind(deadLetterQueue).to(deadLetterExchange).with(queueName_dlq); // ◀️ queueName_dlq as routing key ??
     }
 
     //=================================================
