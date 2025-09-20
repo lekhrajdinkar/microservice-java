@@ -1,5 +1,6 @@
 package more.rmq;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -12,17 +13,47 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Configuration;
 
+@Slf4j
 @Configuration
 public class RabbitMqConfig
 {
     @Value("${rabbit.mq.queue}") String queueName;
     @Value("${rabbit.mq.exchange}") String exchangeName;
     @Value("${rabbit.mq.routingkey}") String key;
+    @Value("${spring.rabbitmq.username}") String username;
+    @Value("${spring.rabbitmq.password}") String password;
 
+    //=================================================
+    // ✅ ConnectionFactory, RabbitTemplate, MessageConverter
+    //=================================================
     @Bean
-    Queue queue() { return  QueueBuilder.durable(queueName).quorum().build();}
+    public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory){
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+        rabbitTemplate.setMessageConverter(messageConverter());
+        return rabbitTemplate;
+    }
+    @Bean
+    public MessageConverter messageConverter(){
+        return new Jackson2JsonMessageConverter();
+    }
 
-    /*
+    //comment out to use application.properties ◀️
+    //@Bean
+    public ConnectionFactory rmqConnectionfactory(){
+        CachingConnectionFactory factory = new CachingConnectionFactory();
+        factory.setUsername(username);
+        factory.setPassword(password);
+        factory.setUri("amqps://localhost:5672");
+        factory.setVirtualHost("/");
+        return factory;
+    }
+
+    //=================================================
+    // ✅  Queue, Exchange, Binding
+    //=================================================
+    @Bean
+    Queue queue() {        return  QueueBuilder.durable(queueName).quorum().build();    }
+
     @Bean
     DirectExchange exchange() {return ExchangeBuilder.directExchange(exchangeName).build();}
 
@@ -32,40 +63,16 @@ public class RabbitMqConfig
                 .bind(queue)
                 .to(exchange)
                 .with(key);
-    }*/
-
-    @RabbitListener(queues="spring.app.queue1")
-    public void receiveMessage(String message) {
-        System.out.println("Rabbit MQ test Received <" + message + ">");
     }
 
+    //=================================================
+    // ✅  others
+    //=================================================
     //@Bean
     CommandLineRunner rabbitMQtest(RabbitTemplate rabbitTemplate){
         return (args)->{
             rabbitTemplate.convertAndSend(exchangeName, key, "{message}", m->m);
-            System.out.println("Rabbit MQ test message sent at startup");
+            log.info("Rabbit MQ test message sent at startup");
         };
-    }
-
-    @Bean
-    public MessageConverter messageConverter(){
-        return new Jackson2JsonMessageConverter();
-    }
-
-    @Bean
-    public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory){
-        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-        rabbitTemplate.setMessageConverter(messageConverter());
-        return rabbitTemplate;
-    }
-
-    //@Bean
-    public ConnectionFactory rmqConnectionfactory(){
-        CachingConnectionFactory factory = new CachingConnectionFactory();
-        factory.setUsername("guest");
-        factory.setPassword("guest");
-        factory.setUri("amqps://localhost:5672");
-        factory.setVirtualHost("/");
-        return factory;
     }
 }

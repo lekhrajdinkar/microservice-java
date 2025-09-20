@@ -10,7 +10,7 @@ public class RmqController
     @Autowired private RmqService srv;
 
     @GetMapping("/RmqSpringApp/send")
-    public String send() {
-       return srv.send();
+    public String send(String msg) {
+       return srv.send(msg);
     }
 }
