@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
+import org.springframework.kafka.listener.DefaultErrorHandler;
+import org.springframework.util.backoff.FixedBackOff;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,8 +59,6 @@ public class KafkaConfig2_avro_customer
         // ===========================
         // Advanced settings
         // ===========================
-        //factory.setBatchListener(true);
-
         // manual offset commit
         if (manualOffset)   factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
         else factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH);
@@ -74,7 +76,7 @@ public class KafkaConfig2_avro_customer
     }
 
     @Bean("avro_KafkaListenerContainerFactory_batch_Customer")
-    public ConcurrentKafkaListenerContainerFactory<String, Customer> kafkaListenerContainerFactory_batch()
+    public ConcurrentKafkaListenerContainerFactory<String, Customer> kafkaListenerContainerFactory_batch(KafkaTemplate<String, Customer> kafkaTemplate)
     {
         Map<String, Object> config = new HashMap<>();
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
@@ -93,8 +95,15 @@ public class KafkaConfig2_avro_customer
         // =================================================
         // manual offset commit
         if (manualOffset)   factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
-        else factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH); // offset commit in batch after each poll() ◀ ◀ ◀
-        factory.setBatchListener(true); //list<Records> ◀ ◀ ◀
+        else factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.BATCH); //  "batch offset commit",  after each poll() ◀ ◀ ◀
+        factory.setBatchListener(true); //list<Records> ◀️
+
+        // Retry 3 times, then send to DLT (customer-topic.DLT.)
+        DefaultErrorHandler errorHandler = new DefaultErrorHandler(
+                new DeadLetterPublishingRecoverer(kafkaTemplate),
+                new FixedBackOff(2000L, 3L) // retry every 2s, max 3 retries
+        );
+        factory.setCommonErrorHandler(errorHandler);
 
         return factory;
     }

@@ -65,7 +65,7 @@ public class KafkaConsumerService
             @Header(KafkaHeaders.RECEIVED_KEY) String key
         )
     {
-            // process in another thread
+            // process in another thread , preferred way.  concurrency = "2", ◀️
             executor.submit(() -> {
             try {
                 log.info("Consumed: {} with key={} source={}", customer, key, source);
@@ -77,12 +77,22 @@ public class KafkaConsumerService
 
 
     // enabled
+    /*
+     consumer-group-1
+     ├── consumer-1 (thread-1) → partition-1
+     └── consumer-2 (thread-2) → partition-2
+    OR
+    consumer-group-1
+     └── consumer-1
+       ├── thread-1 → partition-1
+       └── thread-2 → partition-2
+     */
     @ConditionalOnProperty(name = "customer.kafka.consumer.in.batch", havingValue = "true")
     @KafkaListener(
             topics = { "${app.kafka.topic.customer-topic-name}" },
             groupId = "customer-avro-consumer-group", // "avro-consumer-group",
             containerFactory = "avro_KafkaListenerContainerFactory_batch_Customer", // batch-enabled factory ◀️,
-            concurrency = "2", //◀️ max = 3
+            concurrency = "2", //◀️ max = 3 (threads)
             properties = {
                     "spring.kafka.listener.type=batch",
                     "max.poll.records=5"  // max records per poll. lower value would kill throughput
@@ -93,7 +103,14 @@ public class KafkaConsumerService
             Acknowledgment acknowledgment
     )
     {
-        for (ConsumerRecord<String, Customer> record : records) {
+        for (ConsumerRecord<String, Customer> record : records)
+        {
+            // ❌ Failure handling - to test retry, dlq etc. ❌
+            if (record.value().getCustomerName().toString().contains("fail")) {
+                log.error("Processing failed for record: {}" , record.value());
+                throw new RuntimeException("Processing failed for record: " + record.value());
+            }
+
             log.info("----- Record Metadata -----");
             log.info("Topic     : {}", record.topic());
             log.info("Partition : {}", record.partition());

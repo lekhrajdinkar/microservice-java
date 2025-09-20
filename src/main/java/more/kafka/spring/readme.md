@@ -183,15 +183,20 @@ consumer-group-1
  └── consumer-1
        ├── thread-1 → partition-1
        └── thread-2 → partition-2
-
  */
+
+// 7. exception handling | retry mechanism | DLT dead-letter topics
+// Retry 3 times, then send to DLT (customer-topic.DLT.)
+DefaultErrorHandler errorHandler = new DefaultErrorHandler(
+        new DeadLetterPublishingRecoverer(kafkaTemplate),
+        new FixedBackOff(2000L, 3L) // retry every 2s, max 3 retries
+);
+factory.setCommonErrorHandler(errorHandler);
 ```
 
 ### Advance :: more
 ```properties
-1. exception handling
-2. retry mechanism
-3. dead-letter topics
+
 4. monitoring & metrics
 5. security (SSL, SASL)
 6. schema evolution strategies
