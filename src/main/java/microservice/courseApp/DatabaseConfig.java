@@ -1,4 +1,4 @@
-package microservice.jewelleryApp.config;
+package microservice.courseApp;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.hibernate.SessionFactory;

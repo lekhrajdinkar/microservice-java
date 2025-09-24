@@ -1,4 +1,4 @@
-package microservice.jewelleryApp.custom.servlet;
+package microservice.jewelleryApp.custom.servlet_filter_listener;
 
 
 import jakarta.servlet.annotation.WebServlet;

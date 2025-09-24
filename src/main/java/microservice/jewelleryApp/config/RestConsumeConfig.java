@@ -14,7 +14,8 @@ import java.io.IOException;
 import java.util.Base64;
 
 @Configuration
-public class RestConsumeConfig {
+public class RestConsumeConfig
+{
     @Bean
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
@@ -22,7 +23,9 @@ public class RestConsumeConfig {
         return restTemplate;
     }
 
-    // Interceptors
+    // ================
+    // Interceptors (beans)
+    // ================
     @Bean("basicAuthInterceptor_user1")
     public ClientHttpRequestInterceptor basicAuthInterceptor1() {
         return new BasicAuthenticationInterceptor("user1", "user1Pass");
@@ -49,9 +52,4 @@ public class RestConsumeConfig {
             }
         };
     }
-
-    /*@Bean
-    public WebClient.Builder webClientBuilder() {
-        return WebClient.builder();
-    }*/
 }

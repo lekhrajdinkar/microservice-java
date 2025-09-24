@@ -1,7 +1,5 @@
 package microservice.courseApp;
 
-import microservice.jewelleryApp.repository.StudentRepository;
-import microservice.jewelleryApp.repository.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionCallback;

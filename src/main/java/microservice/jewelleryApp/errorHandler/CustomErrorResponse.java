@@ -1,4 +1,4 @@
-package microservice.jewelleryApp.repository.dto;
+package microservice.jewelleryApp.errorHandler;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

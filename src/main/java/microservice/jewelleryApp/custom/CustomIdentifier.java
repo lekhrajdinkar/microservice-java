@@ -1,9 +1,8 @@
-package microservice.jewelleryApp.repository.entities;
+package microservice.jewelleryApp.custom;
 
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
 
-import java.util.Random;
 import java.util.UUID;
 
 public class CustomIdentifier implements IdentifierGenerator {
@@ -12,3 +11,14 @@ public class CustomIdentifier implements IdentifierGenerator {
         return UUID.randomUUID();
     }
 }
+
+/*
+usage:
+
+    @Id
+    @GeneratedValue(generator = "myUUID")
+    @GenericGenerator(name = "myUUID"
+            ,strategy = "microservice.jewelleryApp.entities.CustomIdentifier"
+            //,parameters = @Parameter(name = "prefix", value = "prod")
+    )
+ */

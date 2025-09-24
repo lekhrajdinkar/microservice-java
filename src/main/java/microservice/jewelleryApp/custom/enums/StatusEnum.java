@@ -1,4 +1,4 @@
-package microservice.jewelleryApp.repository.model;
+package microservice.jewelleryApp.custom.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;

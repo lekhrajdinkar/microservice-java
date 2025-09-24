@@ -2,20 +2,21 @@ package microservice.jewelleryApp.config;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
+import microservice.jewelleryApp.custom.servlet_filter_listener.MyServlet;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-// WebMvcConfigurer / Cusomize Spring MVC : Cors
-// WebServerFactoryCustomizer / fi -> Cusomise Tomcat
-// WebApplicationInitializer / SC
+
 
 @Configuration
-public class WebConfig implements WebApplicationInitializer {
+public class WebConfig implements WebApplicationInitializer
+{
 
     @Bean // for spring MVC
     WebMvcConfigurer webMvcConfigurerForApp(){
@@ -44,7 +45,31 @@ public class WebConfig implements WebApplicationInitializer {
         servletContext.setInitParameter("AppName", "SB_99_RESTful_API");
         // register servlet,filter,webListener
     }
+
+    @Bean
+    public ServletRegistrationBean<MyServlet> myServletRegistrationBean() {
+        ServletRegistrationBean<MyServlet> registrationBean =new ServletRegistrationBean<>(new MyServlet(), "/custom");
+        registrationBean.setLoadOnStartup(1);
+        return registrationBean;
+    }
+
+    /*
+    ==============================
+    Change from Tomcat to jetty.
+    ==============================
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jetty</artifactId>
+    </dependency>
+
+    @Bean
+    public JettyEmbeddedServletContainerFactory  jettyEmbeddedServletContainerFactory() {
+        JettyEmbeddedServletContainerFactory jettyContainer = new JettyEmbeddedServletContainerFactory();
+        jettyContainer.setPort(9000);
+        jettyContainer.setContextPath("/springbootapp");
+        return jettyContainer;
+    }
+    */
 }
 
-//@EnableWebMvc
-//@ComponentScan(basePackages = "com.lekhraj.java.spring.SB_99_RESTful_API.configuration.controller")
+

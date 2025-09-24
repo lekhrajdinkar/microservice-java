@@ -1,6 +1,5 @@
-package microservice.jewelleryApp.repository.entities;
+package microservice.courseApp;
 
-import microservice.jewelleryApp.repository.model.GenderEnum;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;

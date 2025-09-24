@@ -1,9 +1,9 @@
 package microservice.jewelleryApp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import microservice.jewelleryApp.repository.model.StatusEnum;
+import microservice.jewelleryApp.custom.enums.StatusEnum;
 //import com.lekhraj.java.spring.SB_99_RESTful_API.model.dto.Config2Inject;
-import microservice.jewelleryApp.repository.dto.JewelleryDTO;
+import microservice.jewelleryApp.dto.JewelleryDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,7 +22,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("api/jewellery")
+@RequestMapping("/jewelleryApp/v1")
 @Tag(name = "Jewellery API for My-Store", description = "Custom API for demonstrating Jewellery APIs")
 @Validated
 public class JewelleryController {
@@ -30,7 +30,7 @@ public class JewelleryController {
     //====================
     // 1. SWAGGER API Doc
     //====================
-    @GetMapping(value={"v1/get-one"})
+    @GetMapping(value={"/v1/get-one"})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     @Operation(
@@ -72,8 +72,8 @@ public class JewelleryController {
     // 2. BINDING
     //====================
     @GetMapping(value = {
-             "v2/get-one/{pathVariable1}"
-            ,"v2/get-one/{pathVariable1}/{pathVariable2}"
+             "/v2/get-one/{pathVariable1}"
+            ,"/v2/get-one/{pathVariable1}/{pathVariable2}"
     })
     ResponseEntity<JewelleryDTO> getJewelleryRE(
             HttpServletResponse response,
@@ -112,10 +112,10 @@ public class JewelleryController {
         // way-2
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.add("h1","v1");
-        ResponseEntity httpResponse1 = new ResponseEntity<JewelleryDTO>(dto,responseHeader,HttpStatus.OK);
+        ResponseEntity<JewelleryDTO> httpResponse1 = new ResponseEntity<JewelleryDTO>(dto,responseHeader,HttpStatus.OK);
 
         // WAY-3 ResponseEntity BUILDER
-        ResponseEntity httpResponse2 = ResponseEntity
+        ResponseEntity<JewelleryDTO> httpResponse2 = ResponseEntity
                 .status(200)
                 .header("h1", "v1")
                 .header("h2", "v2")
@@ -129,7 +129,7 @@ public class JewelleryController {
     // cannot valid ResponseEntity.
     //=====================================
     @Valid
-    @PostMapping("v3/get-one")
+    @PostMapping("/v3/get-one")
     // JSON --> dtoInput
     JewelleryDTO getJewellery3(@Valid @RequestBody JewelleryDTO dtoInput) throws Exception
     {
@@ -152,9 +152,7 @@ public class JewelleryController {
     }
 
     // ============= MAIN ==========
-    public static void main(String... a){
-
-    }
+    public static void main(String... a){  }
 
     // 1. Deserialize JSON with injected values
     void deserialize(){

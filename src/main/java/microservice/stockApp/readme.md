@@ -6,7 +6,7 @@
 
 ---
 ## POC
-### Streaming-transfer
+### 1 Streaming-transfer
 - https://chatgpt.com/c/68cafc59-3db0-8330-9d79-8e9daf258693
 - NDJSON (Newline Delimited JSON)
 
@@ -54,10 +54,10 @@ Send each JSON as a separate MIME part.
 ```
 
 ---
-### Temporal
+### 2 Temporal
 - todo
 
 ---
-### Spring Modulith
+### 3 Spring Modulith
 - todo
 

@@ -1,6 +1,5 @@
-package microservice.jewelleryApp.Runner;
+package microservice.courseApp;
 
-import microservice.jewelleryApp.repository.StudentRepository;
 import springbootApp.Print;
 import jakarta.persistence.Tuple;
 import lombok.extern.slf4j.Slf4j;

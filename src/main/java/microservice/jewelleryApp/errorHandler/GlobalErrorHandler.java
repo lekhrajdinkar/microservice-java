@@ -2,7 +2,6 @@ package microservice.jewelleryApp.errorHandler;
 
 // Global Error handling
 
-import microservice.jewelleryApp.repository.dto.CustomErrorResponse;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

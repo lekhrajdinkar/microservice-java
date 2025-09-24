@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import microservice.jewelleryApp.custom.Serializer.LocalDateTimeSerializer;
 
 @Configuration
-public class JacksonConfig {
-
+public class JacksonConfig
+{
     @Bean
     public ObjectMapper objectMapper()
     {
@@ -24,16 +24,11 @@ public class JacksonConfig {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return objectMapper;
     }
+    
 
     @Bean
-    LocalDateTimeSerializer ç(){
+    LocalDateTimeSerializer localDateTimeSerializer(){
         return new LocalDateTimeSerializer();
     }
 }
 
-
-
-/*
-spring.jackson.serialization.write-dates-as-timestamps=false
-spring.jackson.default-property-inclusion=non_null
- */

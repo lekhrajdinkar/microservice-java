@@ -1,8 +1,8 @@
-package microservice.jewelleryApp.repository.dto;
+package microservice.jewelleryApp.dto;
 
 import com.fasterxml.jackson.annotation.*;
 //import com.fasterxml.jackson.annotation.JsonInject;
-import microservice.jewelleryApp.repository.model.StatusEnum;
+import microservice.jewelleryApp.custom.enums.StatusEnum;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -67,7 +67,7 @@ public class JewelleryDTO
         unknownFeildMap.put(key, value);
     }
     // =========
-    Category category;
+    CategoryDTO categoryDTO;
 
     @JsonInclude(JsonInclude.Include.ALWAYS)
     String nerverSetFeild;
@@ -83,9 +83,9 @@ public class JewelleryDTO
 
     //@JsonKey - not right place
     // Apply inside MyKey : getKey(){}
-    Map address = new HashMap<MyKey,String>(Map.of(
-            MyKey.builder().prefix("pre-1").key("-city-").suffix("suffix-1").build(),"irvine",
-            MyKey.builder().prefix("pre-2").key("-state-").suffix("suffix-2").build(),"CA"));
+    Map address = new HashMap<MyKeyDTO,String>(Map.of(
+            MyKeyDTO.builder().prefix("pre-1").key("-city-").suffix("suffix-1").build(),"irvine",
+            MyKeyDTO.builder().prefix("pre-2").key("-state-").suffix("suffix-2").build(),"CA"));
 
     // ===== Deserialize =====
     // @JsonDeserialize(using=abc.class)
@@ -95,26 +95,6 @@ public class JewelleryDTO
 
 }
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-//@JsonIgnoreType
-class Category{
-    String type;
-}
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-class MyKey {
-    String prefix;
-    String key;
-    String suffix;
-    @JsonKey
-    String getMyKey(){
-        return "==="+this.prefix+this.key+this.suffix+"===";
-    }
-}
+
+
