@@ -1,8 +1,18 @@
 ## Overview
 ### Web
+-  [jewelleryApp readme](jewelleryApp)
+  - Develop http API 
+  - consume http API
+  - swagger doc : customize
+  - custom : Servlets, Filters, Listeners
+  - custom : converter, validator, serializer/deserializer
+  - hibernate jpa
 - [courseApp readme](courseApp/readme.md)
-- [jewelleryAp readme](jewelleryApp)
+  - ...
 - [stockApp readme](stockApp)
+  - Streaming JSON response
+  - spring Modulith ...
+  - Spring temporal ...
 - [shoppingApp readme](shoppingApp)
 
 ### Security

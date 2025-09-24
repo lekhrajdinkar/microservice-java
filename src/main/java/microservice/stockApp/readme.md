@@ -6,6 +6,8 @@
 
 ---
 ## POC
+[02_microservices.md](../../../../../docs/03_Advance/02_microservices.md) >> [ point 1,2 and 3 ]
+
 ### 1 Streaming-transfer
 - https://chatgpt.com/c/68cafc59-3db0-8330-9d79-8e9daf258693
 - NDJSON (Newline Delimited JSON)
