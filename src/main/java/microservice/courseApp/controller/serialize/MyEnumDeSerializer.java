@@ -1,6 +1,6 @@
 package microservice.courseApp.controller.serialize;
 
-import fundamentals.java_7.enums.CatLevel;
+import evolution.java_7.enums.CatLevel;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;

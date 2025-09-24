@@ -16,17 +16,17 @@ mkdocs serve
 ### 🔸Java
 - [Notes 📚](docs/01_java)
 - **Projects**
-  - [java_7](src/main/java/fundamentals/java_7)
-  - [java_8_and_above](src/main/java/fundamentals/java_8_and_above)
+  - [java_7](src/main/java/evolution/java_7)
+  - [java_8_and_above](src/main/java/evolution/java_8)
 
 ---  
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
 - **projects**
-  - [Spring_01_AOP](src/main/java/com/lekhraj/java/spring/Spring_01_AOP)
-  - [Spring_02_Core](src/main/java/com/lekhraj/java/spring/Spring_02_Core)
-  - [Spring_03_Properties](src/main/java/com/lekhraj/java/spring/Spring_03_Properties)
-  - [Spring_04_AutoConfiguration](src/main/java/com/lekhraj/java/spring/Spring_04_AutoConfiguration)
+  - [Spring_01_AOP](src/main/java/springbootApp/AOP)
+  - [Spring_02_Core](src/main/java/springbootApp/SpringCore)
+  - [Spring_03_Properties](src/main/java/springbootApp/SpringProperties)
+  - [Spring_04_AutoConfiguration](src/main/java/springbootApp/SpringAutoConfiguration)
 
 ---
 ### 🔸Advance use-case/s

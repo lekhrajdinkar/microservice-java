@@ -2,7 +2,7 @@ package microservice.courseApp.model.dto;
 
 import microservice.courseApp.controller.serialize.LocalDateDeSerializer;
 import microservice.courseApp.controller.serialize.LocalDateSerializer;
-import fundamentals.java_7.enums.CatLevel;
+import evolution.java_7.enums.CatLevel;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

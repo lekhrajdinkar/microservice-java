@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.lekhraj.java.spring.Spring_04_AutoConfiguration.CustomConfiguration.MyCustomSBConfig
+  CustomConfiguration.Spring_04_AutoConfiguration.springbootApp.MyCustomSBConfig

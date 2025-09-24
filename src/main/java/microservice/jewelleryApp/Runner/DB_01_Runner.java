@@ -1,7 +1,7 @@
 package microservice.jewelleryApp.Runner;
 
 import microservice.jewelleryApp.repository.StudentRepository;
-import com.lekhraj.java.spring.Print;
+import springbootApp.Print;
 import jakarta.persistence.Tuple;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

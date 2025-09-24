@@ -1,7 +1,7 @@
 package microservice.jewelleryApp.repository;
 
-import microservice.jewelleryApp.entities.Student;
-import microservice.jewelleryApp.model.GenderEnum;
+import microservice.jewelleryApp.repository.entities.Student;
+import microservice.jewelleryApp.repository.model.GenderEnum;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
