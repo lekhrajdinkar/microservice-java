@@ -29,6 +29,7 @@ public class WebConfig implements WebApplicationInitializer
     }
 
     //@Bean
+    // WebServerFactory - TomcatServletWebServerFactory, jettyEmbeddedServletContainerFactory ,etc
     WebServerFactoryCustomizer webServerfactory() // FunctionalInterface
     {
         return new WebServerFactoryCustomizer<TomcatServletWebServerFactory>(){

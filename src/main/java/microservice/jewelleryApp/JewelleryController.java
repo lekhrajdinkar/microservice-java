@@ -22,7 +22,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-@RequestMapping("/jewelleryApp/v1")
+@RequestMapping("/jewelleryApp")
 @Tag(name = "Jewellery API for My-Store", description = "Custom API for demonstrating Jewellery APIs")
 @Validated
 public class JewelleryController {
