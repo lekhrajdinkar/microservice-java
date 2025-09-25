@@ -1,5 +1,7 @@
 package microservice.courseApp.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import microservice.courseApp.errorHandling.MyException;
 import microservice.courseApp.repository.CourseDAO;
@@ -22,13 +24,18 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
+@RequestMapping("/courseApp/Course")
+@Tag( name = "Course", description = "Course API :: CRUD Operations")
 public class CourseController 
 {
     @Autowired CourseSrv srv;
     @Autowired CategorySrv categorySrv;
     @Autowired InstructorSrv instSrv;
 
-    @GetMapping("/course/find-all")
+    // ============
+    // ▶️ CRUD
+    // ===========
+    @GetMapping("/find-all")
     private List<Course> findAll() {
         log.debug("CourseController :: findAll");
         List<Course>  res = srv.findAll();
@@ -36,19 +43,20 @@ public class CourseController
         return srv.findAll();
     }
 
-    @GetMapping("/course/find-all-dto")
+    @GetMapping("/find-all-dto")
     private List<CourseDTO> findAllDto() {
         log.debug("CourseController :: findAllDto");
         return srv.findAllDto();
     }
 
-    @GetMapping("/course/findById")
+    @GetMapping("/findById")
     private Course findById(Long id) {
         log.debug("CourseController :: findById");
         return srv.findById(id);
     }
 
-    @PostMapping("/course/save")
+    @PostMapping("/save")
+    @Operation( summary = "Create/Save Course", description = "dto2Model :: CourseDTO >> Course entity")
     private Long save(@RequestBody CourseDTO dto) {
         log.debug("CourseController :: save");
 
@@ -59,12 +67,14 @@ public class CourseController
         return srv.save(c);
     }
 
-    // ============ @Query ===========
+    // ============
+    // @Query
+    // ===========
 
     @Autowired CourseDAO dao;
 
     @GetMapping(
-            value="/course/q-find-by-cat",
+            value="/q-find-by-cat",
             produces="application/v1+json"
     )
     private List<CourseDTO> QFindByCategory() {
@@ -76,7 +86,7 @@ public class CourseController
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/course/q-find-by-inst")
+    @GetMapping("/q-find-by-inst")
     private List<CourseDTO> QFindByInstructor() {
         log.debug("CourseController :: QFindByInstructor");
         //List<Course>  res =  dao.find2ByCategoryId(1L).get();
@@ -86,7 +96,7 @@ public class CourseController
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/course/q-find-All-page/{page}/{size}")
+    @GetMapping("/q-find-All-page/{page}/{size}")
     private List<CourseDTO> QFindAllPage(@PathVariable int page, @PathVariable int size) {
         log.debug("CourseController :: QFindAllPage");
         Page<Course> res = dao.findAllWithPagination( PageRequest.of(page, size, Sort.by("title").descending().and(Sort.by("desc"))));

@@ -4,12 +4,15 @@
   - category/s > course/s > section/s > lesson/s
   - instructor/s > course/s
   - student/s > course/s
+  - [InitDB.java](runner/InitDB.java) 👈🏻
+  - check ER diagram DB client as well
 
 ## Run time details
 - **Database** : H2 
 - **ApiDoc** : http://localhost:8082/courseApp/swagger-ui/index.html#/
 - h2 console : http://localhost:8082/courseApp/h2-console
 - **Security**: not secured
+- https://github.com/lekhrajdinkar/microservice-java/tree/main/src/main/java
 
 --- 
 ## POC/s
@@ -35,7 +38,7 @@ class config_postgres {}
 - ✔️ **custom** JPA Repo
   - [Student2CustomRepository.java](custom/Student2CustomRepository.java)
   - [Student2.java](repository/entity/Student2.java) -> named query defined as well.
-  - ▶️[Student2Runner.java](runner/Student2Runner.java) -> CRUD
+  - ▶️[StudentController.java](controller/StudentController.java) -> CRUD
 ```
 - CRUD Operations
     - create
@@ -44,10 +47,31 @@ class config_postgres {}
     
 - Manually manage:
     - EntityManagerFactory / sessionFactory
+    - EntityManager
     - Begin transaction 
     - commit transaction
+    - EntityManager :: close
 ```
-
+- **ORM relationships**
+  
+- **database transaction**
+    - ...
 
 ### API
 - [CategoryApi.java](controller/CategoryApi.java) implementation ->  [CategoryController.java](controller/CategoryController.java)
+
+- **mapper : ModelMapper vs MapStruct**
+    - dto to entity
+    - entity to dto
+    - ...
+    - [CourseDAO.java](repository/CourseDAO.java) | [mapper](repository/mapper)
+
+- - **jackson**
+- objectMapper
+- JsonNode
+- serialization / deserialization
+- ...
+
+### More
+- **Error handling**
+  - ...
