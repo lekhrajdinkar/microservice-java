@@ -1,54 +1,49 @@
-# java | springboot | microservices | kafka | rmq | etl/spring-batch
+# java | springboot | microservices | kafka | rmq | spring-batch
 
-## ✔️mkdocs
-```bash
-.\mkdocs\.venv\Scripts\activate
-pip install -r requirements-netlify.txt
-mkdocs serve
-```
+## ✔️ documentation
+- `mkdocs` 
+  ```bash
+  .\mkdocs\.venv\Scripts\activate
+  pip install -r requirements-netlify.txt
+  mkdocs serve
+  ```
 ---
 ## ✔️CD/CI
 - Deployment steps: https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
 
 ---
 ## ✔️POCs / projects
-- https://leetcode.com/u/lekhrajdinkar/
-### 🔸Java
-- [Notes 📚](docs/01_java)
-- **Projects**
-  - [java_7](src/main/java/evolution/java_7)
-  - [java_8_and_above](src/main/java/evolution/java_8)
+### 🔸leetcode
+https://leetcode.com/u/lekhrajdinkar/
 
----  
+### 🔸Java7+ project
+- [Notes 📚](docs/01_java)
+- [java evolution - project](src/main/java/evolution)
+- [Advance 📚](docs/03_Advance)
+
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
-- **projects**
-  - [Spring_01_AOP](src/main/java/springbootApp/AOP)
-  - [Spring_02_Core](src/main/java/springbootApp/SpringCore)
-  - [Spring_03_Properties](src/main/java/springbootApp/SpringProperties)
-  - [Spring_04_AutoConfiguration](src/main/java/springbootApp/SpringAutoConfiguration)
+- [Spring_01_AOP](src/main/java/springbootApp/AOP)
+- [Spring_02_Core](src/main/java/springbootApp/SpringCore)
+- [Spring_03_Properties](src/main/java/springbootApp/SpringProperties)
+- [Spring_04_AutoConfiguration](src/main/java/springbootApp/SpringAutoConfiguration)
+- ...
 
----
-### 🔸Advance use-case/s
-- [Notes 📚](docs/03_Advance)
+### 🔸micro-services projects
+- 📚 check `readme.md` ( in each project for more **details** )
+- 2022 : web/REST concept/s:  [courseApp](src/main/java/microservice/courseApp) | [jewelleryApp](src/main/java/microservice/jewelleryApp)
+- 2023 : [shoppingApp](src/main/java/microservice/shoppingApp)
+- 2025 : Advance web [stockApp](src/main/java/microservice/stockApp)
+  - streaming, performance, modulith, temporal
 
----
-### 🔸More
+### 🔸MessageBroker projects
+- [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
 - [kafka](src/main/java/more)
 - [rmq](src/main/java/more/rmq)
-- ETL/Spring-Batch
-  - [Notes 📚](docs/02_springboot/05_spring-batch-ETL)
-  - [springbatch](src/main/java/more/springbatch)
+- **ETL/Spring-Batch**  | [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  | [springbatch](src/main/java/more/springbatch)
 
 ---
-### 🔸micro-services
-- [courseApp](src/main/java/microservice/courseApp)
-- [jewelleryApp](src/main/java/microservice/jewelleryApp)
-- [shoppingApp](src/main/java/microservice/shoppingApp)
-- [stockApp](src/main/java/microservice/stockApp)
-
----
-
+## ✔️ other/s
 ```
 --spring.config.location=classpath:/custom-config.properties
 --spring.config.additional-location=classpath:/custom-config.properties
