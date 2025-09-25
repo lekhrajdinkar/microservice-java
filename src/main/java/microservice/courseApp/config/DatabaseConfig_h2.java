@@ -33,7 +33,7 @@ public class DatabaseConfig_h2
 
     // ==== ▶️ DataSource ========
 
-    @Bean(name = "dataSource_for_h2") //  3. javax.sql.DataSource
+    @Bean(name = "dataSource_for_h2")
     public DataSource dataSource()
     {
         return DataSourceBuilder.create()
@@ -46,18 +46,18 @@ public class DatabaseConfig_h2
 
     // ==== ▶️  SessionFactory / entityManagerFactory ========
 
-    @Bean(name = "entityManagerFactory_for_h2") // 1. SessionFactory
+    @Bean(name = "entityManagerFactory_for_h2")
     @Primary
     public LocalSessionFactoryBean sessionFactory(@Qualifier("dataSource_for_h2") DataSource dataSource)
     {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", env.getProperty("h2.jpa.properties.hibernate.dialect"));
-        properties.put("hibernate.show_sql", env.getProperty("h2.jpa.show-sql"));
-        properties.put("hibernate.hbm2ddl.auto", env.getProperty("h2.jpa.hibernate.ddl-auto"));
+        properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        properties.put("hibernate.show_sql", env.getProperty("hibernate.show-sql"));
+        properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
             sessionFactory.setDataSource(dataSource);
-            sessionFactory.setPackagesToScan("microservice.jewelleryApp.entities");
+            sessionFactory.setPackagesToScan(env.getProperty("packagesToScan"));
             sessionFactory.setHibernateProperties(properties);
 
         return sessionFactory;

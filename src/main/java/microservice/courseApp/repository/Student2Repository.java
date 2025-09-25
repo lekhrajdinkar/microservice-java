@@ -18,10 +18,10 @@ public class Student2Repository
     public Student2 getStudent(String name){
         EntityManager em = sessionFactory.createEntityManager();
 
-        TypedQuery<Student2> q = em.createQuery("select s from Student s where s.name=:sname", Student2.class);
+        TypedQuery<Student2> q = em.createQuery("select s from Student2 s where s.name=:sname", Student2.class);
         q.setParameter("sname",name);
 
-        TypedQuery<Student2> nq = em.createNamedQuery("Student.findStudentByName", Student2.class);
+        TypedQuery<Student2> nq = em.createNamedQuery("Student2.findStudentByName", Student2.class);
         nq.setParameter("sname",name);
 
         Student2 result =  nq.getSingleResult(); //getResultList()/Set()
@@ -48,7 +48,7 @@ public class Student2Repository
     public List<Tuple> getTuple(){
         EntityManager em = sessionFactory.createEntityManager();
         // Tuple === Object[]
-        TypedQuery<Tuple> nq = em.createNamedQuery("Student.findStudentTuple", Tuple.class);
+        TypedQuery<Tuple> nq = em.createNamedQuery("Student2.findStudentTuple", Tuple.class);
         List<Tuple> result =  nq.getResultList();
         em.close();
         return result;

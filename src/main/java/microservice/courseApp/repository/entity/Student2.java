@@ -10,22 +10,22 @@ import java.util.UUID;
 @Setter
 @Getter
 @Builder
-@Table(name="STUDENT")
+@Table(name="STUDENT2")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Student.findStudentByName", query = "select s from Student s where s.name=:sname"),
-        @NamedQuery(name = "Student.findStudentTuple", query = "select s.name, s.birthDate as dob, s.gender as gender from Student s")
+        @NamedQuery(name = "Student2.findStudentByName", query = "select s from Student2 s where s.name=:sname"),
+        @NamedQuery(name = "Student2.findStudentTuple", query = "select s.name, s.birthDate as dob, s.gender as gender from Student2 s")
 })
 public class Student2 {
     @Id
     @GeneratedValue(generator = "myUUID")
     //@GenericGenerator(name = "UUID",strategy = "org.hibernate.id.UUIDGenerator")
     @GenericGenerator(name = "myUUID"
-            ,strategy = "microservice.jewelleryApp.entities.CustomIdentifier"
+            ,strategy = "microservice.courseApp.custom.CustomIdentifier"
             //,parameters = @Parameter(name = "prefix", value = "prod")
     )
     private UUID uuid;
