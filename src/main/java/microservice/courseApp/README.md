@@ -4,20 +4,24 @@
   - category/s > course/s > section/s > lesson/s
   - instructor/s > course/s
   - student/s > course/s
-  - [InitDB.java](runner/InitDB.java) 👈🏻
+  - [InitDB.java](runner/InitDB.java) | [courseApp.sql](../../../resources/microservice/courseApp/courseApp.sql) 👈🏻
   - check ER diagram DB client as well
-- custom JPA repository, multiple DB/s, etc
+- jpa-entity, orm-relationship, custom-JPA-repo, [CustomIdentifier](custom/CustomIdentifier.java)
+- multiple-Datasources, 
+- tuple, modelapper/mapStrut
 
 ## Run time details
 - **Database** : H2 
 - **ApiDoc** : http://localhost:8082/courseApp/swagger-ui/index.html#/
 - h2 console : http://localhost:8082/courseApp/h2-console
+- h2 .db file: [h2](../../../../../h2)
 - **Security**: not secured
 - https://github.com/lekhrajdinkar/microservice-java/tree/main/src/main/java
 
 --- 
 ## POC/s
 ### Database
+- ✔️ sequence gen: [CustomIdentifier](custom/CustomIdentifier.java)
 - ✔️ multiple DB/s | [config](config)
 ```Java
 @EnableJpaRepositories(
@@ -74,5 +78,4 @@ class config_postgres {}
 - ...
 
 ### More
-- **Error handling**
-  - ...
+- [errorHandling](errorHandling)

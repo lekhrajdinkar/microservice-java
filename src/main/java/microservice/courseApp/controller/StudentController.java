@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/courseApp/Student")
-@Tag( name = "Student", description = "Student API :: CRUD Operations")
+@Tag( name = "Student and Student2(customRepoDemo)", description = "Student API :: CRUD Operations")
 public class StudentController
 {
     @Autowired StudentSrv srv;

@@ -33,11 +33,13 @@ https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸micro-services projects
 - 📚 check `readme.md` ( in each project for more **details** )
-- 2022 : web basic concept/s:  [courseApp](src/main/java/microservice/courseApp) | [jewelleryApp](src/main/java/microservice/jewelleryApp)
-- 2023 : 
+- web basic concept/s:  
+  - [jewelleryApp](src/main/java/microservice/jewelleryApp) - restApi,swagger, servlet, jackson, error handling, etc
+  - [courseApp](src/main/java/microservice/courseApp) - hibernate more, etc
+- security: 
   - [shoppingApp](src/main/java/microservice/shoppingApp) 
   - [securityApp](src/main/java/microservice/securityApp) | OAuth2, okta, jwt
-- 2025 : 
+- More:
   - Advance web:  [stockApp](src/main/java/microservice/stockApp) | streaming, modulith, temporal
   - OTEL : [observabilityApp](src/main/java/microservice/observabilityApp)
 

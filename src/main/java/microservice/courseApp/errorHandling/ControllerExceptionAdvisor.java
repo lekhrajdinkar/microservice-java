@@ -9,21 +9,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ControllerExceptionAdvisor
 {
     @ExceptionHandler(value = {MyException.class})
-    ResponseEntity handleMyException(MyException e){
-        // ResponseEntity res =  ResponseEntity.ok()BodyBuilder();
-        ResponseEntity res = null;
-        res=new ResponseEntity<String>("Business generic Exception. please verify request !" + e.getMessage(), HttpStatus.SERVICE_UNAVAILABLE);
-        return res;
+    ResponseEntity<String> handleMyException(MyException e)
+    {
+        ResponseEntity<String> response = new ResponseEntity<>(
+                "Business generic Exception. please verify request !" + e.getMessage(),
+                HttpStatus.SERVICE_UNAVAILABLE);
+
+        return response;
+        // ResponseEntity res =  ResponseEntity.ok().BodyBuilder();
     }
-
-//    @ExceptionHandler(value = {Exception.class})
-//    ResponseEntity handleException(Exception e){
-//        // ResponseEntity res =  ResponseEntity.ok()BodyBuilder();
-//        ResponseEntity res = null;
-//        res=new ResponseEntity<String>("Business Global Exception. please verify request !", HttpStatus.BAD_REQUEST);
-//        return res;
-//    }
-
 }
 
 
