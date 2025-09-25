@@ -18,7 +18,11 @@ import java.util.UUID;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Student2.findStudentByName", query = "select s from Student2 s where s.name=:sname"),
-        @NamedQuery(name = "Student2.findStudentTuple", query = "select s.name, s.birthDate as dob, s.gender as gender from Student2 s")
+        @NamedQuery(name = "Student2.findStudentTuple", query =
+                "select         s.name, " +
+                "s.birthDate    as dob, " +
+                "s.gender       as gender " +
+                "from Student2 s")
 })
 public class Student2 {
     @Id

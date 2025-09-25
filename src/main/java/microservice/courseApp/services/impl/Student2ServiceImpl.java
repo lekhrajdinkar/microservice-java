@@ -1,6 +1,6 @@
 package microservice.courseApp.services.impl;
 
-import microservice.courseApp.repository.Student2Repository;
+import microservice.courseApp.custom.Student2CustomRepository;
 import microservice.courseApp.repository.entity.Student2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 public class Student2ServiceImpl
 {
     @Autowired
-    Student2Repository repo;
+    Student2CustomRepository repo;
     TransactionTemplate transactionTemplate;
 
 
