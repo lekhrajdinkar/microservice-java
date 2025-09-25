@@ -1,6 +1,6 @@
 package evolution.java_7.enums;
 
-import microservice.courseApp.controller.serialize.MyEnumDeSerializer;
+import microservice.courseApp.custom.serialize.MyEnumDeSerializer;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;

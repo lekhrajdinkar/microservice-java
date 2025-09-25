@@ -1,9 +1,9 @@
 package microservice.courseApp.services.impl;
 
 import microservice.courseApp.repository.CourseDAO;
-import microservice.courseApp.model.dto.CourseDTO;
-import microservice.courseApp.model.mapper.CourseMapper;
-import microservice.courseApp.model.entity.Course;
+import microservice.courseApp.repository.dto.CourseDTO;
+import microservice.courseApp.repository.mapper.CourseMapper;
+import microservice.courseApp.repository.entity.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

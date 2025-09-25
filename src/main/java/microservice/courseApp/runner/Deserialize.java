@@ -1,6 +1,6 @@
 package microservice.courseApp.runner;
 
-import microservice.courseApp.model.dto.CategoryDTO;
+import microservice.courseApp.repository.dto.CategoryDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;

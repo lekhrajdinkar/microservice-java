@@ -1,6 +1,6 @@
 package microservice.courseApp.controller;
 
-import microservice.courseApp.model.entity.Student;
+import microservice.courseApp.repository.entity.Student;
 import microservice.courseApp.services.StudentSrv;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

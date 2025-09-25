@@ -1,6 +1,6 @@
 package microservice.courseApp.services;
 
-import microservice.courseApp.model.entity.Category;
+import microservice.courseApp.repository.entity.Category;
 
 public interface CategorySrv extends BaseSrv<Category, Long>{
 

@@ -1,6 +1,6 @@
 package microservice.courseApp.repository;
 
-import microservice.courseApp.model.entity.Student;
+import microservice.courseApp.repository.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

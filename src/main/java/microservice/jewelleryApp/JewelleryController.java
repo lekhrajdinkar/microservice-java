@@ -151,6 +151,23 @@ public class JewelleryController {
          return dtoInput;
     }
 
+    //=====================================
+    // 4. API Versioning
+    // header ::  Accept="application/v1/2+json" // 👈🏻
+    //=====================================
+    @GetMapping(
+            value="/test/get",
+            produces="application/v1+json" // 👈🏻 produces
+    )
+    private Integer getId() { return 20; }
+
+    @GetMapping(
+            value="/test/get",
+            produces="application/v2+json" // 👈🏻
+    )
+    private String getName() { return "20String / v2"; }
+
+
     // ============= MAIN ==========
     public static void main(String... a){  }
 

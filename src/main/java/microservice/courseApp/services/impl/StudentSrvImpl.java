@@ -1,7 +1,7 @@
 package microservice.courseApp.services.impl;
 
 import microservice.courseApp.repository.StudentDAO;
-import microservice.courseApp.model.entity.Student;
+import microservice.courseApp.repository.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import microservice.courseApp.services.StudentSrv;

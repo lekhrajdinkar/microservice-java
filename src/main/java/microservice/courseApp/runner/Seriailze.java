@@ -1,7 +1,7 @@
 package microservice.courseApp.runner;
 
-import microservice.courseApp.model.dto.CategoryDTO;
-import microservice.courseApp.model.dto.CourseDTO;
+import microservice.courseApp.repository.dto.CategoryDTO;
+import microservice.courseApp.repository.dto.CourseDTO;
 import evolution.java_7.enums.CatLevel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

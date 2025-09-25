@@ -1,6 +1,6 @@
 package evolution.java_8.streamProcessing;
 
-import microservice.courseApp.model.entity.Student;
+import microservice.courseApp.repository.entity.Student;
 
 import java.util.*;
 import java.util.stream.Collectors;

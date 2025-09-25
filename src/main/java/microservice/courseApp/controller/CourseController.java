@@ -1,15 +1,14 @@
 package microservice.courseApp.controller;
 
-import microservice.courseApp.exception.MyException;
+import lombok.extern.slf4j.Slf4j;
+import microservice.courseApp.errorHandling.MyException;
 import microservice.courseApp.repository.CourseDAO;
-import microservice.courseApp.model.dto.CourseDTO;
-import microservice.courseApp.model.mapper.CourseMapper;
-import microservice.courseApp.model.entity.Course;
+import microservice.courseApp.repository.dto.CourseDTO;
+import microservice.courseApp.repository.mapper.CourseMapper;
+import microservice.courseApp.repository.entity.Course;
 import microservice.courseApp.services.CategorySrv;
 import microservice.courseApp.services.CourseSrv;
 import microservice.courseApp.services.InstructorSrv;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,23 +17,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 public class CourseController 
 {
-    Logger logger = LoggerFactory.getLogger(CourseController.class);
-    
     @Autowired CourseSrv srv;
     @Autowired CategorySrv categorySrv;
     @Autowired InstructorSrv instSrv;
 
-    //@Override
     @GetMapping("/course/find-all")
     private List<Course> findAll() {
-        logger.debug("CourseController :: findAll");
+        log.debug("CourseController :: findAll");
         List<Course>  res = srv.findAll();
         res.stream().forEach(System.out::print);
         return srv.findAll();
@@ -42,21 +38,19 @@ public class CourseController
 
     @GetMapping("/course/find-all-dto")
     private List<CourseDTO> findAllDto() {
-        logger.debug("CourseController :: findAllDto");
+        log.debug("CourseController :: findAllDto");
         return srv.findAllDto();
     }
 
-    //@Override
     @GetMapping("/course/findById")
     private Course findById(Long id) {
-        logger.debug("CourseController :: findById");
+        log.debug("CourseController :: findById");
         return srv.findById(id);
     }
 
-    //@Override
     @PostMapping("/course/save")
     private Long save(@RequestBody CourseDTO dto) {
-        logger.debug("CourseController :: save");
+        log.debug("CourseController :: save");
 
             Course c = CourseMapper.dto2Model(dto); //manual mapper, Todo: use mapStruct
             c.setCategory(categorySrv.findById(dto.getCategoryId())); // loading Category Entity manually from id.
@@ -74,7 +68,7 @@ public class CourseController
             produces="application/v1+json"
     )
     private List<CourseDTO> QFindByCategory() {
-        logger.debug("CourseController :: QFindByCategory");
+        log.debug("CourseController :: QFindByCategory");
         //List<Course>  res =  dao.find2ByCategoryId(1L).get();
         List<Course>  res =  dao.find3ByCategoryId(1L);
         return res.stream()
@@ -84,7 +78,7 @@ public class CourseController
 
     @GetMapping("/course/q-find-by-inst")
     private List<CourseDTO> QFindByInstructor() {
-        logger.debug("CourseController :: QFindByInstructor");
+        log.debug("CourseController :: QFindByInstructor");
         //List<Course>  res =  dao.find2ByCategoryId(1L).get();
         List<Course>  res =  dao.find1ByInstructorId(1L);
         return res.stream()
@@ -94,7 +88,7 @@ public class CourseController
 
     @GetMapping("/course/q-find-All-page/{page}/{size}")
     private List<CourseDTO> QFindAllPage(@PathVariable int page, @PathVariable int size) {
-        logger.debug("CourseController :: QFindAllPage");
+        log.debug("CourseController :: QFindAllPage");
         Page<Course> res = dao.findAllWithPagination( PageRequest.of(page, size, Sort.by("title").descending().and(Sort.by("desc"))));
         return res
                 .getContent()
@@ -104,6 +98,7 @@ public class CourseController
     }
 
     // ============ Exception ===========
+
     @RequestMapping( method = RequestMethod.GET, value = "/exp")
     private ResponseEntity<String> testException()
     {

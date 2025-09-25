@@ -1,6 +1,6 @@
 package microservice.courseApp.repository;
 
-import microservice.courseApp.model.entity.Course;
+import microservice.courseApp.repository.entity.Course;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;

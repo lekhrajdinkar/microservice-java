@@ -1,6 +1,6 @@
 package microservice.courseApp.services;
 
-import microservice.courseApp.model.entity.Student;
+import microservice.courseApp.repository.entity.Student;
 
 public interface StudentSrv extends BaseSrv<Student, Long>{
 }

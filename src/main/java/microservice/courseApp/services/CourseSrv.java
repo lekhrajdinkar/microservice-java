@@ -1,7 +1,7 @@
 package microservice.courseApp.services;
 
-import microservice.courseApp.model.dto.CourseDTO;
-import microservice.courseApp.model.entity.Course;
+import microservice.courseApp.repository.dto.CourseDTO;
+import microservice.courseApp.repository.entity.Course;
 
 import java.util.List;
 

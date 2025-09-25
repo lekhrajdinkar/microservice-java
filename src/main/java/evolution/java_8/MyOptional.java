@@ -1,6 +1,6 @@
 package evolution.java_8;
 
-import microservice.courseApp.model.entity.Course;
+import microservice.courseApp.repository.entity.Course;
 import evolution.java_8.interfaceMore.MyInterface;
 import evolution.java_8.interfaceMore.MyInterfaceImpl;
 

@@ -1,7 +1,7 @@
 package microservice.courseApp.services.impl;
 
 import microservice.courseApp.repository.CategoryDAO;
-import microservice.courseApp.model.entity.Category;
+import microservice.courseApp.repository.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
