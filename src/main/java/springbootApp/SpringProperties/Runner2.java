@@ -4,7 +4,7 @@ import springbootApp.SpringProperties.bean.ConfigurationPropertiesByPrefixBean;
 import springbootApp.SpringProperties.bean.DatabasePropertiesMap;
 import springbootApp.SpringProperties.bean.RabbitPropertiesMap;
 import springbootApp.SpringProperties.bean.Prop2Map;
-import springbootApp.Print;
+import util.Print;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

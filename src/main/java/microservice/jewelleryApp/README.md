@@ -1,8 +1,18 @@
 # JewelleryApp
 ## Overview
+- Develop http API
+- consume http API
+- swagger doc : customize
+- custom : Servlets, Filters, Listeners
+- custom : converter, validator, serializer/deserializer
+- hibernate jpa
+- ...
+
+## Run time details
 - Database : no
 - ApiDoc : http://localhost:8086/jewelleryApp/swagger-ui/index.html#/
 
+---
 ## POC/s
 ### 0 web server
 - **Annotations**

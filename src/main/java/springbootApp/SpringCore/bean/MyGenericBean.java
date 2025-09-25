@@ -1,6 +1,6 @@
 package springbootApp.SpringCore.bean;
 
-import springbootApp.Print;
+import util.Print;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

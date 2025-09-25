@@ -1,6 +1,6 @@
 package springbootApp.SpringCore.bean;
 
-import springbootApp.Print;
+import util.Print;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.*;

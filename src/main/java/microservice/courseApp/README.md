@@ -1,11 +1,12 @@
 # courseApp
 ## Overview
-- DTO/s:
+- **DTO/s**:
   - category/s > course/s > section/s > lesson/s
   - instructor/s > course/s
   - student/s > course/s
   - [InitDB.java](runner/InitDB.java) 👈🏻
   - check ER diagram DB client as well
+- custom JPA repository, multiple DB/s, etc
 
 ## Run time details
 - **Database** : H2 

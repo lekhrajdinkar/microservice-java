@@ -1,4 +1,4 @@
-package microservice.javaSpringApp;
+package evolution.javaSpringApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

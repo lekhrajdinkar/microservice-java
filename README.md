@@ -17,10 +17,12 @@
 https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸Java7+ project
-- [Notes 📚](docs/01_java)
+- [java Notes 📚](docs/01_java)
 - [java evolution - project](src/main/java/evolution)
-- [Advance 📚](docs/03_Advance)
-
+- [Advance concepts Notes📚](docs/03_Advance)
+  - Advance project 1 (ms) : [javaSpringApp](src/main/java/evolution/javaSpringApp)
+  - ...
+  
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
 - [Spring_01_AOP](src/main/java/springbootApp/AOP)
@@ -31,10 +33,13 @@ https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸micro-services projects
 - 📚 check `readme.md` ( in each project for more **details** )
-- 2022 : web/REST concept/s:  [courseApp](src/main/java/microservice/courseApp) | [jewelleryApp](src/main/java/microservice/jewelleryApp)
-- 2023 : [shoppingApp](src/main/java/microservice/shoppingApp)
-- 2025 : Advance web [stockApp](src/main/java/microservice/stockApp)
-  - streaming, performance, modulith, temporal
+- 2022 : web basic concept/s:  [courseApp](src/main/java/microservice/courseApp) | [jewelleryApp](src/main/java/microservice/jewelleryApp)
+- 2023 : 
+  - [shoppingApp](src/main/java/microservice/shoppingApp) 
+  - [securityApp](src/main/java/microservice/securityApp) | OAuth2, okta, jwt
+- 2025 : 
+  - Advance web:  [stockApp](src/main/java/microservice/stockApp) | streaming, modulith, temporal
+  - OTEL : [observabilityApp](src/main/java/microservice/observabilityApp)
 
 ### 🔸MessageBroker projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)

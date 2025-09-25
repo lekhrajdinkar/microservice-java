@@ -1,7 +1,7 @@
 package springbootApp.SpringProperties.converter;
 
 import springbootApp.SpringProperties.bean.Credentials;
-import springbootApp.Print;
+import util.Print;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

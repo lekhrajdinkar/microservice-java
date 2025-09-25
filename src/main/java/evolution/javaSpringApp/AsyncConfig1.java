@@ -1,4 +1,4 @@
-package microservice.javaSpringApp;
+package evolution.javaSpringApp;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

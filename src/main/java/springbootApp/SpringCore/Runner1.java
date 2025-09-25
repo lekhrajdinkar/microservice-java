@@ -4,7 +4,7 @@ import springbootApp.SpringCore.Annotation.MyAnnotation;
 import springbootApp.SpringCore.bean.Item;
 import springbootApp.SpringCore.bean.SingletonBean;
 import springbootApp.SpringCore.bean.Store;
-import springbootApp.Print;
+import util.Print;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -16,7 +16,7 @@ public class KafkaController
     // ===========================
     String temp1  = "{\"type\": \"generic\",    \"subtype\": \"student\",    \"payload\": {\"id\": \"1\", \"name\": \"Alice\", \"age\": 22}}";
     String temp2  = "{\"type\": \"generic\",    \"subtype\": \"customer\",    \"payload\": {\"customerId\": \"C123\", \"customerName\": \"Bob\", \"email\": \"bob@example.com\"}}";
-    @PostMapping("/springApp/publish-generic/string")
+    @PostMapping("/springbootApp/publish-generic/string")
     public String sendStudent_generic( String jsonString)
     {
         //producerService.sendGenericString(jsonString);
@@ -25,14 +25,14 @@ public class KafkaController
         return "jsonString :: sent";
     }
 
-    @PostMapping("/springApp/publish-generic/object")
+    @PostMapping("/springbootApp/publish-generic/object")
     public String sendCustomer_generic( @RequestBody Object obj)
     {
         producerService.sendGenericObject(obj);
         return "Customer/student/etc object :: as message sent" ;
     }
 
-    @PostMapping("/springApp/publish-generic/transaction")
+    @PostMapping("/springbootApp/publish-generic/transaction")
     public String sendTransactionalCustomer() {
         return producerService.sendTransactional();
     }
@@ -40,7 +40,7 @@ public class KafkaController
     // ===========================
     // ✅ producer (Avro)
     // ===========================
-    @PostMapping("/springApp/publish/student")
+    @PostMapping("/springbootApp/publish/student")
     public String sendStudent( String id,String name,int age, int count) {
         for (int i = 1; i <= count; i++) {
             Student student = Student.newBuilder().setId(id + "-" + i).setName(name + "-" + i).setAge(age + i).build();
@@ -48,7 +48,7 @@ public class KafkaController
         }
         return "Student/s avro :: message sent ✅";
     }
-    @PostMapping("/springApp/publish/customer")
+    @PostMapping("/springbootApp/publish/customer")
     public String sendCustomer( String id, String name, int count) {
         for (int i = 1; i <= count; i++) {
             Customer customer = Customer.newBuilder().setCustomerId(id + "-" + i).setCustomerName(name + "-" + i).setEmail(name + i + "@gmail.com").build();
