@@ -4,17 +4,19 @@
   - category/s > course/s > section/s > lesson/s
   - instructor/s > course/s
   - student/s > course/s
-  - [InitDB.java](runner/InitDB.java) | [courseApp.sql](../../../resources/microservice/courseApp/courseApp.sql) 👈🏻
+  - [courseApp.sql](../../../resources/microservice/courseApp/courseApp.sql) 👈🏻
   - check ER diagram DB client as well
-```
-[Category] 1---* [Course] *---* [Student]
-                     |
-                     1
-                     |
-               [Instructor]
-```
-- jpa-entity, orm-relationship, custom-JPA-repo, [CustomIdentifier](custom/CustomIdentifier.java)
-- multiple DataSources
+  ```
+  [Category] 1---* [Course] *---* [Student]
+                       |
+                       1
+                       |
+                 [Instructor]
+  ```
+- jpa-entity and orm-relationship([InitDB.java](runner/InitDB.java)), 
+- custom-JPA-repo
+- sequence gen: [CustomIdentifier](custom/CustomIdentifier.java)
+- multiple DataSources - h2 and postgres
 - tuple, modelMapper/mapStrut
 
 ## Run time details
