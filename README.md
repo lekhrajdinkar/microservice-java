@@ -32,8 +32,8 @@ https://leetcode.com/u/lekhrajdinkar/
 ### 🔸micro-services projects
 - 📚 check `readme.md` ( in each project for more **details** )
 - Web basic App  
-  - [jewelleryApp](src/main/java/microservice/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
-  - [courseApp](src/main/java/microservice/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
+  - [jewelleryApp](src/main/java/microservice/basicWebApp/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+  - [courseApp](src/main/java/microservice/basicWebApp/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
 - [modern Web App](src/main/java/microservice/modernWebApp)
   - [shoppingApp](src/main/java/microservice/modernWebApp/shoppingApp) - ASGI, Async, websocket, grpc
   - [stockApp](src/main/java/microservice/modernWebApp/stockApp) - streaming, modulith, temporal

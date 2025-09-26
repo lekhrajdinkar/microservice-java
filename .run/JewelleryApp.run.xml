@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="JewelleryApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="microservice.jewelleryApp.JewelleryApp" />
+  <configuration default="false" name="JewelleryApp" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="microservice.basicWebApp.jewelleryApp.JewelleryApp" />
     <module name="spring-app" />
     <extension name="coverage">
       <pattern>

@@ -41,7 +41,7 @@
       - has @PersistenceContext(type = PersistenceContextType.**TRANSACTIONAL**)
     - way-2: https://chat.deepseek.com/a/chat/s/8e1072c2-9522-4d97-8c6b-d6cdc8ef7c97
       - this is custom repo
-      - check more eg: [StudentRepository.java](../../../src/main/java/microservice/jewelleryApp/repository/StudentRepository.java)
+      - check more eg: [StudentRepository.java](../../../src/main/java/microservice/basicWebApp/jewelleryApp/repository/StudentRepository.java)
 ```java
 @Repository
 public class ExtendedPersistenceContextRepository 

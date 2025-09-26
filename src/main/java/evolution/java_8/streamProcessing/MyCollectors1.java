@@ -1,6 +1,6 @@
 package evolution.java_8.streamProcessing;
 
-import microservice.courseApp.repository.dto.CourseDTO;
+import microservice.basicWebApp.courseApp.repository.dto.CourseDTO;
 
 import java.util.*;
 import java.util.stream.Collectors;

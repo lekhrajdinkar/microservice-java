@@ -62,7 +62,7 @@ public class ErrorController
   - extract **ErrorAttributes**  from **webRequest**. like above.
   - will send out json response.
 - @Component class MyBasicErrorController extends **ErrorController** { @GetMapping(/my-error-path) m()}
-  - [MyBasicErrorController.java](../../../src/main/java/microservice/jewelleryApp/controller/MyBasicErrorController.java)
+  - [MyBasicErrorController.java](../../../src/main/java/microservice/basicWebApp/jewelleryApp/controller/MyBasicErrorController.java)
 
 ### customization-2 (@ControllerAdvice)
 - httpRequest send > No issue - no 401,no 500, etc > controller method m1() gets executed.

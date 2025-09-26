@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="CourseApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="microservice.courseApp.CourseApp" />
+  <configuration default="false" name="CourseApp" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="microservice.basicWebApp.courseApp.CourseApp" />
     <module name="spring-app" />
     <extension name="coverage">
       <pattern>
