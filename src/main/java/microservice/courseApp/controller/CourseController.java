@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import microservice.courseApp.errorHandling.MyException;
 import microservice.courseApp.repository.CourseDAO;
 import microservice.courseApp.repository.dto.CourseDTO;
-import microservice.courseApp.repository.mapper.CourseMapper;
+import microservice.courseApp.repository.modelMapper.CourseMapper;
 import microservice.courseApp.repository.entity.Course;
 import microservice.courseApp.services.CategorySrv;
 import microservice.courseApp.services.CourseSrv;

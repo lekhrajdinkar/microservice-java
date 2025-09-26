@@ -45,16 +45,6 @@ public class Course {
     @JsonBackReference(value = "student_course_json")
     private List<Student> students;
 
-
-    // @OneToMany List<Section> sections;
-
-//    @Column(
-//            name = "created_on"
-//            //,columnDefinition = "DATETIME(6) DEFAULT CURRENT_TIMESTAMP"
-//    )
-//    //@Generated(GenerationTime.INSERT)
-//    private LocalDateTime createdOn;
-
     //Enver - Auditing Framework
     @CreatedDate @Column @Temporal(TemporalType.DATE) private Date createdDate = new Date();
     @LastModifiedDate @Column @Temporal(TemporalType.DATE) private Date modifiedDate= new Date();;

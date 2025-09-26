@@ -11,6 +11,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
+      <assistant-state connection-id="1bad0375-5d2e-4750-a39f-ab6338b53926" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
+        <conversations />
+      </assistant-state>
       <assistant-state connection-id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
         <conversations />
       </assistant-state>
@@ -23,18 +26,31 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07">
-      <console name="CourseApp H2 database" type="STANDARD" schema="" session="Main" />
+    <connection id="1bad0375-5d2e-4750-a39f-ab6338b53926">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1bad0375-5d2e-4750-a39f-ab6338b53926" object-ref="consoles/Connection" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07" />
+    <connection id="1bad0375-5d2e-4750-a39f-ab6338b53926" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <execution-variables-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -42,18 +58,18 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection source-id="" id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07" active="true" signed="true">
+      <connection source-id="" id="1bad0375-5d2e-4750-a39f-ab6338b53926" active="true" signed="true">
         <database>
-          <name value="CourseApp H2 database" />
-          <description value="CourseApp H2 database" />
+          <name value="Connection" />
+          <description value="courseApp-h2" />
           <database-type value="GENERIC" />
           <config-type value="CUSTOM" />
-          <database-version value="9999.0" />
+          <database-version value="2.4" />
           <driver-source value="EXTERNAL" />
-          <driver-library value="" />
-          <driver value="" />
+          <driver-library value="C:\Program Files (x86)\H2\bin" />
+          <driver value="org.h2.Driver" />
           <url-type value="CUSTOM" />
-          <url value="jdbc:h2:mem:courseApp" />
+          <url value="jdbc:h2:file:~/h2/courseApp" />
           <type value="USER_PASSWORD" />
           <user value="sa" />
           <token-type value="" />

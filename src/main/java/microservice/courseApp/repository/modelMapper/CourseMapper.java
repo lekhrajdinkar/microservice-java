@@ -1,4 +1,4 @@
-package microservice.courseApp.repository.mapper;
+package microservice.courseApp.repository.modelMapper;
 
 import microservice.courseApp.repository.dto.CourseDTO;
 import microservice.courseApp.repository.entity.Course;

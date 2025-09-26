@@ -2,7 +2,7 @@ package microservice.courseApp.services.impl;
 
 import microservice.courseApp.repository.CourseDAO;
 import microservice.courseApp.repository.dto.CourseDTO;
-import microservice.courseApp.repository.mapper.CourseMapper;
+import microservice.courseApp.repository.modelMapper.CourseMapper;
 import microservice.courseApp.repository.entity.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

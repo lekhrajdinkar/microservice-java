@@ -6,17 +6,25 @@
   - student/s > course/s
   - [InitDB.java](runner/InitDB.java) | [courseApp.sql](../../../resources/microservice/courseApp/courseApp.sql) 👈🏻
   - check ER diagram DB client as well
+```
+[Category] 1---* [Course] *---* [Student]
+                     |
+                     1
+                     |
+               [Instructor]
+```
 - jpa-entity, orm-relationship, custom-JPA-repo, [CustomIdentifier](custom/CustomIdentifier.java)
-- multiple-Datasources, 
-- tuple, modelapper/mapStrut
+- multiple DataSources
+- tuple, modelMapper/mapStrut
 
 ## Run time details
-- **Database** : H2 
+- **Database** : H2
+  - console : http://localhost:8082/courseApp/h2-console 
+  - driver : https://www.h2database.com/html/main.html
+    - driver lib : C:\Program Files (x86)\H2\bin
 - **ApiDoc** : http://localhost:8082/courseApp/swagger-ui/index.html#/
-- h2 console : http://localhost:8082/courseApp/h2-console
-- h2 .db file: [h2](../../../../../h2)
 - **Security**: not secured
-- https://github.com/lekhrajdinkar/microservice-java/tree/main/src/main/java
+- **git**: https://github.com/lekhrajdinkar/microservice-java/tree/main/src/main/java
 
 --- 
 ## POC/s
@@ -69,7 +77,7 @@ class config_postgres {}
     - dto to entity
     - entity to dto
     - ...
-    - [CourseDAO.java](repository/CourseDAO.java) | [mapper](repository/mapper)
+    - [CourseDAO.java](repository/CourseDAO.java) | [mapper](repository/modelMapper)
 
 - - **jackson**
 - objectMapper
