@@ -20,8 +20,6 @@ https://leetcode.com/u/lekhrajdinkar/
 - [java Notes 📚](docs/01_java)
 - [java evolution - project](src/main/java/evolution)
 - [Advance concepts Notes📚](docs/03_Advance)
-  - Advance project 1 (ms) : [javaSpringApp](src/main/java/evolution/javaSpringApp)
-  - ...
   
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
@@ -33,15 +31,15 @@ https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸micro-services projects
 - 📚 check `readme.md` ( in each project for more **details** )
-- web basic concept/s:  
-  - [jewelleryApp](src/main/java/microservice/jewelleryApp) - restApi,swagger, servlet, jackson, error handling, etc
-  - [courseApp](src/main/java/microservice/courseApp) - hibernate more, etc
-- security: 
-  - [shoppingApp](src/main/java/microservice/shoppingApp) 
-  - [securityApp](src/main/java/microservice/securityApp) | OAuth2, okta, jwt
-- More:
-  - Advance web:  [stockApp](src/main/java/microservice/stockApp) | streaming, modulith, temporal
-  - OTEL : [observabilityApp](src/main/java/microservice/observabilityApp)
+- Web basic App  
+  - [jewelleryApp](src/main/java/microservice/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+  - [courseApp](src/main/java/microservice/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
+- [modern Web App](src/main/java/microservice/modernWebApp)
+  - [shoppingApp](src/main/java/microservice/modernWebApp/shoppingApp) - ASGI, Async, websocket, grpc
+  - [stockApp](src/main/java/microservice/modernWebApp/stockApp) - streaming, modulith, temporal
+- More
+  - [security App](src/main/java/microservice/securityApp) | OAuth2, okta, jwt, basic
+  - [observability App](src/main/java/microservice/observabilityApp) - otel, aws-x-rays
 
 ### 🔸MessageBroker projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)

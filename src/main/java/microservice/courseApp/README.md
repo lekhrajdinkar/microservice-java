@@ -1,25 +1,15 @@
 # courseApp
 ## Overview
-- **DTO/s**:
-  - category/s > course/s > section/s > lesson/s
-  - instructor/s > course/s
-  - student/s > course/s
-  - [courseApp.sql](../../../resources/microservice/courseApp/courseApp.sql) 👈🏻
-  - check ER diagram DB client as well
-  ```
-  [Category] 1---* [Course] *---* [Student]
-                       |
-                       1
-                       |
-                 [Instructor]
-  ```
-- jpa-entity and orm-relationship([InitDB.java](runner/InitDB.java)), 
+- jpa-entity and orm-relationship 
 - custom-JPA-repo
-- sequence gen: [CustomIdentifier](custom/CustomIdentifier.java)
+- sequence gen [CustomIdentifier](custom/CustomIdentifier.java)
 - multiple DataSources - h2 and postgres
-- tuple, modelMapper/mapStrut
+- tuple : `javax.persistence.tuple`
+- modelMapper/mapStrut
+- performance : pagination
+- Transaction
 
-## Run time details
+## Run time details 
 - **Database** : H2
   - console : http://localhost:8082/courseApp/h2-console 
   - driver : https://www.h2database.com/html/main.html
@@ -30,9 +20,24 @@
 
 --- 
 ## POC/s
-### Database
-- ✔️ sequence gen: [CustomIdentifier](custom/CustomIdentifier.java)
-- ✔️ multiple DB/s | [config](config)
+### A. DAO layer
+#### ✔️ ORM relationships
+- [InitDB.java](runner/InitDB.java)
+- [entity](repository/entity)
+
+```
+  [Category] 1---* [Course] *---* [Student]
+                       |
+                       1
+                       |
+                  [Instructor]
+``` 
+
+#### ✔️ sequence gen
+- [CustomIdentifier](custom/CustomIdentifier.java)
+
+#### ✔️ multiple DB/s 
+- [config](config)
 ```Java
 @EnableJpaRepositories(
         basePackages = "microservice.courseApp.package_for_h2",
@@ -50,7 +55,7 @@ class config_H2 {}
 class config_postgres {}
 ```
 
-- ✔️ **custom** JPA Repo
+#### ✔️ custom JPA Repo
   - [Student2CustomRepository.java](custom/Student2CustomRepository.java)
   - [Student2.java](repository/entity/Student2.java) -> named query defined as well.
   - ▶️[StudentController.java](controller/StudentController.java) -> CRUD
@@ -67,25 +72,17 @@ class config_postgres {}
     - commit transaction
     - EntityManager :: close
 ```
-- **ORM relationships**
   
-- **database transaction**
-    - ...
-
-### API
-- [CategoryApi.java](controller/CategoryApi.java) implementation ->  [CategoryController.java](controller/CategoryController.java)
-
-- **mapper : ModelMapper vs MapStruct**
-    - dto to entity
-    - entity to dto
-    - ...
-    - [CourseDAO.java](repository/CourseDAO.java) | [mapper](repository/modelMapper)
-
-- - **jackson**
-- objectMapper
-- JsonNode
-- serialization / deserialization
+#### database transaction
+- [Student2ServiceImpl.java](services/Student2ServiceImpl.java)
 - ...
 
-### More
-- [errorHandling](errorHandling)
+#### ModelMapper vs MapStruct
+- dto to entity
+- entity to dto
+- ...
+- [CourseDAO.java](repository/CourseDAO.java) 
+- [mapper](repository/modelMapper)
+
+
+

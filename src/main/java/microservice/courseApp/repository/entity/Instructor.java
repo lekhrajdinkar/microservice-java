@@ -21,7 +21,7 @@ public class Instructor {
     String email;
 
     //Bidirectional mapping
-    @OneToOne(mappedBy = "instructor")
+    @OneToOne(mappedBy = "instructor", cascade = CascadeType.ALL)
     @JsonBackReference(value = "instructor_course_json")
     Course course;
 

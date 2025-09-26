@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="StockApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="microservice.stockApp.StockApp" />
+    <option name="MAIN_CLASS_NAME" value="microservice.modernWebApp.stockApp.StockApp" />
     <module name="spring-app" />
     <extension name="coverage">
       <pattern>

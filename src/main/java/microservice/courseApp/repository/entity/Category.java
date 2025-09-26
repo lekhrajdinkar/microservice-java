@@ -23,7 +23,7 @@ public class Category {
     String desc;
 
     // Creating BI-DIRECTIONAL Association.
-    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonBackReference(value = "category_course_json")
     List<Course> courses;
 
