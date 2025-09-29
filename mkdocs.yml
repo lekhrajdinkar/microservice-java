@@ -65,18 +65,18 @@ nav:
           - ER Diagram: 02_springboot/03_data-layer/er-diagram.png
 
       - ✔️Security:
-          - OAuth 2.0: 02_springboot/04_security/00_OAuth_2.0.md
-          - Spring Boot Security Start: 02_springboot/04_security/01_sb-security-start.md
-          - Authentication: 02_springboot/04_security/02_Authentication.md
-          - Authorization: 02_springboot/04_security/03_Authorization.md
-          - REST Security: 02_springboot/04_security/04_REST-secure.md
+          - Concepts: 02_springboot/04_security/01_01_Concepts.md
+          - OAuth: 02_springboot/04_security/01_02_OAuth_2.0.md
+          - LDAP: 02_springboot/04_security/01_03_LDAP.md
+          - SpringBoot Start: 02_springboot/04_security/02_01_SB-Security-Start.md
+          - SpringBoot AuthN: 02_springboot/04_security/02_02_Authentication.md
+          - SpringBoot AuthR: 02_springboot/04_security/02_03_Authorization.md
+          - SpringBoot REST: 02_springboot/04_security/02_04_REST-secure.md
 
   - 🔶More:
      - ✔️ETL SpringBatch:
           - index: 02_springboot/05_spring-batch-ETL/00_index.md
           - SpringBatch: 02_springboot/05_spring-batch-ETL/01_SpringBatch-start.md
-
-
 
 
 extra_css:

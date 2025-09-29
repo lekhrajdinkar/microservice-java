@@ -23,7 +23,7 @@
 - Token based Authentication.  `ID-Token`
 - extension over OAuth2.
 
-### ✔️Delegated Authorization
+### ✔️Delegated Authorization (OAuth2)
 - [next page, 00_OAuth_2.0.md](00_OAuth_2.0.md)
 - OAuth2.1 (PKCE mandatory)
 - `Access-token`
@@ -38,7 +38,14 @@
 - TLS/SSL
 - certificate
 - JKS (trust / identity)
-- AWS solutions - ACM, KMS, IAM
 
 ### ✔️SSO
 - SAML
+- https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Amazon-Web-Service
+- https://help.okta.com/en-us/content/topics/deploymentguides/aws/aws-configure-aws-app.html
+
+### AWS solutions 
+- [SE - AWS notes - security 📚](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/01_aws/06_Security)
+- ACM, KMS, IAM
+- WAF
+- etc
