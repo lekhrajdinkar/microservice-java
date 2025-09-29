@@ -1,8 +1,6 @@
 # ShoppingApp
 ## Overview
-- Streaming JSON response
-- spring Modulith ...
-- Spring temporal ...
+- ASGI, Async, websocket, grpc
 
 ## Run time details
 - Database : postgreSQL (docker 👈🏻👈🏻)
@@ -10,4 +8,12 @@
 
 ---
 ## POC/s
+### ASGI, Async
+- todo
+
+### websocket
+- todo
+
+### grpc
+- todo
 

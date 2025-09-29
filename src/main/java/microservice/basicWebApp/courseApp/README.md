@@ -84,5 +84,10 @@ class config_postgres {}
 - [CourseDAO.java](repository/CourseDAO.java) 
 - [mapper](repository/modelMapper)
 
+#### Pagination & Sorting
+
+#### Performance Metrics
+- Integrate actuator or custom metrics.
+
 
 

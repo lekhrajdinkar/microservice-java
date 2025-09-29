@@ -3,22 +3,7 @@
   - multiple filters
 --- 
 ## concepts
-- OAuth2 dependency :: **spring-boot-starter-oauth2-client** + **spring-security-oauth2-jose**
-- LDAP : https://chatgpt.com/c/5865254e-a777-416f-ad16-8e40df050c04 
-  - DN entries
-- Authentication vs Authorization
-- token - JWT https://jwt.io/introduction/
-- microservice filter
-- CCGG pattern/s
-  - App <--> Authenticating users against an LDAP directory, **directly**. (old)
-  - App <--> **OKTA** <--integrated--> LDAP Authentication
-    - okta has user Authentication rule configured with LDAP
-    - okta has user access config. eg: which **scope** can ask. 
-    - okta has **MFA** enabled
-    - one app/atmid, 1 scope, 1 client, 1 issuer, JWT-claims::scope [role1,role2,...]
-     - developer has grab role and use it method level access.
-  - Using SAML for single sign-on (SSO) with external identity providers/Okta.
-- security on the fly : **TLS/SSL**
+
 
 ---
 ## Spring Boot Security
