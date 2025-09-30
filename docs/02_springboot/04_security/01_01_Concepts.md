@@ -1,6 +1,12 @@
 ## ✅ POCs
 - [security App - readme.md](../../../src/main/java/microservice/securityApp/readme.md)
 
+## Diff App architecture
+- server-side microservice applications (SpringMVC, JSP)
+- browser-based applications / SPA 
+- native/mobile apps
+- connected devices (M2M, lambda) 
+
 --- 
 ## Security Concepts
 ### 🔶LDAP (old)
@@ -15,12 +21,6 @@
     - **claims** (statement about user and additional info)
         - `Scope`
 - footer
-
-### ✔️Diff App architecture
-- server-side microservice applications (SpringMVC, JSP) :
-- browser-based applications / SPA :
-- native/mobile apps :
-- connected devices (M2M, lambda) :
 
 ### ✔️Authentication
 - OIDC
@@ -43,10 +43,10 @@
   - app/api - RBAC implemented (app level, based on scope)
   - DB lib: `spring-boot-starter-oauth2-client` + `spring-security-oauth2-jose`
 
-### ✔️Encryption
-- at rest / at transit
-- TLS/SSL
-- certificate
+### ✔️Encryption 👈🏻👈🏻
+- at **rest** / at **transit**
+- **TLS/SSL**
+- **certificate** 
 - JKS (trust / identity)
 
 ### ✔️SSO
@@ -60,12 +60,11 @@
 - WAF
 - Safes: AWS-secret-manager | CyberArk (onPrem)
 
-### ✔️✔️ Common Attacks
-- XSS
-- CSRF 
-
 ### ✔️CORS
 - Cross-Origin Resource Sharing
 
+### ✔️Common Attacks 👈🏻👈🏻
+- XSS
+- CSRF 
 
 

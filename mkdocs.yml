@@ -68,7 +68,6 @@ nav:
           - Concepts: 02_springboot/04_security/01_01_Concepts.md
           - OAuth: 02_springboot/04_security/01_02_OAuth_2.0.md
           - LDAP: 02_springboot/04_security/01_03_LDAP.md
-          - SpringBoot REST: 02_springboot/04_security/02_01_REST-secure.md
 
   - 🔶More:
      - ✔️ETL SpringBatch:
