@@ -19,29 +19,32 @@ public class OAuth2Controller
     @GetMapping("/ignore2")    public String ignore2() { return "ignore2 called";}
 
     // ▶️ client-credential
-    @Operation(description = "regId - cc (client_credential).  returns only access token in m2m")
+    @Operation(description = "regId - cc (client_credential).  \nReturns only access token in m2m")
     @GetMapping("/get-access-token/cc")
     public String m2m() {
         return oAuth2Service.getAccessToken("cc");
     }
 
     // ▶️ Auth Flow
-    @Operation(description = "regId - af_pkce (Authorization_flow with PKCE). mocking ng app behaviour. returns access and id token")
+    @Operation(description = "regId - af_pkce (Authorization_flow with PKCE). \nMocking ng app behaviour. \nReturns access and id token")
     @GetMapping("/get-tokens/af_pkce")
     public String af_pkce() {
         return oAuth2Service.getAccessToken("af_pkce");
     }
 
-    @GetMapping("/validate/access-token")
+    @GetMapping("/validate/tokens")
     public String validateToken() {
-        String token = oAuth2Service.getAccessToken("cc");
-        //Todo
+        String accessToken = oAuth2Service.getAccessToken("cc");
+        String idToken = ""; //Todo - validate ID token
+
         return "token received, validation pending... todo";
     }
 
+    /*
     @GetMapping("/hello")
     public String hello(@AuthenticationPrincipal OidcUser user) {
         return "Hello, " + user.getFullName() + " (" + user.getEmail() + ")";
     }
+    */
 
 }

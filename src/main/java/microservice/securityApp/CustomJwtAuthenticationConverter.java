@@ -1,5 +1,4 @@
-/*
-package microservice.jewelleryApp.configuration;
+package microservice.securityApp;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
@@ -57,4 +56,4 @@ public class CustomJwtAuthenticationConverter implements Converter<Jwt, Abstract
         return Collections.emptyList();
     }
 }
-*/
+

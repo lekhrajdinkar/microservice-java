@@ -71,7 +71,7 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 ```
 
 ###  B1. Authentication (4)
-#### traditional webApp (3) ❌
+#### legacy webApp (3) ❌
 - **▶️Form-based Authentication** 
     - http.loginForm()...
 - **▶️Basic Authentication** 
@@ -111,15 +111,15 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 ### B2. Authorization/OAuth2 (Modern) ✅
 #### ▶️ OAuth2 grant (3)
 - [OAuth2 grant types](README_OAuth2.md)
-- client_credential | Auth Flow (PKCE)
+- client_credential - get access token  ✔️
+- Auth Flow (PKCE) - get both token + refresh token
+  - usually done on ng-app.
 
 #### ▶️validate tokens
-- ID Token
+- ID Token...
 - Access token
-- extracts claims
 
 #### ▶️Method-level Security 
-- custom PermissionEvaluator
 - RBAC (claim > role)
 - attribute-based checks (claim > any-attribute)
 - https://www.baeldung.com/spring-security-method-security
@@ -159,7 +159,7 @@ public class LocationBasedAccessController
  */
 
 ```
-### C. CORS & Browser Security
+### C. ✔️CORS & Browser Security
 - CORS config with DB: add @Bean : `WebMvcConfigurer` | check above
 
 ### D. Custom Filter/s
@@ -185,7 +185,7 @@ public class LocationBasedAccessController
 - k8s | ngInx 👈🏻
 - **openssl** s_client
 
-### G. Secrets Management & Config
+### G. ✔️Secrets Management & Config
 - AWS Secrets Manager
 - AWS SSM paramStore
 
