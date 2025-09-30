@@ -3,21 +3,21 @@
 - [security - Notes 📚](../../../../../docs/02_springboot/04_security)
 
 ## Runtime Details 
-- Database : no
-- Observability: no
-- config:  [securityApp.properties](../../../resources/microservice/securityApp/securityApp.properties)
-  - OKTA_CLIENT_SECRET_CC=<set_value> 👈🏻👈🏻
+- Database : no | Observability: no
 - ApiDoc : http://localhost:8087/securityApp/swagger-ui/index.html#/
 - okta : https://dev-16206041-admin.okta.com/admin/getting-started
 - auth0 : https://manage.auth0.com/dashboard/us/dev-gpg8k3i38lkcqtkw/onboarding | signed up with Github | dev-gpg8k3i38lkcqtkw
-- Security config : [SecurityConfig_modern.java](config)
+- [Security config](config)
+- properties:  [securityApp.properties](../../../resources/microservice/securityApp/securityApp.properties)
+  - OKTA_CLIENT_SECRET_CC=<set_value> 👈🏻👈🏻
 
 
 ## POC/s
 ### A1. Enable security in SB App
 - **old**: implement **WebSecurityConfigurerAdapter**  ❌
-- Add dependency : **spring-boot-starter-security**
-- Add below bean/s:
+- **New**:
+  - Add dependency : **spring-boot-starter-security**
+  - Add below bean/s:
 ```java
   @Configuration
   @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -76,7 +76,7 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 #### legacy webApp (3) ❌
 - **▶️Form-based Authentication** 
     - http.loginForm()...
-- **▶️Basic Authentication** 
+- **▶️Basic/Digest Authentication** 
     - Authorization header :: Base64-encoded string username:password.
     - https | it’s possible to hide the key using SSL.
 -  **▶️LDAP Authentication** 
@@ -96,11 +96,10 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 
 
 #### Modern webApp - Secure REST (2) ✅
-- **▶️basic/digest Authentication**
 - **▶️OpenID Connect**
   - SB helps to integrating with **external authentication-providers** (okta, google, facebook, etc)
   - **Identity token** generate by Okta, requested by UI or consumer.
-- **▶️API Keys**
+- **▶️API Keys** ✔️
   - https://www.baeldung.com/spring-boot-api-key-secret
   - Some REST APIs use API keys for authentication.
   - An API-key is like `token`, that identifies the - `API-client to the API without referencing an actual user`.
@@ -115,11 +114,13 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 - [OAuth2 grant types](README_OAuth2.md)
 - client_credential - get access token  ✔️
 - Auth Flow (PKCE) - get both token + refresh token
-  - usually done on ng-app.
+  - usually done on ng-app...
 
-#### ▶️validate tokens
-- ID Token...
-- Access token
+#### ▶️validate access tokens
+```java
+http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(Customizer.withDefaults()));
+```
+
 
 #### ▶️Method-level Security 
 - RBAC (claim > role)

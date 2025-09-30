@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/v1")
+@RequestMapping
 public class LegacyController
 {
     //=========================
