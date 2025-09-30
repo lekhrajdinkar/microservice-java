@@ -36,7 +36,18 @@
   - Flow (2 steps):
     - code req (attach CC / hashed value of CV)
     - Auth server, keeps CC
-    - token req (attach CV)
+    - got code 
+    - token req (attach CV + code)
+  ```bash
+  curl --request POST \
+    --url "https://<yourOktaDomain>/oauth2/default/v1/token" \
+    --header "Content-Type: application/x-www-form-urlencoded" \
+    --data "grant_type=authorization_code" \
+    --data "client_id=<yourClientId>" \
+    --data "code=<authCodeFromRedirect>" \
+    --data "redirect_uri=<yourRedirectUri>" \
+    --data "code_verifier=<yourCodeVerifier>"
+  ```
 - **▶️Token**
   - Access-Token + Refresh Token (long expiry)
   - token format : JWT
@@ -84,6 +95,7 @@
     - could use default issuer: https://dev-16206041.okta.com/oauth2/default
   - Next, made postman call to get token | [getAccessToken RESt](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-d413afec-f219-436e-b188-bfb397eb7794?action=share&creator=5083106)
   - decode token and check claims at https://www.jwt.io/
+  - fact: getting only **access_token** for  client-credential 👈🏻👈🏻
   ```
   {
     "ver": 1,
@@ -108,9 +120,18 @@
     Fix
       - Disable it of Authorizarion-server 
     ```
+  
+![img.png](../../../../../docs/99_img/99_img_sb/oauth2/img.png)
 
+![img_2.png](../../../../../docs/99_img/99_img_sb/oauth2/img_2.png)
+
+![img4.png](../../../../../docs/99_img/99_img_sb/oauth2/img4.png)
+
+![img_1.png](../../../../../docs/99_img/99_img_sb/oauth2/img_1.png)
+
+---
 #### ✔️Authorization Code 
-- with/without **PKCE**
+- with **PKCE**
 - https://developer.okta.com/docs/guides/sign-into-web-app-redirect/spring-boot/main/
 - After validating client identity,
 - AuthServer return single-use Authorization-Code to the Client via callback URI
@@ -135,16 +156,6 @@
 
 ---
 ### ✅screenshots:
+#### whiteboard
 ![oAuth2.jpeg](../../../../../docs/99_img/99_img_sb/oauth2/oAuth2.jpeg)
-![img.png](../../../../../docs/99_img/99_img_sb/oauth2/img.png)
-![img4.png](../../../../../docs/99_img/99_img_sb/oauth2/img4.png)
-![img_1.png](../../../../../docs/99_img/99_img_sb/oauth2/img_1.png)
-![img_2.png](../../../../../docs/99_img/99_img_sb/oauth2/img_2.png)
-
-
-
-
-
-
-
 

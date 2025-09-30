@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/OAuth2")
 public class OAuth2Controller
 {
+    // ▶️ client-credential
+    @GetMapping("/1/client-credential/get-access-token")
+    public String m2m() { return "try on postman";}
 
-    @GetMapping("/get/access-token")
-    public String m0() { return "ADMIN :: secured-api-1";}
+    // ▶️ Auth Flow
+    @GetMapping("/2/auth-code-flow/get-tokens")
+    public String authFlow1() { return "try on postman";}
 
     @GetMapping("/validate/access-token")
     public String m1() { return "ADMIN :: secured-api-1";}

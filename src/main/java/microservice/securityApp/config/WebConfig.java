@@ -13,6 +13,7 @@ public class WebConfig
     WebMvcConfigurer webMvcConfigurerForApp(){
         return new WebMvcConfigurer()
         {
+            // ✅ CORS
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedMethods("*");
