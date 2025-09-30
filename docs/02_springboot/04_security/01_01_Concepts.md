@@ -1,3 +1,7 @@
+## ✅ POCs
+- [security App - readme.md](../../../src/main/java/microservice/securityApp/readme.md)
+
+--- 
 ## Security Concepts
 ### 🔶LDAP (old)
 - https://chatgpt.com/c/5865254e-a777-416f-ad16-8e40df050c04
@@ -22,6 +26,12 @@
 - OIDC
 - Token based Authentication.  `ID-Token`
 - extension over OAuth2.
+- **MFA** / Multi-factor Authentication : platform(Security) team configures.
+
+### ✔️Authorization
+- resource access based on role. **RBAC**
+- Restricting access to microservice resources based on **URL patterns**
+- **OAuth2**
 
 ### ✔️Delegated Authorization (OAuth2)
 - [next page, 00_OAuth_2.0.md](00_OAuth_2.0.md)
@@ -44,8 +54,20 @@
 - https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Amazon-Web-Service
 - https://help.okta.com/en-us/content/topics/deploymentguides/aws/aws-configure-aws-app.html
 
-### AWS solutions 
+### ✔️AWS solutions 
 - [SE - AWS notes - security 📚](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/01_aws/06_Security)
 - ACM, KMS, IAM
 - WAF
 - etc
+
+---
+### 🟡 More topic
+- **Cross-Origin Resource Sharing** (CORS) settings
+- Password Management safes:
+  - AWS-secret-manager
+  - CyberArk
+- Prevent **XSS** and **CSRF**
+  - CSRF : enabled by default,
+  - create custom filter for further CSRF protection
+- client credential api call, DPoP error fix
+- multiple filters
