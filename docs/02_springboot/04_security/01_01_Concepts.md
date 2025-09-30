@@ -34,7 +34,7 @@
 - **OAuth2**
 
 ### ✔️Delegated Authorization (OAuth2)
-- [next page, 00_OAuth_2.0.md](00_OAuth_2.0.md)
+- [next page, 00_OAuth_2.0.md](../../../src/main/java/microservice/securityApp/README_OAuth2.md)
 - OAuth2.1 (PKCE mandatory)
 - `Access-token`
 - App(api/spa) <--> **OKTA's OAuth server** <--integrated--> **LDAP**

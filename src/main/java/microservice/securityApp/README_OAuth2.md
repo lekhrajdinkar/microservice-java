@@ -121,18 +121,13 @@ got exception:
 #### ✔️ `Refresh Token` Grant
 - involves the exchange of a Refresh Token for a new Access Token.
 
-
 ---
 ### ✅screenshots:
-![oAuth2.jpeg](../../../src/main/resources/img/oAuth2.jpeg)
-
-![img.png](../../99_img/99_img_sb/05/01/img.png)
-
-![img_1.png](../../99_img/99_img_sb/05/01/img_1.png)
-
-![img_2.png](../../99_img/99_img_sb/05/01/img_2.png)
-
-![img.png](../../99_img/99_img_sb/05/01/img4.png)
+![oAuth2.jpeg](../../../../../docs/99_img/99_img_sb/oauth2/oAuth2.jpeg)
+![img.png](../../../../../docs/99_img/99_img_sb/oauth2/img.png)
+![img4.png](../../../../../docs/99_img/99_img_sb/oauth2/img4.png)
+![img_1.png](../../../../../docs/99_img/99_img_sb/oauth2/img_1.png)
+![img_2.png](../../../../../docs/99_img/99_img_sb/oauth2/img_2.png)
 
 
 
