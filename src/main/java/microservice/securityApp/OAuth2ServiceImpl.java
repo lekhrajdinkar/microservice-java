@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
-import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +14,10 @@ public class OAuth2ServiceImpl
 {
     @Autowired    private OAuth2AuthorizedClientManager authorizedClientManager;
 
-    public String getAccessToken(String regId)
+    public String getAccessToken_and_parse(String regId)
     {
         OAuth2AuthorizeRequest authorizeRequest = OAuth2AuthorizeRequest
-                .withClientRegistrationId(regId ) // "okta"/m2m or "okta2"/authflow
+                .withClientRegistrationId(regId ) // "cc" or "af_pkce"
                 .principal("client")
                 .build();
 

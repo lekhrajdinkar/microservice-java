@@ -25,13 +25,6 @@ import java.util.List;
 //@EnableWebSecurity
 public class SecurityConfig_legacy
 {
-    @Value("${spring.security.oauth2.client.registration.okta.scope}") String scope;
-
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/ignore1", "/ignore2");
-    }
-
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user1 = User.withUsername("user1")
@@ -106,9 +99,9 @@ public class SecurityConfig_legacy
         return http.build();
     }
 
-    // ============
+    // =========
     // JWT
-    // ==========
+    // =========
     @Bean
     public JwtDecoder jwtDecoder() {
         NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withJwkSetUri("https://dev-16206041.okta.com/oauth2/ausldbxlfakbwq32P5d7/v1/keys").build();
@@ -130,6 +123,15 @@ public class SecurityConfig_legacy
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(authoritiesConverter);
         return jwtAuthenticationConverter;
+    }
+
+    // =========
+    // More
+    // =========
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        //return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
+        return (microservice) -> microservice.ignoring().requestMatchers("/not-secured/**", "/not-secured/*");
     }
 
 }

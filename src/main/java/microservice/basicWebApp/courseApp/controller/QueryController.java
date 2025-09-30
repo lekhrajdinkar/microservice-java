@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Tag( name = "Queries on Course", description = "HQL, JPQL, SQL, NamedQueries, mapper(entity2dto), etc")
 public class QueryController
 {
+    // @RequestHeader("Authorization") String h1
     @Autowired CourseDAO dao;
 
     @GetMapping(

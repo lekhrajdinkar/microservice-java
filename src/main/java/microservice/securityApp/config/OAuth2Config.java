@@ -13,7 +13,7 @@ public class OAuth2Config
     ClientRegistration oktaClientRegistration_cc(
             @Value("${spring.security.oauth2.client.provider.cc.token-uri}") String token_uri,
             @Value("${spring.security.oauth2.client.registration.cc.client-id}") String client_id,
-            @Value("${spring.security.oauth2.client.registration.cc.client-secret}") String client_secret,
+            @Value("${spring.security.oauth2.client.registration.cc.client-secret}") String client_secret, // get from aws-secret-manager 👈🏻
             @Value("${spring.security.oauth2.client.registration.cc.scope}") String scope,
             @Value("${spring.security.oauth2.client.registration.cc.authorization-grant-type}") String authorizationGrantType
     ) {

@@ -2,6 +2,7 @@ package microservice.securityApp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig_modern
 {
     @Bean
@@ -32,8 +34,9 @@ public class SecurityConfig_modern
                         "/actuator/**",
                         "/v3/api-docs/**",
                         "/h2-console",
-                        "/micrometer/**",
-                        "/**")
+                        "/micrometer/**"
+                        //"/**"
+                )
                 .permitAll()
                 .anyRequest()
                 .authenticated());
@@ -43,7 +46,8 @@ public class SecurityConfig_modern
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
+        //return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
+        return (microservice) -> microservice.ignoring().requestMatchers("/not-secured/**", "/not-secured/*");
     }
 }
 

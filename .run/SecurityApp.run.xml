@@ -4,7 +4,7 @@
     <module name="spring-app" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="microservice.securityApp.*" />
+        <option name="PATTERN" value="microservice.securityApp.config.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

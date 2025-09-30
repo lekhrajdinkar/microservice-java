@@ -93,7 +93,9 @@
     - **DPoP** : disable
     - can add **Trusted-servers**
     - could use default issuer: https://dev-16206041.okta.com/oauth2/default
-  - Next, made postman call to get token | [getAccessToken RESt](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-d413afec-f219-436e-b188-bfb397eb7794?action=share&creator=5083106)
+  - Next, made postman call to get token 
+    - [API 1 - direct](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-d413afec-f219-436e-b188-bfb397eb7794?action=share&creator=5083106)
+    - [API 2 - sb programmatically ](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-c3f1445a-acf5-4d32-b7a5-6d0f30627832?action=share&creator=5083106)
   - decode token and check claims at https://www.jwt.io/
   - fact: getting only **access_token** for  client-credential 👈🏻👈🏻
   ```
