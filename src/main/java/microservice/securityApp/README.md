@@ -4,9 +4,11 @@
 
 ## Runtime Details 
 - Database : no
-- ApiDoc : http://localhost:8085/SecurityApp/swagger-ui/index.html#/
+- ApiDoc : http://localhost:8087/securityApp/swagger-ui/index.html#/
 - okta : https://dev-16206041-admin.okta.com/admin/getting-started
 - auth0 : https://manage.auth0.com/dashboard/us/dev-gpg8k3i38lkcqtkw/onboarding | signed up with Github | dev-gpg8k3i38lkcqtkw
+- Observability
+
 
 ## POC/s
 ### A1. Enable security in SB App
@@ -106,9 +108,19 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 
 
 ### B2. Authorization/OAuth2 (Modern) ✅
-- [01_02_OAuth_2.0.md](../../../../../docs/02_springboot/04_security/01_02_OAuth_2.0.md)
-#### validating JWT tokens.
-#### Method-level Security
+#### ▶️ OAuth2 grant (3)
+- [OAuth2 grant types](README_OAuth2.md)
+- client_credential | Auth Flow (PKCE)
+
+#### ▶️validate tokens
+- ID Token
+- Access token
+- extracts claims
+
+#### ▶️Method-level Security 
+- custom PermissionEvaluator
+- RBAC (claim > role)
+- attribute-based checks (claim > any-attribute)
 - https://www.baeldung.com/spring-security-method-security
 
 ```java
@@ -146,9 +158,8 @@ public class LocationBasedAccessController
  */
 
 ```
-### C. CORS
-- @Bean : `WebMvcConfigurer`
-- check above
+### C. CORS & Browser Security
+- CORS config with DB: add @Bean : `WebMvcConfigurer` | check above
 
 ### D. Custom Filter/s
 - @Order(1) @Bean : `SecurityFilterChain`
@@ -157,9 +168,26 @@ public class LocationBasedAccessController
   - filter-1 bean  @Order(1)  for url-pattern-1, do form-login
   - filter-2 bean  @Order(2)  for url-pattern-2, do Oauth-JWT-validation
 
-### E. try Security headers
-- Security headers
-  - `Strict-Transport-Security`
+### E. Rate limiting per IP/client
+- Inputs validated (JSR-303), request size limits, rate limiting per IP/client
+- `bucket4j` or `resilience4j`
+- **headers**
+  ```
   - `X-Content-Type-Options`
   - `X-Frame-Options`
   - `Content-Security-Policy` 
+  ```
+
+### F. TLS / SSL 
+- HTTPS, mTLS option, cert rotation
+- header: `Strict-Transport-Security`
+- k8s | ngInx 👈🏻
+- **openssl** s_client
+
+### G. Secrets Management & Config
+- AWS Secrets Manager
+- AWS SSM paramStore
+
+### H. Resiliency
+- ensure security layers do not cause unacceptable latency; 
+- demonstrate circuit breaker for **Okta auth server downtime**
