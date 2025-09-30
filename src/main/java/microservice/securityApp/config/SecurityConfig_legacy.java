@@ -1,8 +1,6 @@
-/*
-package microservice.jewelleryApp.configuration;
+package microservice.securityApp.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -23,10 +21,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import java.util.List;
 
-@ConditionalOnProperty(havingValue = "security_02", name = "sb.customize.security")
-@Configuration
-@EnableWebSecurity
-public class Security_01_Config
+//@Configuration
+//@EnableWebSecurity
+public class SecurityConfig_legacy
 {
     @Value("${spring.security.oauth2.client.registration.okta.scope}") String scope;
 
@@ -60,7 +57,6 @@ public class Security_01_Config
     //========================
     // SecurityFilterChain
     // ====================
-    @ConditionalOnProperty(havingValue = "SecurityFilterChain_01", name = "sb.customize.SecurityFilterChain")
     @Bean
     public SecurityFilterChain filterChain_1_BasicAuth(HttpSecurity http) throws Exception
     {
@@ -92,7 +88,6 @@ public class Security_01_Config
         return http.build();
     }
 
-    @ConditionalOnProperty(havingValue = "SecurityFilterChain_02", name = "sb.customize.SecurityFilterChain")
     @Bean
     public SecurityFilterChain filterChain_2_Token(HttpSecurity http) throws Exception
     {
@@ -104,18 +99,16 @@ public class Security_01_Config
                                 .anyRequest()
                                 .authenticated());
         //http.oauth2ResourceServer(oAuth2 -> oAuth2.jwt(Customizer.withDefaults()));
-        http.oauth2ResourceServer(oAuth2 -> oAuth2.jwt(jwt -> jwt
+
+        /*http.oauth2ResourceServer(oAuth2 -> oAuth2.jwt(jwt -> jwt
                     .jwtAuthenticationConverter(new CustomJwtAuthenticationConverter(scope))
-            ));
+            ));*/
         return http.build();
     }
 
-    @ConditionalOnProperty(havingValue = "SecurityFilterChain_03", name = "sb.customize.SecurityFilterChain")
-    @Bean
-    public SecurityFilterChain filterChain_3_none(HttpSecurity http) throws Exception{
-        return http.build();
-    }
-
+    // ============
+    // JWT
+    // ==========
     @Bean
     public JwtDecoder jwtDecoder() {
         NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withJwkSetUri("https://dev-16206041.okta.com/oauth2/ausldbxlfakbwq32P5d7/v1/keys").build();
@@ -140,4 +133,4 @@ public class Security_01_Config
     }
 
 }
-*/
+

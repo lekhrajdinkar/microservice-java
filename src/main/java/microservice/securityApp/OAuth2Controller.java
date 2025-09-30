@@ -1,29 +1,47 @@
 package microservice.securityApp;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
 @RequestMapping("/OAuth2")
 public class OAuth2Controller
 {
+    @Autowired OAuth2ServiceImpl oAuth2Service;
+
+    @GetMapping("/ignore1")    public String ignore1() { return "ignore1 called";}
+    @GetMapping("/ignore2")    public String ignore2() { return "ignore2 called";}
+
     // ▶️ client-credential
-    @GetMapping("/1/client-credential/get-access-token")
-    public String m2m() { return "try on postman";}
+    @Operation(description = "regId - cc (client_credential).  returns only access token in m2m")
+    @GetMapping("/get-access-token/cc")
+    public String m2m() {
+        return oAuth2Service.getAccessToken("cc");
+    }
 
     // ▶️ Auth Flow
-    @GetMapping("/2/auth-code-flow/get-tokens")
-    public String authFlow1() { return "try on postman";}
+    @Operation(description = "regId - af_pkce (Authorization_flow with PKCE). mocking ng app behaviour. returns access and id token")
+    @GetMapping("/get-tokens/af_pkce")
+    public String af_pkce() {
+        return oAuth2Service.getAccessToken("af_pkce");
+    }
 
     @GetMapping("/validate/access-token")
-    public String m1() { return "ADMIN :: secured-api-1";}
+    public String validateToken() {
+        String token = oAuth2Service.getAccessToken("cc");
+        //Todo
+        return "token received, validation pending... todo";
+    }
 
-    @GetMapping("/validate/id-token")
-    public String m2() { return "USER :: secured-api-2";}
+    @GetMapping("/hello")
+    public String hello(@AuthenticationPrincipal OidcUser user) {
+        return "Hello, " + user.getFullName() + " (" + user.getEmail() + ")";
+    }
 
 }

@@ -1,6 +1,4 @@
-/*
-package microservice.jewelleryApp.service;
-
+package microservice.securityApp;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +11,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class OAuth2TokenServiceImpl {
-    @Autowired
-    private OAuth2AuthorizedClientManager authorizedClientManager;
+public class OAuth2ServiceImpl
+{
+    @Autowired    private OAuth2AuthorizedClientManager authorizedClientManager;
 
-    @Autowired
-    private ClientRegistrationRepository clientRegistrationRepository;
-
-    public String getAccessToken()
+    public String getAccessToken(String regId)
     {
         OAuth2AuthorizeRequest authorizeRequest = OAuth2AuthorizeRequest
-                .withClientRegistrationId("okta")
+                .withClientRegistrationId(regId ) // "okta"/m2m or "okta2"/authflow
                 .principal("client")
                 .build();
 
@@ -40,5 +35,3 @@ public class OAuth2TokenServiceImpl {
         throw new IllegalStateException("Failed to obtain access token");
     }
 }
-
-*/

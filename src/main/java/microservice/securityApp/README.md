@@ -4,10 +4,11 @@
 
 ## Runtime Details 
 - Database : no
+- Observability: no
 - ApiDoc : http://localhost:8087/securityApp/swagger-ui/index.html#/
 - okta : https://dev-16206041-admin.okta.com/admin/getting-started
 - auth0 : https://manage.auth0.com/dashboard/us/dev-gpg8k3i38lkcqtkw/onboarding | signed up with Github | dev-gpg8k3i38lkcqtkw
-- Observability
+- Security config : [SecurityConfig_modern.java](config)
 
 
 ## POC/s
