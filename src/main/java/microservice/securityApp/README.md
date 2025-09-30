@@ -117,10 +117,18 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
   - usually done on ng-app...
 
 #### ▶️validate access tokens
+- Add dep: `spring-boot-starter-oauth2-resource-server`
+- **option1** / Simple :
+  - http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(Customizer.withDefaults()));
+  - inject method argumnet - `@AuthenticationPrincipal Jwt jwt`
+- **Option2** :
+  - **Converter**: `Jwt` >> `AbstractAuthenticationToken` | [CustomJwtAuthenticationConverter.java](config/CustomJwtAuthenticationConverter.java)
 ```java
-http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(Customizer.withDefaults()));
+        http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(jwtConfigurer -> jwtConfigurer
+           .jwtAuthenticationConverter(new CustomJwtAuthenticationConverter(scope_cc))
+        ));
 ```
-
+- call api [/secured/resource-1](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-5539bfbb-9c72-4042-aafb-0d9beb5d92dc?action=share&creator=5083106)
 
 #### ▶️Method-level Security 
 - RBAC (claim > role)

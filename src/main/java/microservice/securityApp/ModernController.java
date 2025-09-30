@@ -50,8 +50,15 @@ public class ModernController
     }
 
     @PreAuthorize("hasAuthority('SCOPE_app_read_lekhraj')")
-    @GetMapping("/secured/resource-2")  String resource2_scope() {
-        return "accessToken with scp [ app_read_lekhraj] can access resource-2";
+    @GetMapping("/secured/resource-2/200")  String resource2_scope_200(@AuthenticationPrincipal Jwt jwt) {
+        jwt.getClaims().forEach((k,v)->log.info(" ▶️ {} : {}", k,v));
+        return "accessToken with scp [ app_read_lekhraj ] can access resource-2";
+    }
+
+    @Operation(description = "SCOPE_app_read_lekhraj_2 not exist, so will fail ❌")
+    @PreAuthorize("hasAuthority('SCOPE_app_read_lekhraj_2')")
+    @GetMapping("/secured/resource-2/403")  String resource2_scope_403() {
+        return "accessToken with scp [ app_read_lekhraj ] can access resource-2";
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN') and #jwt.claims['location'] == 'Irvine'")
