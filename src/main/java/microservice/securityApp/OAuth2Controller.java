@@ -12,9 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/OAuth2")
 public class OAuth2Controller
 {
+
+    @GetMapping("/get/access-token")
+    public String m0() { return "ADMIN :: secured-api-1";}
+
     @GetMapping("/validate/access-token")
     public String m1() { return "ADMIN :: secured-api-1";}
 
     @GetMapping("/validate/id-token")
     public String m2() { return "USER :: secured-api-2";}
+
 }

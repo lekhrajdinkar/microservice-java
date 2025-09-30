@@ -48,7 +48,7 @@
     - `openid`, `profile`, `email`, `offline_access`
     - `custom_scope_1`
   - returned token will have `claims` 👈🏻
-- **▶️claims**
+- **▶️claims** (3 chars)
   - **Registered claims**:  
     - `iss` (issuer), 
     - `exp` (expiration time), 
@@ -57,12 +57,60 @@
     - ...
     - more: https://datatracker.ietf.org/doc/html/rfc7519#section-4.1
   - public claims : https://www.iana.org/assignments/jwt/jwt.xhtml
-  - private claims :
+  - private claims : custom claims created to share information between parties 
 - **▶️Grant Types**
   - grants are the `set of steps` a Client has to perform to get "resource-access-authorization".
 
-### Grant Types (detailed)
-#### ✔️`Authorization Code` Grant  with/without PKCE
+### ✅POC/s : Grant Types 
+#### ✔️client-credential (m2m)
+- https://developer.okta.com/blog/2021/05/05/client-credentials-spring-security 👈🏻
+- First **client** acquire credentials(client id, client secret) from the Authorization Server
+- **Access-Token** is returned against these credential. (basically, AuthServer validate identity)
+- **use-case** : lambda making api call, micro services comm, etc
+- **hands on**: 👈🏻👈🏻
+  - **app-integration** (new `client-1`): 
+    - Applications >> Applications >>
+    - https://dev-16206041-admin.okta.com/admin/app/oidc_client/instance/0oaldbk7ys8px41Gy5d7/#tab-general
+    - Proof of Possession (DPoP) - unchecked
+    - use it in **securityApp**
+  - **authServer** (new `Issuer-1`): 
+    - security >> API >> 
+    - https://dev-16206041-admin.okta.com/admin/oauth2/as/ausldbxlfakbwq32P5d7#
+    - add scope :  `app_read_lekhraj`
+    - add/update claims : `sub`, `location`, etc
+    - add Access policy : rule-1: allow above `client-1` (0oaldbk7ys8px41Gy5d7)
+    - **DPoP** : disable
+    - can add **Trusted-servers**
+    - could use default issuer: https://dev-16206041.okta.com/oauth2/default
+  - Next, made postman call to get token | [getAccessToken RESt](https://lekhrajdinkar-postman-team.postman.co/workspace/microservice-java~734a0225-95ea-4e29-b76b-970c95475790/request/5083106-d413afec-f219-436e-b188-bfb397eb7794?action=share&creator=5083106)
+  - decode token and check claims at https://www.jwt.io/
+  ```
+  {
+    "ver": 1,
+    "jti": "AT.-DVBDB63tr7t34AlwXR_y3zT_mHZWpGPWxholPDGLfI",
+    "iss": "https://dev-16206041.okta.com/oauth2/ausldbxlfakbwq32P5d7",
+    "aud": "0oaldbk7ys8px41Gy5d7",
+    "iat": 1732406655,
+    "exp": 1732410255,
+    "cid": "0oaldbk7ys8px41Gy5d7",
+    "scp": [                                        // 👈🏻👈🏻
+        "app_read_lekhraj"                       
+    ],
+    "sub": "0oaldbk7ys8px41Gy5d7"
+  }
+  ```
+  - **Exceptions/Error**
+    ```
+    got exception: 
+      - org.springframework.security.oauth2.core.OAuth2AuthorizationException: [invalid_dpop_proof] The **DPoP proof JWT header is missing**. 
+      - Demonstration of Proof of Possession
+      - provides an additional layer of security by requiring the client to prove possession of a private key associated.
+    Fix
+      - Disable it of Authorizarion-server 
+    ```
+
+#### ✔️Authorization Code 
+- with/without **PKCE**
 - https://developer.okta.com/docs/guides/sign-into-web-app-redirect/spring-boot/main/
 - After validating client identity,
 - AuthServer return single-use Authorization-Code to the Client via callback URI
@@ -77,49 +125,13 @@
        grant_type=authorization_code&code=AUTHORIZATION_CODE&redirect_uri=REDIRECT_URI&client_id=CLIENT_ID&client_secret=CLIENT_SECRET
 ```
 
-#### ✔️`Implicit` Grant ❌
+#### ✔️Refresh Token Grant
+- involves the exchange of a Refresh Token for a new Access Token.
+
+#### ❌Implicit Grant 
 - A simplified flow where the Access Token is returned "directly" to the Client.
 - use-case : SPA (old)
 - new -  Authorization Code with PKCE, in SPA
-
-#### ✔️`client-credential` Grant
-- First client acquire its own credentials(client id, client secret) from the Authorization Server,
-- Access Token is returned against these credential. (basically AuthServer validate identity.)
-- use-case : lambda, micro services.
-- https://developer.okta.com/blog/2021/05/05/client-credentials-spring-security
-- **hands on**: 👈🏻👈🏻
-  - created app / client https://dev-16206041-admin.okta.com/admin/app/oidc_client/instance/0oaldbk7ys8px41Gy5d7/#tab-general
-  - created auth server: https://dev-16206041-admin.okta.com/admin/oauth2/as/ausldbxlfakbwq32P5d7#
-    - add scope :  app_read_lekhraj
-    - add Access policy : allow above client
-    - **DPoP** : disable
-    - can add Trusted-servers
-  - made postman call : https://lekhrajdinkar-postman-team.postman.co/workspace/My-Workspace~355328d1-2f75-4558-8e56-e229e284f6a3/example/5083106-53c3fa91-ef5f-4f49-899f-2b1064386242
-  - created GET http://localhost:8083/spring/security/getAccessToken to do same.
-```
-{
-  "ver": 1,
-  "jti": "AT.-DVBDB63tr7t34AlwXR_y3zT_mHZWpGPWxholPDGLfI",
-  "iss": "https://dev-16206041.okta.com/oauth2/ausldbxlfakbwq32P5d7",
-  "aud": "0oaldbk7ys8px41Gy5d7",
-  "iat": 1732406655,
-  "exp": 1732410255,
-  "cid": "0oaldbk7ys8px41Gy5d7",
-  "scp": [                                        // 👈🏻👈🏻
-      "app_read_lekhraj"                       
-  ],
-  "sub": "0oaldbk7ys8px41Gy5d7"
-}
-  
-got exception: 
-  - org.springframework.security.oauth2.core.OAuth2AuthorizationException: [invalid_dpop_proof] The **DPoP proof JWT header is missing**. 
-  - Demonstration of Proof of Possession
-  - provides an additional layer of security by requiring the client to prove possession of a private key associated.
-  - Disable it of Authorizarion-server 
-```
-
-#### ✔️ `Refresh Token` Grant
-- involves the exchange of a Refresh Token for a new Access Token.
 
 ---
 ### ✅screenshots:

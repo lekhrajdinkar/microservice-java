@@ -16,11 +16,24 @@
 
 ### ✔️JWT (token format)
 - https://jwt.io/introduction/
-- header
+- header : 
+```
+  { 
+    "alg": "HS256", 
+    "typ": "JWT" , 
+    "kid": "xxxxxxxxxxxxxxxxxxxxxxxxxx" // token signed with private key 👈🏻
+  } 
+```
 - body/payload
     - **claims** (statement about user and additional info)
         - `Scope`
-- footer
+- Signature : signature is used to verify the message wasn't changed along the way
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret)
+```
 
 ### ✔️Authentication
 - OIDC
