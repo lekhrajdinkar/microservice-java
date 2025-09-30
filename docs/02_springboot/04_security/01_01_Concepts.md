@@ -4,7 +4,7 @@
 --- 
 ## Security Concepts
 ### 🔶LDAP (old)
-- https://chatgpt.com/c/5865254e-a777-416f-ad16-8e40df050c04
+- [01_03_LDAP.md](01_03_LDAP.md)
 
 ### 🔶SessionID (old)
 
@@ -58,16 +58,14 @@
 - [SE - AWS notes - security 📚](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/01_aws/06_Security)
 - ACM, KMS, IAM
 - WAF
-- etc
+- Safes: AWS-secret-manager | CyberArk (onPrem)
 
----
-### 🟡 More topic
-- **Cross-Origin Resource Sharing** (CORS) settings
-- Password Management safes:
-  - AWS-secret-manager
-  - CyberArk
-- Prevent **XSS** and **CSRF**
-  - CSRF : enabled by default,
-  - create custom filter for further CSRF protection
-- client credential api call, DPoP error fix
-- multiple filters
+### ✔️✔️ Common Attacks
+- XSS
+- CSRF 
+
+### ✔️CORS
+- Cross-Origin Resource Sharing
+
+
+

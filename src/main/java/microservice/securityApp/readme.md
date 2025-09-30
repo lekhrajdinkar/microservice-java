@@ -8,13 +8,13 @@
 ### A1. Enable security in SB App
 - **old**: implement **WebSecurityConfigurerAdapter**  ❌
 - Add dependency : **spring-boot-starter-security**
-- Add bean/s:
+- Add below bean/s:
 ```java
   @Configuration
   @EnableGlobalMethodSecurity(prePostEnabled = true)
   public class SecurityConfig 
   {
-  // 1 ▶️  
+  // 1 ▶️  Security Filter
   @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception { // 👈🏻 injecting : HttpSecurity http
         http
@@ -34,6 +34,20 @@
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
     }
+
+    // 3 ▶️ CORS
+    @Bean // for spring MVC
+    WebMvcConfigurer webMvcConfigurerForApp(){
+      return new WebMvcConfigurer()
+      {
+        @Override
+        public void addCorsMappings(CorsRegistry registry) {
+          registry
+                  .addMapping("/**")
+                  .allowedMethods("*");
+        }
+      };
+    }
    }
 ```
 
@@ -47,7 +61,7 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 ```
 
 ###  B1. Authentication (4)
-#### traditional web application ❌
+#### traditional web application (3) ❌
 - **▶️Form-based Authentication** 
     - http.loginForm()...
 - **▶️Basic Authentication** 
@@ -55,25 +69,25 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
     - https | it’s possible to hide the key using SSL.
 -  **▶️LDAP Authentication** 
   - springs helps to integrating with LDAP and perform authentication.
+  ```java
+  /*
+  - UserDetail
+  - UserDetailsService
+  - Authentication
+  - AuthenticationManager 
+  - AuthenticationManagerBuilder
+  - AuthenticationProviders
+  - InMemoryUserDetailsManager 
+  - Custom beans :  UserDetailsService, AuthenticationProvider, Filters
+  */
+  ```
 
-```java
-/*
-- UserDetail
-- UserDetailsService
-- Authentication
-- AuthenticationManager 
-- AuthenticationManagerBuilder
-- AuthenticationProviders
-- InMemoryUserDetailsManager 
-- Custom beans :  UserDetailsService, AuthenticationProvider, Filters
-*/
-```
-#### Modern web app 
+#### Modern web app (1) ✅
 - **▶️OpenID Connect**
   - SB helps to integrating with **external authentication-providers** (okta, google, facebook, etc)
   - **Identity token** generate by Okta, requested by UI or consumer.
 
-### B2. Authorization/OAuth2
+### B2. Authorization/OAuth2 (Modern) ✅
 #### validating JWT tokens.
 
 #### Method-level Security
@@ -115,13 +129,12 @@ public class LocationBasedAccessController
 
 ```
 ### C. CORS
-- @Bean `WebMvcConfigurer` 
-- [WebConfig.java](config/WebConfig.java) ✔
+- @Bean : `WebMvcConfigurer`
+- check above
 
 ### D. Custom Filter/s
-- Add bean `SecurityFilterChain`
-- @Order(1)
-- manually chain with other filter
-- **scenario-1**
+- @Order(1) @Bean : `SecurityFilterChain`
+- **scenario-1** : manually chain with other filter
+- **scenario-2**
   - filter-1 bean  @Order(1)  for url-pattern-1, do form-login
   - filter-2 bean  @Order(2)  for url-pattern-2, do Oauth-JWT-validation
