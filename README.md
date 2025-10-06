@@ -17,13 +17,14 @@
 https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸Java7+ project
+- [JavaSpringApp README.md](src/main/java/evolution/javaSpringApp/README.md)
 - [java evolution - project and Notes](src/main/java/evolution)
   - [Java 7 README.md](src/main/java/evolution/java_7/README.md)
   - [Java 8 README.md](src/main/java/evolution/java_8/README.md)
-  - [Java 9-11 README.md](src/main/java/evolution/java_9_11/README.md)
-  - [Java 12-17 README.md](src/main/java/evolution/java_11_17/README.md)
-  - [Java 18-21README.md](src/main/java/evolution/Java_17_21/README.md)
-  - [Java 24 README.md](src/main/java/evolution/java_24/README.md)
+  - [Java 11 README.md](src/main/java/evolution/java_11/README.md)
+  - [Java 17 README.md](src/main/java/evolution/java_17/README.md)
+  - [Java 21 README.md](src/main/java/evolution/Java_21/README.md)
+  - [Java 25 README.md](src/main/java/evolution/java_25/README.md)
   - ...
 - [Advance concepts Notes📚](docs/03_Advance)
   

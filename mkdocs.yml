@@ -3,7 +3,7 @@
 # mkdocs serve | build
 
 site_name: Java | micro services | Spring Boot
-site_url: https://lekhrajdinkar.github.io/solution-engineer/
+site_url: https://lekhrajdinkar.github.io/microservices-java
 site_author: Lekhraj Dinkar
 site_author_url: https://www.linkedin.com/in/lekhraj-dinkar-25872140/
 site_logo: images/logo.png
@@ -12,13 +12,6 @@ site_subtitle: Java | Spring Boot | Spring Batch | ETL
 site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Documentation
 
 nav:
-  - 🔶Java:
-      - Java 7: 01_java/README.md
-      - Java 8: 01_java/README.md
-      - Java 9-11: 01_java/README.md
-      - Java 11-17: 01_java/README.md
-      - Java 17-21: 01_java/README.md
-
   - 🔶Spring boot:
       - ✔️lombok mvn git: 02_springboot/00_others.md
       - ✔️Spring Core:
