@@ -13,11 +13,11 @@ site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Do
 
 nav:
   - 🔶Java:
-      - Java 7: 01_java/01_java-7-basic.md
-      - Java 8: 01_java/02_Java-8-new.md
-      - Java 9-11: 01_java/03_Java-9-11-new.md
-      - Java 11-17: 01_java/04_Java-11-17-new.md
-      - Java 17-21: 01_java/05_Java-17-21-new.md
+      - Java 7: 01_java/README.md
+      - Java 8: 01_java/README.md
+      - Java 9-11: 01_java/README.md
+      - Java 11-17: 01_java/README.md
+      - Java 17-21: 01_java/README.md
 
   - 🔶Spring boot:
       - ✔️lombok mvn git: 02_springboot/00_others.md

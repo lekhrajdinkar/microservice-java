@@ -197,7 +197,7 @@ CONCURRENT	      Can be modified concurrently	        ConcurrentHashMap
       - `flatmap`()
  
 ---
-![img.png](../99_img/streams.png)
+![img.png](../../../../../docs/99_img/streams.png)
 ---
 ## programs
 1. program with Optional<`List<Integer>`>  and  Optional<`Integer`>

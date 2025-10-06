@@ -1,12 +1,4 @@
 # Java 7
-## References
-- Core java 1 : https://chatgpt.com/c/3d0ee54a-34c7-4501-9fbe-f9fb21479339 :green_circle:
-- Core java 2 : https://chatgpt.com/c/518e4a83-d192-428a-a2a0-c45ee9b0bb17 :green_circle:
-- Core java 3 collection  : https://chatgpt.com/c/eb94768c-122d-49d4-955b-2d5d46cfe1c0 :green_circle:
-- Core java 4 collection  :https://chatgpt.com/c/d1a3d740-2904-4a27-8132-3b26f96387c8 :green_circle:
-- Core java 5 collection - `LIST` : https://chatgpt.com/c/82cc34ae-de89-4672-b43d-65e94730a382
-- Core java 6 collection - `MAP` : https://chatgpt.com/c/c50132a3-ca62-4b2a-b868-7ed1d5f61af5
----
 ## Fundamental:
 - JVM JRE JDK classLoader/ Memory Model : GC, heap,stack,permGen etc.
   - custom ClassLoader - load classes from `non-standard sources`(databases, network-locations, or encrypted files)
@@ -131,7 +123,7 @@
   - String.join(", ", strArray);
 ---
 ## Java Collection 
-![img.png](../99_img/collections.png)
+![img.png](../../../../../docs/99_img/collections.png)
 ### Java Collection (Data structure) - commonly used
 > - Side-Note:
 >   - can think, Linked-list as tree with single branch.
@@ -256,3 +248,12 @@
   - C, C++, Golang
   - offer better performance
   - they may require more effort in managing memory and dealing with low-level details of the hardware architecture.
+
+---
+## References
+- Core java 1 : https://chatgpt.com/c/3d0ee54a-34c7-4501-9fbe-f9fb21479339 :green_circle:
+- Core java 2 : https://chatgpt.com/c/518e4a83-d192-428a-a2a0-c45ee9b0bb17 :green_circle:
+- Core java 3 collection  : https://chatgpt.com/c/eb94768c-122d-49d4-955b-2d5d46cfe1c0 :green_circle:
+- Core java 4 collection  :https://chatgpt.com/c/d1a3d740-2904-4a27-8132-3b26f96387c8 :green_circle:
+- Core java 5 collection - `LIST` : https://chatgpt.com/c/82cc34ae-de89-4672-b43d-65e94730a382
+- Core java 6 collection - `MAP` : https://chatgpt.com/c/c50132a3-ca62-4b2a-b868-7ed1d5f61af5
