@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lekhraj.java</groupId>
-	<artifactId>java-module-1</artifactId>
+	<artifactId>root-module</artifactId>
 	<version>1.0.0</version>
     <packaging>pom</packaging>
     <name>spring</name>
@@ -19,7 +19,7 @@
     <modules>
         <module>module1</module>
         <module>module2</module>
-        <module>Java25</module>
+        <module>JavaEvolutionModule</module>
     </modules>
 
     <properties>

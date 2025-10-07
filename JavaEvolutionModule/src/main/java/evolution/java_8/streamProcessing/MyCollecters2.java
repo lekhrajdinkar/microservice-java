@@ -3,8 +3,9 @@ package evolution.java_8.streamProcessing;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static evolution.Print.p;
 import static java.util.stream.Collectors.toCollection;
-import static util.Print.p;
 
 public class MyCollecters2 {
 

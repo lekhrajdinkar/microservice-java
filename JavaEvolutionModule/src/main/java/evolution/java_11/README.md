@@ -16,7 +16,7 @@
 - self-contained unit:
   - Which packages it exposes to other modules 
   - Which modules it depends on
-- demo: [module1](../../../../../module1) |  [module2](../../../../../module2)
+- demo: [module1](../../../../../../module1) |  [module2](../../../../../../module2)
 
 #### ✔️language/compiler Enhancement
 - Local-Variable Type Inference - **var**

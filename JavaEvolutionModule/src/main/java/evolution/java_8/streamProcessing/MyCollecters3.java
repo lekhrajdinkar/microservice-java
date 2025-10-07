@@ -1,20 +1,18 @@
 package evolution.java_8.streamProcessing;
 
-import microservice.basicWebApp.courseApp.repository.entity.Student;
-
+import evolution.java_8.Collection.Student;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static util.Print.p;
+import static evolution.Print.p;
 
 public class MyCollecters3
 {
     public static <HasSet> void main(String a[])
     {
          List<Student> students = new ArrayList<>();
-            Student s1 = Student.builder().id(1L).name("Lekhraj").email("ld-1@g.com").build();
-            Student s2 = Student.builder().id(2L).name("Lekhraj").email("ld-2@g.com").build();
-            Student s3 = Student.builder().id(3L).name("Manisha").email("ld-3@g.com").build();
+            Student s1 = Student.builder().firstname("Lekhraj").lastname("Dinkar").build();
+            Student s2 = Student.builder().firstname("Lekhraj2").lastname("Dinkar2").build();
+            Student s3 = Student.builder().firstname("Manisha").lastname("prasad").build();
             students.add(s1); students.add(s2); students.add(s3);
          //------------ Java Collector ----------
 
@@ -22,7 +20,7 @@ public class MyCollecters3
         //1.1  java8 way
         List<String> r1=students
                 .stream()
-                .map(s->s.getName()+"--"+s.getEmail() )
+                .map(s->s.getFirstname()+"--"+s.getLastname() )
                 .collect(Collectors.toList());
         p(r1);
 
@@ -30,7 +28,7 @@ public class MyCollecters3
         r1=students
                 .stream()
                 .collect(Collectors.mapping(
-                        s->s.getName()+"--"+s.getEmail(),
+                        s->s.getFirstname()+"--"+s.getLastname(),
                         Collectors.toList()
                 ));
         p(r1);
@@ -39,7 +37,7 @@ public class MyCollecters3
         Map<String,List<String>> r2=students
                 .stream()
                 .collect(Collectors.mapping(
-                        s->s.getName()+"--"+s.getEmail(),
+                        s->s.getFirstname()+"--"+s.getLastname(),
                         Collectors.groupingBy(x->x.contains("Lekhraj")?"Lek":"others")
                 ));
         p(r2);
@@ -48,9 +46,9 @@ public class MyCollecters3
         r2 = students
                 .stream()
                 .collect(Collectors.groupingBy(
-                        s->s.getName().equals("Lekhraj") ? "lek" : "Others",
+                        s->s.getFirstname().equals("Lekhraj") ? "lek" : "Others",
                         Collectors.mapping(
-                                s->s.getName()+"--"+s.getEmail(),
+                                s->s.getFirstname()+"--"+s.getLastname(),
                                 Collectors.toList())
                 ));
         p(r2);

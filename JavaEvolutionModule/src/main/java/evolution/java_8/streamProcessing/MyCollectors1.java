@@ -1,10 +1,10 @@
 package evolution.java_8.streamProcessing;
 
-import microservice.basicWebApp.courseApp.repository.dto.CourseDTO;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import static util.Print.p;
+
+import static evolution.Print.p;
 
 public class MyCollectors1
 {

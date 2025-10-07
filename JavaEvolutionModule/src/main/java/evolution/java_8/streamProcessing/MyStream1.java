@@ -5,8 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.*;
-import static util.Print.p;
-import static util.Print.printStream;
+import static evolution.Print.p;
+import static evolution.Print.printStream;
 
 public class MyStream1 {
     public  static void main(String args[]) throws Exception {

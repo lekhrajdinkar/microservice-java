@@ -1,9 +1,9 @@
 package evolution.java_25.language;
 
-record Point(double x, double y) {}
-
-public class Main {
+public class Primitives {
     /*
+    record Point(double x, double y) {}
+
     public static void main(String[] args)
     {
         // ✔️ Flexible Constructor - this() / Super() does not needs to be first line

@@ -5,8 +5,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-import static util.Print.pc;
-import static util.Print.p;
+
+import static evolution.Print.p;
+import static evolution.Print.pc;
 
 public class MyList1
 {

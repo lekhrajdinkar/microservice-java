@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="JewelleryApp" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="microservice.basicWebApp.jewelleryApp.JewelleryApp" />
-    <module name="java-module-1" />
+    <module name="root-module" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="microservice.courseApp.config.*" />

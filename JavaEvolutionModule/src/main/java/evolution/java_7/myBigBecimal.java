@@ -2,8 +2,8 @@ package evolution.java_7;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import static evolution.Print.p;
 
-import static util.Print.p;
 
 public class myBigBecimal {
     public static void main(String[] args) {

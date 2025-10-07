@@ -1,6 +1,6 @@
 package evolution.java_8;
 
-import microservice.basicWebApp.courseApp.repository.entity.Course;
+import evolution.java_8.streamProcessing.CourseDTO;
 import evolution.java_8.interfaceMore.MyInterface;
 import evolution.java_8.interfaceMore.MyInterfaceImpl;
 
@@ -17,8 +17,8 @@ public class MyOptional {
         return courseList;
     }
 
-    static Course getCourse(){
-        return Course.builder()
+    static CourseDTO getCourse(){
+        return CourseDTO.builder()
                 .title("Java 8")
                 .desc("Lamba Expression, Functional Interface, Optional util Class, Method ref all 4 types")
                 .build();
@@ -30,7 +30,8 @@ public class MyOptional {
 
     //-----------------------------------------------------------------
 
-    public  static void main(String args[]) throws Exception {
+    public  static void main(String args[]) throws Exception
+    {
         MyInterface.print(); //java 8 interface with static Function
         new MyInterfaceImpl().SayHello(); // Java 8 interface default method
 
@@ -42,17 +43,12 @@ public class MyOptional {
         p(courseListO.map(c->c+"_map").get());
 
 
-        Optional<Course> courseO = Optional.ofNullable(getCourse()); // if course is null then returns Optional.empty()
+        Optional<CourseDTO> courseO = Optional.ofNullable(getCourse()); // if course is null then returns Optional.empty()
         //courseO = Optional.of(null); // then use OfOptional
         p(courseO.isEmpty());
-        p(courseO.orElseGet(()-> Course.builder().build()));
-        p(courseO.orElse(Course.builder().build()));
+        p(courseO.orElseGet(()-> CourseDTO.builder().build()));
+        p(courseO.orElse(CourseDTO.builder().build()));
         p(courseO.map(c->c.getDesc()).map(d->d+"---suffix").get());
-
-        // p(courseO.map(c->c.getCategory()).map(cat-> cat.getDesc()).get());
-        // Cat is missing, NPE , Fix below:
-        p(courseO.map(c->c.getCategory()).map(cat-> cat.getDesc()).orElse("Category Unknown")); // fix1
-        p(courseO.map(c->c.getCategory()).map(cat-> cat.getDesc()).orElseThrow(CategoryMissingException::new).toLowerCase()); // change into anothor custom Exception with meaning full message
 
         //99 ============= optional ====================
         List<String> names = Stream.of("lek", "manisha", "bryan", "dinkar", "Prasad").collect(Collectors.toList());

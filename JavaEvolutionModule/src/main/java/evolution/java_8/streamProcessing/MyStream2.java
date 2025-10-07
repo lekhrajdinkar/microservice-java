@@ -11,7 +11,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static util.Print.p;
+import static evolution.Print.p;
+
 
 public class MyStream2 {
 

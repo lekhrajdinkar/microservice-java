@@ -21,8 +21,8 @@
 | ------------ | ------------- | ---------------------------------------------------- |------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | JDK 22       | 456           | Unnamed Variables & Patterns (final)                 | Use underscore (`_`) for variables or pattern elements you don’t intend to name/use ([HappyCoders.eu][101])                              | `catch (IOException _) { … }` or pattern match: `if (o instanceof Point(_, y)) …`                              |
 | JDK 25       | 513           | Flexible Constructor Bodies (final)                  | Allows certain statements before calling `super(...)` or `this(...)` in a constructor (with constraints)                                 | Validation or field setup before invoking the parent constructor                                               |
-| JDK 25       | 512           | **Compact Source Files** & Instance Main Methods (final) | Supports writing Java programs without explicit class boilerplate; non-static `main` allowed; auto imports from `java.base` ([InfoQ][102]) | [📚CompactSourceFile.java](language/CompactSourceFile.java)                                                    |
-| JDK 25 | 507 | Primitive Types in Patterns, instanceof & switch | Extend pattern matching, instanceof, and switch to support primitive types                                                               | if (o instanceof int i) { … } or switch (x) { case int i -> … } ,  [📚Primitive.java](language/Primitive.java) |
+| JDK 25       | 512           | **CompactSourceFiles** & Instance Main Methods (final) | Supports writing Java programs without explicit class boilerplate; non-static `main` allowed; auto imports from `java.base` ([InfoQ][102]) | [📚CompactSourceFile.java](language/CompactSourceFile.java)                                                    |
+| JDK 25 | 507 | 🔸Primitive Types in Patterns, instanceof & switch | Extend pattern matching, instanceof, and switch to support primitive types                                                               | if (o instanceof int i) { … } or switch (x) { case int i -> … } ,  [📚Primitive.java](language/Primitive.java) |
 
 [101]: https://www.happycoders.eu/java/java-22-features/?utm_source=chatgpt.com "Java 22 Features (with Examples) - HappyCoders.eu"
 [102]: https://www.infoq.com/news/2025/05/jdk25-instance-main-methods/?utm_source=chatgpt.com "Instance Main Methods Move from Preview to Final in JDK 25 - InfoQ"
@@ -52,6 +52,8 @@ import java.sql.Date; //resolve /fix
 
 #### ✔️API
 - **Class-File API**
+  - Standard API to parse, inspect, modify, emit Java class files (replacing or reducing dependence on ASM, BCEL)
+  - A tool or agent reading/modifying `.class` files programmatically
 - **Java Stream - Gatherers**
     - https://www.youtube.com/watch?v=If6wFkY8ux4
     - https://www.perplexity.ai/search/java-stream-gatherers-https-ww-nqX3RLlRQlGUC0FoXQgmYw
@@ -62,23 +64,22 @@ import java.sql.Date; //resolve /fix
 - **PEM** (JEP 470)
   -  adds support for reading and writing cryptographic keys and certificates in PEM format via standard APIs
   -  This improves interoperability with OpenSSL-based systems and streamlines secure communications.
+- **FFM API** (Advance topic, can skip) ❌
+  - Foreign Function & Memory API
+  - https://www.happycoders.eu/java/foreign-function-memory-api/
+  - replacement for old/slow - Java Native Interface (JNI)| FFM 4x faster.
+  - makes it possible to access code **outside** the JVM
+    - functions in libraries implemented in **other programming languages**
+    - memory not managed by the JVM in the heap
 
+#### ✔️ JavaDoc(md), Streams
 
-#### ✔️Tooling, Classfile, Streams, Modules, APIs
-
-| Java Version | JEP / Feature | Title / Status                                        | Description                                                                                                                    | Short Example / Use / Scenario                                            |
-| ------------ | ------------- | ----------------------------------------------------- |--------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
-| JDK 22       | 457           | Class-File API (final)                                | Standard API to parse, inspect, modify, emit Java class files (replacing or reducing dependence on ASM, BCEL) ([OpenJDK][201]) | A tool or agent reading/modifying `.class` files programmatically         |
-| JDK 22       | 458           | Launch Multi-File Source-Code Programs (final)        | `java` launcher can accept multiple `.java` files and compile/run on the fly ([OpenJDK][201])                                    | `java A.java B.java` without pre-compilation                              |
-| JDK 23       | 467           | Markdown Documentation Comments (final)               | JavaDoc comments may use Markdown syntax instead of or in addition to traditional JavaDoc tags ([Eclipse Foundation][202])       | `/** * # Summary * Use **bold** … */`                                     |
-| JDK 24       | 483           | Ahead-of-Time Class Loading & Linking                 | Preload and prelink classes to improve startup performance (Leyden / AOT cache) ([InfoQ][203])                                   | Use AOT / CDS / class prelinking to reduce runtime class loading overhead |
-| JDK 24       | 484           | Class-File API (refined)                              | Continue evolution / integration of class-file API previews into more stable form ([InfoQ][203])                                 | Tools working on class file generation or analysis use this API           |
-| JDK 24       | 485           | Stream Collectors / Gatherers (final / refined)       | Finalize or refine custom stream collector operations (windowing, scans, folds) in the Stream API ([InfoQ][203])                 | Use richer operations: `stream.collect(… gatherer …)` etc.                |
-| JDK 24       | 492           | Flexible Constructor Bodies (preview)                 | Allow statements before `super(...)` / `this(...)` in constructors (preview version) ([InfoQ][203])                              | Similar to the final feature, but still under preview constraints         |
-| JDK 24       | 494           | Module Import Declarations (preview)                  | Syntax to allow `import module M` style declarations for modules ([InfoQ][203])                                                  | Bring all public exports of a module into import scope                    |
-| JDK 24       | 495           | Simple Source Files & Instance Main Methods (preview) | Continue refinement of compact / lightweight source file entry syntax (without explicit class) ([InfoQ][203])                    | Write `void main()` at top level in small scripts                         |
-| JDK 25       | 512           | Compact Source Files & Instance Main Methods (final)  | Graduate preview syntax into full feature: implicit classes, instance `main`, `java.lang.IO`, auto imports ([InfoQ][204])        | Small programs, REPL-like code, learning environment                      |
-| JDK 25       | 511           | Module Import Declarations (final)                    | Import module exports directly (simplified module import) ([Oracle][205])                                                        | `import module some.module;` to bring its public exports into scope       |
+| Java Version | JEP / Feature | Title / Status                                    | Description                                                                                                                    | Short Example / Use / Scenario                                            |
+|-----------| ------------- |---------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
+| JDK 22    | 458           | Launch Multi-File Source-Code Programs (final)    | `java` launcher can accept multiple `.java` files and compile/run on the fly ([OpenJDK][201])                                    | `java A.java B.java` without pre-compilation                              |
+| JDK 23    | 467           | Markdown Documentation Comments (final)           | JavaDoc comments may use Markdown syntax instead of or in addition to traditional JavaDoc tags ([Eclipse Foundation][202])       | `/** * # Summary * Use **bold** … */`                                     |
+| JDK 24    | 483           | AOT/Ahead-of-Time Class Loading & Linking         | Preload and prelink classes to improve startup performance (Leyden / AOT cache) ([InfoQ][203])                                   | Use AOT / CDS / class prelinking to reduce runtime class loading overhead |
+| JDK 24    | 485           | 🔸Stream Collectors / Gatherers (final / refined) | Finalize or refine custom stream collector operations (windowing, scans, folds) in the Stream API ([InfoQ][203])                 | Use richer operations: `stream.collect(… gatherer …)` etc.                |
 
 [201]: https://openjdk.org/projects/jdk/22/?utm_source=chatgpt.com "JDK 22 - OpenJDK"
 [202]: https://www.eclipse.org/lists/jetty-dev/msg03758.html?utm_source=chatgpt.com "[jetty-dev] JDK 25 feature set is now frozen! - Eclipse"
@@ -116,3 +117,4 @@ import java.sql.Date; //resolve /fix
 [401]: https://openjdk.org/projects/jdk/22/?utm_source=chatgpt.com "JDK 22 - OpenJDK"
 [402]: https://www.infoq.com/news/2025/02/java-24-so-far/?utm_source=chatgpt.com "JDK 24 and JDK 25: What We Know So Far - InfoQ"
 [403]: https://www.oracle.com/ca-en/news/announcement/oracle-releases-java-25-2025-09-16/?utm_source=chatgpt.com "Oracle Releases Java 25"
+

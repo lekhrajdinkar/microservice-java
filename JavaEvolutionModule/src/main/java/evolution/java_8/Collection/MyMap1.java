@@ -1,9 +1,10 @@
 package evolution.java_8.Collection;
 
-import static util.Print.p;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static evolution.Print.p;
 
 public class MyMap1 {
     public static void main(String... arr){

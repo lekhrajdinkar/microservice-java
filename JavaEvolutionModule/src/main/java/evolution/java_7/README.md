@@ -123,7 +123,7 @@
   - String.join(", ", strArray);
 ---
 ## Java Collection 
-![img.png](../../../../../docs/99_img/collections.png)
+![img.png](../../../../../../docs/99_img/collections.png)
 ### Java Collection (Data structure) - commonly used
 > - Side-Note:
 >   - can think, Linked-list as tree with single branch.

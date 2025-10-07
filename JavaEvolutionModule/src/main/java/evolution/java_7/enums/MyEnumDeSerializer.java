@@ -1,4 +1,4 @@
-package microservice.basicWebApp.courseApp.custom.serialize;
+package evolution.java_7.enums;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
