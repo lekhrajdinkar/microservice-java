@@ -37,22 +37,23 @@ https://leetcode.com/u/lekhrajdinkar/
 - ...
 
 ### 🔸micro-client projects
-- 📚 check `readme.md` ( in each project for more **details** )
-- Web basic App  
-  - [jewelleryApp](MicroserviceModule/basicWebApp/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
-  - [courseApp](MicroserviceModule/basicWebApp/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
-- [modern Web App](MicroserviceModule/modernWebApp)
-  - [shoppingApp](MicroserviceModule/modernWebApp/shoppingApp) - ASGI, Async, websocket, grpc
-  - [stockApp](MicroserviceModule/modernWebApp/stockApp) - streaming, modulith, temporal
+- ✔ Web basic App  
+  - [jewelleryApp README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+  - [courseApp README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) - h2, hibernate more, txn, tuple, pagination, etc
+- [✔ modern Web App](MicroserviceModule/modernWebApp)
+  - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
+  - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
 - More
-  - [security App](MicroserviceModule/securityApp) | OAuth2, okta, jwt, basic
-  - [observability App](MicroserviceModule/observabilityApp) - otel, aws-x-rays
+  - [securityApp README.md](MicroserviceModule/src/main/java/securityApp/README.md) | OAuth2, okta, jwt, basic
+  - [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
 
 ### 🔸MessageBroker projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
-- [kafka](src/main/java/more)
-- [rmq](MessageBrokerModule/rmq)
-- **ETL/Spring-Batch**  | [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  | [springbatch](ETLModule/src/main/java/springbatch)
+- [kafkaSpringApp README.md](MessageBrokerModule/src/main/java/kafka/spring/README.md)
+- [rmqSpringApp README.md](MessageBrokerModule/src/main/java/rmq/README.md)
+- **ETL/Spring-Batch**  
+  - [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  
+  - [springbatch](ETLModule/src/main/java/springbatch)
 
 ---
 ## ✔️ other/s
