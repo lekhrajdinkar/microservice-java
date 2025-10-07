@@ -21,7 +21,7 @@
 ### 2 more actions list-2 (pending)
 - **Async Controllers**: 
   - Use **@Async("taskExecutor-1")** and **CompletableFuture** to handle long-running requests asynchronously :point_left:
-  - [AsyncController.java](../../../src/main/java/microservice/basicWebApp/jewelleryApp/controller/AsyncController.java)
+  - [AsyncController.java](../../../MicroserviceModule/basicWebApp/jewelleryApp/controller/AsyncController.java)
   - **@EnableAsync** - enable
   - create @Bean(name = "taskExecutor-1") **ThreadPoolTaskExecutor** : [AsyncConfig.java](../../src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API/configuration/AsyncConfig.java)
   

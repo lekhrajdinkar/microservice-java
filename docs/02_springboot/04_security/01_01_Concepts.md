@@ -1,5 +1,5 @@
 ## ✅ POCs
-- [security App - readme.md](../../../src/main/java/microservice/securityApp/readme.md)
+- [security App - readme.md](../../../MicroserviceModule/securityApp/readme.md)
 
 ## Diff App architecture
 - server-side microservice applications (SpringMVC, JSP)
@@ -47,7 +47,7 @@ HMACSHA256(
 - **OAuth2**
 
 ### ✔️Delegated Authorization (OAuth2)
-- [next page, 00_OAuth_2.0.md](../../../src/main/java/microservice/securityApp/README_OAuth2.md)
+- [next page, 00_OAuth_2.0.md](../../../MicroserviceModule/securityApp/README_OAuth2.md)
 - OAuth2.1 (PKCE mandatory)
 - `Access-token`
 - App(api/spa) <--> **OKTA's OAuth server** <--integrated--> **LDAP**

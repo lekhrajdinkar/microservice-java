@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="SpringApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="springbootApp.SpringbootApp" />
+    <option name="MAIN_CLASS_NAME" value="SpringbootApp" />
     <module name="root-module" />
     <extension name="coverage">
       <pattern>

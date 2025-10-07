@@ -30,29 +30,29 @@ https://leetcode.com/u/lekhrajdinkar/
   
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
-- [Spring_01_AOP](src/main/java/springbootApp/AOP)
-- [Spring_02_Core](src/main/java/springbootApp/SpringCore)
-- [Spring_03_Properties](src/main/java/springbootApp/SpringProperties)
-- [Spring_04_AutoConfiguration](src/main/java/springbootApp/SpringAutoConfiguration)
+- [Spring_01_AOP](SpringBootModule/src/main/java/AOP)
+- [Spring_02_Core](SpringBootModule/src/main/java/SpringCore)
+- [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
+- [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration)
 - ...
 
 ### 🔸micro-client projects
 - 📚 check `readme.md` ( in each project for more **details** )
 - Web basic App  
-  - [jewelleryApp](src/main/java/microservice/basicWebApp/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
-  - [courseApp](src/main/java/microservice/basicWebApp/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
-- [modern Web App](src/main/java/microservice/modernWebApp)
-  - [shoppingApp](src/main/java/microservice/modernWebApp/shoppingApp) - ASGI, Async, websocket, grpc
-  - [stockApp](src/main/java/microservice/modernWebApp/stockApp) - streaming, modulith, temporal
+  - [jewelleryApp](MicroserviceModule/basicWebApp/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+  - [courseApp](MicroserviceModule/basicWebApp/courseApp) - h2, hibernate more, txn, tuple, pagination, etc
+- [modern Web App](MicroserviceModule/modernWebApp)
+  - [shoppingApp](MicroserviceModule/modernWebApp/shoppingApp) - ASGI, Async, websocket, grpc
+  - [stockApp](MicroserviceModule/modernWebApp/stockApp) - streaming, modulith, temporal
 - More
-  - [security App](src/main/java/microservice/securityApp) | OAuth2, okta, jwt, basic
-  - [observability App](src/main/java/microservice/observabilityApp) - otel, aws-x-rays
+  - [security App](MicroserviceModule/securityApp) | OAuth2, okta, jwt, basic
+  - [observability App](MicroserviceModule/observabilityApp) - otel, aws-x-rays
 
 ### 🔸MessageBroker projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
 - [kafka](src/main/java/more)
-- [rmq](src/main/java/more/rmq)
-- **ETL/Spring-Batch**  | [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  | [springbatch](src/main/java/more/springbatch)
+- [rmq](MessageBrokerModule/rmq)
+- **ETL/Spring-Batch**  | [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  | [springbatch](ETLModule/src/main/java/springbatch)
 
 ---
 ## ✔️ other/s

@@ -20,6 +20,10 @@
         <module>module1</module>
         <module>module2</module>
         <module>JavaEvolutionModule</module>
+        <module>SpringBootModule</module>
+        <module>MessageBrokerModule</module>
+        <module>MicroserviceModule</module>
+        <module>ETLModule</module>
     </modules>
 
     <properties>

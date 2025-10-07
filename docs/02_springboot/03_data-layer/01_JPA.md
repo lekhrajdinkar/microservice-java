@@ -30,7 +30,7 @@
   - **TransactionManager**  
     - `PlatformTransactionManager` --impl--> HibernateTransactionManager, JpaTransactionManager
   - **TransactionTemplate** 
-    - [HibernatePostgresConfig.java](../../../src/main/java/microservice/modernWebApp/HibernatePostgresConfig.java)
+    - [HibernatePostgresConfig.java](../../../MicroserviceModule/modernWebApp/HibernatePostgresConfig.java)
     - can set global ISOLATION LEVEL here :point_left:
   - **Datasource** 
     - database connections pool
@@ -41,7 +41,7 @@
       - has @PersistenceContext(type = PersistenceContextType.**TRANSACTIONAL**)
     - way-2: https://chat.deepseek.com/a/chat/s/8e1072c2-9522-4d97-8c6b-d6cdc8ef7c97
       - this is custom repo
-      - check more eg: [StudentRepository.java](../../../src/main/java/microservice/basicWebApp/jewelleryApp/repository/StudentRepository.java)
+      - check more eg: [StudentRepository.java](../../../MicroserviceModule/basicWebApp/jewelleryApp/repository/StudentRepository.java)
 ```java
 @Repository
 public class ExtendedPersistenceContextRepository 
@@ -73,7 +73,7 @@ public class ExtendedPersistenceContextRepository
 ## C Relationship
 - owner owns the foreign key and defines @JoinColumn(name="newName")
 - uni-directional or bi-directional : both has references of each other.
-- project : [entities](../../../src/main/java/microservice/modernWebApp/shoppingApp/entities)
+- project : [entities](../../../MicroserviceModule/modernWebApp/shoppingApp/entities)
 - ![img.png](er-diagram.png)
 
 ### `1-2-1`
