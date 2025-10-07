@@ -1,7 +1,8 @@
 package evolution.java_25.language;
 
-public class Primitives {
-    /*
+/*
+public class Primitives
+{
     record Point(double x, double y) {}
 
     public static void main(String[] args)
@@ -29,6 +30,4 @@ public class Primitives {
         };
 
     }
-
-    */
-}
+}*/

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collections;
 
 @SpringBootApplication
-@Component("more.kafka.spring")
+@Component("kafka.spring")
 @EnableAsync
 public class kafkaSpringApp
 {

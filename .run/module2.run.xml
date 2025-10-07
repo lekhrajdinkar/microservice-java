@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="module2" type="Application" factoryName="Application">
+  <configuration default="false" name="module2" type="Application" factoryName="Application" folderName="Java+Spring">
     <option name="MAIN_CLASS_NAME" value="client.Runner1" />
     <module name="module2" />
     <option name="VM_PARAMETERS" value="--add-reads module2=ALL-UNNAMED" />

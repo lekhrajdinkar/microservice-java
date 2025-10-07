@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collections;
 
 @SpringBootApplication
-@Component("more.rmq")
+@Component("rmq")
 @EnableAsync
 public class RmqSpringApp
 {
