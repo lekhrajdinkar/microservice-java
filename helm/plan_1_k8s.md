@@ -102,10 +102,10 @@
 
 ### 7 cleanup all :point_left:
 - Option 1: kubectl delete namespace dev1-manifest
-- Option 2: kubectl delete pods,services,serviceaccounts,deployments --all -n dev1-manifest
+- Option 2: kubectl delete pods,client,serviceaccounts,deployments --all -n dev1-manifest
 ```yaml
 kubectl delete pods --all -n dev1-manifest
-kubectl delete services --all -n dev1-manifest
+kubectl delete client --all -n dev1-manifest
 kubectl delete serviceaccounts --all -n dev1-manifest
 kubectl delete deployments,statefulsets,daemonsets --all -n dev1-manifest
 kubectl delete configmaps,secrets --all -n dev1-manifest

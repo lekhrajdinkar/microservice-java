@@ -14,7 +14,7 @@
 
 ## gRPC-Web((For Browser Clients)
 - ng/react uses 
-- gRPC-Web, which uses HTTP/1.1 or HTTP/2 in the browser to communicate with the backend gRPC services
+- gRPC-Web, which uses HTTP/1.1 or HTTP/2 in the browser to communicate with the backend gRPC client
 
 ## Steps
 - proto file : [user.proto.bkp](..%2F..%2Fsrc%2Fmain%2Fproto%2Fuser.proto.bkp)

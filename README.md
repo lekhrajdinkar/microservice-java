@@ -36,7 +36,7 @@ https://leetcode.com/u/lekhrajdinkar/
 - [Spring_04_AutoConfiguration](src/main/java/springbootApp/SpringAutoConfiguration)
 - ...
 
-### 🔸micro-services projects
+### 🔸micro-client projects
 - 📚 check `readme.md` ( in each project for more **details** )
 - Web basic App  
   - [jewelleryApp](src/main/java/microservice/basicWebApp/jewelleryApp) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc

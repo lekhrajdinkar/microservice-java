@@ -77,7 +77,7 @@
 - https://developer.okta.com/blog/2021/05/05/client-credentials-spring-security 👈🏻
 - First **client** acquire credentials(client id, client secret) from the Authorization Server
 - **Access-Token** is returned against these credential. (basically, AuthServer validate identity)
-- **use-case** : lambda making api call, micro services comm, etc
+- **use-case** : lambda making api call, micro client comm, etc
 - **hands on**: 👈🏻👈🏻
   - **app-integration** (new `client-1`): 
     - Applications >> Applications >>

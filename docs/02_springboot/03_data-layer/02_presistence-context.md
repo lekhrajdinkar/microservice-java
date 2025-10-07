@@ -35,7 +35,7 @@
 - eg: Spring-boot-jpa -  @EnableTransactionManagement c, then @Transaction m()
 - fact:
   - used in cg maps
-  - not need for micro-services arch.
+  - not need for micro-client arch.
 
 ### 2 Extended. 
 - workflows where a sequence of operations spans multiple transactions / stateful App. @PersistenceContext(type = PersistenceContextType.EXTENDED)

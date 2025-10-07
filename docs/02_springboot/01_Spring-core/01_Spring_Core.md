@@ -166,7 +166,7 @@ public class BeanB {
 - run you logic around it.
 ```
 public void CustomAnnotationTest(){
-        Method method = Runner1.class.getMethod("testMethod1");
+        Method method = client.Runner1.class.getMethod("testMethod1");
         MyAnnotation annotation = method.getAnnotation(MyAnnotation.class);
 
         if (annotation != null) {

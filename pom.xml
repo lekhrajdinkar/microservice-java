@@ -9,11 +9,17 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lekhraj.java</groupId>
-	<artifactId>spring-app</artifactId>
+	<artifactId>java-module-1</artifactId>
 	<version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>spring</name>
 	<description>Demo project for Spring Boot</description>
+
+    <!--🔰 Modules-->
+    <modules>
+        <module>module1</module>
+        <module>module2</module>
+    </modules>
 
     <properties>
         <java.version>21</java.version>

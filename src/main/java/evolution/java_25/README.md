@@ -1,6 +1,5 @@
 ## java 25 (Sep 2025)
-
-### oversview
+### overview
 - docs:
   - https://www.oracle.com/java/technologies/downloads/#jdk25-windows
   - https://docs.oracle.com/en/java/javase/25/index.html
@@ -11,8 +10,18 @@
   
 ---
 ### Developer
-- Flexible Constructor Bodies - this()/super() does not to be first line.
-- Primitive Types in Patterns, instanceof, switch
+- Flexible Constructor Bodies - `this()/super()` does not to be first line.
+- Primitive Types in : instanceof, switch
+```
+- Simplifies data transformation and type dispatching in modern APIs.
+- Unifies pattern matching across primitive + object types → less boilerplate.
+- More consistent with record patterns and deconstruction patterns.
+```
+| Feature                                      | Before Java 24   | Java 24 (Preview) |
+| -------------------------------------------- | ---------------- | ----------------- |
+| `i[Main.java](language/Main.java)nstanceof int`                             | ❌ Not allowed    | ✅ Allowed         |
+| `switch (Object)` with `int`, `double`, etc. | ❌ Manual casting | ✅ Direct pattern  |
+
 - Module Import Declarations
 - Class-File API
 - **Java Stream - Gatherers**

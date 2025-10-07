@@ -2,7 +2,7 @@
   <configuration default="false" name="SecurityApp" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="ALTERNATIVE_JRE_PATH" value="25" />
     <option name="MAIN_CLASS_NAME" value="microservice.securityApp.SecurityApp" />
-    <module name="spring-app" />
+    <module name="java-module-1" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="microservice.securityApp.config.*" />
