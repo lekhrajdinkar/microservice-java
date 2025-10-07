@@ -1,10 +1,10 @@
 package basicWebApp.courseApp.repository;
 
 import lombok.extern.slf4j.Slf4j;
-import microservice.basicWebApp.courseApp.repository.entity.Category;
-import microservice.basicWebApp.courseApp.repository.entity.Course;
-import microservice.basicWebApp.courseApp.repository.entity.Instructor;
-import microservice.basicWebApp.courseApp.repository.entity.Student;
+import basicWebApp.courseApp.repository.entity.Category;
+import basicWebApp.courseApp.repository.entity.Course;
+import basicWebApp.courseApp.repository.entity.Instructor;
+import basicWebApp.courseApp.repository.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

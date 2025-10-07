@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collections;
 
 @SpringBootApplication
-@Component("microservice.modernWebApp.shoppingApp")
+@Component("modernWebApp.shoppingApp")
 @EnableAsync
 public class ShoppingApp
 {

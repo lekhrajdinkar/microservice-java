@@ -1,7 +1,7 @@
 package modernWebApp.shoppingApp;
 
-import microservice.modernWebApp.shoppingApp.entities.Customer;
-import microservice.modernWebApp.shoppingApp.entities.Product;
+import modernWebApp.shoppingApp.entities.Customer;
+import modernWebApp.shoppingApp.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

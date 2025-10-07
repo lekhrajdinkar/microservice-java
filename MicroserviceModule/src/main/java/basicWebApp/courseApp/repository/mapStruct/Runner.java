@@ -1,11 +1,12 @@
 package basicWebApp.courseApp.repository.mapStruct;
 
-import microservice.basicWebApp.courseApp.repository.dto.CourseDTO;
-import microservice.basicWebApp.courseApp.repository.entity.Category;
-import microservice.basicWebApp.courseApp.repository.entity.Course;
-import microservice.basicWebApp.courseApp.repository.entity.Instructor;
+import basicWebApp.courseApp.repository.dto.CourseDTO;
+import basicWebApp.courseApp.repository.entity.Category;
+import basicWebApp.courseApp.repository.entity.Course;
+import basicWebApp.courseApp.repository.entity.Instructor;
 
 import static util.Print.p;
+
 
 public class Runner {
     public static void main(String[] args)

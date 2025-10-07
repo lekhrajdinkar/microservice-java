@@ -3,17 +3,19 @@ package modernWebApp.shoppingApp;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-import microservice.modernWebApp.shoppingApp.entities.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+
+import modernWebApp.shoppingApp.entities.*;
+
 @Component
 public class DataInitializer_Runner
 {

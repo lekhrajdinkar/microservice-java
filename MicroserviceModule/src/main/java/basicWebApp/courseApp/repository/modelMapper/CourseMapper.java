@@ -1,7 +1,7 @@
 package basicWebApp.courseApp.repository.modelMapper;
 
-import microservice.basicWebApp.courseApp.repository.dto.CourseDTO;
-import microservice.basicWebApp.courseApp.repository.entity.Course;
+import basicWebApp.courseApp.repository.dto.CourseDTO;
+import basicWebApp.courseApp.repository.entity.Course;
 
 public class CourseMapper {
     public static CourseDTO model2Dto(Course model){

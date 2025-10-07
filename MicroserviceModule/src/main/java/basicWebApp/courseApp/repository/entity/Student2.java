@@ -2,7 +2,7 @@ package basicWebApp.courseApp.repository.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import microservice.basicWebApp.courseApp.custom.enums.GenderEnum;
+import basicWebApp.courseApp.custom.enums.GenderEnum;
 import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDate;
 import java.util.UUID;

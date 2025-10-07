@@ -1,8 +1,7 @@
 package basicWebApp.jewelleryApp.controller;
 
-import microservice.basicWebApp.jewelleryApp.custom.enums.StatusEnum;
-//import com.lekhraj.java.spring.SB_99_RESTful_API.model.dto.Config2Inject;
-import microservice.basicWebApp.jewelleryApp.dto.JewelleryDTO;
+import basicWebApp.jewelleryApp.custom.enums.StatusEnum;
+import basicWebApp.jewelleryApp.dto.JewelleryDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

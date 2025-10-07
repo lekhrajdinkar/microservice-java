@@ -1,7 +1,7 @@
 package basicWebApp.courseApp.custom;
 
 import jakarta.persistence.*;
-import microservice.basicWebApp.courseApp.custom.enums.GenderEnum;
+import basicWebApp.courseApp.custom.enums.GenderEnum;
 import basicWebApp.courseApp.repository.entity.Student2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

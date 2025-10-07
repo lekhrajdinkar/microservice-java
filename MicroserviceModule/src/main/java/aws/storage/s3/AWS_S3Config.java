@@ -1,4 +1,4 @@
-package s3;
+package aws.storage.s3;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

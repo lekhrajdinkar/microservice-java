@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="kafkaSpringApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="more.kafka.spring.kafkaSpringApp" />
-    <module name="root-module" />
+  <configuration default="false" name="kafkaSpringApp" type="Application" factoryName="Application" folderName="MB">
+    <option name="MAIN_CLASS_NAME" value="kafka.spring.kafkaSpringApp" />
+    <module name="MessageBrokerModule" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="more.kafka.spring.*" />

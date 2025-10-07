@@ -5,7 +5,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import evolution.java_7.enums.CatLevel;
 import lombok.extern.slf4j.Slf4j;
 import basicWebApp.courseApp.repository.dto.CategoryDTO;
 import basicWebApp.courseApp.repository.dto.CourseDTO;
@@ -15,6 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import basicWebApp.courseApp.repository.dto.CatLevel;
 
 @Service
 @Slf4j

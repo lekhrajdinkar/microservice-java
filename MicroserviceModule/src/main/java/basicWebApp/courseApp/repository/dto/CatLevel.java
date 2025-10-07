@@ -1,5 +1,6 @@
-package basicWebApp.courseApp.custom.serialize;
+package basicWebApp.courseApp.repository.dto;
 
+import basicWebApp.courseApp.custom.serialize.MyEnumDeSerializer;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;

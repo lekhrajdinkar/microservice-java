@@ -1,13 +1,13 @@
 package modernWebApp.shoppingApp;
 
-import microservice.modernWebApp.shoppingApp.entities.AppOrder;
-import microservice.modernWebApp.shoppingApp.entities.AppOrderDetail;
-import microservice.modernWebApp.shoppingApp.entities.Customer;
-import microservice.modernWebApp.shoppingApp.entities.Product;
-import microservice.modernWebApp.shoppingApp.repo.AppOrderRepository;
-import microservice.modernWebApp.shoppingApp.repo.CartRepository;
-import microservice.modernWebApp.shoppingApp.repo.CustomerRepository;
-import microservice.modernWebApp.shoppingApp.repo.ProductRepository;
+import modernWebApp.shoppingApp.entities.AppOrder;
+import modernWebApp.shoppingApp.entities.AppOrderDetail;
+import modernWebApp.shoppingApp.entities.Customer;
+import modernWebApp.shoppingApp.entities.Product;
+import modernWebApp.shoppingApp.repo.AppOrderRepository;
+import modernWebApp.shoppingApp.repo.CartRepository;
+import modernWebApp.shoppingApp.repo.CustomerRepository;
+import modernWebApp.shoppingApp.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

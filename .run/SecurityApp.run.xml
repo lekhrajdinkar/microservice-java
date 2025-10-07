@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SecurityApp" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="SecurityApp" type="Application" factoryName="Application" folderName="Microservices">
     <option name="ALTERNATIVE_JRE_PATH" value="25" />
-    <option name="MAIN_CLASS_NAME" value="microservice.securityApp.SecurityApp" />
-    <module name="root-module" />
+    <option name="MAIN_CLASS_NAME" value="securityApp.SecurityApp" />
+    <module name="MicroserviceModule" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="microservice.securityApp.config.*" />

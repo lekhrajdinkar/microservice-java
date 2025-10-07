@@ -1,4 +1,4 @@
-package evolution.javaSpringApp;
+package javaSpringApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class AsyncController {
 
     @Autowired
-    private AsyncServiceImpl asyncService;
+    private evolution.javaSpringApp.AsyncServiceImpl asyncService;
 
     @GetMapping("/async")
     public CompletableFuture<ResponseEntity<String>> asyncEndpoint()

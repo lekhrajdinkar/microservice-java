@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ShoppingApp" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="microservice.modernWebApp.shoppingApp.ShoppingApp" />
-    <module name="root-module" />
+  <configuration default="false" name="modernWebApp.ShoppingApp" type="Application" factoryName="Application" folderName="Microservices">
+    <option name="MAIN_CLASS_NAME" value="modernWebApp.shoppingApp.ShoppingApp" />
+    <module name="MicroserviceModule" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="microservice.modernWebApp.*" />

@@ -1,6 +1,6 @@
 package basicWebApp.courseApp.services;
 
-import microservice.basicWebApp.courseApp.custom.Student2CustomRepository;
+import basicWebApp.courseApp.custom.Student2CustomRepository;
 import basicWebApp.courseApp.repository.entity.Student2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

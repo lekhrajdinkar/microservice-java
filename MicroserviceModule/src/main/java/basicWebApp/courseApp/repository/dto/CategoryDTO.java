@@ -1,8 +1,7 @@
 package basicWebApp.courseApp.repository.dto;
 
-import microservice.basicWebApp.courseApp.custom.serialize.LocalDateDeSerializer;
-import microservice.basicWebApp.courseApp.custom.serialize.LocalDateSerializer;
-import evolution.java_7.enums.CatLevel;
+import basicWebApp.courseApp.custom.serialize.LocalDateDeSerializer;
+import basicWebApp.courseApp.custom.serialize.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

@@ -1,4 +1,4 @@
-package s3;
+package aws.storage.s3;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

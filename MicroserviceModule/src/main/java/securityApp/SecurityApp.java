@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collections;
 
 @SpringBootApplication
-@Component("microservice.securityApp")
+@Component("securityApp")
 public class SecurityApp
 {
 	private ApplicationContext applicationContext;

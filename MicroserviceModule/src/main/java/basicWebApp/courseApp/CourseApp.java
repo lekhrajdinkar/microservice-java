@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collections;
 
 @SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
-@Component("microservice.basicWebApp.courseApp")
+@Component("basicWebApp.courseApp")
 public class CourseApp
 {
 	public static void main(String[] args)
