@@ -49,37 +49,13 @@ error: reference to Date is ambiguous
 import java.sql.Date; //resolve /fix
 ```
 
-
-#### ✔️API
-- **Class-File API**
-  - Standard API to parse, inspect, modify, emit Java class files (replacing or reducing dependence on ASM, BCEL)
-  - A tool or agent reading/modifying `.class` files programmatically
-- **Java Stream - Gatherers**
-    - https://www.youtube.com/watch?v=If6wFkY8ux4
-    - https://www.perplexity.ai/search/java-stream-gatherers-https-ww-nqX3RLlRQlGUC0FoXQgmYw
-- **Vector API**
-- **StableValue<>** (JEP 502)
-- **ScopedValue<>** (JEP 506)
-  - `ScopedValue.where(…).run(…)` 
-- **PEM** (JEP 470)
-  -  adds support for reading and writing cryptographic keys and certificates in PEM format via standard APIs
-  -  This improves interoperability with OpenSSL-based systems and streamlines secure communications.
-- **FFM API** (Advance topic, can skip) ❌
-  - Foreign Function & Memory API
-  - https://www.happycoders.eu/java/foreign-function-memory-api/
-  - replacement for old/slow - Java Native Interface (JNI)| FFM 4x faster.
-  - makes it possible to access code **outside** the JVM
-    - functions in libraries implemented in **other programming languages**
-    - memory not managed by the JVM in the heap
-
-#### ✔️ JavaDoc(md), Streams
+#### ✔️ language 2
 
 | Java Version | JEP / Feature | Title / Status                                    | Description                                                                                                                    | Short Example / Use / Scenario                                            |
 |-----------| ------------- |---------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------- |
 | JDK 22    | 458           | Launch Multi-File Source-Code Programs (final)    | `java` launcher can accept multiple `.java` files and compile/run on the fly ([OpenJDK][201])                                    | `java A.java B.java` without pre-compilation                              |
 | JDK 23    | 467           | Markdown Documentation Comments (final)           | JavaDoc comments may use Markdown syntax instead of or in addition to traditional JavaDoc tags ([Eclipse Foundation][202])       | `/** * # Summary * Use **bold** … */`                                     |
 | JDK 24    | 483           | AOT/Ahead-of-Time Class Loading & Linking         | Preload and prelink classes to improve startup performance (Leyden / AOT cache) ([InfoQ][203])                                   | Use AOT / CDS / class prelinking to reduce runtime class loading overhead |
-| JDK 24    | 485           | 🔸Stream Collectors / Gatherers (final / refined) | Finalize or refine custom stream collector operations (windowing, scans, folds) in the Stream API ([InfoQ][203])                 | Use richer operations: `stream.collect(… gatherer …)` etc.                |
 
 [201]: https://openjdk.org/projects/jdk/22/?utm_source=chatgpt.com "JDK 22 - OpenJDK"
 [202]: https://www.eclipse.org/lists/jetty-dev/msg03758.html?utm_source=chatgpt.com "[jetty-dev] JDK 25 feature set is now frozen! - Eclipse"
@@ -87,6 +63,17 @@ import java.sql.Date; //resolve /fix
 [204]: https://www.infoq.com/news/2025/05/jdk25-instance-main-methods/?utm_source=chatgpt.com "Instance Main Methods Move from Preview to Final in JDK 25 - InfoQ"
 [205]: https://www.oracle.com/ca-en/news/announcement/oracle-releases-java-25-2025-09-16/?utm_source=chatgpt.com "Oracle Releases Java 25"
 
+#### ✔️API
+- **Class-File API**
+    - Standard API to parse, inspect, modify, emit Java class files (replacing or reducing dependence on ASM, BCEL)
+    - A tool or agent reading/modifying `.class` files programmatically
+- **Java Stream - Gatherers** 🔸
+    - https://www.youtube.com/watch?v=If6wFkY8ux4
+    - https://www.perplexity.ai/search/java-stream-gatherers-https-ww-nqX3RLlRQlGUC0FoXQgmYw
+- **Vector API**
+- **StableValue<>** 
+- **ScopedValue<>** 
+  
 #### ✔️Concurrent / Context / Execution / GC / Runtime Features
 | Java Version | JEP / Feature    | Title / Status                                                 | Description                                                                                                                           | Short Example / Use / Scenario                                                      |
 | ------------ | ---------------- | -------------------------------------------------------------- |---------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------- |
@@ -105,7 +92,7 @@ import java.sql.Date; //resolve /fix
 [304]: https://egahlin.github.io/2025/05/31/whats-new-in-jdk-25.html?utm_source=chatgpt.com "What's new for JFR in JDK 25 - Erik Gahlin"
 [305]: https://mail.openjdk.org/pipermail/jdk-dev/2025-February/009787.html?utm_source=chatgpt.com "JEP proposed to target JDK 25: 502: Stable Values (Preview)"
 
-#### ✔️ Interop / Native / Memory / JNI & Unsafe
+#### ✔️Interop / Native / Memory / JNI & Unsafe
 
 | Java Version | JEP / Feature | Title / Status                                           | Description                                                                                                             | Short Example / Use / Scenario                                                             |
 | ------------ | ------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -117,4 +104,16 @@ import java.sql.Date; //resolve /fix
 [401]: https://openjdk.org/projects/jdk/22/?utm_source=chatgpt.com "JDK 22 - OpenJDK"
 [402]: https://www.infoq.com/news/2025/02/java-24-so-far/?utm_source=chatgpt.com "JDK 24 and JDK 25: What We Know So Far - InfoQ"
 [403]: https://www.oracle.com/ca-en/news/announcement/oracle-releases-java-25-2025-09-16/?utm_source=chatgpt.com "Oracle Releases Java 25"
+
+- **PEM API** (JEP 470)
+    -  adds support for reading and writing cryptographic keys and certificates in PEM format via standard APIs
+    -  This improves interoperability with OpenSSL-based systems and streamlines secure communications.
+  
+- **FFM API** (Advance topic, can skip) ❌
+    - Foreign Function & Memory API
+    - https://www.happycoders.eu/java/foreign-function-memory-api/
+    - replacement for old/slow - Java Native Interface (JNI)| FFM 4x faster.
+    - makes it possible to access code **outside** the JVM
+        - functions in libraries implemented in **other programming languages**
+        - memory not managed by the JVM in the heap
 
