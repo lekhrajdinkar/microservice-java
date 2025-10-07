@@ -71,4 +71,34 @@ Order of property resolution (highest wins):
   application.properties
 ```
 
+- Set/update **java Runtime**
+```
+#1 pom.xml
+<properties>
+   <java.version>21</java.version>
+   <maven.java.version>21</maven.java.version>
+</properties>
+
+#2  InteliJ    
+- File → Project Structure → SDKs
+- Set this as Project SDK and Module SDK
+- In Settings → Build, Execution, Deployment → Compiler → Java Compiler, ensure:
+    Use compiler: javac
+    Target bytecode: 25 (or lower if compatibility needed)
+- Check java version on runtime config for each app and validate java
+
+---cmd-----
+mvn clean compile
+mvn -v
+java -version
+javac -version
+
+--- Status--- (as of Sep 2025) 
+java 21 : working ✔️
+java 23 : Lombok not supported ❌
+java 25 : Maven not supported ❌
+
+```
+![img.png](docs/99_img/java21.png)
+
 

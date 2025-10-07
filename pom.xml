@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <maven.java.version>21</maven.java.version>
     </properties>
 
 	<dependencies>
@@ -61,7 +62,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+            <version>1.18.34</version>
+            <scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -75,11 +77,6 @@
             <artifactId>spring-tx</artifactId>
             <version>6.1.4</version>
         </dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -312,13 +309,17 @@
 				</configuration>
 			</plugin>
 
+            <!--Maven’s compiler plugin may not fully support java 25, use 23 , as of oct 2025-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
+					<!--
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					-->
+                    <release>${maven.java.version}</release>
 				</configuration>
 			</plugin>
 
@@ -350,6 +351,13 @@
 			<id>confluent</id>
 			<url>https://packages.confluent.io/maven/</url>
 		</repository>
+
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+
 	</repositories>
 
 </project>

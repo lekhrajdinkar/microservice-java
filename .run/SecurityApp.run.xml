@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="SecurityApp" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="25" />
     <option name="MAIN_CLASS_NAME" value="microservice.securityApp.SecurityApp" />
     <module name="spring-app" />
     <extension name="coverage">
