@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args)
     {
         // ✔️ Flexible Constructor - this() / Super() does not needs to be first line
+        // allowing argument validation
 
         // ✔️ instanceof - with primitive types
         Object obj = 42;

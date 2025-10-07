@@ -8,7 +8,7 @@
 #### ✔️JShell
 - A Read-Eval-Print Loop (REPL) tool.
 
-#### Module System
+#### ✔️Module System
 - purpose:
    - for better modularizing of code.
    - help to encapsulate packages.
@@ -70,6 +70,8 @@
 - **Open-source root certificates** to improve the OpenJDK build process.
 
 #### ✔️tool
-- **Flight Recorder**  
- - A low-overhead data collection framework for troubleshooting and profiling
+- **Java Flight Recorder (JFR)**   
+ - A low-overhead **data collection framework** for troubleshooting and profiling
+ - CPU-time-based profiling (amount of CPU time spent in specific methods or threads)
+   - `-XX:StartFlightRecording=filename=cpu-time.jfr`
 

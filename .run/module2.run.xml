@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="module2" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="client.Runner1" />
+    <module name="module2" />
+    <option name="VM_PARAMETERS" value="--add-reads module2=ALL-UNNAMED" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
