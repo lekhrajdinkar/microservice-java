@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "Customer",
-  "namespace": "more.kafka.spring.avro",
+  "namespace": "kafka.spring.avro",
   "fields": [
     {"name": "customerId", "type": "string"},
     {"name": "customerName", "type": "string"},

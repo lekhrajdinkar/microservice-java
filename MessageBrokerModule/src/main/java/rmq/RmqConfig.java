@@ -14,7 +14,7 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Configuration;
-import more.rmq.avro.Student;
+import rmq.avro.Student;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -17,7 +17,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
   private static final long serialVersionUID = 7410427153356215762L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"more.kafka.spring.avro\",\"fields\":[{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"customerName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"kafka.spring.avro\",\"fields\":[{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"customerName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -180,8 +180,8 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new Customer RecordBuilder.
    * @return A new Customer RecordBuilder
    */
-  public static more.kafka.spring.avro.Customer.Builder newBuilder() {
-    return new more.kafka.spring.avro.Customer.Builder();
+  public static kafka.spring.avro.Customer.Builder newBuilder() {
+    return new kafka.spring.avro.Customer.Builder();
   }
 
   /**
@@ -189,11 +189,11 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new Customer RecordBuilder
    */
-  public static more.kafka.spring.avro.Customer.Builder newBuilder(more.kafka.spring.avro.Customer.Builder other) {
+  public static kafka.spring.avro.Customer.Builder newBuilder(kafka.spring.avro.Customer.Builder other) {
     if (other == null) {
-      return new more.kafka.spring.avro.Customer.Builder();
+      return new kafka.spring.avro.Customer.Builder();
     } else {
-      return new more.kafka.spring.avro.Customer.Builder(other);
+      return new kafka.spring.avro.Customer.Builder(other);
     }
   }
 
@@ -202,11 +202,11 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new Customer RecordBuilder
    */
-  public static more.kafka.spring.avro.Customer.Builder newBuilder(more.kafka.spring.avro.Customer other) {
+  public static kafka.spring.avro.Customer.Builder newBuilder(kafka.spring.avro.Customer other) {
     if (other == null) {
-      return new more.kafka.spring.avro.Customer.Builder();
+      return new kafka.spring.avro.Customer.Builder();
     } else {
-      return new more.kafka.spring.avro.Customer.Builder(other);
+      return new kafka.spring.avro.Customer.Builder(other);
     }
   }
 
@@ -230,7 +230,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(more.kafka.spring.avro.Customer.Builder other) {
+    private Builder(kafka.spring.avro.Customer.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.customerId)) {
         this.customerId = data().deepCopy(fields()[0].schema(), other.customerId);
@@ -250,7 +250,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Customer instance
      * @param other The existing instance to copy.
      */
-    private Builder(more.kafka.spring.avro.Customer other) {
+    private Builder(kafka.spring.avro.Customer other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.customerId)) {
         this.customerId = data().deepCopy(fields()[0].schema(), other.customerId);
@@ -280,7 +280,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'customerId'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder setCustomerId(java.lang.CharSequence value) {
+    public kafka.spring.avro.Customer.Builder setCustomerId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.customerId = value;
       fieldSetFlags()[0] = true;
@@ -300,7 +300,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'customerId' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder clearCustomerId() {
+    public kafka.spring.avro.Customer.Builder clearCustomerId() {
       customerId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -320,7 +320,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'customerName'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder setCustomerName(java.lang.CharSequence value) {
+    public kafka.spring.avro.Customer.Builder setCustomerName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.customerName = value;
       fieldSetFlags()[1] = true;
@@ -340,7 +340,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'customerName' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder clearCustomerName() {
+    public kafka.spring.avro.Customer.Builder clearCustomerName() {
       customerName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -360,7 +360,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder setEmail(java.lang.CharSequence value) {
+    public kafka.spring.avro.Customer.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.email = value;
       fieldSetFlags()[2] = true;
@@ -380,7 +380,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Customer.Builder clearEmail() {
+    public kafka.spring.avro.Customer.Builder clearEmail() {
       email = null;
       fieldSetFlags()[2] = false;
       return this;

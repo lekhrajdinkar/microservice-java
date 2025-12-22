@@ -17,7 +17,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   private static final long serialVersionUID = 8711287502392048201L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"more.kafka.spring.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"kafka.spring.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -180,8 +180,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new Student RecordBuilder.
    * @return A new Student RecordBuilder
    */
-  public static more.kafka.spring.avro.Student.Builder newBuilder() {
-    return new more.kafka.spring.avro.Student.Builder();
+  public static kafka.spring.avro.Student.Builder newBuilder() {
+    return new kafka.spring.avro.Student.Builder();
   }
 
   /**
@@ -189,11 +189,11 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new Student RecordBuilder
    */
-  public static more.kafka.spring.avro.Student.Builder newBuilder(more.kafka.spring.avro.Student.Builder other) {
+  public static kafka.spring.avro.Student.Builder newBuilder(kafka.spring.avro.Student.Builder other) {
     if (other == null) {
-      return new more.kafka.spring.avro.Student.Builder();
+      return new kafka.spring.avro.Student.Builder();
     } else {
-      return new more.kafka.spring.avro.Student.Builder(other);
+      return new kafka.spring.avro.Student.Builder(other);
     }
   }
 
@@ -202,11 +202,11 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new Student RecordBuilder
    */
-  public static more.kafka.spring.avro.Student.Builder newBuilder(more.kafka.spring.avro.Student other) {
+  public static kafka.spring.avro.Student.Builder newBuilder(kafka.spring.avro.Student other) {
     if (other == null) {
-      return new more.kafka.spring.avro.Student.Builder();
+      return new kafka.spring.avro.Student.Builder();
     } else {
-      return new more.kafka.spring.avro.Student.Builder(other);
+      return new kafka.spring.avro.Student.Builder(other);
     }
   }
 
@@ -230,7 +230,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(more.kafka.spring.avro.Student.Builder other) {
+    private Builder(kafka.spring.avro.Student.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -250,7 +250,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Student instance
      * @param other The existing instance to copy.
      */
-    private Builder(more.kafka.spring.avro.Student other) {
+    private Builder(kafka.spring.avro.Student other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -280,7 +280,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder setId(java.lang.CharSequence value) {
+    public kafka.spring.avro.Student.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -300,7 +300,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder clearId() {
+    public kafka.spring.avro.Student.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -320,7 +320,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder setName(java.lang.CharSequence value) {
+    public kafka.spring.avro.Student.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -340,7 +340,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder clearName() {
+    public kafka.spring.avro.Student.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -360,7 +360,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'age'.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder setAge(int value) {
+    public kafka.spring.avro.Student.Builder setAge(int value) {
       validate(fields()[2], value);
       this.age = value;
       fieldSetFlags()[2] = true;
@@ -380,7 +380,7 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'age' field.
       * @return This builder.
       */
-    public more.kafka.spring.avro.Student.Builder clearAge() {
+    public kafka.spring.avro.Student.Builder clearAge() {
       fieldSetFlags()[2] = false;
       return this;
     }

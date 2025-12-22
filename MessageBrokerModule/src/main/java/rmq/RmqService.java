@@ -3,7 +3,7 @@ package rmq;
 import io.apicurio.registry.serde.avro.AvroKafkaDeserializer;
 import io.apicurio.registry.serde.avro.AvroKafkaSerializer;
 import lombok.extern.slf4j.Slf4j;
-import more.rmq.avro.Student;
+import rmq.avro.Student;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

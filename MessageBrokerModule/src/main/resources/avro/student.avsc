@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "Student",
-  "namespace": "more.kafka.spring.avro",
+  "namespace": "kafka.spring.avro",
   "fields": [
     {"name": "id", "type": "string"},
     {"name": "name", "type": "string"},

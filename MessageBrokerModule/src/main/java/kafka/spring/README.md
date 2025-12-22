@@ -14,13 +14,13 @@ Topics used:
 ## 2. Environment Setup
 ### Docker Compose
 - Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
-- [docker-compose.yml](../../../../../../src/main/resources/more/kafka/docker-compose.yml)
-- [platform-config.yml](../../../../../../src/main/resources/more/kafka/platform-config.yml)
+- [docker-compose.yml](../../../resources/more/kafka/docker-compose.yml)
+- [platform-config.yml](../../../resources/more/kafka/platform-config.yml)
 - cluster name: `my-local-kafka-cluster`
 - https://conduktor.io/get-started
 
 ```bash
-cd ./../../../../../../src/main/resources/more/kafka
+cd ./../../../resources/more/kafka
 docker-compose -f docker-compose.yml up -d
 ```
 
@@ -36,7 +36,7 @@ docker-compose -f docker-compose.yml up -d
       - "8080:8080"
     volumes:
       - type: bind
-        source: "/c/Users/Manisha/Documents/GitHub/idea/microservice-java/src/main/resources/more/kafka/platform-config.yml" # update this path 👈🏻👈🏻
+        source: "/c/Users/Manisha/Documents/github-2025/microservice-java/src/main/resources/more/kafka/platform-config.yml" # update this path 👈🏻👈🏻
         target: /opt/conduktor/platform-config.yaml
         read_only: true
     environment:
@@ -54,7 +54,7 @@ docker-compose -f docker-compose.yml up -d
  ✔ Container schema-registry       Started
 ```
 
-![docker1.png](../../../../../../src/main/resources/more/kafka/docker1.png)
+![docker1.png](../../../resources/more/kafka/docker1.png)
 
 ---
 ## 3.1. kafkaSpringApp - producer & consumer
@@ -64,7 +64,7 @@ docker-compose -f docker-compose.yml up -d
   - docs: http://localhost:8091/kafkaSpringApp/swagger-ui/index.html
   - props: [kafkaSpringApp.properties](../../../../../../src/main/resources/more/kafka/kafkaSpringApp.properties)
   - conductor console: http://localhost:8080/console/my-local-kafka-cluster
-  - [avro](../../../../../../src/main/resources/avro)
+  - [avro](../../../resources/avro)
   - ![img.png](img.png)
   
 ### Error and its Fix
@@ -204,4 +204,5 @@ factory.setCommonErrorHandler(errorHandler);
 
 ---
 ## 3.2. kafkaSpringApp - KafkaStreamAPI
+- JT playlist : https://www.youtube.com/watch?v=U7RZcBtP6Dw&list=PLVz2XdJiJQxz55LcpHFM6QIB-Px40w3Gt&index=4
 - inProcess...
