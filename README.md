@@ -1,5 +1,9 @@
 # java | springboot | microservices | kafka | rmq | spring-batch
 
+## Continuous Annual Learning
+- [index_learning_2025.md](docs/03_learning_2025/index_learning_2025.md)
+- [index_learning_2026.md](docs/04_learning_2026/index_learning_2026.md)
+
 ## ✔️ documentation
 - `mkdocs` 
   ```bash
@@ -7,6 +11,7 @@
   pip install -r requirements-netlify.txt
   mkdocs serve
   ```
+
 ---
 ## ✔️CD/CI
 - Deployment steps: https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
@@ -16,7 +21,7 @@
 ### 🔸leetcode
 https://leetcode.com/u/lekhrajdinkar/
 
-### 🔸Java7+ project
+### 🔸project - Java7 and above 
 - [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
 - [java evolution - project and Notes](JavaEvolutionModule/src/main/java/evolution)
   - [Java 7 README.md](JavaEvolutionModule/src/main/java/evolution/java_7/README.md)
@@ -26,7 +31,7 @@ https://leetcode.com/u/lekhrajdinkar/
   - [Java 21 README.md](JavaEvolutionModule/src/main/java/evolution/Java_21/README.md)
   - [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
   - ...
-- [Advance concepts Notes📚](docs/03_Advance)
+- [Advance concepts Notes📚](docs/03_learning_2025)
   
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
