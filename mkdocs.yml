@@ -12,60 +12,63 @@ site_subtitle: Java | Spring Boot | Spring Batch | ETL
 site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Documentation
 
 nav:
-  - 🔶Spring boot:
-      - ✔️lombok mvn git: 02_springboot/00_others.md
-      - ✔️Spring Core:
-          - Spring Core Basics: 02_springboot/01_Spring-core/01_Spring_Core.md
-          - Spring Bean Lifecycle: 02_springboot/01_Spring-core/02_Spring_bean_lifeCycle.md
-          - AOP Concept: 02_springboot/01_Spring-core/03_AOP_concept.md
-          - Point-cut Examples: 02_springboot/01_Spring-core/03_point-cut-examples.txt
-          - Spring Properties: 02_springboot/01_Spring-core/04_spring_properties.md
+  - 🔶lombok mvn git: 00_others.md
+  - 🔶Java: 00_java-evolution.md
+  - 🔶Spring:
+      - ✔️Core:
+          - Spring Core Basics: 01_Spring-core/01_Spring_Core.md
+          - Spring Bean Lifecycle: 01_Spring-core/02_Spring_bean_lifeCycle.md
+          - AOP Concept: 01_Spring-core/03_AOP_concept.md
+          - Point-cut Examples: 01_Spring-core/03_point-cut-examples.txt
+          - Spring Properties: 01_Spring-core/04_spring_properties.md
 
-      - ✔️Spring Boot:
-          - Kickoff: 02_springboot/01_springboot/01_SB_kickoff.md
-          - Auto Configuration: 02_springboot/01_springboot/02_SB_AutoConfig.md
-          - Starter & Testing: 02_springboot/01_springboot/03_SB_starter_test.md
+      - ✔️SpringBoot:
+          - Kickoff: 01_springboot/01_SB_kickoff.md
+          - Auto Configuration: 01_springboot/02_SB_AutoConfig.md
+          - Starter & Testing: 01_springboot/03_SB_starter_test.md
 
-  - 🔶Advance:
-      - performance: 03_Advance/01_performance.md
-      - microservices: 03_Advance/02_microservices.md
-      - multi-threading: 03_Advance/03_multi-threading.md
+      - ✔️SpringBatch:
+          - SpringBatch1: 05_spring-batch-ETL/00_index.md
+          - SpringBatch2: 05_spring-batch-ETL/01_SpringBatch-start.md
 
   - 🔶Web Application:
       - ✔️controller:
-          - Web Start: 02_springboot/02_web/00 WEB_start.md
-          - General Web Tasks: 02_springboot/02_web/00_general_web_task.md
-          - Servlet 3: 02_springboot/02_web/01_servlet_3.md
-          - Spring MVC: 02_springboot/02_web/02_spring_MVC.md
-          - Spring Boot Starter Web: 02_springboot/02_web/03_spring_boot_stater_web.md
-          - REST: 02_springboot/02_web/04_REST.md
-          - Jackson: 02_springboot/02_web/05_Jackson.md
-          - Swagger: 02_springboot/02_web/06_swagger.md
-          - Error Handling: 02_springboot/02_web/07_error_handling.md
-          - gRPC & Webflux: 02_springboot/02_web/08_gRPC+webflux.md
-          - Webflux: 02_springboot/02_web/09_webflux.md
+          - Web Start: 02_web/00 WEB_start.md
+          - General Web Tasks: 02_web/00_general_web_task.md
+          - Servlet 3: 02_web/01_servlet_3.md
+          - Spring MVC: 02_web/02_spring_MVC.md
+          - Spring Boot Starter Web: 02_web/03_spring_boot_stater_web.md
+          - REST: 02_web/04_REST.md
+          - Jackson: 02_web/05_Jackson.md
+          - Swagger: 02_web/06_swagger.md
+          - Error Handling: 02_web/07_error_handling.md
+          - gRPC & Webflux: 02_web/08_gRPC+webflux.md
+          - Webflux: 02_web/09_webflux.md
 
       - ✔️Data Layer:
-          - Common Tasks: 02_springboot/03_data-layer/00_common_task.md
-          - JPA: 02_springboot/03_data-layer/01_JPA.md
-          - Persistence Context: 02_springboot/03_data-layer/02_presistence-context.md
-          - Hibernate Annotations & Converter: 02_springboot/03_data-layer/04_Hibernate-1-anno+converter.md
-          - Hibernate Identifier & Validator: 02_springboot/03_data-layer/04_Hibernate-2-identifier+validator.md
-          - Hibernate Query: 02_springboot/03_data-layer/04_Hibernate-3-query.md
-          - SB JPA Data Part 1: 02_springboot/03_data-layer/05-SBjpaData-1-start.md
-          - SB JPA Data Part 2: 02_springboot/03_data-layer/05-SBjpaData-2.md
-          - SB JPA Data Transactions: 02_springboot/03_data-layer/05-SBjpaData-3-txn.md
-          - ER Diagram: 02_springboot/03_data-layer/er-diagram.png
+          - Common Tasks: 03_data-layer/00_common_task.md
+          - JPA: 03_data-layer/01_JPA.md
+          - Persistence Context: 03_data-layer/02_presistence-context.md
+          - Hibernate Annotations & Converter: 03_data-layer/04_Hibernate-1-anno+converter.md
+          - Hibernate Identifier & Validator: 03_data-layer/04_Hibernate-2-identifier+validator.md
+          - Hibernate Query: 03_data-layer/04_Hibernate-3-query.md
+          - SB JPA Data Part 1: 03_data-layer/05-SBjpaData-1-start.md
+          - SB JPA Data Part 2: 03_data-layer/05-SBjpaData-2.md
+          - SB JPA Data Transactions: 03_data-layer/05-SBjpaData-3-txn.md
+          - ER Diagram: 03_data-layer/er-diagram.png
 
       - ✔️Security:
-          - Concepts: 02_springboot/04_security/01_01_Concepts.md
-          - LDAP: 02_springboot/04_security/01_03_LDAP.md
+          - Concepts: 04_security/01_01_Concepts.md
+          - LDAP: 04_security/01_03_LDAP.md
 
-  - 🔶More:
-     - ✔️ETL SpringBatch:
-          - index: 02_springboot/05_spring-batch-ETL/00_index.md
-          - SpringBatch: 02_springboot/05_spring-batch-ETL/01_SpringBatch-start.md
-
+  - 🔶POCS:
+      - ✔️2025:
+          - index: 2025_pocs/00_index_POC_2025.md
+          - Java-performance: 2025_pocs/01_java-performance.md
+          - microservices: 2025_pocs/03_sb-microservices.md
+          - multi-threading: 2025_pocs/02_java-multi-threading.md
+      - ✔️2026:
+          - index: 2026_pocs/00_index_POC_2026.md
 
 extra_css:
   - mkdocs.css

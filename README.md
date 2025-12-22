@@ -1,8 +1,6 @@
 # java | springboot | microservices | kafka | rmq | spring-batch
 
-## Continuous Annual Learning
-- [index_learning_2025.md](docs/03_learning_2025/index_learning_2025.md)
-- [index_learning_2026.md](docs/04_learning_2026/index_learning_2026.md)
+
 
 ## ✔️ documentation
 - `mkdocs` 
@@ -11,14 +9,13 @@
   pip install -r requirements-netlify.txt
   mkdocs serve
   ```
-
 ---
 ## ✔️CD/CI
 - Deployment steps: https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
 
 ---
 ## ✔️POCs / projects
-### 🔸leetcode
+### 🔸leetcode project
 https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸project - Java7 and above 
@@ -31,7 +28,7 @@ https://leetcode.com/u/lekhrajdinkar/
   - [Java 21 README.md](JavaEvolutionModule/src/main/java/evolution/Java_21/README.md)
   - [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
   - ...
-- [Advance concepts Notes📚](docs/03_learning_2025)
+- [Advance concepts Notes📚](docs/2025_pocs)
   
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
@@ -55,10 +52,16 @@ https://leetcode.com/u/lekhrajdinkar/
 ### 🔸MessageBroker projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
 - [kafkaSpringApp README.md](MessageBrokerModule/src/main/java/kafka/spring/README.md)
+  - App1 - Producer/Consumer with Avro serialization
+  - App2 - KafkaStream API 
 - [rmqSpringApp README.md](MessageBrokerModule/src/main/java/rmq/README.md)
 - **ETL/Spring-Batch**  
-  - [Notes 📚](docs/02_springboot/05_spring-batch-ETL)  
+  - [Notes 📚](docs/05_spring-batch-ETL)  
   - [springbatch](ETLModule/src/main/java/springbatch)
+
+### 🔸More POCS
+- [index_POC_2025](docs/2025_pocs/00_index_POC_2025.md)
+- [index_POC_2026](docs/2026_pocs/00_index_POC_2026.md)
 
 ---
 ## ✔️ other/s

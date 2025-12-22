@@ -57,7 +57,7 @@ docker-compose -f docker-compose.yml up -d
 ![docker1.png](../../../../../../src/main/resources/more/kafka/docker1.png)
 
 ---
-## kafkaSpringApp
+## 3.1. kafkaSpringApp - producer & consumer
 ### overview
   - [https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8](https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8)
   - main: [kafkaSpringApp.java](kafkaSpringApp.java)
@@ -195,11 +195,13 @@ factory.setCommonErrorHandler(errorHandler);
 ```
 
 ### Advance :: more
-```properties
+- monitoring & metrics
+- security (SSL, SASL)
+- schema evolution strategies
+- testing strategies (embedded Kafka, MockConsumer)
+- performance tuning (batch size, linger.ms, compression)
+- Message Ordering (JT) : https://www.youtube.com/watch?v=Jl-nauqEtEo
 
-4. monitoring & metrics
-5. security (SSL, SASL)
-6. schema evolution strategies
-7. testing strategies (embedded Kafka, MockConsumer)
-8. performance tuning (batch size, linger.ms, compression)
-```
+---
+## 3.2. kafkaSpringApp - KafkaStreamAPI
+- inProcess...
