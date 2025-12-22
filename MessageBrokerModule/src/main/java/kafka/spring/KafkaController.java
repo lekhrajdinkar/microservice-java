@@ -2,8 +2,6 @@ package kafka.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import kafka.spring.avro.Customer;
-import kafka.spring.avro.Student;
 
 @RestController
 @RequestMapping("/kafka")

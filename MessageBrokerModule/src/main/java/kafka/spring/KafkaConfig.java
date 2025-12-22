@@ -12,6 +12,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
+import kafka.spring.avro.*;
 
 @Configuration
 public class KafkaConfig

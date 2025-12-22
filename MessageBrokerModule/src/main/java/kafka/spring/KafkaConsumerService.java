@@ -10,12 +10,10 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
-import kafka.spring.avro.Customer;
-import kafka.spring.avro.Student;
-
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import kafka.spring.avro.*;
 
 @Slf4j
 @Service
