@@ -1,5 +1,7 @@
 package kafka.spring;
 
+import kafka.spring.avro.Customer;
+import kafka.spring.avro.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="RmqSpringApp" type="Application" factoryName="Application" folderName="MB">
     <option name="MAIN_CLASS_NAME" value="rmq.RmqSpringApp" />
-    <module name="MessageBrokerModule" />
+    <module name="RmqModule" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="more.rmq.*" />

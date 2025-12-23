@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "Customer",
+  "namespace": "kafka.spring.avro",
+  "fields": [
+    {"name": "customerId", "type": "string"},
+    {"name": "customerName", "type": "string"},
+    {"name": "email", "type": "string"}
+  ]
+}

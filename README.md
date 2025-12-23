@@ -54,7 +54,9 @@ https://leetcode.com/u/lekhrajdinkar/
 - [kafkaSpringApp README.md](MessageBrokerModule/src/main/java/kafka/spring/README.md)
   - App1 - Producer/Consumer with Avro serialization
   - App2 - KafkaStream API 
-- [rmqSpringApp README.md](MessageBrokerModule/src/main/java/rmq/README.md)
+- [RmqSpringApp README.md](RmqModule/src/main/java/rmq/README.md)
+
+### 🔸ETL projects
 - **ETL/Spring-Batch**  
   - [Notes 📚](docs/05_spring-batch-ETL)  
   - [springbatch](ETLModule/src/main/java/springbatch)

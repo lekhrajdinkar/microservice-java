@@ -1,16 +1,16 @@
 package rmq;
 
+import com.rabbitmq.client.Channel;
 import io.apicurio.registry.serde.avro.AvroKafkaDeserializer;
 import io.apicurio.registry.serde.avro.AvroKafkaSerializer;
 import lombok.extern.slf4j.Slf4j;
-import rmq.avro.Student;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import com.rabbitmq.client.Channel;
-import org.springframework.amqp.core.Message;
+import rmq.avro.Student;
 
 import java.util.Arrays;
 
