@@ -4,7 +4,7 @@
     <module name="KafkaModule" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="more.kafka.spring.*" />
+        <option name="PATTERN" value="kafka.spring.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

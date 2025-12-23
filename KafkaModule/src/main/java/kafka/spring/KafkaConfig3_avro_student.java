@@ -72,7 +72,8 @@ public class KafkaConfig3_avro_student
         factory.setRecordFilterStrategy(record -> {
             Student student = (Student) record.value();
             if (student.getAge() <= 18) { // skip if not adult
-                log.warn("Skipping Student (age <= 18): {}", student);
+                //log.warn("Skipping Student (age <= 18): {}", student);
+                System.out.println("Skipping Student (age <= 18): {}"+student);
                 return true ;
             }
             return false ;
