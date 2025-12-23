@@ -12,6 +12,7 @@
 ## Run time details
 - Database : no DB, no entity | only DTO 👈🏻
 - ApiDoc : http://localhost:8086/jewelleryApp/swagger-ui/index.html#/
+- no security
 
 ---
 ## POC/s 

@@ -1,7 +1,5 @@
 # java | springboot | microservices | kafka | rmq | spring-batch
 
-
-
 ## ✔️ documentation
 - `mkdocs` 
   ```bash
@@ -97,6 +95,10 @@ Order of property resolution (highest wins):
     Use compiler: javac
     Target bytecode: 25 (or lower if compatibility needed)
 - Check java version on runtime config for each app and validate java
+- use maven wrapper > update it for InteliJ
+
+# maven warpper
+- [toolchains.xml](.mvn/toolchains.xml) > update hardcoded java path
 
 ---cmd-----
 mvn clean compile
@@ -109,7 +111,10 @@ java 21 : working ✔️
 java 23 : Lombok not supported ❌
 java 25 : Maven not supported ❌
 
+--- More
+- <!-- 🔶 Security --> comment this part in pom.xml(root)
 ```
+
 ![img.png](docs/99_img/java21.png)
 
 

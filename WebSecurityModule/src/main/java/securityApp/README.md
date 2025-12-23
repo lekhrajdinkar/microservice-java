@@ -1,6 +1,6 @@
 # Security App
 ## Overview
-- [security - Notes 📚](../../../../../docs/02_springboot/04_security)
+- [04_security](../../../../../docs/04_security)
 
 ## Runtime Details 
 - Database : no | Observability: no
@@ -8,7 +8,7 @@
 - okta : https://dev-16206041-admin.okta.com/admin/getting-started
 - auth0 : https://manage.auth0.com/dashboard/us/dev-gpg8k3i38lkcqtkw/onboarding | signed up with Github | dev-gpg8k3i38lkcqtkw
 - [Security config](config)
-- properties:  [securityApp.properties](../../../../../src/main/resources/microservice/securityApp/securityApp.properties)
+- properties:  [securityApp.properties](../../../../src/main/resources/securityApp/securityApp.properties)
   - OKTA_CLIENT_SECRET_CC=<set_value> 👈🏻👈🏻
 
 

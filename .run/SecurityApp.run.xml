@@ -2,7 +2,7 @@
   <configuration default="false" name="SecurityApp" type="Application" factoryName="Application" folderName="Microservices">
     <option name="ALTERNATIVE_JRE_PATH" value="25" />
     <option name="MAIN_CLASS_NAME" value="securityApp.SecurityApp" />
-    <module name="MicroserviceModule" />
+    <module name="WebSecurityModule" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="microservice.securityApp.config.*" />

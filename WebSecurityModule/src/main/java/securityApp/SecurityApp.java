@@ -15,7 +15,7 @@ public class SecurityApp
 	public static void main(String[] args)
 	{
 		SpringApplication app = new SpringApplication(SecurityApp.class);
-		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/microservice/securityApp/securityApp.properties"));
+		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/securityApp/securityApp.properties"));
 		app.run(args);
 	}
 }

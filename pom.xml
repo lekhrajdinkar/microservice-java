@@ -25,6 +25,7 @@
         <module>MicroserviceModule</module>
         <module>ETLModule</module>
         <module>RmqModule</module>
+        <module>WebSecurityModule</module>
     </modules>
 
     <properties>
@@ -119,7 +120,7 @@
 			<version>4.0.1</version> <!-- Or the version compatible with your servlet container -->
 		</dependency>
 
-<!-- 🔶 Security -->
+<!-- 🔶 Security
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -134,6 +135,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
 		</dependency>
+-->
 
 <!-- 🔶 RMQ -->
 		<dependency>

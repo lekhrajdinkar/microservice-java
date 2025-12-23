@@ -26,12 +26,12 @@ public class RestConsumeConfig
     // ================
     // Interceptors (beans)
     // ================
-    @Bean("basicAuthInterceptor_user1")
+    //@Bean("basicAuthInterceptor_user1")
     public ClientHttpRequestInterceptor basicAuthInterceptor1() {
         return new BasicAuthenticationInterceptor("user1", "user1Pass");
     }
 
-    @Bean("basicAuthInterceptor_admin")
+    //@Bean("basicAuthInterceptor_admin")
     public ClientHttpRequestInterceptor basicAuthInterceptor2() {
         return new BasicAuthenticationInterceptor("admin", "adminPass");
     }
