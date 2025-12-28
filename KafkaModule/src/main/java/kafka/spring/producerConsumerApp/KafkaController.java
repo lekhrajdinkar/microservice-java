@@ -1,4 +1,4 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import kafka.spring.avro.Customer;
 import kafka.spring.avro.Student;

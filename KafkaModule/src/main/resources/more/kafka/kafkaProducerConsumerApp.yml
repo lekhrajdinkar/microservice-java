@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: kafkaSpringApp
+  banner:
+    location: classpath:/more/kafka/banner.txt
+  kafka:
+    bootstrap-servers: localhost:9092
+    schema-registry-servers: http://localhost:8081
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    streams:
+      application-id: student-streams-poc
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+
+server:
+  servlet:
+    context-path: /kafkaSpringApp
+  port: 8091
+
+app:
+  kafka:
+    topic:
+      generic-topic-name: generic-topic
+      student-topic-name: student-topic
+      customer-topic-name: customer-topic
+    consumer:
+      kafka-generic-consumer-group:
+        enabled: true
+
+student:
+  kafka:
+    consumer:
+      group-id: student-avro-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      specific:
+        avro:
+          reader: true
+      manual:
+        offset: false
+
+customer:
+  kafka:
+    consumer:
+      group-id: student-avro-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      specific:
+        avro:
+          reader: true
+      manual:
+        offset: true
+      in:
+        batch: true
+
+# Producer properties (left intentionally empty for now)
+# Add producer-specific settings here if needed

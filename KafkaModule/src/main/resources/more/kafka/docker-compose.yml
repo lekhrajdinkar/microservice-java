@@ -71,7 +71,7 @@ services:
       - "8080:8080"
     volumes:
       - type: bind
-        source: "/c/Users/Manisha/Documents/github-2025/microservice-java/MessageBrokerModule/src/main/resources/more/kafka/platform-config.yml"
+        source: "/c/Users/Manisha/Documents/github-2025/microservice-java/KafkaModule/src/main/resources/more/kafka/platform-config.yml"
         target: /opt/conduktor/platform-config.yaml
         read_only: true
     environment:

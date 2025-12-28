@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: kafkaStreamApp
+  banner:
+    location: classpath:/more/kafka/banner-stream-app.txt
+  kafka:
+    bootstrap-servers: localhost:9092
+    schema-registry-servers: http://localhost:8081
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    streams:
+      application-id: kafkaStreamApp
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+
+server:
+  servlet:
+    context-path: /kafkaStreamApp
+  port: 8092
+

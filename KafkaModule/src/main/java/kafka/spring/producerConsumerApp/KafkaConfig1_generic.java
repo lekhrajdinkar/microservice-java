@@ -1,4 +1,4 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;

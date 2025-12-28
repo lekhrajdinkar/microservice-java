@@ -1,7 +1,6 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -14,8 +13,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import kafka.spring.avro.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 @Service
 @ConditionalOnProperty(
         name = "app.kafka.consumer.kafka-generic-consumer-group.enabled",
@@ -24,6 +24,7 @@ import kafka.spring.avro.*;
     )
 public class KafkaConsumerService
 {
+    private static final Logger log = LoggerFactory.getLogger(KafkaConsumerService.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final ExecutorService executor = Executors.newFixedThreadPool(3);
 

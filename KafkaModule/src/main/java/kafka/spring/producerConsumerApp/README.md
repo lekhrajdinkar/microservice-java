@@ -15,8 +15,8 @@ Topics used:
 ## 2. Environment Setup
 ### Docker Compose
 - Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
-- [docker-compose.yml](../../../resources/more/kafka/docker-compose.yml)
-- [platform-config.yml](../../../resources/more/kafka/platform-config.yml)
+- [docker-compose.yml](../../../../resources/more/kafka/docker-compose.yml)
+- [platform-config.yml](../../../../resources/more/kafka/platform-config.yml)
 - cluster name: `my-local-kafka-cluster`
 - https://conduktor.io/get-started
 
@@ -55,18 +55,18 @@ docker-compose -f docker-compose.yml up -d
  ✔ Container schema-registry       Started
 ```
 
-![docker1.png](../../../resources/more/kafka/docker1.png)
+![docker1.png](../../../../resources/more/kafka/docker1.png)
 
 ---
-## 3.1. kafkaSpringApp - producer & consumer
+## 3. kafkaProducerConsumerApp - producer & consumer
 ### overview
   - [https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8](https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8)
-  - main: [kafkaSpringApp.java](kafkaSpringApp.java)
-  - docs: http://localhost:8091/kafkaSpringApp/swagger-ui/index.html
-  - props: [kafkaSpringApp.properties](../../../../../../src/main/resources/more/kafka/kafkaSpringApp.properties)
+  - main: [kafkaProducerConsumerApp.java](kafkaProducerConsumerApp.java)
+  - docs: http://localhost:8091/kafkaProducerConsumerApp/swagger-ui/index.html
+  - props: [kafkaProducerConsumerApp.properties](../../../../resources/more/kafka/kafkaProducerConsumerApp.properties)
   - conductor console: http://localhost:8080/console/my-local-kafka-cluster
-  - [avro](../../../resources/avro)
-  - ![img.png](../../../resources/img/img.png)
+  - [avro](../../../../resources/avro)
+  - ![img.png](../../../../resources/img/img.png)
   
 ### Error and its Fix
 ```
@@ -193,6 +193,15 @@ DefaultErrorHandler errorHandler = new DefaultErrorHandler(
         new FixedBackOff(2000L, 3L) // retry every 2s, max 3 retries
 );
 factory.setCommonErrorHandler(errorHandler);
+
+// 7. ✔️Serial/Deserialize
+
+// 7.1. Custom -> class Class1 implements Serialize<T> : override byte[] serialize(T) and vice versa
+// 7.2. JSON Serde is simple but no schema evolution safety. use for dev where Kafka Streams does not require Schema Registry
+    - JsonSerde<T>
+// 7.3. For production → Avro/Protobuf + Schema Registry
+    - genericAvro
+    - avro1,avro2
 ```
 
 ### Advance :: more
@@ -203,7 +212,3 @@ factory.setCommonErrorHandler(errorHandler);
 - performance tuning (batch size, linger.ms, compression)
 - Message Ordering (JT) : https://www.youtube.com/watch?v=Jl-nauqEtEo
 
----
-## 3.2. kafkaSpringApp - KafkaStreamAPI
-- JT playlist : https://www.youtube.com/watch?v=U7RZcBtP6Dw&list=PLVz2XdJiJQxz55LcpHFM6QIB-Px40w3Gt&index=4
-- inProcess...

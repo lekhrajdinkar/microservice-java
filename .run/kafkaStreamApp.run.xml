@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="kafkaStreamApp" type="Application" factoryName="Application" folderName="MB" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="kafka.spring.streamApp.kafkaStreamApp" />
+    <module name="KafkaModule" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="kafka.spring.streamApp.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

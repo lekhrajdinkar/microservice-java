@@ -1,4 +1,4 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,13 +11,13 @@ import java.util.Collections;
 @SpringBootApplication
 @Component("kafka.spring")
 @EnableAsync
-public class kafkaSpringApp
+public class kafkaProducerConsumerApp
 {
 	private ApplicationContext applicationContext;
 	public static void main(String[] args)
 	{
-		SpringApplication app = new SpringApplication(kafkaSpringApp.class);
-		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/more/kafka/kafkaSpringApp.properties"));
+		SpringApplication app = new SpringApplication(kafkaProducerConsumerApp.class);
+		app.setDefaultProperties(Collections.singletonMap("spring.config.location", "classpath:/more/kafka/kafkaProducerConsumerApp.properties"));
 		app.run(args);
 	}
 }

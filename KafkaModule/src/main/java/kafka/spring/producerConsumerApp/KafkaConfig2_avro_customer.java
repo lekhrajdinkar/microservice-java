@@ -1,10 +1,9 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import kafka.spring.avro.Customer;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -23,10 +22,14 @@ import org.springframework.util.backoff.FixedBackOff;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Configuration
 public class KafkaConfig2_avro_customer
 {
+    private static final Logger log = LoggerFactory.getLogger(KafkaConfig2_avro_customer.class);
+
     @Value("${spring.kafka.bootstrap-servers}") private String bootstrapServers;
     @Value("${spring.kafka.schema-registry-servers}") private String schemaRegistryUrl;
     @Value("${customer.kafka.consumer.manual.offset}") private boolean manualOffset;
@@ -128,4 +131,3 @@ public class KafkaConfig2_avro_customer
 
 
 }
-

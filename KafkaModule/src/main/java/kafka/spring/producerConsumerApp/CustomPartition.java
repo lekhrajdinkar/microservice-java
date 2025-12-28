@@ -1,4 +1,4 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;

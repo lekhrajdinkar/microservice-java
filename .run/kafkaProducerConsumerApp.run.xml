@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="kafkaSpringApp" type="Application" factoryName="Application" folderName="MB">
-    <option name="MAIN_CLASS_NAME" value="kafka.spring.kafkaSpringApp" />
+  <configuration default="false" name="kafkaProducerConsumerApp" type="Application" factoryName="Application" folderName="MB">
+    <option name="MAIN_CLASS_NAME" value="kafka.spring.producerConsumerApp.kafkaProducerConsumerApp" />
     <module name="KafkaModule" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="kafka.spring.*" />
+        <option name="PATTERN" value="kafka.spring.streamApp.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

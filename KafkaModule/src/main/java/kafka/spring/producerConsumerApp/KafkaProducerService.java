@@ -1,4 +1,4 @@
-package kafka.spring;
+package kafka.spring.producerConsumerApp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
