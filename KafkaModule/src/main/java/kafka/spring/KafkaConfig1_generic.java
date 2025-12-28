@@ -12,13 +12,12 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
-import kafka.spring.avro.*;
 
 @Configuration
-public class KafkaConfig
+public class KafkaConfig1_generic
 {
     @Value("${spring.kafka.bootstrap-servers}") private String bootstrapServers;
-    @Value("${spring.kafka.bootstrap-servers}") private String schemaRegistryUrl; // = "http://localhost:8081";
+    //@Value("${spring.kafka.bootstrap-servers}") private String schemaRegistryUrl; // = "http://localhost:8081";
 
     // ===========================
     // Optional topic creation

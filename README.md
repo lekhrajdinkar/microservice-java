@@ -44,7 +44,7 @@ https://leetcode.com/u/lekhrajdinkar/
   - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
   - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
 - More
-  - [securityApp README.md](MicroserviceModule/src/main/java/securityApp/README.md) | OAuth2, okta, jwt, basic
+  - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
   - [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
 
 ### 🔸MessageBroker projects

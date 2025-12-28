@@ -4,6 +4,7 @@
 This POC demonstrates Kafka basics and advanced patterns using:
 - **Java Spring Boot** (producers, consumers, schema integration).
 - **Confluent Schema Registry** for Avro schema-based messaging.
+- [📋Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker/kakfa)
 
 Topics used:
 - `student-topic`
@@ -65,7 +66,7 @@ docker-compose -f docker-compose.yml up -d
   - props: [kafkaSpringApp.properties](../../../../../../src/main/resources/more/kafka/kafkaSpringApp.properties)
   - conductor console: http://localhost:8080/console/my-local-kafka-cluster
   - [avro](../../../resources/avro)
-  - ![img.png](img.png)
+  - ![img.png](../../../resources/img/img.png)
   
 ### Error and its Fix
 ```

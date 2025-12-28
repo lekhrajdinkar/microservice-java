@@ -4,9 +4,9 @@ import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
 import java.util.Map;
 
-// props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "more.kafka.spring.CustomPartitioner"); 👈🏻
+// props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "kafka.spring.CustomPartitioner"); 👈🏻
 
-public class customPartition implements Partitioner
+public class CustomPartition implements Partitioner
 {
     @Override
     public int partition(
