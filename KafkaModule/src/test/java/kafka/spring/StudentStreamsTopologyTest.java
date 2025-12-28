@@ -18,24 +18,24 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class StudentStreamsTopologyTest {
-
+public class StudentStreamsTopologyTest
+{
     private TopologyTestDriver testDriver;
     private JsonSerde<StudentJson> studentSerde;
 
     @BeforeEach
-    public void setup() {
+    public void setup()
+    {
         StreamsBuilder builder = new StreamsBuilder();
-
         studentSerde = new JsonSerde<>(StudentJson.class);
 
-        builder.stream("student-topic", org.apache.kafka.streams.kstream.Consumed.with(Serdes.String(), studentSerde))
+        builder.stream("stream-app-student-topic", org.apache.kafka.streams.kstream.Consumed.with(Serdes.String(), studentSerde))
                 .filter((k, v) -> v != null && v.getName() != null && v.getName().toLowerCase().contains("lekhraj"))
                 .mapValues(v -> {
                     if (v.getName() != null) v.setName(v.getName().toUpperCase());
                     return v;
                 })
-                .to("student-topic-processed", org.apache.kafka.streams.kstream.Produced.with(Serdes.String(), studentSerde));
+                .to("stream-app-student-topic-processed", org.apache.kafka.streams.kstream.Produced.with(Serdes.String(), studentSerde));
 
         Topology topology = builder.build();
 
@@ -52,7 +52,8 @@ public class StudentStreamsTopologyTest {
     }
 
     @Test
-    public void testFilterAndTransform() {
+    public void testFilterAndTransform()
+    {
         TestInputTopic<String, StudentJson> input = testDriver.createInputTopic(
                 "student-topic", Serdes.String().serializer(), studentSerde.serializer());
 

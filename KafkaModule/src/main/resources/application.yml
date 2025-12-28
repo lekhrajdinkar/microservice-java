@@ -21,3 +21,10 @@ server:
     context-path: /kafkaStreamApp
   port: 8092
 
+streamapp:
+  topics:
+    input: stream-app-student-topic
+    output: stream-app-student-topic-processed
+
+# Producer properties (left intentionally empty for now)
+# Add producer-specific settings here if needed
