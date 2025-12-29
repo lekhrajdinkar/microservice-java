@@ -37,7 +37,7 @@ public class KafkaStreamService {
         JsonSerde<StudentJson> studentSerde1 = new JsonSerde<>(StudentJson.class);
         KStream<String, StudentJson> stream1 = builder.stream(
                 topicInput,
-                Consumed.with(Serdes.String(), studentSerde1)
+                Consumed.with(Serdes.String(), studentSerde1) //k,v
         );
 
         // Example: basic filter + peek (side-effect for logging)
@@ -63,7 +63,8 @@ public class KafkaStreamService {
         KStream<String, String> nameParts = keyedByName.flatMapValues(s -> Arrays.asList(s.getName().split("\\s+")));
         nameParts.peek((k, v) -> System.out.println("name-part: key=" + k + " value=" + v));
 
-        // Example: branch - split stream into multiple streams by predicates
+
+        // ▶️Example: branch - split stream into multiple streams by predicates
         KStream<String, StudentJson>[] branches = stream1.branch(
                 (k, v) -> v != null && v.getAge() < 18,   // minors
                 (k, v) -> v != null && v.getAge() >= 18   // adults
@@ -71,13 +72,13 @@ public class KafkaStreamService {
         KStream<String, StudentJson> minorsBranch = branches[0];
         KStream<String, StudentJson> adultsBranch = branches[1];
 
-        // Example: groupBy / count (stateful). Count students by name.
+        // ▶️Example: groupBy / count (stateful). Count students by name.
         KTable<String, Long> counts = stream1
                 .map((k, v) -> KeyValue.pair(v.getName(), v))
                 .groupByKey(Grouped.with(Serdes.String(), studentSerde1))
                 .count(Materialized.as("student-counts-store"));
 
-        // Example: windowed counts (tumbling window of 5 minutes)
+        // ▶️Example: windowed counts (tumbling window of 5 minutes)
         TimeWindows tumbling = TimeWindows.ofSizeWithNoGrace(Duration.ofMinutes(5));
         KTable<Windowed<String>, Long> windowedCounts = stream1
                 .map((k, v) -> KeyValue.pair(v.getName(), v))
