@@ -7,6 +7,14 @@
 - Leverage Kafka's scalability and fault-tolerance for robust stream processing.
 - **JsonSerde** for serialization/deserialization. 👈🏻
   - This POC uses JSON serde (Spring's JsonSerde)
+  
+### Scenarios
+- stream-process-app-1 (consumer-group-1) - gets all 3 partition.
+- stream-process-app-1/2/3 (consumer-group-1) - each gets 1 partition.
+  - use same application.id :)
+  - start same instance multiple times.
+  - parallelism == no of partitions. (hard truth)
+- Run app > send some event > stop it > restart > see state restored from changelog topic.
 
 ### overview
 - env setup: [README_env_setup.md](../README_env_setup.md)
