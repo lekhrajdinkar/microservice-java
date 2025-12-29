@@ -47,12 +47,16 @@ https://leetcode.com/u/lekhrajdinkar/
   - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
   - [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
 
-### 🔸MessageBroker projects
+### 🔸Kafka projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
-- [kafkaSpringApp README.md](MessageBrokerModule/src/main/java/kafka/spring/README.md)
-  - App1 - Producer/Consumer with Avro serialization
-  - App2 - KafkaStream API 
-- [RmqSpringApp README.md](RmqModule/src/main/java/rmq/README.md)
+- Environmnet Setup: [README_env_setup.md](KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
+- **App1** - `Producer/Consumer API` + **Avro schema** | [README.md](KafkaModule/src/main/java/kafka/spring/producerConsumerApp/README.md)
+- **App2** - `KafkaStream API` + **JsonSerde** | [README.md](KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
+
+### 🔸Rabbit MQ projects
+- environmnet Setup: Run Docker docker for RMQ + Management console: 
+```docker run -d --hostname my-rmq --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
+- **App1** - Producer/Consume | [README.md](RmqModule/src/main/java/rmq/README.md)
 
 ### 🔸ETL projects
 - **ETL/Spring-Batch**  

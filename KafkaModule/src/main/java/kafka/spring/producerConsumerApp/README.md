@@ -1,64 +1,16 @@
-# Kafka Spring Example
+## kafkaProducerConsumerApp - producer & consumer
 
-## 1. Overview
-This POC demonstrates Kafka basics and advanced patterns using:
+### POC Summary
+- This POC demonstrates Kafka basics and advanced patterns using:
 - **Java Spring Boot** (producers, consumers, schema integration).
 - **Confluent Schema Registry** for Avro schema-based messaging.
-- [📋Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker/kakfa)
+- [📋SD Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker/kakfa)
 
-Topics used:
-- `student-topic`
-- `customer-topic`
-- `generic-topic`
+- Topics used:
+  - `student-topic`
+  - `customer-topic`
+  - `generic-topic`
 
----
-## 2. Environment Setup
-### Docker Compose
-- Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
-- [docker-compose.yml](../../../../resources/more/kafka/docker-compose.yml)
-- [platform-config.yml](../../../../resources/more/kafka/platform-config.yml)
-- cluster name: `my-local-kafka-cluster`
-- https://conduktor.io/get-started
-
-```bash
-cd ./../../../resources/more/kafka
-docker-compose -f docker-compose.yml up -d
-```
-
-- fix for cnductor-console 👈🏻
-```yaml
-  conduktor-console:
-    image: conduktor/conduktor-console:1.26.0
-    hostname: conduktor-console
-    container_name: conduktor-console
-    depends_on:
-      - postgresql
-    ports:
-      - "8080:8080"
-    volumes:
-      - type: bind
-        source: "/c/Users/Manisha/Documents/github-2025/microservice-java/src/main/resources/more/kafka/platform-config.yml" # update this path 👈🏻👈🏻
-        target: /opt/conduktor/platform-config.yaml
-        read_only: true
-    environment:
-      CDK_IN_CONF_FILE: /opt/conduktor/platform-config.yaml
-```
-
-```text
-[+] Running 7/7 ✅
- ✔ Network kafka_default           Created                                                                                                                                                                                 0.0s 
- ✔ Container zookeeper             Started                                                                                                                                                                                 1.6s 
- ✔ Container conduktor-monitoring  Started                                                                                                                                                                                 1.6s 
- ✔ Container postgresql            Started                                                                                                                                                                                 1.5s 
- ✔ Container conduktor-console     Started                                                                                                                                                                                 1.5s 
- ✔ Container kafka                 Started                                                                                                                                                                                 1.6s 
- ✔ Container schema-registry       Started
-```
-
-![docker1.png](../../../../resources/more/kafka/docker1.png)
-
----
-## 3. kafkaProducerConsumerApp - producer & consumer
 ### overview
   - [https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8](https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8)
   - main: [kafkaProducerConsumerApp.java](kafkaProducerConsumerApp.java)
@@ -80,8 +32,8 @@ to [more.kafka.spring.avro.Student] for GenericMessage
 ✔️ Fix : config.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "txn-producer-1");
 ```
 
+---
 ### Producer Advance
-
 ```properties
 # ✔️ Idempotent Producer
 props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true);
@@ -204,7 +156,7 @@ factory.setCommonErrorHandler(errorHandler);
     - avro1,avro2
 ```
 
-### Advance :: more
+### Advance :: more to do
 - monitoring & metrics
 - security (SSL, SASL)
 - schema evolution strategies
