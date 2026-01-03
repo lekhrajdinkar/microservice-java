@@ -73,37 +73,41 @@ public class KafkaStreamService {
 
         //========STATE-FULL OPERATIONS========//
 
-        // ▶️Example: groupBy / count (stateful). Count students by name.
+        // ▶️Example:1 group & count (global counts)
+        // 1.1 map(new key) > groupByKey > count (stateful)
         KTable<String, Long> counts = stream1
                 .map((k, v) -> KeyValue.pair(v.getName(), v))
                 .groupByKey(Grouped.with(Serdes.String(), studentSerde1))
                 .count(Materialized.as("student-counts-store"));
                 // topic : kafkaStreamApp-student-age-counts-store-changelog 👈🏻
-        counts.toStream().peek((name, count) -> System.out.println("Student name: " + name + " has count: " + count));
+        counts.toStream().peek((name, count) -> System.out.println(" 1️⃣Student name: " + name + " has count: " + count));
 
+        // 1.2 groupBy > count (direct way)
         KTable<Integer, Long> counts_2 = stream1
-                .map((k, v) -> KeyValue.pair(v.getAge(), v))
-                .groupByKey(Grouped.with(Serdes.Integer(), studentSerde1))
+                .groupBy((k,v)-> v.getAge(), Grouped.with(Serdes.Integer(), studentSerde1))
                 .count(Materialized.as("student-age-counts-store"));
                 // topic : kafkaStreamApp-student-age-counts-store-changelog 👈🏻
-        counts_2.toStream().peek((name, count) -> System.out.println("Student name: " + name + " has count: " + count));
+        counts_2.toStream().peek((name, count) -> System.out.println("2️⃣Student Age: " + name + " has count: " + count));
 
-        /*
-        KTable<String, Integer> latestStudentTable =stream1
-                        .map((k, v) -> KeyValue.pair(v.getName(), v.getAge()))
-                        .groupByKey()
-                        .aggregate(0,   // initializer
-                                (key, value, agg) -> value
-                        );
 
-        // ▶️Example: windowed counts (tumbling window of 5 minutes)
-        TimeWindows tumbling = TimeWindows.ofSizeWithNoGrace(Duration.ofMinutes(5));
-        KTable<Windowed<String>, Long> windowedCounts = stream1
+        // ▶️Example:2 windowed counts
+        // Don't send same Student for next 10 seconds to see windowing effect.
+        TimeWindows tumbling = TimeWindows.ofSizeWithNoGrace(Duration.ofSeconds(10));
+        KStream<Windowed<String>, Long> windowedCounts = stream1
                 .map((k, v) -> KeyValue.pair(v.getName(), v))
                 .groupByKey(Grouped.with(Serdes.String(), studentSerde1))
                 .windowedBy(tumbling)
-                .count();
+                .count(Materialized.as("student-name-counts-store-windowed"))
+                .toStream()
+                .peek((windowedName, count) -> {
+                    String name = windowedName.key();
+                    long start = windowedName.window().start();
+                    long end = windowedName.window().end();
+                    System.out.println("3️⃣🕒Windowed Count - Name: " + name + ", Count: " + count + ", Window :" + (end- start));
+                    if(count > 1) System.out.println(" ❗❗ Duplicate detected for name: " + name);
+                });
 
+        /*
         // Note: stream-stream joins and transform/transformValues (for stateful custom logic) are available too.
         // ▶️Example (commented): joining with another stream (requires another KStream instance `otherStream`)
         KStream<String, EnrichedStudent> enriched = stream1.join(
