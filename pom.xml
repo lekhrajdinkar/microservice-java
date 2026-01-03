@@ -26,6 +26,7 @@
         <module>ETLModule</module>
         <module>RmqModule</module>
         <module>WebSecurityModule</module>
+        <module>SpringAIModule</module>
     </modules>
 
     <properties>

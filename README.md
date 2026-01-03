@@ -25,8 +25,6 @@ https://leetcode.com/u/lekhrajdinkar/
   - [Java 17 README.md](JavaEvolutionModule/src/main/java/evolution/java_17/README.md)
   - [Java 21 README.md](JavaEvolutionModule/src/main/java/evolution/Java_21/README.md)
   - [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
-  - ...
-- [Advance concepts Notes📚](docs/2025_pocs)
   
 ### 🔸SpringBoot App
 - [Notes 📚](docs/02_springboot)
@@ -66,6 +64,10 @@ https://leetcode.com/u/lekhrajdinkar/
 ### 🔸More POCS
 - [index_POC_2025](docs/2025_pocs/00_index_POC_2025.md)
 - [index_POC_2026](docs/2026_pocs/00_index_POC_2026.md)
+
+### 🔸Spring AI 🤖🤖
+- [SpringAIModule](SpringAIModule)
+- docs [06_spring_ai](docs/06_spring_ai)
 
 ---
 ## ✔️ other/s
