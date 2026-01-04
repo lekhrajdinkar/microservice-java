@@ -61,16 +61,17 @@ nav:
           - Concepts: 04_security/01_01_Concepts.md
           - LDAP: 04_security/01_03_LDAP.md
 
-  - 🔶POCS:
+  - 🔶Learning and POCS:
       - ✔️2025:
-          - 01 Stream performance: 2025_pocs/01_java-streams-performance.md
-          - 02_java-virtual-thread: 2025_pocs/02_java-virtual-thread.md
-          - 03_Streaming-response: 2025_pocs/03_Streaming-response.md
-          - 04_temporal_ms-workflow: 2025_pocs/04_temporal_ms-workflow.md
-          - 05_Spring_modulith: 2025_pocs/05_Spring_modulith.md
-          - 06_Java-streams-gatherer: 2025_pocs/06_Java-streams-gatherer.md
+          - 01 Stream performance: 2025/01_java-streams-performance.md
+          - 02_java-virtual-thread: 2025/02_java-virtual-thread.md
+          - 03_Streaming-response: 2025/03_Streaming-response.md
+          - 04_temporal_ms-workflow: 2025/04_temporal_ms-workflow.md
+          - 05_Spring_modulith: 2025/05_Spring_modulith.md
+          - 06_Java-streams-gatherer: 2025/06_Java-streams-gatherer.md
       - ✔️2026:
-          - 01_Spring-v4: 2026_pocs/01_Spring-v4.md
+          - 01_01_SpringBoot-v4: 2026/01_01_SpringBoot-v4.md
+          - 02_01_SpringAI-start: 2026/02_01_SpringAI-start.md
 
 extra_css:
   - mkdocs.css

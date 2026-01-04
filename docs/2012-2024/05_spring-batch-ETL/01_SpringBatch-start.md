@@ -4,7 +4,7 @@
 
 ---
 ## A. Architecture
-![img_1.png](../99_img/99_img_sb/etl-sb/img_1.png)
+![img_1.png](../../99_img/99_img_sb/etl-sb/img_1.png)
 ###  key components
 - **Job**     : Represents the batch process.
 - **Step**    : A stage in the job (e.g., reading, processing, writing).
@@ -88,4 +88,4 @@ tells Spring to look for methods annotated with @Async and execute them asynchro
   - batch_step_execution_context: Similar to batch_job_execution_context, but this table stores the execution context data for each step of the job.
 
 ---
-![img.png](../99_img/99_img_sb/etl-sb/img.png)
+![img.png](../../99_img/99_img_sb/etl-sb/img.png)

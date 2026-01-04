@@ -58,14 +58,13 @@ https://leetcode.com/u/lekhrajdinkar/
 - **App1** - Producer/Consume | [README.md](RmqModule/src/main/java/rmq/README.md)
 
 ### 🔸ETL projects
-- **ETL/Spring-Batch**  : [Notes 📚](docs/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
+- **ETL/Spring-Batch**  : [Notes 📚](docs/2012-2024/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
 
 ### 🔸More POCS
-- [2025](docs/2025_pocs) |  [2026](docs/2026_pocs) | ...
+- [2025](docs/2025) 
+- [2026](docs/2026) 
+  - **SpringAI** | Project : [SpringAIModule](SpringAIModule) | [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md)
 
-### 🔸Spring AI 🤖🤖
-- Project : [SpringAIModule](SpringAIModule)
-- docs : [06_spring_ai](docs/06_spring_ai)
 
 ---
 ## ✔️ other/s
