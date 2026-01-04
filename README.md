@@ -55,6 +55,7 @@
 ---
 ## 🔰2026
 ### In-progress:
+- 🔴 [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
 - 🔴 [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
 - 🔴 **SpringAI** [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md)
   - App-1 : ...
