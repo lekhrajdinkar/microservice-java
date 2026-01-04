@@ -18,6 +18,7 @@ https://leetcode.com/u/lekhrajdinkar/
 
 ### 🔸project - Java7 and above 
 - [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
+- git, maven, etc: [00_others.md](docs/2012-2024/00_others.md)
 - [java evolution - project and Notes](JavaEvolutionModule/src/main/java/evolution)
   - [Java 7 README.md](JavaEvolutionModule/src/main/java/evolution/java_7/README.md)
   - [Java 8 README.md](JavaEvolutionModule/src/main/java/evolution/java_8/README.md)

@@ -13,53 +13,52 @@ site_keywords: Java, Spring Boot, Spring Batch, ETL, Microservices, Technical Do
 
 nav:
   - 🔶lombok mvn git: 00_others.md
-  - 🔶Java: 00_java-evolution.md
   - 🔶Spring:
       - ✔️Core:
-          - Spring Core Basics: 01_Spring-core/01_Spring_Core.md
-          - Spring Bean Lifecycle: 01_Spring-core/02_Spring_bean_lifeCycle.md
-          - AOP Concept: 01_Spring-core/03_AOP_concept.md
-          - Point-cut Examples: 01_Spring-core/03_point-cut-examples.txt
-          - Spring Properties: 01_Spring-core/04_spring_properties.md
+          - Spring Core Basics: 2012-2014/01_Spring-core/01_Spring_Core.md
+          - Spring Bean Lifecycle: 2012-2014/01_Spring-core/02_Spring_bean_lifeCycle.md
+          - AOP Concept: 2012-2014/01_Spring-core/03_AOP_concept.md
+          - Point-cut Examples: 2012-2014/01_Spring-core/03_point-cut-examples.txt
+          - Spring Properties: 2012-2014/01_Spring-core/04_spring_properties.md
 
       - ✔️SpringBoot:
-          - Kickoff: 01_springboot/01_SB_kickoff.md
-          - Auto Configuration: 01_springboot/02_SB_AutoConfig.md
-          - Starter & Testing: 01_springboot/03_SB_starter_test.md
+          - Kickoff: 2012-2014/01_springboot/01_SB_kickoff.md
+          - Auto Configuration: 2012-2014/01_springboot/02_SB_AutoConfig.md
+          - Starter & Testing: 2012-2014/01_springboot/03_SB_starter_test.md
 
       - ✔️SpringBatch:
-          - SpringBatch1: 05_spring-batch-ETL/00_index.md
-          - SpringBatch2: 05_spring-batch-ETL/01_SpringBatch-start.md
+          - SpringBatch1: 2012-2014/05_spring-batch-ETL/00_index.md
+          - SpringBatch2: 2012-2014/05_spring-batch-ETL/01_SpringBatch-start.md
 
   - 🔶Web Application:
       - ✔️controller:
-          - Web Start: 02_web/00 WEB_start.md
-          - General Web Tasks: 02_web/00_general_web_task.md
-          - Servlet 3: 02_web/01_servlet_3.md
-          - Spring MVC: 02_web/02_spring_MVC.md
-          - Spring Boot Starter Web: 02_web/03_spring_boot_stater_web.md
-          - REST: 02_web/04_REST.md
-          - Jackson: 02_web/05_Jackson.md
-          - Swagger: 02_web/06_swagger.md
-          - Error Handling: 02_web/07_error_handling.md
-          - gRPC & Webflux: 02_web/08_gRPC+webflux.md
-          - Webflux: 02_web/09_webflux.md
+          - Web Start: 2012-2014/02_web/00 WEB_start.md
+          - General Web Tasks: 2012-2014/02_web/00_general_web_task.md
+          - Servlet 3: 2012-2014/02_web/01_servlet_3.md
+          - Spring MVC: 2012-2014/02_web/02_spring_MVC.md
+          - Spring Boot Starter Web: 2012-2014/02_web/03_spring_boot_stater_web.md
+          - REST: 2012-2014/02_web/04_REST.md
+          - Jackson: 2012-2014/02_web/05_Jackson.md
+          - Swagger: 2012-2014/02_web/06_swagger.md
+          - Error Handling: 2012-2014/02_web/07_error_handling.md
+          - gRPC & Webflux: 2012-2014/02_web/08_gRPC+webflux.md
+          - Webflux: 2012-2014/02_web/09_webflux.md
 
       - ✔️Data Layer:
-          - Common Tasks: 03_data-layer/00_common_task.md
-          - JPA: 03_data-layer/01_JPA.md
-          - Persistence Context: 03_data-layer/02_presistence-context.md
-          - Hibernate Annotations & Converter: 03_data-layer/04_Hibernate-1-anno+converter.md
-          - Hibernate Identifier & Validator: 03_data-layer/04_Hibernate-2-identifier+validator.md
-          - Hibernate Query: 03_data-layer/04_Hibernate-3-query.md
-          - SB JPA Data Part 1: 03_data-layer/05-SBjpaData-1-start.md
-          - SB JPA Data Part 2: 03_data-layer/05-SBjpaData-2.md
-          - SB JPA Data Transactions: 03_data-layer/05-SBjpaData-3-txn.md
-          - ER Diagram: 03_data-layer/er-diagram.png
+          - Common Tasks: 2012-2014/03_data-layer/00_common_task.md
+          - JPA: 2012-2014/03_data-layer/01_JPA.md
+          - Persistence Context: 2012-2014/03_data-layer/02_presistence-context.md
+          - Hibernate Annotations & Converter: 2012-2014/03_data-layer/04_Hibernate-1-anno+converter.md
+          - Hibernate Identifier & Validator: 2012-2014/03_data-layer/04_Hibernate-2-identifier+validator.md
+          - Hibernate Query: 2012-2014/03_data-layer/04_Hibernate-3-query.md
+          - SB JPA Data Part 1: 2012-2014/03_data-layer/05-SBjpaData-1-start.md
+          - SB JPA Data Part 2: 2012-2014/03_data-layer/05-SBjpaData-2.md
+          - SB JPA Data Transactions: 2012-2014/03_data-layer/05-SBjpaData-3-txn.md
+          - ER Diagram: 2012-2014/03_data-layer/er-diagram.png
 
       - ✔️Security:
-          - Concepts: 04_security/01_01_Concepts.md
-          - LDAP: 04_security/01_03_LDAP.md
+          - Concepts: 2012-2014/04_security/01_01_Concepts.md
+          - LDAP: 2012-2014/04_security/01_03_LDAP.md
 
   - 🔶Learning and POCS:
       - ✔️2025:
