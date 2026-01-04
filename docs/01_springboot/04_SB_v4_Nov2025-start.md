@@ -23,6 +23,14 @@
   - won't  see  this change as developer, but under the hood.
 - **resilience** is now built-in. 
   - `@EnableResilientMethods -> @Retryable,  @ConcurrencyLimit`
+- **Spring Data AOT**
+  - parse and validate Spring Data repositories at **build time**.
+  - Not, at Appl start up (container cold start time)
+  - https://youtu.be/yGlmEXRJ470?si=8XoRk_5d42OTEj5K 
+    - Add Spring-aot plugin in pom.xml
+    - run application and check start up performance 
+    - inject error : findByName to findByNameeeee. Caught at build phase-2
+    - target folder - 2 files - json metadata (all SQL) + aot java file
   
 ### REST Enhancements
 - new `@ConfigurationPropertiesSource`

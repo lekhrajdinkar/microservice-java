@@ -63,12 +63,14 @@ nav:
 
   - 🔶POCS:
       - ✔️2025:
-          - index: 2025_pocs/00_index_POC_2025.md
-          - Java-performance: 2025_pocs/01_java-performance.md
-          - microservices: 2025_pocs/03_sb-microservices.md
-          - multi-threading: 2025_pocs/02_java-multi-threading.md
+          - 01 Stream performance: 2025_pocs/01_java-streams-performance.md
+          - 02_java-virtual-thread: 2025_pocs/02_java-virtual-thread.md
+          - 03_Streaming-response: 2025_pocs/03_Streaming-response.md
+          - 04_temporal_ms-workflow: 2025_pocs/04_temporal_ms-workflow.md
+          - 05_Spring_modulith: 2025_pocs/05_Spring_modulith.md
+          - 06_Java-streams-gatherer: 2025_pocs/06_Java-streams-gatherer.md
       - ✔️2026:
-          - index: 2026_pocs/00_index_POC_2026.md
+          - 01_Spring-v4: 2026_pocs/01_Spring-v4.md
 
 extra_css:
   - mkdocs.css

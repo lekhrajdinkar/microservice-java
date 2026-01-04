@@ -52,22 +52,20 @@ https://leetcode.com/u/lekhrajdinkar/
 - **App2** - `KafkaStream API` + **JsonSerde** | [README.md](KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
 
 ### 🔸RabbitMQ-projects
-- environmnet Setup: Run Docker docker for RMQ + Management console: 
+- environment Setup: Run Docker docker for RMQ + Management console: 
+
 ```docker run -d --hostname my-rmq --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
 - **App1** - Producer/Consume | [README.md](RmqModule/src/main/java/rmq/README.md)
 
 ### 🔸ETL projects
-- **ETL/Spring-Batch**  
-  - [Notes 📚](docs/05_spring-batch-ETL)  
-  - [springbatch](ETLModule/src/main/java/springbatch)
+- **ETL/Spring-Batch**  : [Notes 📚](docs/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
 
 ### 🔸More POCS
-- [index_POC_2025](docs/2025_pocs/00_index_POC_2025.md)
-- [index_POC_2026](docs/2026_pocs/00_index_POC_2026.md)
+- [2025](docs/2025_pocs) |  [2026](docs/2026_pocs) | ...
 
 ### 🔸Spring AI 🤖🤖
-- [SpringAIModule](SpringAIModule)
-- docs [06_spring_ai](docs/06_spring_ai)
+- Project : [SpringAIModule](SpringAIModule)
+- docs : [06_spring_ai](docs/06_spring_ai)
 
 ---
 ## ✔️ other/s

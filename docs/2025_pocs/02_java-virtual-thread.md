@@ -1,6 +1,4 @@
-# Multi-Threading in java
-## 🔶New features
-### 🔸Virtual-threads
+## A. Java: Virtual-threads
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DZIC_Jrrg4U?si=qhyJZvL7HwmYJkn4"
 title="Virtual threads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
@@ -10,8 +8,8 @@ picture-in-picture; microservice-share" referrerpolicy="strict-origin-when-cross
 - hands-on: `pending`
 
 ---
-## 🔶problems
-### 🔸producer-consumer-problem
+
+## B. producer-consumer-problem
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ITPesAZFvWI?si=XXvvjJzYTXHufd3C" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
