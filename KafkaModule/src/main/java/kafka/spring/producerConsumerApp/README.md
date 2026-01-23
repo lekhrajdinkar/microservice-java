@@ -67,7 +67,7 @@ generic_kafkaTemplate.executeInTransaction(ops -> {
 props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.example.kafka.CustomPartitioner");
 
 # ✔️ Batching & Compression
-props.put(ProducerConfig.BATCH_SIZE_CONFIG, 32*1024); // 32 KB
+props.put(ProducerConfig.BATCH_SIZE_CONFIG, 32*1024); // 32 KB + key must be null
 props.put(ProducerConfig.LINGER_MS_CONFIG, 10);
 props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
 
@@ -80,6 +80,10 @@ on broker :
 # ✔️ Schema Evolution
 - Register new Avro schema version with backward/forward compatibility.
 - Producer sends using latest schema; consumer reads using previous schema if compatible.
+
+# ✔️ produce - sync + async
+- sysc - send(produceRecord)
+- a-sync  - send(produceRecord, `new Callback() { @override onCompletion ... }`)
 ```
 
 ### Consumer Advance
@@ -156,6 +160,15 @@ factory.setCommonErrorHandler(errorHandler);
 // 7.3. For production → Avro/Protobuf + Schema Registry
     - genericAvro
     - avro1,avro2
+
+// 8. # Partition Assignment :
+## --- Using RangeAssignor --- 
+c1: partition-0, partition-1.
+c2: partition-2, partition-3.
+
+## ---  Using RoundRobinAssignor --- 
+c1: partition-0, partition-2.
+c2: partition-1, partition-3.
 ```
 
 ### Advance :: more to do
