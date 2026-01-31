@@ -1,5 +1,12 @@
 ## Kafka Environment Setup
-### Docker Compose
+### online lab (paid)
+- kk: https://kode.wiki/4q4V7VZ paid / Apache Kafka
+- Watch lab here: https://www.youtube.com/watch?v=9mNYokzTD14 - netflix examples
+- apache kafka + kafDrop UI 
+- watched once, no need to watch again.
+- scenarios: producer, consumer, alter partions 3 to 6, hence more through-put, set retention policies,
+
+### Docker Compose 
 - Kafka cluster + Zookeeper + Schema Registry + Conduktor Console already running.
 - [docker-compose.yml](../../../../resources/more/kafka/docker-compose.yml)
 - [platform-config.yml](../../../../resources/more/kafka/platform-config.yml)
