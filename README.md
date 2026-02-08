@@ -10,21 +10,28 @@
 - [Java 21 README.md](JavaEvolutionModule/src/main/java/evolution/Java_21/README.md)
 - [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
 
-### ✔️SpringBoot
-- [Notes 📚](docs/02_springboot)
-- [Spring_01_AOP](SpringBootModule/src/main/java/AOP)
-- [Spring_02_Core](SpringBootModule/src/main/java/SpringCore)
-- [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
-- [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration)
-
-### ✔️micro-services projects
-- **basicWebApp**
-    - [jewelleryApp README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
-    - [courseApp README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) - h2, hibernate more, txn, tuple, pagination, etc
-  
 ### ✔️Java Spring App
 - [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
 - git, maven, etc: [00_others.md](docs/2012-2024/00_others.md)
+
+### ✔️SpringBoot
+- [Spring_01_AOP](SpringBootModule/src/main/java/AOP) | [Notes](docs/2012-2024/01_Spring-core)
+- [Spring_02_Core](SpringBootModule/src/main/java/SpringCore) | [Notes](docs/2012-2024/01_Spring-core)
+- [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
+- [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) | [Notes](docs/2012-2024/01_springboot)
+- SpringBoot-starter, Notes:
+  - [web](docs/2012-2024/02_web)
+  - [data-layer](docs/2012-2024/03_data-layer)
+  - [security](docs/2012-2024/04_security)
+
+### ✔️micro-services projects
+**BasicWebApp**
+
+[jewelleryApp, README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) 
+> restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+
+[courseApp, README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) 
+> h2, hibernate more, txn, tuple, pagination, etc
 
 ### ✔️RabbitMQ-projects
 - environment Setup: Run Docker docker for RMQ + Management console:
