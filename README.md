@@ -25,13 +25,13 @@
   - [security](docs/2012-2024/04_security)
 
 ### ✔️micro-services projects
-**BasicWebApp**
-
-[jewelleryApp, README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) 
-> restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
-
-[courseApp, README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) 
-> h2, hibernate more, txn, tuple, pagination, etc
+> **BasicWebApp**
+>
+> [jewelleryApp, README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) 
+> - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
+>
+> [courseApp, README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) 
+> - h2, hibernate more, txn, tuple, pagination, etc
 
 ### ✔️RabbitMQ-projects
 - environment Setup: Run Docker docker for RMQ + Management console:
@@ -50,14 +50,14 @@
 - **App2** - `KafkaStream API` + **JsonSerde** | [README.md](KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
 - 
 ### ✔️micro-services projects
-- **SecurityApp**
-    - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
-- 🔴 **modernWebApp**
-    - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
-    - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
-    - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
-    - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
-- 🔴 [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
+> - **SecurityApp**
+>    - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
+> - 🔴 **modernWebApp**
+>    - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
+>    - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
+>    - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
+>    - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
+> - 🔴 [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
 
 ### ✔️Misc project
 - [2025](docs/2025)
