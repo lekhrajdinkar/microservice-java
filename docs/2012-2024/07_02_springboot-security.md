@@ -105,10 +105,8 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
 ---
 ## 3. Authorization/OAuth2 (Modern) ✅
 ### ▶️ OAuth2 grant (3)
-- [OAuth2 grant types](README_OAuth2.md)
-- client_credential - get access token  ✔️
-- Auth Flow (PKCE) - get both token + refresh token
-    - usually done on ng-app...
+- https://github.com/lekhrajdinkar/senior-system-engineer/blob/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security/03_protocol_oauth-v1.md
+- https://github.com/lekhrajdinkar/senior-system-engineer/blob/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security/03_protocol_oauth-v2.md
 
 ### ▶️validate access tokens
 - Add dep: `spring-boot-starter-oauth2-resource-server`
