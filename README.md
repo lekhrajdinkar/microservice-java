@@ -21,7 +21,6 @@
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
 - [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
 
-
 ### ✔️micro-services projects
 > **BasicWebApp**
 >
@@ -50,21 +49,21 @@
 ### ✔️micro-services projects
 > - **SecurityApp**
 >    - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
-> - 🔴 **modernWebApp**
+> -  **modernWebApp** 🔴
 >    - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
 >    - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
 >    - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
 >    - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
-> - 🔴 [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays
+> -  [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays 🔴
 
-### ✔️Misc project
+### ✔️Misc
 - [2025](docs/2025)
 
 ---
 ## 🔰2026
 ### In-progress:
-- 🔴 [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
-- 🔴 **SpringAI** [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md)
+-  [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md) 🔴
+-  **SpringAI** [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md) 🔴
   - App-1 : ...
   - App-2 : ...
 

@@ -1,5 +1,5 @@
-## OAuth2.1
-### Intro
+# OAuth 2.1
+## Intro
 - https://auth0.com/intro-to-iam/what-is-oauth-2
 - OAuth standard protocol to solve **Delegated Authorization**
     - allow appl(Client) to access resources hosted by other microservice apps, on behalf of a user/resource-owner.
@@ -8,7 +8,9 @@
 - **token** based protocol | **http-redirection** based protocol
   - (header : `location=url-2`, responseCode :: `301/302`)  
 
-### Key Components 1
+![oAuth2.jpeg](../../../../../docs/99_img/99_img_sb/oauth2/oAuth2.jpeg)
+
+## Key Components 1
 - **▶️resource-Owner** (User)
   -  client must identify/authenticate itself first, then requesting an Access Token. 👈🏻
 - **▶️Client (app-spa)**
@@ -23,7 +25,7 @@
   - spring-backend-app(via dependency : `spring-boot-starter-oauth2-resource-server`) 
   - or, centralized SaaS app like **OKTA**
   
-### Key Components 2
+## Key Components 2
 - **▶️Authorization Code**
   - OAuth 2 Authorization server may not directly return an **Access Token**.
   - Instead, and for better security, an **Authorization Code** may be returned, 
@@ -72,8 +74,9 @@
 - **▶️Grant Types**
   - grants are the `set of steps` a Client has to perform to get "resource-access-authorization".
 
-### ✅POC/s : Grant Types 
-#### ✔️client-credential (m2m)
+---
+## POC/s : Grant Types 
+### ✔️client-credential (m2m)
 - https://developer.okta.com/blog/2021/05/05/client-credentials-spring-security 👈🏻
 - First **client** acquire credentials(client id, client secret) from the Authorization Server
 - **Access-Token** is returned against these credential. (basically, AuthServer validate identity)
@@ -132,7 +135,7 @@
 ![img_1.png](../../../../../docs/99_img/99_img_sb/oauth2/img_1.png)
 
 ---
-#### ✔️Authorization Code 
+### ✔️Authorization Code 
 - with **PKCE**
 - https://developer.okta.com/docs/guides/sign-into-web-app-redirect/spring-boot/main/
 - After validating client identity,
@@ -148,16 +151,12 @@
        grant_type=authorization_code&code=AUTHORIZATION_CODE&redirect_uri=REDIRECT_URI&client_id=CLIENT_ID&client_secret=CLIENT_SECRET
 ```
 
-#### ✔️Refresh Token Grant
+### ✔️Refresh Token Grant
 - involves the exchange of a Refresh Token for a new Access Token.
 
-#### ❌Implicit Grant 
+### ❌Implicit Grant 
 - A simplified flow where the Access Token is returned "directly" to the Client.
 - use-case : SPA (old)
 - new -  Authorization Code with PKCE, in SPA
 
----
-### ✅screenshots:
-#### whiteboard
-![oAuth2.jpeg](../../../../../docs/99_img/99_img_sb/oauth2/oAuth2.jpeg)
 
