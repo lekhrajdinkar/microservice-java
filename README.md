@@ -9,16 +9,12 @@
 - [Java 21 README.md](JavaEvolutionModule/src/main/java/evolution/Java_21/README.md)
 - [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md)
 
-### ✔️Java Spring App
-- [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
-- git, maven, etc: [00_others.md](docs/2012-2024/00_01_developer_tool.md)
-
-### ✔️SpringBoot 
-Projects:
+### ✔️SpringBoot project
 - [Spring_01_AOP](SpringBootModule/src/main/java/AOP) 
 - [Spring_02_Core](SpringBootModule/src/main/java/SpringCore) 
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
 - [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
+- [Advance javaSpringApp](JavaEvolutionModule/src/main/java/javaSpringApp) - Async etc
 
 ### ✔️micro-services project/s
 > **BasicWebApp** | [📚Notes](docs/2012-2024)
