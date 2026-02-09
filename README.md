@@ -15,6 +15,7 @@
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
 - [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
 - [Advance javaSpringApp](JavaEvolutionModule/src/main/java/javaSpringApp) - Async etc
+-  Spring-Batch | [Notes 📚](docs/2012-2024/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
 
 ### ✔️micro-services project/s
 > **BasicWebApp** | [📚Notes](docs/2012-2024)
@@ -29,9 +30,6 @@
 - environment Setup: Run Docker docker for RMQ + Management console:
 - ```docker run -d --hostname my-rmq --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
 - **App1** - Producer/Consume | [README.md](RmqModule/src/main/java/rmq/README.md)
-
-### ✔️ETL projects
-- **Spring-Batch**  : [Notes 📚](docs/2012-2024/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
 
 ---
 ## 🔰2025
