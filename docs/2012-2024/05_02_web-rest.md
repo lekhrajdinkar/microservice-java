@@ -1,12 +1,14 @@
-## references
+# REST
+## overview
 - https://www.baeldung.com/rest-with-spring-series
-- microservice filter : https://chatgpt.com/c/34abc85f-eabb-47ac-b525-7c2c6af8023a 
- 
----
-## REST Actions
-
-### 1 actions list-1
+- https://chatgpt.com/c/34abc85f-eabb-47ac-b525-7c2c6af8023a | microservice filter
+- https://chatgpt.com/c/f4a0c9cd-c6cb-414e-888c-605c2d50340c | ext server
 - https://chatgpt.com/c/0471007c-7d4e-4a04-bd37-d6262d5f9aaf - REST Actions
+- https://chatgpt.com/c/9719e1f6-c4e4-4fac-8941-178c26acc484 | REST client
+
+---
+## ✔️todo list
+### list-1
 - `create`
 - `logging interceptor/filter` --> not doing, having common logging.
 - `Content Negotiation` - Support different representations : `produces/consumes` = MediaType.APPLICATION_JSON
@@ -18,14 +20,14 @@
 - `CORS` setup - add frontend url
 - `Pagination and Sorting` - pageable and page<E>
 
-### 2 more actions list-2 (pending)
-- **Async Controllers**: 
+### list-2
+**Async Controllers**: 
   - Use **@Async("taskExecutor-1")** and **CompletableFuture** to handle long-running requests asynchronously :point_left:
   - [AsyncController.java](../../../MicroserviceModule/basicWebApp/jewelleryApp/controller/AsyncController.java)
   - **@EnableAsync** - enable
   - create @Bean(name = "taskExecutor-1") **ThreadPoolTaskExecutor** : [AsyncConfig.java](../../src/main/java/com/lekhraj/java/spring/SB_99_RESTful_API/configuration/AsyncConfig.java)
   
-- **HATEOS**
+**HATEOS**
   - https://chatgpt.com/c/67414b1b-9018-800d-a683-8a632932177a
   - return **EntityModel<Result>** from api method.
   - use **WebMvcLinkBuilder** to create **Link**
@@ -56,8 +58,19 @@
   }
   ```
 
+### list-3
+- SetTimeouts API
+- API to download file.
+- Filters and Interceptors / `InterceptorRegistry`
+- webClient and RestTemplate
+- custom Binder
+- ResponseBodyAdvice program
+- `@WebFilter`
+- Send response other than JSON
+
 ---
-## A Create API
+## ✔️Hands on
+### 💠Create API
 - check [JewelleryController.java](..%2F..%2Fsrc%2Fmain%2Fjava%2Fcom%2Flekhraj%2Fjava%2Fspring%2FSB_99_RESTful_API%2Fcontroller%2FJewelleryController.java)
 - @ResponseBody + `@Controller` =` @RestController`
 - Modify HttpResponse
@@ -73,8 +86,7 @@
   - eg:  @PathVariable(value="pathVariable2", required = false) String pathVariable2_optional :
 
 ---
-
-## B. Validation / JSR 380
+### 💠Validation / JSR 380
 - apply on DTO/Bean/ENTITY
 - https://chatgpt.com/c/a04dc001-e879-43e0-a39d-acd01b9ef2c7
 - Add dependeny : **spring-boot-starter-validation**
@@ -84,7 +96,7 @@
     - Apply on method return.
 - validate response: https://chatgpt.com/c/b8c60911-2df5-478b-9804-67c3ecf9506d
 
-### Custom validator 
+### 💠 Custom validator 
 - check [hibernate_validator](..%2F..%2Fsrc%2Fmain%2Fjava%2Fcom%2Flekhraj%2Fjava%2Fspring%2FSB_99_RESTful_API%2Fhibernate_validator)
 - can inject **BindingResult** as well.
 - just implement `ConstraintValidator<Anno,feildType>`
@@ -106,9 +118,8 @@
   - check : https://chatgpt.com/c/591c7b06-4ac0-4f03-a328-038cde9cf7ca
 
 ---
-
-## C. Formatting ( Serialize / De-serialize)
-- more: [05_Jackson.md](05_Jackson.md)
+### 💠 Formatting ( Serialize / De-serialize)
+- more: [05_Jackson.md](05_05_Jackson.md)
 - binding happens with internal Serialize/De-serialize by jackson, 
   - has inbuilt serializer and de-serializer
   - can create custom ones too.
@@ -118,7 +129,7 @@
   - new MappingJackson2HttpMessageConverter()
 
 ---
-## D. Version
+### 💠 Version
 - https://chatgpt.com/c/7fa2c12d-eada-4991-944f-cfad8d084805
   - @RequestMapping("/api/v1")
   - @GetMapping(value = "/users", `params = "version=1"`)
@@ -135,25 +146,46 @@
     - Header Versioning: Keeps the URL clean, suitable for clients that can easily add headers.
     - Content Negotiation Versioning: Good for complex API evolution but can be harder to debug.
 
----
-
-## E. REST : consume `Pending...`
-- https://chatgpt.com/c/9719e1f6-c4e4-4fac-8941-178c26acc484
-### RestTemplate
-### webClient
 
 ---
+### 💠 microservice-aware Spring ApplicationContext : `WebApplicationContext`
+- IAC container for springMVC application.
+- AC aware of the microservice-specific features and contexts in a Servlet environment.
+    - can access the `ServletContext`, provides access to the Servlet API
+    - access the `ServletConfig`
+- supports **microservice-scopes** for beans
+    - request - bean is created for each HTTP request
+    - session -
+    - global session - never used
+    - Web socket - bean is created for each WebSocket connection
 
-## F. HATEOAS `Pending...`
-- add hypermedia links to the API responses, enabling clients to navigate the API dynamically
-- hands-on pending.
 
-# project : `Pending...`
-- SetTimeouts API
-- API to download file.
-- Filters and Interceptors / `InterceptorRegistry`
-- webClient and RestTemplate
-- custom Binder
-- ResponseBodyAdvice program
-- `@WebFilter`
-- Send response other than JSON
+---
+### 💠 MIME type
+
+**consumes**
+```text
+"application/json"	                  Accepts JSON input
+"application/xml"	                  Accepts XML input
+"text/plain"	                      Accepts plain text
+"multipart/form-data"	              Accepts file uploads
+"application/x-www-form-urlencoded"	  Accepts form data
+```
+
+**produces**
+```
+"application/json"	Returns JSON
+"application/xml"	Returns XML
+"text/html"	        Returns HTML
+"text/csv"	        Returns CSV
+"application/pdf"	Returns PDF
+
+APPLICATION_OCTET_STREAM - Generic binary (default)
+APPLICATION_PDF - For PDF files
+IMAGE_JPEG/IMAGE_PNG - For images
+APPLICATION_ZIP - For ZIP archives
+
+Content-Disposition Header
+- attachment forces download dialog
+- filename suggests the saved filename
+```

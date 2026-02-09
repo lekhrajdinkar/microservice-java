@@ -22,7 +22,7 @@
 -  **Auto-Configuration**
   - customize Auto-Configuration
   - create own **custom starter project**
-    - [02_SB_AutoConfig.md](02_SB_AutoConfig.md)
+    - [02_SB_AutoConfig.md](03_02_springboot-AutoConfig.md)
     - customize : we write our custom auto-configurations, we want Spring to use them conditionally.
        - create your own class with @Configuration - new bean + Override Method. eg:WebSecurity, Datasource,etc
        - Apply then conditionally - @ConditionalOnProperty, etc.

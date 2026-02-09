@@ -1,6 +1,7 @@
 # Global Error handling
+https://chatgpt.com/c/7d23b0fe-a7a5-43d5-9ced-69d4a344e31a
 
-## A. in `spring MVC project`
+## spring MVC project
 ### 1. send html response for specific error code - 404
 - add html page --> resource/templates/404.html 
 - add property **server.error.404 = /error/path-404**
@@ -31,7 +32,7 @@ public class ErrorController
 ```
 
 ---
-## B. in `REST API`
+## `REST API`
 ### Default handling flow
 - when an exception occurs, it is automatically routed to below path.
 - define **server.error.path** = /error

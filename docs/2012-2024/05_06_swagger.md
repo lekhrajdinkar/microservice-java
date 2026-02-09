@@ -1,7 +1,6 @@
 # Swagger
-
 ## Enable swagger
-- add dependeny
+- add dependency
 ```
 <dependency>
     <groupId>io.springfox</groupId>

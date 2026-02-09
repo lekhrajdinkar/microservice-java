@@ -124,7 +124,7 @@ public class BeanB {
 
 ## C. Spring IOC container
 ### bean Life Cycle
-- also check : [Spring_02_lifeCycle.md](02_Spring_bean_lifeCycle.md)
+- also check : [Spring_02_lifeCycle.md](01_02_Spring-Bean-lifeCycle.md)
 - manage bean scopes
   - singleton : create along with IoC container on start up.
   - prototype : create on demand

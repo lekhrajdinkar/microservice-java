@@ -1,3 +1,5 @@
+> [java-v25.0.pdf](java-v25.0.pdf)
+
 ## java 25 (Sep 2025)
 - Java 22 (march 2024), java 23 (Sep 2024)
 - java 24 (march 2025), java 23 (Sep 2025)

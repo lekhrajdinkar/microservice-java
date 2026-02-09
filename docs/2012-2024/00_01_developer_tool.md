@@ -1,3 +1,4 @@
+# Developer tool
 ## lombok
 - https://chatgpt.com/c/67429341-6080-800d-a368-578db5ca75d2
 
@@ -13,7 +14,7 @@
 - bbgo : http://youtube.com/post/Ugkxyu-gn0pFn8ERIJ9Edwmpjn67cLr2kDxx?feature=shared | essential
 
 ## model mapper
-- kickoff : https://chatgpt.com/c/6742d97f-5798-800d-bf8e-f0f0939ae338
+- https://chatgpt.com/c/6742d97f-5798-800d-bf8e-f0f0939ae338
 
 ## map struct
-- kickOff : https://chatgpt.com/c/6742d8e6-6fcc-800d-a5e1-feda0b7bf067
+- https://chatgpt.com/c/6742d8e6-6fcc-800d-a5e1-feda0b7bf067

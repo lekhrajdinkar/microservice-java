@@ -12,7 +12,7 @@
 
 ### ✔️Java Spring App
 - [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
-- git, maven, etc: [00_others.md](docs/2012-2024/00_others.md)
+- git, maven, etc: [00_others.md](docs/2012-2024/00_01_developer_tool.md)
 
 ### ✔️SpringBoot
 - [Spring_01_AOP](SpringBootModule/src/main/java/AOP) | [Notes](docs/2012-2024/01_Spring-core)
@@ -22,7 +22,6 @@
 - SpringBoot-starter, Notes:
   - [web](docs/2012-2024/02_web)
   - [data-layer](docs/2012-2024/03_data-layer)
-  - [security](docs/2012-2024/04_security)
 
 ### ✔️micro-services projects
 **BasicWebApp**
