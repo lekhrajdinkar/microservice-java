@@ -15,19 +15,19 @@
 - git, maven, etc: [00_others.md](docs/2012-2024/00_01_developer_tool.md)
 
 ### ✔️SpringBoot 
-[📚Notes](docs/2012-2024) | Projects:
+Projects:
 - [Spring_01_AOP](SpringBootModule/src/main/java/AOP) 
 - [Spring_02_Core](SpringBootModule/src/main/java/SpringCore) 
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
 - [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
 
-### ✔️micro-services projects
-> **BasicWebApp**
+### ✔️micro-services project/s
+> **BasicWebApp** | [📚Notes](docs/2012-2024)
 >
-> [jewelleryApp, README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) 
+> [**jewelleryApp**, README.md](MicroserviceModule/src/main/java/basicWebApp/jewelleryApp/README.md) 
 > - restApi(no DB, h/c), swagger doc, servlet, webServer, jackson, error handling, caching response, etc
 >
-> [courseApp, README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) 
+> [**courseApp**, README.md](MicroserviceModule/src/main/java/basicWebApp/courseApp/README.md) 
 > - h2, hibernate more, txn, tuple, pagination, etc
 
 ### ✔️RabbitMQ-projects
@@ -45,16 +45,19 @@
 - Environmnet Setup: [README_env_setup.md](KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
 - **App1** - `Producer/Consumer API` + **Avro schema** | [README.md](KafkaModule/src/main/java/kafka/spring/producerConsumerApp/README.md)
 - **App2** - `KafkaStream API` + **JsonSerde** | [README.md](KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
-- 
-### ✔️micro-services projects
+
+### ✔️micro-services project/s
 > - **SecurityApp**
->    - [SecurityApp README.md](WebSecurityModule/src/main/java/securityApp/README.md)| OAuth2, okta, jwt, basic
+>    - OAuth2, okta, jwt, basic
+>    - [README.md](WebSecurityModule/src/main/java/securityApp/README.md) | [📚Security Notes](https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security)
 > -  **modernWebApp** 🔴
 >    - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
 >    - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
 >    - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
 >    - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
-> -  [observabilityApp README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) - otel, aws-x-rays 🔴
+> -  **observabilityApp** 🔴
+>   - [README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) 
+>   - otel, aws-x-rays 
 
 ### ✔️Misc
 - [2025](docs/2025)
