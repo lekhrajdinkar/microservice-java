@@ -1,5 +1,4 @@
-# java | Spring boot | microServices | kafka | rmq | spring-batch | SpringAI 🤖 | etc
----
+# java | Spring boot | microServices | kafka | rmq | spring-batch | SpringAI 🤖 | [leetcode](https://leetcode.com/u/lekhrajdinkar/)
 ## 🔰2012-2024
 ### ✔️Java7 -java21
 - [java evolution - project and Notes](JavaEvolutionModule/src/main/java/evolution)
@@ -40,9 +39,10 @@ Projects:
 
 ---
 ## 🔰2025
+### ✔️Misc  [, check here](docs/2025)
 ### ✔️Kafka-projects
 - [📚 Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
-- Environmnet Setup: [README_env_setup.md](KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
+- Environment Setup: [README_env_setup.md](KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
 - **App1** - `Producer/Consumer API` + **Avro schema** | [README.md](KafkaModule/src/main/java/kafka/spring/producerConsumerApp/README.md)
 - **App2** - `KafkaStream API` + **JsonSerde** | [README.md](KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
 
@@ -50,38 +50,23 @@ Projects:
 > - **SecurityApp**
 >    - OAuth2, okta, jwt, basic
 >    - [README.md](WebSecurityModule/src/main/java/securityApp/README.md) | [📚Security Notes](https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security)
-> -  **modernWebApp** 🔴
+> - **modernWebApp** 🔴
 >    - [shoppingApp README.md](MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
 >    - [stockApp README.md](MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
 >    - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
 >    - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
-> -  **observabilityApp** 🔴
->   - [README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) 
->   - otel, aws-x-rays 
-
-### ✔️Misc
-- [2025](docs/2025)
+> - **observabilityApp** 🔴
+>    - [README.md](MicroserviceModule/src/main/java/observabilityApp/README.md) 
+>    - otel, aws-x-rays 
 
 ---
 ## 🔰2026
 ### In-progress:
 -  [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md) 🔴
 -  **SpringAI** [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md) 🔴
-  - App-1 : ...
-  - App-2 : ...
 
 ---
-## ▶️More
-- leet-code project : https://leetcode.com/u/lekhrajdinkar/
-- `mkdocs` - local setup
-  ```bash
-  .\mkdocs\.venv\Scripts\activate
-  pip install -r requirements-netlify.txt
-  mkdocs serve
-  ```
-
----
-## ▶️Side Notes
+## ▶ Side Notes
 ```
 --spring.config.location=classpath:/custom-config.properties
 --spring.config.additional-location=classpath:/custom-config.properties
