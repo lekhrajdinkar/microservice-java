@@ -29,7 +29,7 @@
 - @GeneratedValue() `@TableGenerator`()
 - @GeneratedValue() `@SequenceGenerator`()
 - @GeneratedValue() `@GenericGenerator`()
-- check more: [04_Hibernate-2-identifier+validator.md](06_04_Hibernate-2-identifier+validator.md)
+- check more: [04_Hibernate-2-identifier+validator.md](06_04_data-Hibernate-2-identifier+validator.md)
   
 ### Inheritance
 - `@MappedSuperclass` on parent class

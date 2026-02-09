@@ -1,17 +1,15 @@
-# jackson
-## reference
+# Serialization/Deserialization with `jackson`
+## ✔️Overview
 - https://chatgpt.com/c/0f8b8a16-cab5-4fbb-8f0e-1c7949dd97f4 - anno 1
 - https://chatgpt.com/c/cbe3f6c3-c238-4db8-99e5-a0c9c9ddffec - anno 2
 - https://chatgpt.com/c/4334405c-e8c0-4e88-a138-a53b14ae52b5 - object mapper
-- https://www.baeldung.com/jackson
---- 
+- https://www.baeldung.com/jackson - Advance Section `pending`
 - Json , JsonStr , Object , JsonNode(asText(), readTree())
 - Objectmapper / Xmlmapper API
 - @ResquestBody and @responseBody behind the scene perform S and D using OM.
--  Advance Section pending : https://www.baeldung.com/jackson
 
 ---
-## Common task
+## ✔️Common task
 1. Serialize and Deserialize 
    - Class, generic-Class
    - interface and abstractClass : Does not work.
@@ -65,10 +63,8 @@
      }
      ```
 8. handle visibilty: @JsonAutoDetect(fieldVisibility = Visibility.ANY) // Private feild. etc.
-9. 
 
 ---
-
 ## Advance task
 1. inject
     - @JacksonInject indicates that a property will get its value from the injection and not from the JSON data.
@@ -82,8 +78,7 @@
 2.
 
 ---
-
-## Objectmapper
+## ObjectMapper
 - Builder pattern
 
 ### Serialize
@@ -137,7 +132,3 @@
   - @JsonFormat(shape = JsonFormat.Shape.String, pattern="") Date // 
   - @JsonFormat(shape = JsonFormat.Shape.NUMBER) Date //Timeinmilliseconds
   - @JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES) class  // IMP
-
-
-
-

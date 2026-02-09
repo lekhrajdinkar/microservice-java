@@ -15,7 +15,7 @@
 - **inheritance** 
 - (**EntityManager** / EntityManagerFactory) or  (**Session** / sessionFactory in Hibernate)
   - heap(object) <==> **PC**(managed entity) <==> Database
-  - provide API to interact with PC. more on PC [02_presistence-context.md](06_02_presistence-context.md)
+  - provide API to interact with PC. more on PC [02_presistence-context.md](06_02_data-presistence-context.md)
     - session.persist : mark for save
     - session.merge : move to pc
     - session.refresh : sync with DB

@@ -14,14 +14,13 @@
 - [JavaSpringApp README.md](JavaEvolutionModule/src/main/java/evolution/javaSpringApp/README.md)
 - git, maven, etc: [00_others.md](docs/2012-2024/00_01_developer_tool.md)
 
-### ✔️SpringBoot
-- [Spring_01_AOP](SpringBootModule/src/main/java/AOP) | [Notes](docs/2012-2024/01_Spring-core)
-- [Spring_02_Core](SpringBootModule/src/main/java/SpringCore) | [Notes](docs/2012-2024/01_Spring-core)
+### ✔️SpringBoot 
+[📚Notes](docs/2012-2024) | Projects:
+- [Spring_01_AOP](SpringBootModule/src/main/java/AOP) 
+- [Spring_02_Core](SpringBootModule/src/main/java/SpringCore) 
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
-- [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) | [Notes](docs/2012-2024/01_springboot)
-- SpringBoot-starter, Notes:
-  - [web](docs/2012-2024/02_web)
-  - [data-layer](docs/2012-2024/03_data-layer)
+- [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
+
 
 ### ✔️micro-services projects
 > **BasicWebApp**
