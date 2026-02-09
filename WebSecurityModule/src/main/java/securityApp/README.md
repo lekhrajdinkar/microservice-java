@@ -1,6 +1,6 @@
-# Security App
+# SpringSecurityApp
 ## Overview
-- https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security
+- Security note : https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security
 
 ## Runtime Details 
 - Database : no 
@@ -123,7 +123,7 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
   - inject method argumnet - `@AuthenticationPrincipal Jwt jwt`
 - **Option2** :
   - **Converter**: `Jwt` >> `AbstractAuthenticationToken` | [CustomJwtAuthenticationConverter.java](config/CustomJwtAuthenticationConverter.java)
-```java
+```
         http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(jwtConfigurer -> jwtConfigurer
            .jwtAuthenticationConverter(new CustomJwtAuthenticationConverter(scope_cc))
         ));
