@@ -49,6 +49,7 @@ public class ModernController
         return "Resource-1 accessed by subject: " + jwt.getSubject();
     }
 
+    //@Secured(ROLE_xxxxx) only check for role.
     @PreAuthorize("hasAuthority('SCOPE_app_read_lekhraj')")
     @GetMapping("/secured/resource-2/200")  String resource2_scope_200(@AuthenticationPrincipal Jwt jwt) {
         jwt.getClaims().forEach((k,v)->log.info(" ▶️ {} : {}", k,v));

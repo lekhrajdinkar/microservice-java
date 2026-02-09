@@ -14,32 +14,35 @@
 
 ## POC/s
 ### A1. Enable security in SB App
-- **old**: implement **WebSecurityConfigurerAdapter**  ❌
-- **New**:
-  - Add dependency : **spring-boot-starter-security**
-  - Add below bean/s:
+- Add dependency : **spring-boot-starter-security**
+- Add below bean/s:
 ```java
   @Configuration
   @EnableGlobalMethodSecurity(prePostEnabled = true)
   public class SecurityConfig 
   {
-  // 1 ▶️  Security Filter
-  @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception { // 👈🏻 injecting : HttpSecurity http
-        http
-            .authorizeRequests(authorize -> authorize
-                    .requestMatchers("/swagger-ui/**", "/actuators/**").permitAll()
-                    
-                    .antMatchers("/path-read").hasAuthority("SCOPE_ScopeRead")    
-                    .antMatchers("/path-write").hasAuthority("SCOPE_ScopeWrite") //.hasRole("").hasAnyRole("","")
-                    
-                    .anyRequest().authenticated()                         
-            )
-            .oauth2ResourceServer(oauth2 -> oauth2
-                .jwt(Customizer.withDefaults()) // Validate JWT tokens
-            );
-        return http.build();
-    }
+      @Bean
+      public SecurityFilterChain filterChain_1(HttpSecurity http) throws Exception
+      {
+          http
+                  .cors(Customizer.withDefaults()) // add @Bean CorsConfigurationBean
+                  .csrf(csrf->csrf.disable())
+                  .authorizeHttpRequests(
+                          registry -> registry
+                                  .requestMatchers("/swagger-ui/**","/actuator/**","/v3/api-docs/**", "/h2-console","/micrometer/**" ).permitAll()
+                                  .anyRequest().authenticated()
+                  );
+
+          // Option-1 : withDefaults
+          // http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(Customizer.withDefaults()));
+
+          // Option-2 : Custom Jwt Converter... throws exceptions if scope missing...
+          http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(jwtConfigurer -> jwtConfigurer
+                  .jwtAuthenticationConverter(new CustomJwtAuthenticationConverter(scope_cc))
+          ));
+
+          return http.build();
+      }
   
     // 2 ▶️ 
     @Bean
@@ -48,22 +51,24 @@
     }
 
     // 3 ▶️ CORS
-    @Bean // for spring MVC
+    @Bean
+    // way-1: WebMvcConfigurer : addCorsMappings | way-2 : add @Bean CorsConfigurationBean
+    // cors mapping:
+    // url1 --> angular-app-1 can call
+    // url2 --> angular-app-2 can call
     WebMvcConfigurer webMvcConfigurerForApp(){
-      return new WebMvcConfigurer()
-      {
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-          registry
-                  .addMapping("/**")
-                  .allowedMethods("*");
-        }
-      };
+        return new WebMvcConfigurer()
+        {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedMethods("*");
+            }
+        };
     }
    }
 ```
 
-### A1. Disable security in SB App
+### A2. Disable security in SB App
 ```java
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class}) 
 class Config{}
@@ -94,12 +99,15 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
   */
   ```
 
+**▶️mTLS**
+- certificate based
 
 #### Modern webApp - Secure REST (2) ✅
-- **▶️OpenID Connect**
+**▶️OpenID Connect**
   - SB helps to integrating with **external authentication-providers** (okta, google, facebook, etc)
   - **Identity token** generate by Okta, requested by UI or consumer.
-- **▶️API Keys** ✔️
+
+**▶️API Keys** ✔️
   - https://www.baeldung.com/spring-boot-api-key-secret
   - Some REST APIs use API keys for authentication.
   - An API-key is like `token`, that identifies the - `API-client to the API without referencing an actual user`.
@@ -108,7 +116,7 @@ spring.autoconfigure.exclude = org.springframework.boot.autoconfigure.security.S
   - Create `Custom Filter` to Check API-Check
   - eg: CCGG MuleSoft API
 
-
+---
 ### B2. Authorization/OAuth2 (Modern) ✅
 #### ▶️ OAuth2 grant (3)
 - [OAuth2 grant types](README_OAuth2.md)
@@ -146,7 +154,7 @@ public class LocationBasedAccessController
 {
     @GetMapping("/api-1")
     //@PostAuthorize
-    //@Secured
+    //@Secured --> checks only role
     //@RolesAllowed
     @PreAuthorize("hasAuthority('ROLE_scope1') and #jwt.claims['location'] == 'Irvine'") // 👈🏻
     public String restrictedAccess() {
@@ -177,8 +185,8 @@ public class LocationBasedAccessController
 - @Order(1) @Bean : `SecurityFilterChain`
 - **scenario-1** : manually chain with other filter
 - **scenario-2**
-  - filter-1 bean  @Order(1)  for url-pattern-1, do form-login
-  - filter-2 bean  @Order(2)  for url-pattern-2, do Oauth-JWT-validation
+  - filter-1 bean  @Order(1)  for url-pattern-1, **do form-login**
+  - filter-2 bean  @Order(2)  for url-pattern-2, **do Oauth-JWT-validation**
 
 ### E. Rate limiting per IP/client
 - Inputs validated (JSR-303), request size limits, rate limiting per IP/client
@@ -190,11 +198,11 @@ public class LocationBasedAccessController
   - `Content-Security-Policy` 
   ```
 
-### F. TLS / SSL 
-- HTTPS, mTLS option, cert rotation
-- header: `Strict-Transport-Security`
+### F. encryption 
+- HTTPS TLS handskake, X.509 cert, cert rotation
+- enforce https over http using header: `Strict-Transport-Security`
 - k8s | ngInx 👈🏻
-- **openssl** s_client
+- **openssl** tool
 
 ### G. ✔️Secrets Management & Config
 - AWS Secrets Manager

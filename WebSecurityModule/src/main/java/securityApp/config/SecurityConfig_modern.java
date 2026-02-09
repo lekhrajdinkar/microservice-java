@@ -18,11 +18,13 @@ public class SecurityConfig_modern
     @Value("${spring.security.oauth2.client.registration.cc.scope}") String scope_cc;
 
     @Bean
-    // ▶️ WebMvcConfigurer : addCorsMappings
+    // ▶️ way-1: WebMvcConfigurer : addCorsMappings | way-2 : add @Bean CorsConfigurationBean
+    // cors mapping:
+    // url1 --> angular-app-1 can call
+    // url2 --> angular-app-2 can call
     WebMvcConfigurer webMvcConfigurerForApp(){
         return new WebMvcConfigurer()
         {
-            // ✅ CORS
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedMethods("*");
@@ -33,15 +35,14 @@ public class SecurityConfig_modern
     @Bean
     public SecurityFilterChain filterChain_1(HttpSecurity http) throws Exception
     {
-        http.authorizeHttpRequests(registry -> registry
-                .requestMatchers("/swagger-ui/**",
-                        "/actuator/**",
-                        "/v3/api-docs/**",
-                        "/h2-console",
-                        "/micrometer/**"
-                        //"/**"
-                ).permitAll()
-                .anyRequest().authenticated());
+        http
+                .cors(Customizer.withDefaults()) // add @Bean CorsConfigurationBean
+                .csrf(csrf->csrf.disable())
+                .authorizeHttpRequests(
+                        registry -> registry
+                .requestMatchers("/swagger-ui/**","/actuator/**","/v3/api-docs/**", "/h2-console","/micrometer/**" ).permitAll()
+                .anyRequest().authenticated()
+                );
 
         // ▶️ Option-1 : withDefaults
         // http.oauth2ResourceServer(OAuthRSConfigurer -> OAuthRSConfigurer.jwt(Customizer.withDefaults()));
@@ -57,7 +58,7 @@ public class SecurityConfig_modern
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         //return (microservice) -> microservice.ignoring().requestMatchers("/ignore1", "/ignore2");
-        return (microservice) -> microservice.ignoring().requestMatchers("/not-secured/**", "/not-secured/*");
+        return (s) -> s.ignoring().requestMatchers("/not-secured/**", "/not-secured/*");
     }
 }
 
