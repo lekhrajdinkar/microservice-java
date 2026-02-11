@@ -15,7 +15,8 @@
 - [Spring_03_Properties](SpringBootModule/src/main/java/SpringProperties)
 - [Spring_04_AutoConfiguration](SpringBootModule/src/main/java/SpringAutoConfiguration) 
 - [Advance javaSpringApp](JavaEvolutionModule/src/main/java/javaSpringApp) - Async etc
--  Spring-Batch | [Notes 📚](docs/2012-2024/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
+- **Spring-Batch** | [Notes 📚](docs/2012-2024/05_spring-batch-ETL)  |  [Project ](ETLModule/src/main/java/springbatch)
+- **Spring-Cloud** (microservices-old-project) | [Notes 📚](https://github.com/lekhrajdinkar/spring-cloud/tree/main/Notes) | [project ](https://github.com/lekhrajdinkar/spring-cloud)
 
 ### ✔️micro-services project/s
 > **BasicWebApp** | [📚Notes](docs/2012-2024)
