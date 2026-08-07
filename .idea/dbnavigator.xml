@@ -11,13 +11,18 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
-      <assistant-state connection-id="1bad0375-5d2e-4750-a39f-ab6338b53926" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
-        <conversations />
+      <assistant-state connection-id="1bad0375-5d2e-4750-a39f-ab6338b53926" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+        <tools />
+        <mcp-servers />
       </assistant-state>
-      <assistant-state connection-id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
-        <conversations />
+      <assistant-state connection-id="d93fcbca-85e4-4b84-a0fa-e0fa7e226d07" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+        <mcp-servers />
       </assistant-state>
     </assistants>
+    <selection-state>
+      <model-selection />
+    </selection-state>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
@@ -55,6 +60,11 @@
     <filters />
   </component>
   <component name="DBNavigator.Project.Settings">
+    <states>
+      <state category="SECRET_STORAGE_MIGRATION">
+        <migrated value="true" />
+      </state>
+    </states>
     <connections>
       <connection source-id="" id="1bad0375-5d2e-4750-a39f-ab6338b53926" active="true" signed="true">
         <database>
@@ -73,6 +83,12 @@
           <token-type value="" />
           <token-config-file value="" />
           <token-profile value="" />
+          <adb-compartment-ocid value="" />
+          <adb-database-ocid value="" />
+          <azure-token-database-id-uri value="" />
+          <azure-token-tenant-id value="" />
+          <azure-token-client-id value="" />
+          <azure-token-client-certificate-file value="" />
           <session-user value="" />
         </database>
         <properties>
@@ -110,17 +126,24 @@
         </details>
         <debugger>
           <compile-dependencies value="true" />
-          <tcp-driver-tunneling value="false" />
           <tcp-host-address value="" />
           <tcp-port-from value="4000" />
           <tcp-port-to value="4999" />
+          <jdwp-tunnel-type value="NONE" />
           <debugger-type value="ASK" />
+          <reverse-ssh-tunnel>
+            <host value="" />
+            <port value="22" />
+            <bind-host value="127.0.0.1" />
+            <bind-port value="0" />
+            <auth-type value="PASSWORD" />
+            <user value="" />
+            <key-file value="" />
+          </reverse-ssh-tunnel>
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
           <object-filters />
           <object-type-filter use-master-settings="true">
-            <object-type name="SCHEMA" enabled="true" />
-            <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
             <object-type name="PRIVILEGE" enabled="true" />
             <object-type name="CHARSET" enabled="true" />
@@ -151,6 +174,7 @@
             <object-type name="DBLINK" enabled="true" />
             <object-type name="CREDENTIAL" enabled="true" />
             <object-type name="AI_PROFILE" enabled="true" />
+            <object-type name="AI_MODEL" enabled="true" />
           </object-type-filter>
         </object-filters>
       </connection>
@@ -165,8 +189,6 @@
       </general>
       <filters>
         <object-type-filter>
-          <object-type name="SCHEMA" enabled="true" />
-          <object-type name="USER" enabled="true" />
           <object-type name="ROLE" enabled="true" />
           <object-type name="PRIVILEGE" enabled="true" />
           <object-type name="CHARSET" enabled="true" />
@@ -197,6 +219,7 @@
           <object-type name="DBLINK" enabled="true" />
           <object-type name="CREDENTIAL" enabled="true" />
           <object-type name="AI_PROFILE" enabled="true" />
+          <object-type name="AI_MODEL" enabled="true" />
         </object-type-filter>
       </filters>
       <sorting>
@@ -302,7 +325,6 @@
           <content-type name="PL/SQL" enabled="true" />
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
-          <content-type name="Groovy" enabled="true" />
           <content-type name="YAML" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
@@ -322,6 +344,7 @@
         <save-changes value="false" />
         <revert-changes value="true" />
         <exit-on-changes value="ASK" />
+        <close-temporary-console value="ASK" />
       </confirmations>
     </code-editor-settings>
     <code-completion-settings>
@@ -350,9 +373,14 @@
             <filter-element type="OBJECT" id="function" selected="true" />
             <filter-element type="OBJECT" id="package" selected="true" />
             <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="java class" selected="true" />
+            <filter-element type="OBJECT" id="java resource" selected="true" />
             <filter-element type="OBJECT" id="dimension" selected="true" />
             <filter-element type="OBJECT" id="cluster" selected="true" />
             <filter-element type="OBJECT" id="dblink" selected="true" />
+            <filter-element type="OBJECT" id="credential" selected="true" />
+            <filter-element type="OBJECT" id="AI profile" selected="true" />
+            <filter-element type="OBJECT" id="AI model" selected="true" />
           </user-schema>
           <public-schema>
             <filter-element type="OBJECT" id="table" selected="false" />
@@ -368,9 +396,14 @@
             <filter-element type="OBJECT" id="function" selected="false" />
             <filter-element type="OBJECT" id="package" selected="false" />
             <filter-element type="OBJECT" id="type" selected="false" />
+            <filter-element type="OBJECT" id="java class" selected="false" />
+            <filter-element type="OBJECT" id="java resource" selected="false" />
             <filter-element type="OBJECT" id="dimension" selected="false" />
             <filter-element type="OBJECT" id="cluster" selected="false" />
             <filter-element type="OBJECT" id="dblink" selected="false" />
+            <filter-element type="OBJECT" id="credential" selected="false" />
+            <filter-element type="OBJECT" id="AI profile" selected="false" />
+            <filter-element type="OBJECT" id="AI model" selected="false" />
           </public-schema>
           <any-schema>
             <filter-element type="OBJECT" id="table" selected="true" />
@@ -386,9 +419,14 @@
             <filter-element type="OBJECT" id="function" selected="true" />
             <filter-element type="OBJECT" id="package" selected="true" />
             <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="java class" selected="true" />
+            <filter-element type="OBJECT" id="java resource" selected="true" />
             <filter-element type="OBJECT" id="dimension" selected="true" />
             <filter-element type="OBJECT" id="cluster" selected="true" />
             <filter-element type="OBJECT" id="dblink" selected="true" />
+            <filter-element type="OBJECT" id="credential" selected="true" />
+            <filter-element type="OBJECT" id="AI profile" selected="true" />
+            <filter-element type="OBJECT" id="AI model" selected="true" />
           </any-schema>
         </basic-filter>
         <extended-filter>
@@ -415,9 +453,14 @@
             <filter-element type="OBJECT" id="function" selected="true" />
             <filter-element type="OBJECT" id="package" selected="true" />
             <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="java class" selected="true" />
+            <filter-element type="OBJECT" id="java resource" selected="true" />
             <filter-element type="OBJECT" id="dimension" selected="true" />
             <filter-element type="OBJECT" id="cluster" selected="true" />
             <filter-element type="OBJECT" id="dblink" selected="true" />
+            <filter-element type="OBJECT" id="credential" selected="true" />
+            <filter-element type="OBJECT" id="AI profile" selected="true" />
+            <filter-element type="OBJECT" id="AI model" selected="true" />
           </user-schema>
           <public-schema>
             <filter-element type="OBJECT" id="table" selected="true" />
@@ -436,6 +479,9 @@
             <filter-element type="OBJECT" id="dimension" selected="true" />
             <filter-element type="OBJECT" id="cluster" selected="true" />
             <filter-element type="OBJECT" id="dblink" selected="true" />
+            <filter-element type="OBJECT" id="credential" selected="true" />
+            <filter-element type="OBJECT" id="AI profile" selected="true" />
+            <filter-element type="OBJECT" id="AI model" selected="true" />
           </public-schema>
           <any-schema>
             <filter-element type="OBJECT" id="table" selected="true" />
@@ -451,9 +497,14 @@
             <filter-element type="OBJECT" id="function" selected="true" />
             <filter-element type="OBJECT" id="package" selected="true" />
             <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="java class" selected="true" />
+            <filter-element type="OBJECT" id="java resource" selected="true" />
             <filter-element type="OBJECT" id="dimension" selected="true" />
             <filter-element type="OBJECT" id="cluster" selected="true" />
             <filter-element type="OBJECT" id="dblink" selected="true" />
+            <filter-element type="OBJECT" id="credential" selected="true" />
+            <filter-element type="OBJECT" id="AI profile" selected="true" />
+            <filter-element type="OBJECT" id="AI model" selected="true" />
           </any-schema>
         </extended-filter>
       </filters>
@@ -504,6 +555,11 @@
         <debug-execution-timeout value="600" />
         <parameter-history-size value="10" />
       </method-execution>
+      <method-execution>
+        <execution-timeout value="30" />
+        <debug-execution-timeout value="600" />
+        <parameter-history-size value="10" />
+      </method-execution>
     </execution-engine-settings>
     <operation-settings>
       <transactions>
@@ -530,17 +586,17 @@
     </operation-settings>
     <ddl-file-settings>
       <extensions>
-        <mapping file-type-id="VIEW" extensions="vw" />
-        <mapping file-type-id="TRIGGER" extensions="trg" />
-        <mapping file-type-id="PROCEDURE" extensions="prc" />
-        <mapping file-type-id="FUNCTION" extensions="fnc" />
-        <mapping file-type-id="PACKAGE" extensions="pkg" />
-        <mapping file-type-id="PACKAGE_SPEC" extensions="pks" />
-        <mapping file-type-id="PACKAGE_BODY" extensions="pkb" />
-        <mapping file-type-id="TYPE" extensions="tpe" />
-        <mapping file-type-id="TYPE_SPEC" extensions="tps" />
-        <mapping file-type-id="TYPE_BODY" extensions="tpb" />
-        <mapping file-type-id="JAVA_SOURCE" extensions="sql" />
+        <mapping file-type-id="VIEW" file-name-patterns="*.vw" />
+        <mapping file-type-id="TRIGGER" file-name-patterns="*.trg" />
+        <mapping file-type-id="PROCEDURE" file-name-patterns="*.prc" />
+        <mapping file-type-id="FUNCTION" file-name-patterns="*.fnc" />
+        <mapping file-type-id="PACKAGE" file-name-patterns="*.pkg" />
+        <mapping file-type-id="PACKAGE_SPEC" file-name-patterns="*.pks" />
+        <mapping file-type-id="PACKAGE_BODY" file-name-patterns="*.pkb" />
+        <mapping file-type-id="TYPE" file-name-patterns="*.tpe" />
+        <mapping file-type-id="TYPE_SPEC" file-name-patterns="*.tps" />
+        <mapping file-type-id="TYPE_BODY" file-name-patterns="*.tpb" />
+        <mapping file-type-id="JAVA_SOURCE" file-name-patterns="*.sql" />
       </extensions>
       <general>
         <lookup-ddl-files value="true" />
@@ -550,11 +606,6 @@
         <make-scripts-rerunnable value="true" />
       </general>
     </ddl-file-settings>
-    <assistant-settings>
-      <credential-settings>
-        <credentials />
-      </credential-settings>
-    </assistant-settings>
     <general-settings>
       <regional-settings>
         <date-format value="MEDIUM" />

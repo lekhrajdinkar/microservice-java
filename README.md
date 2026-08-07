@@ -58,7 +58,7 @@
 ## 🔰2026
 ### In-progress:
 -  [Java 25 README.md](JavaEvolutionModule/src/main/java/evolution/java_25/README.md) 🔴
--  **SpringAI** [02_01_SpringAI-start.md](docs/2026/02_01_SpringAI-start.md) 🔴
+-  **SpringAI** [02_01_SpringAI-start.md](docs/2026/spring-ai/README.md) 🔴
 
 ---
 ## ▶ Side Notes
