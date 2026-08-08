@@ -1,0 +1,75 @@
+# 2025-2030
+### Kafka-projects
+- [Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
+- Environment Setup: [README_env_setup.md](./../../KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
+- **App1** - `Producer/Consumer API` + **Avro schema** | [README.md](./../../KafkaModule/src/main/java/kafka/spring/producerConsumerApp/README.md)
+- **App2** - `KafkaStream API` + **JsonSerde** | [README.md](./../../KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
+
+### SecurityApp
+- OAuth2, okta, jwt, basic
+- [README.md](./../../WebSecurityModule/src/main/java/securityApp/README.md) | 
+- [Notes](https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security)
+
+### modernWebApp 🔴
+- [shoppingApp README.md](./../../MicroserviceModule/src/main/java/modernWebApp/shoppingApp/README.md) - ASGI, Async, websocket, grpc
+- [stockApp README.md](./../../MicroserviceModule/src/main/java/modernWebApp/stockApp/README.md) - streaming, modulith, temporal
+- communication pattern: rest, grpc, websocket, messaging (kafka), rmq
+- k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
+
+
+### SpringAI project
+-  [README.md](../../SpringAIModule/README.md) 🔴
+
+---
+## Side Notes
+```
+--spring.config.location=classpath:/custom-config.properties
+--spring.config.additional-location=classpath:/custom-config.properties
+
+--spring.profiles.active=dev
+
+👉 Priority Rule:
+Order of property resolution (highest wins):
+  Command-line args (--key=value)
+  spring.config.location file(s)
+  spring.config.additional-location file(s)
+  application-{profile}.properties
+  application.properties
+```
+
+- Set/update **java Runtime**
+```
+#1 pom.xml
+<properties
+   <java.version21</java.version
+   <maven.java.version21</maven.java.version
+</properties
+
+#2  InteliJ    
+- File → Project Structure → SDKs
+- Set this as Project SDK and Module SDK
+- In Settings → Build, Execution, Deployment → Compiler → Java Compiler, ensure:
+    Use compiler: javac
+    Target bytecode: 25 (or lower if compatibility needed)
+- Check java version on runtime config for each app and validate java
+- use maven wrapper  update it for InteliJ
+
+# maven warpper
+- [toolchains.xml](.mvn/toolchains.xml)  update hardcoded java path
+
+---cmd-----
+mvn clean compile
+mvn -v
+java -version
+javac -version
+
+--- Status--- (as of Sep 2025) 
+java 21 : working ✔️
+java 23 : Lombok not supported ❌
+java 25 : Maven not supported ❌
+
+--- More
+- <!-- 🔶 Security -- comment this part in pom.xml(root)
+```
+
+![img.png](docs/99_img/2025/java21.png)

@@ -74,7 +74,7 @@ public class ExtendedPersistenceContextRepository
 - owner owns the foreign key and defines @JoinColumn(name="newName")
 - uni-directional or bi-directional : both has references of each other.
 - project : [entities](../../../MicroserviceModule/modernWebApp/shoppingApp/entities)
-- ![img.png](../99_img/99_img_sb/er-diagram.png)
+- ![img.png](../../99_img/2024/er-diagram.png)
 
 ### `1-2-1`
 - any class can be owner
