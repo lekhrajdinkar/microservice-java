@@ -1,4 +1,10 @@
 # KafkaModule
+
+## Run
+- app1 producer consumer [README.md](src/main/java/kafka/spring/streamApp/README.md)
+- app2 stream App [README.md](src/main/java/kafka/spring/producerConsumerApp/README.md)
+
+---
 ## Environment Setup
 ### 1. Online lab 💲
 - kk: https://kode.wiki/4q4V7VZ paid / Apache Kafka
