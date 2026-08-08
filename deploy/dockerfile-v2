@@ -4,9 +4,9 @@ FROM eclipse-temurin:17-jdk-alpine as builder
 WORKDIR /app
 
 # Copy only the files needed for dependency resolution first (optimizes cache)
-COPY pom.xml .
-COPY .mvn/ .mvn
-COPY mvnw .
+COPY ../pom.xml .
+COPY ../.mvn .mvn
+COPY ../mvnw .
 
 # Make the Maven wrapper executable
 RUN chmod +x mvnw
@@ -15,7 +15,7 @@ RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline -B
 
 # Copy the rest of the source code
-COPY src/ src
+COPY ../src src
 
 # Package the application
 RUN ./mvnw clean package -DskipTests

@@ -8,10 +8,10 @@ LABEL version="1.0.0"
 LABEL environment="dev1"
 
 # Copy project files into the container
-COPY .mvn/ .mvn
-COPY src/ src
-COPY pom.xml .
-COPY mvnw .
+COPY ../.mvn .mvn
+COPY ../src src
+COPY ../pom.xml .
+COPY ../mvnw .
 
 # Make the Maven wrapper executable
 RUN chmod 775 ./mvnw
