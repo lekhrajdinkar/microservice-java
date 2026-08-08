@@ -55,10 +55,10 @@ public class StudentStreamsTopologyTest
     public void testFilterAndTransform()
     {
         TestInputTopic<String, StudentJson> input = testDriver.createInputTopic(
-                "student-topic", Serdes.String().serializer(), studentSerde.serializer());
+            "stream-app-student-topic", Serdes.String().serializer(), studentSerde.serializer());
 
         TestOutputTopic<String, StudentJson> output = testDriver.createOutputTopic(
-                "student-topic-processed", Serdes.String().deserializer(), studentSerde.deserializer());
+            "stream-app-student-topic-processed", Serdes.String().deserializer(), studentSerde.deserializer());
 
         StudentJson s1 = new StudentJson();
         s1.setName("lekhraj kumar");

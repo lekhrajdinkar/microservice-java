@@ -16,23 +16,21 @@
 	<description>Demo project for Spring Boot</description>
 
     <!--🔰 Modules-->
-    <modules>
-        <module>module1</module>
-        <module>module2</module>
-        <module>JavaEvolutionModule</module>
-        <module>SpringBootModule</module>
-        <module>KafkaModule</module>
-        <module>MicroserviceModule</module>
-        <module>ETLModule</module>
-        <module>RmqModule</module>
-        <module>WebSecurityModule</module>
-        <module>SpringAIModule</module>
-    </modules>
+	<modules>
+		<module>JavaEvolutionModule</module>
+		<module>SpringBootModule</module>
+		<module>KafkaModule</module>
+		<module>MicroserviceModule</module>
+		<module>ETLModule</module>
+		<module>RmqModule</module>
+		<module>WebSecurityModule</module>
+		<module>SpringAIModule</module>
+	</modules>
 
-    <properties>
-        <java.version>21</java.version>
-        <maven.java.version>21</maven.java.version>
-    </properties>
+	<properties>
+		<java.version>25</java.version>
+		<maven.java.version>25</maven.java.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -76,8 +74,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-            <version>1.18.34</version>
-            <scope>provided</scope>
+			<version>1.18.40</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -308,17 +306,28 @@
 				</configuration>
 			</plugin>
 
-            <!--Maven’s compiler plugin may not fully support java 25, use 23 , as of oct 2025-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
 				<configuration>
-					<!--
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-                    <release>${maven.java.version}</release>
-                    -->
+					<release>${maven.java.version}</release>
+					<useModulePath>false</useModulePath>
+					<excludes>
+						<exclude>**/module-info.java</exclude>
+					</excludes>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.40</version>
+						</path>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>1.5.2.Final</version>
+						</path>
+					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
 
