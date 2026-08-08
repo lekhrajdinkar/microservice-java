@@ -1,4 +1,4 @@
-import springbootApp.SpringProperties.bean.Prop2Map;
+import SpringProperties.bean.Prop2Map;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
