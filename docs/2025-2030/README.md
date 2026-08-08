@@ -1,11 +1,10 @@
 # 2025-2030
-## ✔️Kafka-projects
+### Kafka-projects
 - [Notes](https://github.com/lekhrajdinkar/solution-engineer/tree/main/docs/06_message-broker)
 - Environment Setup: [README_env_setup.md](./../../KafkaModule/src/main/java/kafka/spring/README_env_setup.md)
 - **App1** - `Producer/Consumer API` + **Avro schema** | [README.md](./../../KafkaModule/src/main/java/kafka/spring/producerConsumerApp/README.md)
 - **App2** - `KafkaStream API` + **JsonSerde** | [README.md](./../../KafkaModule/src/main/java/kafka/spring/streamApp/README.md)
 
-## ✔️micro-services project/s
 ### SecurityApp
 - OAuth2, okta, jwt, basic
 - [README.md](./../../WebSecurityModule/src/main/java/securityApp/README.md) | 
@@ -17,12 +16,9 @@
 - communication pattern: rest, grpc, websocket, messaging (kafka), rmq
 - k8s Helm | Deployment steps https://github.com/lekhrajdinkar/microservice-java/blob/main/helm/readme.md
 
-### observabilityApp 🔴
-- [README.md](./../../MicroserviceModule/src/main/java/observabilityApp/README.md)
-- otel, aws-x-rays
 
 ### SpringAI project
--  [README.md](./../../docs/2025-2030/spring-ai/README.md) 🔴
+-  [README.md](../../SpringAIModule/README.md) 🔴
 
 ---
 ## Side Notes

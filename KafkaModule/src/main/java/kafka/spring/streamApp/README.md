@@ -17,7 +17,7 @@
 - Run app > send some event > stop it > restart > see state restored from changelog topic.
 
 ### overview
-- env setup: [README_env_setup.md](../README_env_setup.md)
+- env setup: [README_env_setup.md](../../../../../../README.md)
 - reference: 
   - https://www.youtube.com/watch?v=U7RZcBtP6Dw&list=PLVz2XdJiJQxz55LcpHFM6QIB-Px40w3Gt&index=4
   - https://chatgpt.com/c/6951ccd9-ddac-8333-a10e-28ed6ebec776
@@ -93,7 +93,7 @@ kafka-console-consumer --bootstrap-server localhost:9092 --topic stream-app-stud
 ```        
 #### Stateful
 
-![img.png](../../../../resources/img/img-2.png)
+![img.png](../../../../../../../docs/99_img/2025/img/img-2.png)
 
 - **groupBy / aggregate / count** 
     Aggregate or count by key (creates a KTable).

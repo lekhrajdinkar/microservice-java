@@ -12,7 +12,7 @@
   - `generic-topic`
 
 ### overview
-- env setup: [README_env_setup.md](../README_env_setup.md)
+- env setup: [README_env_setup.md](../../../../../../README.md)
 - [https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8](https://chatgpt.com/c/68cc4d40-7964-8333-86be-2846ae7979e8)
 - main: [kafkaProducerConsumerApp.java](kafkaProducerConsumerApp.java)
 - Swagger docs : http://localhost:8091/kafkaProducerConsumerApp/swagger-ui/index.html 👈🏻
@@ -20,7 +20,7 @@
 - conductor console: http://localhost:8080/console/my-local-kafka-cluster
 - [avro](../../../../resources/avro)
 
-![img.png](../../../../resources/img/img.png)
+![img.png](../../../../../../../docs/99_img/2025/img/img.png)
   
 ### Error and its Fix
 ```

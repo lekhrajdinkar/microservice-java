@@ -16,7 +16,7 @@
 - interview question : https://chatgpt.com/c/67428185-c2e4-800d-a691-97f034a12433
 - bbgo : http://youtube.com/post/Ugkxyu-gn0pFn8ERIJ9Edwmpjn67cLr2kDxx?feature=shared | essential
 - bm https://www.youtube.com/watch?v=HMoZ5cYzU4I
-- ![img.png](../99_img/2025/img.png)
+- ![img.png](../../99_img/2025/img.png)
 
 ---
 ## MapStruct / modelMapper
