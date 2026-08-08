@@ -14,4 +14,4 @@
 
 ### Runtime details:
 - Database : no
-- [SpringbootApp.java](SpringbootApp.java)
+- [SpringbootApp.java](src/main/java/SpringbootApp.java)
