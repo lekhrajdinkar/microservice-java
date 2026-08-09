@@ -1,7 +1,17 @@
+# RabbitMQ Module
 - https://www.rabbitmq.com/tutorials
+- https://chatgpt.com/c/68ce348e-9b24-8330-8faf-6036616d5006 | AMQP 
 
 ---
-## run rmq locally
+## Run
+- API docs: http://localhost:8095/RmqSpringApp/swagger-ui/index.html
+- props : [RmqSpringApp.properties](src/main/resources/more/rmq/RmqSpringApp.properties)
+- main class : [RmqSpringApp.java](src/main/java/rmq/RmqSpringApp.java)
+-  `mvn spring-boot:run -Dspring-boot.run.profiles=rmq`
+
+---
+## Environment setup
+
 ```bash
 docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
@@ -9,24 +19,16 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:1567
 cd ./../../../../../src/main/resources/more/rmq
 docker-compose -f docker-compose.yml up -d
 ```
+- RMQ Management console UI : http://localhost:15672/#/ 
 
-- 🔶 RMQ Management console UI : http://localhost:15672/#/ 
-- 🔶 Apicurio Registry : http://localhost:8080/ui/artifacts
+![img.png](../docs/99_img/2024/img-rmq/img.png)
 
-![img.png](../../../../../src/main/resources/img/rmq/img.png)
+- Apicurio Registry : http://localhost:8080/ui/artifacts
 
-![img_1.png](../../../../../src/main/resources/img/rmq/img_1.png)
+![img_1.png](../docs/99_img/2024/img-rmq/img_1.png)
 
 ---
-## RmqSpringApp
--  `AMQP 0-9-1` protocol | https://chatgpt.com/c/68ce348e-9b24-8330-8faf-6036616d5006 🤖
-- API docs: http://localhost:8095/RmqSpringApp/swagger-ui/index.html
-- props : [RmqSpringApp.properties](../../../../../src/main/resources/more/rmq/RmqSpringApp.properties)
-- main class : [RmqSpringApp.java](../java/more/rmq/RmqSpringApp.java)
-  - run : `mvn spring-boot:run -Dspring-boot.run.profiles=rmq`
-  - test : [RmqSpringAppTest.java](../java/more/rmq/RmqSpringAppTest.java)
-
-## Advance
+## POC
 ### Consumer
 - **1 Manual ack/nack**
 ```java

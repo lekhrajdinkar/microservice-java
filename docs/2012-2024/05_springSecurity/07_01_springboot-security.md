@@ -1,6 +1,6 @@
 > - **security concepts** https://github.com/lekhrajdinkar/senior-system-engineer/tree/2026/docs/2022-2025/SE_02_distributed-system/SD_03_security
 > - projects:
->   - [securityApp, **README.md**](../../WebSecurityModule/src/main/java/securityApp/README.md)
+>   - [securityApp, **README.md**](../../../WebSecurityModule/src/main/java/securityApp/README.md)
 
 ---
 # Spring security
@@ -26,7 +26,7 @@
         - ...
         - custom filters (plug-in and can change order)
 
-![img.png](../99_img/99_img_sb/img.png)
+![img.png](../../99_img/2024/img.png)
 
 ---
 ## Authentications
