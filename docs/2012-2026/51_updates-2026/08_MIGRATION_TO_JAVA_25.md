@@ -1,4 +1,4 @@
-Migration summary — upgrade to Java 25
+# Migration summary — upgrade to Java 25
 
 What I changed
 
