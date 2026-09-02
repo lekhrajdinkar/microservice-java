@@ -15,6 +15,39 @@
   - control/conditional statement, switch expression & block
   - loop with break/continue.
 
+- `Primitive` → value itself is copied | `Object/Array` → reference is copied
+```java
+void change(int x) {    x = 100;}
+
+int a = 10;
+change(a);
+
+System.out.println(a); // 10
+```
+```
+a = 10
+change(a)
+   ↓
+x = 10   ← copy
+
+x = 100
+a is still 10
+```
+```java
+void change(int[] nums) {    nums[0] = 100;}
+
+int[] arr = {10, 20, 30};
+change(arr);
+
+System.out.println(arr[0]); // 100
+```
+```
+arr ──────┐
+          ↓
+       [10, 20, 30]
+          ↑
+nums ─────┘
+```
     
 - primitives types/8:
   - char and boolean
